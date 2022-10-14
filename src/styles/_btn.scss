@@ -1,0 +1,40 @@
+@import "vars";
+
+.btn {
+    width: 260px;
+    padding: 15px 0;
+    font-size: 16px;
+    // background-color: $accentColor;
+    // color: #FFFFFF;
+    font-weight: 600;
+    text-align: center;
+    line-height: 18.8px;
+    // border: none;
+    text-decoration: none;
+
+    &:hover{
+        // background-color: $greyColor;
+        // color: $accentColor;
+        cursor: pointer;
+        transition: background-color 0.1s ease;
+    }
+}
+
+.btn_full {
+    background-color: $accentColor;
+    color: $textColor;
+    border: none;
+}
+
+.btn_blank {
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 3px solid $accentColor;
+    color: $accentColor;
+}
+
+.btn_smaller {
+    font-size: 14px;
+    line-height: 16.45px;
+    padding: 5px 0;
+}
