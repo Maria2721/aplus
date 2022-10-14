@@ -1,9 +1,11 @@
 import './TemplateName.scss';
 
-const TemplateName = () => (
-  <div className="templateName">
+function TemplateName () {
+  return (
+    <div className="templateName">
     TemplateName
-  </div>
-);
+    </div>
+  )
+}
 
 export default TemplateName;

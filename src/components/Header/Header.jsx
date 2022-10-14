@@ -3,7 +3,7 @@ import * as cx from "classnames";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Header = () => {
+function Header () {
   let [opened, setOpened] = useState(false);
 
   const classNav = cx("header__nav", {
