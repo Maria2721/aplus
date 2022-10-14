@@ -1,0 +1,58 @@
+@import "vars";
+@import "fonts";
+@import "btn";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+body {
+  font-family: $generalFont;
+  background-color: $bgColor;
+  color: $textColor;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container__row {
+  width: 85%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  color: $textColor;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: $accentColor;
+  text-align: center;
+
+  @media (max-width: $tablet)  {
+    font-size: 40px;
+  }
+
+  @media (max-width: $mobile)  {
+    font-size: 16px;
+  }
+}
