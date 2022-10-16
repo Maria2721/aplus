@@ -2,7 +2,55 @@
 
 .header {
     background-color: $bgColor_dark;
+    height: 90px;
 }
 .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: $textColor;
+}
+
+.header__logo {
+    align-self: start;
+}
+
+.header__logoIcon {
+    width: 70px;
+}
+
+.header__nav {
+    flex: 1 0 auto;
+}
+
+.header__links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.header__link {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.header__buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+// .header__calc {
+//     border: none;
+//     background-color: transparent;
+// }
+
+.header__calc {
+    height: 32px;
+    border: none;
+    background-color: transparent;
+}
+
+.header__calcIcon {
+    width: 32px;
 }
