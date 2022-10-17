@@ -1,3 +1,48 @@
 @import "../../styles/_vars.scss";
 
-.firstScreen {}
+.firstScreen {
+  position: relative;
+  background-image: url(../../assets/imgs/first_screen.jpg); // как вставить 2х?
+  background-repeat: no-repeat;
+  background-color: $bgColor_dark;
+}
+
+.firstScreen :after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+.firstScreen__inner {
+  z-index: 100;
+}
+
+.firstScreen__header {
+  margin-top: 231px;
+  margin-bottom: 5px;
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 81.71px;
+  color: $textColor;
+}
+
+.firstScreen__description {
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 43.58px;
+  color: $textColor;
+  // margin-top: 231px;
+}
+
+.firstScreen__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 187px;
+}
