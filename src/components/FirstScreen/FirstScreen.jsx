@@ -1,5 +1,6 @@
 import './FirstScreen.scss';
-import Button from '../Button/Button';
+import ButtonRequest from '../ButtonRequest/ButtonRequest';
+import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 
 function FirstScreen () {
   return (
@@ -8,8 +9,8 @@ function FirstScreen () {
         <h1 className="firstScreen__header">Факторинг для поставщиков <br/> и покупателей</h1>
         <p className="firstScreen__description">Все виды факторинга, все регионы России,<br/>получите выгодные условия на факторинг.</p>
         <div className="firstScreen__buttons">
-          <Button blank={false}>Отправить заявку</Button>
-          <Button blank={true}>Рассчитать стоимость</Button>
+          <ButtonRequest/>
+          <ButtonCalculate/>
         </div>
       </div>
     </div>

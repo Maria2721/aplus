@@ -19,16 +19,17 @@
 }
 
 .firstScreen__inner {
+  margin-top: 231px;
   z-index: 100;
 }
 
 .firstScreen__header {
-  margin-top: 231px;
   margin-bottom: 5px;
   font-size: 60px;
   font-weight: 800;
   line-height: 81.71px;
   color: $textColor;
+  text-transform: uppercase;
 }
 
 .firstScreen__description {
