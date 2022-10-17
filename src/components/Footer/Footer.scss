@@ -1,3 +1,7 @@
 @import "../../styles/_vars.scss";
 
-.footer {}
+.footer {
+    flex: 0 0 auto;
+    background-color: $bgColor_dark;
+    height: 320px;
+}
