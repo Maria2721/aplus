@@ -5,6 +5,7 @@ import FactoringIs from "../../components/FactoringIs/FactoringIs";
 import Interaction from "../../components/Interaction/Interaction";
 import Cases from "../../components/Cases/Cases";
 import Documents from "../../components/Documents/Documents";
+import Contacts from "../../components/Contacts/Contacts";
 
 function HomePage() {
   return (
@@ -19,6 +20,7 @@ function HomePage() {
           <Documents />
         </div>
       </div>
+      <Contacts/>
     </div>
   );
 }

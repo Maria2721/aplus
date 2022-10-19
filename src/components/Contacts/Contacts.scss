@@ -1,3 +1,64 @@
 @import "../../styles/_vars.scss";
 
-.contacts {}
+.contacts {
+    margin-bottom: 100px;
+}
+
+.contacts__header {
+    margin-bottom: 30px;
+}
+
+.contacts__content {
+    display: flex;
+    gap: 35px;
+}
+
+.contacts__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contacts__row:first-child {
+    margin-bottom: 23px;
+}
+
+.contacts__row:nth-child(2) {
+    margin-bottom: 50px;
+}
+
+.contacts__row:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts__subtitle {
+    font-weight: 700;
+    color: $textColor_dark;
+    margin-bottom: 15px;
+}
+
+.contacts__telAndMail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacts__linkAndIcon {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+
+.contacts__map {
+    width: 720px;
+    height: 100%;
+    border: 0;
+}
+
+.contacts__description {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.24px;
+    color: $textColor_dark
+}
