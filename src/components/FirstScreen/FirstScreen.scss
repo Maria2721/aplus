@@ -2,8 +2,9 @@
 
 .firstScreen {
   position: relative;
-  background-image: url(../../assets/imgs/first_screen.jpg); // как вставить 2х?
+  background-image: image-set("../../assets/imgs/first_screen.jpg" 1x, "../../assets/imgs/first_screen_2x.jpg" 2x);
   background-repeat: no-repeat;
+  background-size: cover;
   background-color: $bgColor_dark;
 }
 

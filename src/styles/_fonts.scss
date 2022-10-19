@@ -4,7 +4,7 @@
     font-family: $generalFont;
     src: url('../assets/fonts/OpenSans/OpenSans-Regular.woff2') format('woff2'),
         url('../assets/fonts/OpenSans/OpenSans-Regular.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -22,7 +22,7 @@
     font-family: 'Open Sans';
     src: url('../assets/fonts/OpenSans/OpenSans-Bold.woff2') format('woff2'),
         url('../assets/fonts/OpenSans/OpenSans-Bold.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -40,7 +40,7 @@
     font-family: 'Open Sans';
     src: url('../assets/fonts/OpenSans/OpenSans-ExtraBoldItalic.woff2') format('woff2'),
         url('../assets/fonts/OpenSans/OpenSans-ExtraBoldItalic.woff') format('woff');
-    font-weight: bold;
+    font-weight: 800;
     font-style: italic;
     font-display: swap;
 }
@@ -67,7 +67,7 @@
     font-family: 'Open Sans';
     src: url('../assets/fonts/OpenSans/OpenSans-Italic.woff2') format('woff2'),
         url('../assets/fonts/OpenSans/OpenSans-Italic.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: italic;
     font-display: swap;
 }
@@ -94,7 +94,7 @@
     font-family: 'Open Sans';
     src: url('../assets/fonts/OpenSans/OpenSans-BoldItalic.woff2') format('woff2'),
         url('../assets/fonts/OpenSans/OpenSans-BoldItalic.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: italic;
     font-display: swap;
 }
@@ -112,7 +112,7 @@
     font-family: $extraFont;
     src: url('../assets/fonts/PublicSans/PublicSans-Regular.woff2') format('woff2'),
         url('../assets/fonts/PublicSans/PublicSans-Regular.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -121,7 +121,7 @@
     font-family: 'Public Sans';
     src: url('../assets/fonts/PublicSans/PublicSans-BoldItalic.woff2') format('woff2'),
         url('../assets/fonts/PublicSans/PublicSans-BoldItalic.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: italic;
     font-display: swap;
 }
@@ -130,7 +130,7 @@
     font-family: 'Public Sans';
     src: url('../assets/fonts/PublicSans/PublicSans-Bold.woff2') format('woff2'),
         url('../assets/fonts/PublicSans/PublicSans-Bold.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -148,7 +148,7 @@
     font-family: 'Public Sans';
     src: url('../assets/fonts/PublicSans/PublicSans-ExtraBold.woff2') format('woff2'),
         url('../assets/fonts/PublicSans/PublicSans-ExtraBold.woff') format('woff');
-    font-weight: bold;
+    font-weight: 800;
     font-style: normal;
     font-display: swap;
 }
@@ -184,7 +184,7 @@
     font-family: 'Public Sans';
     src: url('../assets/fonts/PublicSans/PublicSans-ExtraBoldItalic.woff2') format('woff2'),
         url('../assets/fonts/PublicSans/PublicSans-ExtraBoldItalic.woff') format('woff');
-    font-weight: bold;
+    font-weight: 800;
     font-style: italic;
     font-display: swap;
 }
@@ -211,7 +211,7 @@
     font-family: 'Public Sans';
     src: url('../assets/fonts/PublicSans/PublicSans-Italic.woff2') format('woff2'),
         url('../assets/fonts/PublicSans/PublicSans-Italic.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: italic;
     font-display: swap;
 }

@@ -5,7 +5,7 @@ import Step from '../Step/Step';
 
 function FiveSteps(){
   return (
-  <div className="fiveSteps container">
+  <section className="fiveSteps container">
     <div className="fiveSteps__inner container__row">
       <h1 className="fiveSteps__header">Получите финансирование за 5 шагов</h1>
       <div className="fiveSteps__steps">
@@ -20,7 +20,7 @@ function FiveSteps(){
         <ButtonCalculate/>
       </div>
     </div>
-  </div>
+  </section>
 )};
 
 export default FiveSteps;

@@ -1,0 +1,67 @@
+@import "../../styles/_vars.scss";
+
+.interaction {
+    padding-top: 293px;
+}
+
+.interaction__inner {
+    display: flex;
+    gap: 33px;
+}
+
+.interaction__header {
+    margin-bottom: 74px;
+}
+
+.interaction__imgWrapper {
+    width: 584px;
+    margin-bottom: 57px;
+}
+
+.interaction__img {
+    width: 100%;
+}
+
+.interaction__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.interaction__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-bottom: 94px;
+    margin-top: 50px;
+}
+
+.interaction__item {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.interaction__numberWrapper {
+    display: flex;
+    min-width: 29px;
+    justify-content: center;
+}
+
+.interaction__number {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 65.37px;
+    color: $accentColor;
+
+    &_grey {
+        color: #D9D9D9
+    }
+}
+
+.interaction__description {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.24px;
+    color: $textColor_dark;
+}

@@ -4,7 +4,7 @@ import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 
 function FirstScreen () {
   return (
-    <div className="firstScreen container">
+    <section className="firstScreen container">
       <div className="firstScreen__inner container__row">
         <h1 className="firstScreen__header">Факторинг для поставщиков <br/> и покупателей</h1>
         <p className="firstScreen__description">Все виды факторинга, все регионы России,<br/>получите выгодные условия на факторинг.</p>
@@ -13,7 +13,7 @@ function FirstScreen () {
           <ButtonCalculate/>
         </div>
       </div>
-    </div>
+    </section>
   )
 };
 
