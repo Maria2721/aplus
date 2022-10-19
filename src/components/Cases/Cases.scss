@@ -1,3 +1,69 @@
 @import "../../styles/_vars.scss";
 
-.cases {}
+.cases__content {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    height: 488px;
+}
+
+.cases__header {
+    margin-bottom: 30px;
+}
+
+.cases__leftSide {
+    width: 60%;
+}
+
+.cases__rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.cases__imgWrapper {
+    position: relative;
+}
+
+.cases__img {
+    position: relative;
+    width: 100%;
+    width: 415px;
+    height: 488px;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.cases__img_smaller {
+    width: 280px;
+    height: 235px;
+}
+
+.cases__imgWrapper:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.29%, #000000 100%);
+  }
+
+.cases__subtitle {
+    position: absolute;
+    bottom: 20px;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.24px;
+    min-height: 2.4em;
+    color: $textColor;
+    z-index: 1;
+
+    &_smaller {
+        bottom: 15px;
+        font-size: 12px;
+        line-height: 16.34px;
+    }
+
+}
