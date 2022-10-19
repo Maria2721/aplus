@@ -6,11 +6,17 @@ import SchemePage from './pages/SchemePage/SchemePage';
 import CasesPage from './pages/CasesPage/CasesPage';
 import MarketplacePage from './pages/MarketplacePage/MarketplacePage';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function App() {
+  const { pathname } = useLocation(); 
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
-    <Router>
       <div className="App">
         <Header/>
         <main>
@@ -24,7 +30,6 @@ function App() {
         </main>
         <Footer/>
       </div>
-    </Router>
   );
 }
 

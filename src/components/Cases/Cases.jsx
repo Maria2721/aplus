@@ -12,7 +12,6 @@ function Cases() {
     <div className="cases">
         <h1 className="cases__header">Кейсы</h1>
         <div className="cases__content">
-
           <div className="cases__leftSide">
             <Link to="/cases">
                 <div className="cases__imgWrapper">
@@ -21,12 +20,11 @@ function Cases() {
                 </div>
             </Link>
           </div>
-
           <div className="cases__rightSide">
             <Link to="/cases">
               <div className="cases__imgWrapper">
                 <img className="cases__img cases__img_smaller" alt="Кейс" src={Case2} srcSet={`${Case2Retina} 2x`}/>
-                <div className="cases__subtitle cases__subtitle_smaller">Онлайн-факторинг для света и теп</div>
+                <div className="cases__subtitle cases__subtitle_smaller">Онлайн-факторинг для света и тепла</div>
               </div>
             </Link>
             <Link to="/cases">
