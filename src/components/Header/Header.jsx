@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ReactComponent as Logo } from "../../assets/imgs/logo.svg"
 import { ReactComponent as CalculatorIcon } from "../../assets/imgs/calc_icon.svg"
+import ButtonRequest from '../ButtonRequest/ButtonRequest';
 
 function Header () {
   let [opened, setOpened] = useState(false);
@@ -30,7 +31,7 @@ function Header () {
           </div>
       </nav>
       <div className='header__buttons'>
-        <button className='btn btn_full btn_smaller'>Отправить заявку</button>
+        <ButtonRequest isSmall={true}/>
         <button className='header__calc'><CalculatorIcon className='header__calcIcon'/></button>
       </div>
     {/* <BurgerBlack onClick={() => setOpened(!opened)} className="header__burger"/> */}

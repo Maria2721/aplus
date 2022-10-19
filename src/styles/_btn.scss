@@ -2,15 +2,13 @@
 
 .btn {
     width: 260px;
-    padding: 15px 0;
+    padding: 18px 0;
     font-size: 16px;
-    // background-color: $accentColor;
-    // color: #FFFFFF;
     font-weight: 600;
     text-align: center;
     line-height: 18.8px;
-    // border: none;
     text-decoration: none;
+    font-family: $extraFont;
 
     &:hover{
         // background-color: $greyColor;
@@ -27,6 +25,7 @@
 }
 
 .btn_blank {
+    padding: 15px 0;
     box-sizing: border-box;
     background-color: transparent;
     border: 3px solid $accentColor;
