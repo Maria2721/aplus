@@ -38,6 +38,13 @@
     margin-bottom: 15px;
 }
 
+.contacts__description {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.24px;
+    color: $textColor_dark
+}
+
 .contacts__telAndMail {
     display: flex;
     flex-direction: column;
@@ -50,15 +57,16 @@
     gap: 21px;
 }
 
+.contacts__iconTel {
+    width: 19px;
+}
+
+.contacts__iconMail {
+    width: 20px;
+}
+
 .contacts__map {
     width: 720px;
     height: 100%;
     border: 0;
-}
-
-.contacts__description {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 27.24px;
-    color: $textColor_dark
 }

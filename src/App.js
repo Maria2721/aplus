@@ -7,10 +7,17 @@ import CasesPage from './pages/CasesPage/CasesPage';
 import MarketplacePage from './pages/MarketplacePage/MarketplacePage';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const { pathname } = useLocation(); 
+  let [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
+
+  const closeBurgerMenu = () => {
+    if (openedBurgerMenu) {
+      setOpenedBurgerMenu(false);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,7 +25,7 @@ function App() {
 
   return (
       <div className="App">
-        <Header/>
+        <Header opened={openedBurgerMenu} closeBurgerMenu={closeBurgerMenu} handleBurger={() => setOpenedBurgerMenu(!openedBurgerMenu)}/>
         <main>
           <Routes>
                   <Route path='/' element={<HomePage/>}/>

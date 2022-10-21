@@ -4,6 +4,7 @@
     background-color: $bgColor_dark;
     height: 90px;
 }
+
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -23,10 +24,15 @@
     flex: 1 0 auto;
 }
 
+.header__linksAndButtons {
+    display: flex;
+}
+
 .header__links {
     display: flex;
     justify-content: space-evenly;
     gap: 5px;
+    flex: 1 0 auto;
 }
 
 .header__link {
@@ -40,11 +46,6 @@
     gap: 14px;
 }
 
-// .header__calc {
-//     border: none;
-//     background-color: transparent;
-// }
-
 .header__calc {
     height: 32px;
     border: none;
@@ -53,4 +54,193 @@
 
 .header__calcIcon {
     width: 32px;
+}
+
+.header__burger {
+    display: none;
+}
+
+.header__close {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.header__overlay {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top:0;
+    z-index: 500;
+    background-color: hsla(0,0%,7%,.36);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.header__overlay_active {
+    opacity: 1;
+    background-color: hsla(0,0%,7%,.36);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: opacity .8s ease,visibility 0s;
+}
+
+@media screen and (max-width: $tablet) {
+    .header {
+        height: 100px;
+    }
+
+    .header__close {
+        display: block;
+        position: absolute;
+        top: 65px;
+        right: 65px;
+    }
+
+    .header__closeIcon {
+        width: 17px;
+    }
+
+    .header__nav {
+        position: fixed;
+        display: flex;
+        justify-content: flex-end;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        transition: transform 0.2s ease;
+        background-color: transparent;
+    }
+
+    .header__nav_active {
+        transform: translateX(0);
+    }
+
+    .header__navInner {
+        padding: 140px 60px;
+        width: 60vw;
+        height: 100vh;
+        background-color: $bgColor_dark;
+    }
+
+    .header__linksAndButtons {
+        flex-direction: column;
+    }
+
+    .header__links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 45px;
+        width: 100vw;
+    }
+
+    .header__link, .header__calc {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 20px;
+        font-family: $generalFont;
+    }
+
+    .header__buttons {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .header__calc {
+        align-self: flex-start;
+        margin: 40px 0;
+        color: $textColor;
+    }
+    
+    .header__burger {
+        display: block;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+
+    .header__burgerIcon {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: $smallTablet) {
+    .header__navInner {
+        padding: 120px 40px;
+    }
+
+    .header__close {
+        top: 55px;
+        right: 35px;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .header {
+        height: 50px;
+    }
+
+    .header__logoIcon {
+        width: 40px;
+    }
+
+    .header__close {
+        top: 27px;
+        right: 23px;
+    }
+
+    .header__closeIcon {
+        width: 10px;
+    }
+
+    .header__navInner {
+        padding: 70px 30px;
+    }
+
+    .header__links {
+        gap: 20px;
+    }
+
+    .header__link, .header__calc {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .header__buttons {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .header__calc {
+        margin: 20px 0 30px 0;
+    }
+
+    .header__burgerIcon {
+        width: 20px;
+    }
+}
+
+@media screen and (max-width: $smallMobile) {
+    .header__navInner {
+        padding: 70px 18px;
+    }
+
+    .header__calc {
+        margin: 20px 0 20px 0;
+    }
+
+    .header__close {
+        top: 27px;
+        right: 15px;
+    }
 }
