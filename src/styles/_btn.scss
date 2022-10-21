@@ -50,16 +50,19 @@
     }
 }
 
-// @media screen and (max-width: $smallTablet) {
-//     .btn_smaller {
-//         width: 180px;
-//         font-size: 14px;
-//         line-height: 11.75px;
-//         padding: 13px 0;
-//     }
-// }
-
 @media screen and (max-width: $mobile) {
+    .btn {
+        width: 133px;
+        padding: 9px 0;
+        font-size: 10px;
+        line-height: 11.75px;
+    }
+
+    .btn_blank {
+        padding: 7px 0;
+        border-width: 2px;
+    }
+
     .btn_smaller {
         max-width: 133px;
         width: 100%;
