@@ -15,7 +15,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.19);
   z-index: -1;
 }
 
@@ -34,12 +34,12 @@
 }
 
 .firstScreen__description {
+  max-width: 776px;
   margin-bottom: 15px;
   font-size: 32px;
   font-weight: 600;
   line-height: 43.58px;
   color: $textColor;
-  // margin-top: 231px;
 }
 
 .firstScreen__buttons {
@@ -47,4 +47,52 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 187px;
+}
+
+
+@media screen and (max-width: $tablet) {
+  .firstScreen__inner {
+    margin-top: 361px;
+  }
+
+.firstScreen__header {
+  max-width: 700px;
+  margin-bottom: 10px;
+  font-size: 48px;
+  line-height: 65.37px;
+}
+
+.firstScreen__description {
+  max-width: 568px;
+  margin-bottom: 45px;
+  font-size: 24px;
+  line-height: 32.68px;
+}
+
+.firstScreen__buttons {
+  margin-bottom: 342px;
+}
+}
+
+@media screen and (max-width: $mobile) {
+  .firstScreen__inner {
+    margin-top: 123px;
+  }
+
+.firstScreen__header {
+  max-width: 250px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  line-height: 27.24px;
+}
+
+.firstScreen__description {
+  max-width: 240px;
+  font-size: 12px;
+  line-height: 16.34px;
+}
+
+.firstScreen__buttons {
+  margin-bottom: 147px;
+}
 }
