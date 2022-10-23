@@ -3,9 +3,9 @@
 .step {
     position: relative;
     width: 20%;
-    // width: 200px;
     height: 280px;
     background-color: #EFEFEF;
+    min-width: 200px;
     max-width: 200px;
     color: $textColor_dark;
 }
@@ -13,7 +13,7 @@
 .step_highlight {
     background-color: $accentColor;
     color: $textColor;
-    margin-bottom: 45px;
+    margin-top: -45px;
 }
 
 .step_highlight .step__number {
@@ -36,4 +36,66 @@
     font-weight: 800;
     line-height: 340.45px;
     color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 1150px) {
+    .step {
+        min-width: 220px;
+        max-width: 220px;
+    }
+
+    .step__number {
+        left: 83px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .step_highlight .step__number {
+        color: rgba(255, 255, 255, 0.5); // спросить у Яны, точно ли здесь должно быть ярче
+    }
+}
+
+@media screen and (max-width: $smallTablet) {
+    .step {
+        min-width: 128px;
+        max-width: 128px;
+        height: 159px;
+    }
+
+    .step__number {
+        left: 83px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .step__header {
+        margin: 14px 9px;
+        font-size: 12px;
+        line-height: 16.34px;
+    }
+    
+    .step__number {
+        top: 27px;
+        left: 56px;
+        font-size: 120px;
+        line-height:163.42px;
+    }
+}
+
+@media screen and (max-width: $smallMobile) {
+    .step {
+        min-width: 88px;
+        max-width: 88px;
+        height: 119px;
+    }
+
+    .step__number {
+        top: -12px;
+        left: 18px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .step__header {
+        margin: 9px 8px;
+        font-size: 8px;
+        line-height: 13.34px;
+    }
 }

@@ -1,7 +1,5 @@
 @import "../../styles/_vars.scss";
 
-// .fiveSteps {}
-
 .fiveSteps__inner {
     display: flex;
     flex-direction: column;
@@ -10,7 +8,10 @@
     margin-top: 150px;
 }
 
-.fiveSteps__header {
+.fiveSteps__header, .fiveSteps__number {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 65.37px;
     text-align: center;
     margin-bottom: 70px;
 }
@@ -20,7 +21,7 @@
     justify-content: center;
     align-items: center;
     gap: 17px;
-    // width: 100%;
+    width: 100%;
     margin-bottom: 70px;
 }
 
@@ -28,4 +29,100 @@
     display: flex;
     gap: 10px;
     margin-bottom: 74px;
+}
+
+@media screen and (max-width: 1150px) {
+    .fiveSteps__inner {
+        width: 84% !important;
+        margin-top: 100px;
+    }
+
+    .fiveSteps__steps {
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 25px;
+        margin-bottom: 98px;
+    }
+
+    .fiveSteps__header {
+       max-width: 657px;
+       font-size: 40px;
+       line-height: 51.87px;
+    }
+
+    .fiveSteps__number {
+        font-size: 64px;
+        line-height: 67px;
+        margin: 0 3px;
+     }
+
+     .fiveSteps__buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 85px;
+    }
+}
+
+@media screen and (max-width: $smallTablet) {
+    .fiveSteps__inner {
+        width: 100% !important;
+        margin-top: 70px;
+    }
+
+    .fiveSteps__steps {
+        margin-bottom: 50px;
+    }
+
+    .fiveSteps__header {
+       max-width: 423px;
+       font-size: 28px;
+       line-height: 8.87px;
+       margin-bottom: 50px;
+    }
+
+    .fiveSteps__number {
+        font-size: 37px;
+        line-height: 67px;
+     }
+
+     .fiveSteps__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+    
+}
+
+@media screen and (max-width: $mobile) {
+    .fiveSteps__inner {
+        margin-top: 40px;
+    }
+
+    .fiveSteps__steps {
+        column-gap: 22px;
+        row-gap: 35px;
+        margin-bottom: 15px;
+    }
+
+    .fiveSteps__header {
+       max-width: 273px;
+       font-size: 16px;
+       line-height: 16.75px;
+       margin-bottom: 45px;
+    }
+
+    .fiveSteps__number {
+        font-size: 22px;
+        line-height: 23.03px;
+        margin: 0 3px;
+     }
+}
+
+@media screen and (max-width: $smallMobile) {
+    .fiveSteps__steps {
+        column-gap: 10px;
+        row-gap: 15px;
+        margin-bottom: 15px;
+    }
 }
