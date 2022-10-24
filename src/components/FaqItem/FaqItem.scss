@@ -1,3 +1,25 @@
 @import "../../styles/_vars.scss";
 
-.faqItem {}
+.faqItem__inner {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    margin-top: 200px;
+    border: 2px solid rgb(0, 153, 255);
+
+    .faqItem__header {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 65.37px;
+        text-align: center;
+        margin-bottom: 65px;
+    }
+
+    .faqItem__items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
