@@ -2,20 +2,34 @@
 
 .interaction {
     padding-top: 293px;
+    margin-bottom: 100px;
 }
 
 .interaction__inner {
     display: flex;
+    flex-direction: column;
+}
+
+.interaction__content {
+    display: flex;
     gap: 33px;
 }
 
-.interaction__header {
-    margin-bottom: 74px;
-}
+// .interaction__left {
+//   position: relative;
+// }
+
+// .interaction__header {
+//     // margin-bottom: 74px;
+// }
 
 .interaction__imgWrapper {
-    width: 584px;
-    margin-bottom: 57px;
+    // position: absolute;
+    // width: 42vw;
+    // top: 0;
+    // left: 0;
+    width: 695px;
+    margin-left: -117px;
 }
 
 .interaction__img {
@@ -24,7 +38,6 @@
 
 .interaction__buttons {
     display: flex;
-    flex-direction: column;
     gap: 10px;
 }
 
@@ -32,7 +45,8 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
-    padding-bottom: 94px;
+    // min-width: 600px;
+    max-width: 600px;
     margin-top: 50px;
 }
 
@@ -64,4 +78,22 @@
     font-weight: 600;
     line-height: 27.24px;
     color: $textColor_dark;
+}
+
+@media screen and (max-width: $tablet) {
+    .interaction__content {
+        flex-direction: column;
+        margin-bottom: 25px;
+        // align-items: center;
+    }
+
+    .interaction__imgWrapper {
+        // // width: 42vw;
+        // width: 695px;
+        margin-left: 0;
+    }
+
+    .interaction__buttons {
+        flex-direction: column;
+    }
 }

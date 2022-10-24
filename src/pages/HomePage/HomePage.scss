@@ -1,12 +1,15 @@
 @import "../../styles/_vars.scss";
 
-// .homePage {
-//     display: flex;
-//     gap: 10px;
-// }
-
 .homePage__casesAndDocuments {
     display: flex;
     gap: 20px;
     margin-bottom: 140px;
+}
+
+@media screen and (max-width: $tablet) {
+    .homePage__casesAndDocuments {
+        flex-direction: column;
+        // gap: 20px;
+        // margin-bottom: 140px;
+    }
 }

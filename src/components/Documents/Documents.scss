@@ -32,3 +32,28 @@
         padding-top: 10px;
     }
 }
+
+@media screen and (max-width: $tablet) {
+    .documents__list {
+        height: 182px;
+        // padding: 30px 15px;
+        // background-color: #F3F3F3;
+    }
+
+    .documents__link:last-child {
+        border-bottom: none;
+    }
+
+    // .documents__link {
+    //     padding-bottom: 10px;
+    //     font-size: 20px;
+    //     font-weight: 600;
+    //     line-height: 27.24px;
+    //     color: $textColor_dark;
+    //     border-bottom: 3px solid #FFFFFF;
+    
+    //     &:not(:first-child) {
+    //         padding-top: 10px;
+    //     }
+    // }
+}
