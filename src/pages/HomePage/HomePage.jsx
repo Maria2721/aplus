@@ -20,7 +20,7 @@ function HomePage() {
           <Documents />
         </div>
       </div>
-      <Contacts />
+     <Contacts />
     </div>
   );
 }

@@ -11,15 +11,15 @@
     margin-bottom: 30px;
 }
 
-.cases__leftSide {
-    width: 60%;
-}
+// .cases__leftSide {
+//     // width: 60%;
+// }
 
 .cases__rightSide {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 40%;
+    // width: 40%;
 }
 
 .cases__imgWrapper {
@@ -67,3 +67,11 @@
     }
 
 }
+
+// @media screen and (max-width: $tablet) {
+
+// }
+
+// @media screen and (max-width: $mobile) {
+
+// }
