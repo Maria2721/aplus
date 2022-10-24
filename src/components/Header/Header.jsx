@@ -41,6 +41,9 @@ function Header({ opened, closeBurgerMenu, handleBurger }) {
                 <Link to="/cases" onClick={closeBurgerMenu} className="header__link">
                   Кейсы
                 </Link>
+                <Link to="/for-marketplaces" onClick={closeBurgerMenu} className="header__link">
+                  Маркетплейсам
+                </Link>
                 <Link
                   to="/contacts"
                   onClick={closeBurgerMenu}
