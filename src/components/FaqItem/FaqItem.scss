@@ -1,25 +1,97 @@
 @import "../../styles/_vars.scss";
 
 .faqItem__inner {
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
     margin-top: 200px;
+    margin-bottom: 190px;
     border: 2px solid rgb(0, 153, 255);
 
     .faqItem__header {
         font-size: 48px;
         font-weight: 800;
         line-height: 65.37px;
-        text-align: center;
-        margin-bottom: 65px;
+        color: $accentColor;
+        margin-right: 30%;
+        margin-bottom: 80px;
     }
 
     .faqItem__items {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+    }
+}
+
+@media screen and (max-width: $tablet) {
+    // up to 959px
+    .faqItem__inner {
+        margin-top: 100px;
+        margin-bottom: 80px;
+        .faqItem__header {
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 22px;
+            margin-bottom: 30px;
+            margin-right: 18%;
+        }
+        .faqItem__items {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: $smallTablet) {
+    // up to 620px
+    .faqItem__inner {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        .faqItem__header {
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 22px;
+            margin-bottom: 30px;
+            margin-right: 18%;
+        }
+        .faqItem__items {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    // up to 480px
+    .faqItem__inner {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        .faqItem__header {
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 22px;
+            margin-bottom: 30px;
+            margin-right: 18%;
+        }
+        .faqItem__items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 15%;
+        }
+    }
+}
+
+@media screen and (max-width: $smallMobile) {
+    // up to 330px
+    .faqItem__inner {
+        .faqItem__header {
+            margin-right: 0px;
+        }
+        .faqItem__items {
+            margin-right: 0px;
+        }
     }
 }

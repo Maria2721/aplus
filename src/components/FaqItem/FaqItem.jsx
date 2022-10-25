@@ -11,6 +11,7 @@ function FaqItem() {
           {faqItems.map((item) => (
             <Faq
               key={item.id}
+              id={item.id}
               title={item.title}
               solution={item.solution}
               rate={item.rate}
