@@ -1,8 +1,9 @@
 import './MarketplacePage.scss';
+import PersonalContact from '../../components/PersonalContact/PersonalContact';
 
 const MarketplacePage = () => (
   <div className="marketplacePage">
-    MarketplacePage
+    <PersonalContact />
   </div>
 );
 
