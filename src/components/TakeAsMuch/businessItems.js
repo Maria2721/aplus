@@ -1,4 +1,4 @@
-export const faqItems = [
+export const businessItems = [
   {
     id: "smallBusiness",
     title: "До 5 млн рублей",

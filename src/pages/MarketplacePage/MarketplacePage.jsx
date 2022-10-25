@@ -1,9 +1,9 @@
 import './MarketplacePage.scss';
-import FaqItem from '../../components/FaqItem/FaqItem';
+import TakeAsMuch from '../../components/TakeAsMuch/TakeAsMuch';
 
 const MarketplacePage = () => (
   <div className="marketplacePage">
-    <FaqItem />
+    <TakeAsMuch />
   </div>
 );
 
