@@ -1,5 +1,9 @@
 @import "../../styles/_vars.scss";
 
+.contacts__desktop_hidden {
+    display: none;
+}
+
 .contacts {
     margin-bottom: 100px;
 }
@@ -10,21 +14,15 @@
 
 .contacts__content {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
     gap: 35px;
 }
 
 .contacts__contacts {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-.contacts__row:first-child {
-    margin-bottom: 23px;
-}
-
-.contacts__row:nth-child(2) {
-    margin-bottom: 50px;
+    gap: 29px;
 }
 
 .contacts__row:last-child {
@@ -33,6 +31,8 @@
 }
 
 .contacts__subtitle {
+    font-size: 24px;
+    line-height: 32.68px;
     font-weight: 700;
     color: $textColor_dark;
     margin-bottom: 15px;
@@ -65,8 +65,104 @@
     width: 20px;
 }
 
-.contacts__map {
-    width: 720px;
+.contacts__mapWrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
     height: 100%;
+    max-width: 720px;
+    min-height: 443px;
+}
+
+.contacts__map {
+    width: 100%;
     border: 0;
+}
+
+@media screen and (max-width: $tablet) {
+    .contacts__desktop_hidden {
+        display: block;
+    }
+
+    .contacts {
+        margin-bottom: 89px;
+    }
+    
+    .contacts__content {
+        gap: 20px;
+    }
+    
+    .contacts__contacts {
+        gap: 30px;
+    }
+    
+    .contacts__subtitle {
+        margin-bottom: 10px;
+    }
+    
+    .contacts__mapWrapper {
+        width: 80%;
+        max-width: 450px;
+        min-height: 720px;
+    }
+}
+
+@media screen and (max-width: $smallTablet) {
+    .contacts {
+        margin-bottom: 20px;
+    }
+    
+    .contacts__content {
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .contacts__header {
+        margin-bottom: 18px;
+    }
+    
+    .contacts__contacts {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    
+    .contacts__subtitle {
+        font-size: 10px;
+        line-height: 13.62px;
+        margin-bottom: 9px;
+    }
+    
+    .contacts__description {
+        font-size: 10px;
+        line-height: 13.62px;
+    }
+    
+    .contacts__telAndMail {
+        gap: 8px;
+    }
+    
+    .contacts__linkAndIcon {
+        gap: 8px;
+    }
+    
+    .contacts__iconTel {
+        width: 10px;
+    }
+    
+    .contacts__iconMail {
+        width: 12px;
+    }
+    
+    .contacts__mapWrapper {
+        width: 100%;
+        max-width: 100%;
+        min-height: 220px;
+    }
+}
+
+@media screen and (max-width: $smallMobile) {
+    .contacts__contacts {
+        gap: 10px;
+    }
 }

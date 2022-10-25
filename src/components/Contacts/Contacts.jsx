@@ -12,12 +12,12 @@ function Contacts(){
           <div className="contacts__contacts">
             <div className="contacts__row">
               <h2 className="contacts__subtitle">Центральный офис</h2>
-              <div className="contacts__description">350063, Россия, , г. Краснодар,<br/>ул. Октябрьская, д 59, помещ. 2/14</div>
+              <div className="contacts__description">350063, Россия, <br className="contacts__desktop_hidden"/>г. Краснодар,<br/>ул. Уральская, д. 75/1</div>
             </div>
-            <div className="contacts__row">
+            {/* <div className="contacts__row">
               <h2 className="contacts__subtitle">Филиал</h2>
               <div className="contacts__description">Москва, Пресненская набережная, д.12, офис 405, помещение 3</div>
-            </div>
+            </div> */}
             <div className="contacts__row">
               <h2 className="contacts__subtitle">Для связи</h2>
               <div className="contacts__telAndMail">
