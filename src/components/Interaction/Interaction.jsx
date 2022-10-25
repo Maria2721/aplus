@@ -11,7 +11,7 @@ function Interaction() {
         <div className='interaction__inner'>
           <div className="interaction__content">
             <div className="interaction__left">
-              <h1 className="interaction__header">Схема<br className="interaction__mobile_hidden"/>взаимодействия</h1>
+              <h1 className="interaction__header">Схема<br className="interaction__mobile_hidden"/> взаимодействия</h1>
               <div className="interaction__imgWrapper"><img className="interaction__img" alt="Схема" src={SchemeImg} srcSet={`${SchemeRetinaImg} 2x`}/></div>
             </div>
             <div className="interaction__list">
