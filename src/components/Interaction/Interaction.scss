@@ -29,18 +29,10 @@
     max-width: 564px;
     width: 100%;
     align-self: flex-end;
-   margin-bottom: 25px;
-//    padding-left: 100px;
+    margin-bottom: 25px;
 }
 
 .interaction__imgWrapper {
-    // position: absolute;
-    // width: 58%;
-    // top: 134px;
-    // left: -61px;
-    // width: 617px;
-    // margin-left: -80px;
-    // padding-left: 117px;
     max-width: 100%;
     height: auto;
 }
@@ -99,7 +91,7 @@
 
 @media screen and (max-width: $tablet) {
     .interaction {
-        padding-top: 100px;
+        padding-top: 253px;
         margin-bottom: 41px;
     }
 
@@ -132,10 +124,10 @@
 }
 
 @media screen and (max-width: $mobile) {
-    .interaction {
-        padding-top: 40px;
+    .interaction__mobile_hidden {
+        display: none;
     }
-    
+
     .interaction__content {
         margin-bottom: 20px;
     }
