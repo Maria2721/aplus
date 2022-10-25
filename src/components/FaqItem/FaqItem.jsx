@@ -6,7 +6,7 @@ function FaqItem() {
   return (
     <div className="faqItem container">
       <div className="faqItem__inner container__row">
-        <div className="faqItem__header">Берите столько, сколько нужно вашему бизнесу</div>
+        <h1 className="faqItem__header">Берите столько, сколько нужно вашему бизнесу</h1>
         <div className="faqItem__items">
           {faqItems.map((item) => (
             <Faq
