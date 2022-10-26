@@ -2,12 +2,23 @@
 
 .step {
     position: relative;
+    background-color: #EFEFEF;
+    color: $textColor_dark;
+}
+
+.step_home {
     width: 20%;
     height: 280px;
-    background-color: #EFEFEF;
     min-width: 200px;
     max-width: 200px;
-    color: $textColor_dark;
+}
+
+.step_market {
+    position: relative;
+    width: 25%;
+    height: 300px;
+    min-width: 260px;
+    max-width: 260px;
 }
 
 .step_highlight {
@@ -39,7 +50,7 @@
 }
 
 @media screen and (max-width: 1150px) {
-    .step {
+    .step_standart {
         min-width: 220px;
         max-width: 220px;
     }
@@ -49,13 +60,13 @@
         color: rgba(255, 255, 255, 0.5);
     }
 
-    .step_highlight .step__number {
-        color: rgba(255, 255, 255, 0.5); // спросить у Яны, точно ли здесь должно быть ярче
-    }
+    // .step_highlight .step__number {
+    //     color: rgba(255, 255, 255, 0.5); // спросить у Яны, точно ли здесь должно быть ярче
+    // }
 }
 
 @media screen and (max-width: $smallTablet) {
-    .step {
+    .step_home {
         min-width: 128px;
         max-width: 128px;
         height: 159px;
@@ -81,7 +92,7 @@
 }
 
 @media screen and (max-width: $smallMobile) {
-    .step {
+    .step_home {
         min-width: 88px;
         max-width: 88px;
         height: 119px;

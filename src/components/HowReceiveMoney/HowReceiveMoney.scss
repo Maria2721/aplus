@@ -1,3 +1,19 @@
 @import "../../styles/_vars.scss";
 
-.howReceiveMoney {}
+.howReceiveMoney__header {
+    margin-bottom: 74px;
+}
+
+.howReceiveMoney__steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.howReceiveMoney__twoSteps {
+    display: flex;
+    gap: 20px;
+}
