@@ -160,6 +160,7 @@
 
   .factoring__section_right {
     width: 85%;
+    margin-bottom: -180px;
   }
   
   .factoring__content {
@@ -189,25 +190,26 @@
 
 @media screen and (max-width: $mobile) {
   .factoring__section_left {
-    width: 90%;
+    // width: 80%;
     margin-top: 33px;
     margin-bottom: 17px;
   }
 
   .factoring__section_right {
-    width: 90%;
+    width: 80%;
+    margin-bottom: -172px;
   }
   
   .factoring__content {
     padding: 0 13px;
   
     &_left {
-      max-width: calc(10vw + 590px);
+      // max-width: calc(18vw + 590px);
       padding-top: 17px;
     }
   
     &_right {
-      max-width: calc(10vw + 590px);
+      max-width: calc(20vw + 590px);
       padding-top: 25px;
     }
   }
