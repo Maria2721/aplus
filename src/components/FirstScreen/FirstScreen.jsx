@@ -1,16 +1,22 @@
 import './FirstScreen.scss';
 import ButtonRequest from '../ButtonRequest/ButtonRequest';
 import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
+import * as cx from "classnames";
 
-function FirstScreen () {
+function FirstScreen ({ page, description, children, buttonRequest, buttonCalculate }) {
+  const classFirstScreen = cx("container firstScreen", {
+    "container firstScreen firstScreen_home": page === 'home',
+    "container firstScreen firstScreen_market": page === 'market',
+  });
+
   return (
-    <section className="firstScreen container">
+    <section className={classFirstScreen}>
       <div className="firstScreen__inner container__row">
-        <h1 className="firstScreen__header">Факторинг для поставщиков <br/> и покупателей</h1>
-        <p className="firstScreen__description">Все виды факторинга, все регионы России, получите выгодные условия на факторинг.</p>
+        <h1 className="firstScreen__header">{children}</h1>
+        <p className="firstScreen__description">{description}</p>
         <div className="firstScreen__buttons">
-          <ButtonRequest/>
-          <ButtonCalculate/>
+          {buttonRequest && <ButtonRequest/>}
+          {buttonCalculate && <ButtonCalculate/>}
         </div>
       </div>
     </section>

@@ -10,7 +10,13 @@ import Contacts from "../../components/Contacts/Contacts";
 function HomePage() {
   return (
     <div className="homePage">
-      <FirstScreen />
+      <FirstScreen
+        page="home"
+        description="Все виды факторинга, все регионы России, получите выгодные условия на факторинг."
+        buttonRequest={true}
+        buttonCalculate={true}>
+        Факторинг для поставщиков <br /> и покупателей
+      </FirstScreen>
       <FiveSteps />
       <FactoringIs />
       <Interaction />
@@ -20,7 +26,7 @@ function HomePage() {
           <Documents />
         </div>
       </div>
-     <Contacts />
+      <Contacts />
     </div>
   );
 }
