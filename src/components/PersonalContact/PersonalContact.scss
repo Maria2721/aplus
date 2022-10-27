@@ -146,6 +146,16 @@
     }
 }
 
+@media screen and (min-width: $mobile) and (max-width: 720px) {
+    .personalContact__info {
+        .personalContact__info__subtitle {
+            font-size: 13px !important;
+            font-weight: 700 !important;
+            line-height: 18px !important;
+        }
+    }
+}
+
 @media screen and (max-width: 720px) {
     //620px;
     .personalContact__inner {
