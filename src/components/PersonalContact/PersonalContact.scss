@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     height: auto; // 500px;
+    margin-bottom: 170px;
 
     .personalContact__chat {
         width: 50%;
@@ -81,6 +82,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 110px;
         .personalContact__chat {
             width: 45%;
             padding-left: 20px;
@@ -150,6 +152,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-bottom: 45px;
         .personalContact__chat {
             width: 80%;
             max-width: 320px;
