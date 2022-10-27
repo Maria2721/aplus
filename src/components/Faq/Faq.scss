@@ -1,4 +1,13 @@
 @import "../../styles/_vars.scss";
 
-.faq {
+.faq__inner {
+    margin-bottom: 80px;
+    .faq__header {
+        color: $accentColor;
+        margin-bottom: 65px;
+    }
+    .faq__items {
+        display: flex;
+        flex-direction: column;
+    }
 }
