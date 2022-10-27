@@ -1,7 +1,6 @@
 @import "../../styles/_vars.scss";
 
 .personalContact__inner {
-    border: 2px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -9,9 +8,8 @@
     height: auto; // 500px;
 
     .personalContact__chat {
-        border: 2px solid rgb(0, 136, 255);
         width: 50%;
-        padding-left: 38px;
+        padding-left: 70px;
 
         display: flex;
         flex-direction: column;
@@ -22,7 +20,7 @@
             border-radius: 50%;
             position: relative;
             top: 69px;
-            left: -93px;
+            left: -85px;
         }
         .personalContact__chat__client_img {
             width: 110px;
@@ -30,7 +28,8 @@
             border-radius: 50%;
             position: relative;
             top: -26px;
-            left: 306px;
+            left: 60px;
+            align-self: flex-end;
         }
         .personalContact__chat__manager__first,
         .personalContact__chat__manager__second {
@@ -38,16 +37,20 @@
             margin-bottom: 15px;
         }
         .personalContact__chat__manager__first {
-            max-width: 75%;
+            width: 80%;
+            max-width: 390px;
         }
         .personalContact__chat__manager__second {
-            max-width: 60%;
+            width: 70%;
+            max-width: 315px;
         }
         .personalContact__chat__client {
             box-shadow: 0px 0px 4px 3px rgba(159, 159, 159, 0.3);
-            max-width: 60%;
-            margin-left: 52px;
+            width: 70%;
+            max-width: 315px;
             margin-top: 45px;
+            text-align: center;
+            align-self: flex-end;
         }
     }
     .personalContact__chat > div {
@@ -61,7 +64,6 @@
     }
 
     .personalContact__info {
-        border: 2px solid rgb(255, 0, 230);
         width: 40%;
         .personalContact__info__subtitle {
             margin-top: 30px;
@@ -73,67 +75,129 @@
     }
 }
 
-@media screen and (max-width: $smallMobile) {
-    //330px;
+@media screen and (max-width: $tablet) {
+    //959px;
+    .personalContact__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .personalContact__chat {
+            width: 45%;
+            padding-left: 20px;
+            margin-bottom: 0px;
+            .personalContact__chat__manager_img {
+                width: 64px;
+                border: 3px solid $accentColor;
+                position: relative;
+                top: 0px;
+                left: -38px;
+                margin-bottom: 3px;
+            }
+            .personalContact__chat__client_img {
+                width: 64px;
+                border: 3px solid #d9d9d9;
+                position: relative;
+                top: 0px;
+                left: 38px;
+                margin-top: 3px;
+            }
+            .personalContact__chat__manager__first,
+            .personalContact__chat__manager__second {
+                box-shadow: 0px 0px 4px 3px rgba(255, 122, 0, 0.3);
+                margin-bottom: 15px;
+            }
+            .personalContact__chat__manager__first {
+                width: 90%;
+                max-width: 260px;
+            }
+            .personalContact__chat__manager__second {
+                width: 90%;
+                max-width: 260px;
+            }
+            .personalContact__chat__client {
+                box-shadow: 0px 0px 4px 3px rgba(159, 159, 159, 0.3);
+                width: 80%;
+                max-width: 240px;
+                margin-top: 45px;
+            }
+        }
+        .personalContact__chat > div {
+            padding: 12px 20px;
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 18px;
+        }
+
+        .personalContact__info {
+            width: 45%;
+            text-align: end;
+            .personalContact__info__subtitle {
+                margin-top: 25px;
+                margin-bottom: 20px;
+                font-size: 13px;
+                font-weight: 700;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    //620px;
     .personalContact__inner {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-
         .personalContact__chat {
+            width: 80%;
+            max-width: 320px;
             padding-left: 0px;
-            .personalContact__chat__manager {
-                .personalContact__chat__manager_img {
-                    width: 36px;
-                    border: 2px solid $accentColor;
-                    position: static;
-                    margin-bottom: 3px;
-                }
-                .personalContact__chat__manager__first,
-                .personalContact__chat__manager__second {
-                    display: block;
-                    max-width: 70%;
-                }
+            margin-bottom: 7px;
+            .personalContact__chat__manager_img {
+                width: 36px;
+                border: 2px solid $accentColor;
+                position: relative;
+                top: 0px;
+                left: -38px;
+                margin-bottom: 3px;
             }
-            .personalContact__chat__client {
-                padding-left: 0px;
-                padding-top: 0px;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                div {
-                    display: block;
-                    max-width: 70%;
-                }
-                .personalContact__chat__client_img {
-                    width: 36px;
-                    border: 2px solid #d9d9d9;
-                    border-radius: 50%;
-                    position: static;
-                    margin-top: 3px;
-                }
+            .personalContact__chat__client_img {
+                width: 36px;
+                border: 2px solid #d9d9d9;
+                position: relative;
+                top: 0px;
+                left: 38px;
+                margin-top: 3px;
             }
-            .personalContact__chat__manager > div,
-            .personalContact__chat__client > div {
-                width: auto;
-                height: auto;
-                padding: 6px 7px;
-                border-radius: 10px;
-                background: $bgColor;
-
-                font-size: 10px;
-                font-weight: 700;
-                line-height: 14px;
-            }
-            .personalContact__chat__manager > div {
+            .personalContact__chat__manager__first,
+            .personalContact__chat__manager__second {
                 box-shadow: 0px 0px 2px 3px rgba(255, 122, 0, 0.3);
                 margin-bottom: 15px;
             }
-            .personalContact__chat__client > div {
-                box-shadow: 0px 0px 2px 3px rgba(159, 159, 159, 0.3);
+            .personalContact__chat__manager__first {
+                width: 90%;
+                max-width: 185px;
             }
+            .personalContact__chat__manager__second {
+                width: 90%;
+                max-width: 185px;
+            }
+            .personalContact__chat__client {
+                box-shadow: 0px 0px 2px 3px rgba(159, 159, 159, 0.3);
+                width: 80%;
+                max-width: 165px;
+                margin-top: 0px;
+            }
+        }
+        .personalContact__chat > div {
+            padding: 6px 7px;
+            border-radius: 10px;
+
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 14px;
         }
 
         .personalContact__info {
