@@ -9,11 +9,37 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     width: 100%;
 }
 
 .howReceiveMoney__twoSteps {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+}
+
+@media screen and (max-width: 1150px) {
+    .howReceiveMoney__steps {
+        gap: 20px;
+    }
+    
+    .howReceiveMoney__twoSteps {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .howReceiveMoney__header {
+        margin-bottom: 52px;
+    }
+}
+
+@media screen and (max-width: $smallMobile) {
+    .howReceiveMoney__steps {
+        gap: 8px;
+    }
+    
+    .howReceiveMoney__twoSteps {
+        gap: 8px;
+    }
 }
