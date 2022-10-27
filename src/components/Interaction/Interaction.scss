@@ -91,7 +91,7 @@
 
 @media screen and (max-width: $tablet) {
     .interaction {
-        padding-top: 253px;
+        padding-top: 260px;
         margin-bottom: 41px;
     }
 
@@ -124,6 +124,10 @@
 }
 
 @media screen and (max-width: $mobile) {
+    .interaction {
+        padding-top: 210px;
+    }
+
     .interaction__mobile_hidden {
         display: none;
     }

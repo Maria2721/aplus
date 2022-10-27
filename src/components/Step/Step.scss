@@ -2,18 +2,21 @@
 
 .step {
     position: relative;
+    background-color: #EFEFEF;
+    color: $textColor_dark;
+}
+
+.step_home {
     width: 20%;
     height: 280px;
-    background-color: #EFEFEF;
     min-width: 200px;
     max-width: 200px;
-    color: $textColor_dark;
 }
 
 .step_highlight {
     background-color: $accentColor;
     color: $textColor;
-    margin-top: -45px;
+    margin-top: -35px;
 }
 
 .step_highlight .step__number {
@@ -38,64 +41,140 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
+.step_market {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 25%;
+    height: 300px;
+    min-width: 260px;
+    max-width: 260px;
+
+    & .step__header {
+        position: relative;
+        width: 190px;
+        margin: 20px 20px;
+    }
+
+    & + .step_highlight {
+        display: flex;
+        align-items: flex-start;
+
+        & .step__number {
+            top: 15px;
+            left: 11px;
+        }
+    }
+
+    & .step__number {
+        top: -57px;
+        left: 107px;
+    }
+}
+
 @media screen and (max-width: 1150px) {
-    .step {
-        min-width: 220px;
-        max-width: 220px;
+    .step_home .step__number {
+        left: 59px;
     }
 
-    .step__number {
-        left: 83px;
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    .step_highlight .step__number {
-        color: rgba(255, 255, 255, 0.5); // спросить у Яны, точно ли здесь должно быть ярче
+    .step_market {
+        height: 196px;
+        min-width: 170px;
+        max-width: 128px;
+    
+        & .step__header {
+            position: relative;
+            width: 150px;
+            margin: 10px 10px;
+            font-size: 16px;
+            line-height: 21.79px;
+        }
+    
+        & + .step_highlight .step__number {
+            top: 29px;
+            left: 9px;
+        }
+    
+        & .step__number {
+            font-size: 150px;
+            line-height: 204px;
+            top: -43px;
+            left: 81px;
+        }
     }
 }
 
 @media screen and (max-width: $smallTablet) {
-    .step {
+    .step_home {
         min-width: 128px;
         max-width: 128px;
         height: 159px;
-    }
 
-    .step__number {
-        left: 83px;
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    .step__header {
-        margin: 14px 9px;
-        font-size: 12px;
-        line-height: 16.34px;
-    }
+        & .step__number {
+            left: 83px;
+            color: rgba(255, 255, 255, 0.5);
+        }
     
-    .step__number {
-        top: 27px;
-        left: 56px;
-        font-size: 120px;
-        line-height:163.42px;
+        & .step__header {
+            margin: 14px 9px;
+            font-size: 12px;
+            line-height: 16.34px;
+        }
+
+        &  .step__number {
+            top: 27px;
+            left: 56px;
+            font-size: 120px;
+            line-height:163.42px;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .step_market {
+        align-items: flex-start;
+        height: 159px;
+        min-width: 128px;
+        max-width: 128px;
+    
+        & .step__header {
+            position: relative;
+            width: 90px;
+            margin: 10px 10px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    
+        & + .step_highlight .step__number {
+            top: 10px;
+            left: 56px;
+        }
+    
+        & .step__number {
+            font-size: 120px;
+            line-height: 204px;
+            top: 10px;
+            left: 56px;
+        }
     }
 }
 
 @media screen and (max-width: $smallMobile) {
-    .step {
+    .step_home {
         min-width: 88px;
         max-width: 88px;
         height: 119px;
-    }
 
-    .step__number {
-        top: -12px;
-        left: 18px;
-        color: rgba(255, 255, 255, 0.5);
-    }
+        & .step__header {
+            margin: 9px 8px;
+            font-size: 6px;
+            line-height: 13.34px;
+        }
 
-    .step__header {
-        margin: 9px 8px;
-        font-size: 8px;
-        line-height: 13.34px;
+        &  .step__number {
+            top: -12px;
+            left: 18px;
+            color: rgba(255, 255, 255, 0.5);
+        }
     }
 }

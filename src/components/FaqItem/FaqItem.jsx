@@ -1,9 +1,9 @@
 import './FaqItem.scss';
 
-function FaqItem () {
+function FaqItem() {
   return (
     <div className="faqItem">
-    FaqItem
+      FaqItem
     </div>
   )
 }
