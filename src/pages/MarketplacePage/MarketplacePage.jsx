@@ -1,9 +1,8 @@
 import './MarketplacePage.scss';
-import PersonalContact from '../../components/PersonalContact/PersonalContact';
-import "./MarketplacePage.scss";
 import TakeAsMuch from "../../components/TakeAsMuch/TakeAsMuch";
 import FirstScreen from "../../components/FirstScreen/FirstScreen";
 import HowReceiveMoney from "../../components/HowReceiveMoney/HowReceiveMoney";
+import PersonalContact from '../../components/PersonalContact/PersonalContact';
 
 const MarketplacePage = () => (
   <div className="marketplacePage">
