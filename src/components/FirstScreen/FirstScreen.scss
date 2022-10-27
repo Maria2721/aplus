@@ -37,6 +37,7 @@
 
 .firstScreen_market {
   background-image: image-set("../../assets/imgs/first_screen_market.jpg" 1x, "../../assets/imgs/first_screen_market_2x.jpg" 2x);
+  margin-bottom: 150px;
 
   & :after {
     content: "";

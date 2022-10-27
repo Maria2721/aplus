@@ -1,7 +1,7 @@
 import "./MarketplacePage.scss";
 import TakeAsMuch from "../../components/TakeAsMuch/TakeAsMuch";
 import FirstScreen from "../../components/FirstScreen/FirstScreen";
-// import HowReceiveMoney from "../../components/HowReceiveMoney/HowReceiveMoney";
+import HowReceiveMoney from "../../components/HowReceiveMoney/HowReceiveMoney";
 
 const MarketplacePage = () => (
   <div className="marketplacePage">
@@ -14,7 +14,7 @@ const MarketplacePage = () => (
       на развитие бизнеса <br />
       на маркетплейсах
     </FirstScreen>
-    {/* <HowReceiveMoney/> */}
+    <HowReceiveMoney/>
     <TakeAsMuch />
   </div>
 );

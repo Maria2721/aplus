@@ -9,11 +9,11 @@ function FiveSteps(){
     <div className="fiveSteps__inner container__row">
       <h1 className="fiveSteps__header">Получите финансирование за <span className="fiveSteps__number">5</span> шагов</h1>
       <div className="fiveSteps__steps">
-        <Step text="Заполните заявку" number="1" highlight={false}/>
-        <Step text="Прикрепитe документы" number="2" highlight={true}/>
-        <Step text="Свяжитесь с менеджером" number="3" highlight={false}/>
-          <Step text="Подпишите договор и уведомление дебитора" number="4" highlight={false}/>
-          <Step text="Получите финансирование" number="5" highlight={false}/>
+        <Step page="home" text="Заполните заявку" number="1" highlight={false}/>
+        <Step page="home" text="Прикрепитe документы" number="2" highlight={true}/>
+        <Step page="home" text="Свяжитесь с менеджером" number="3" highlight={false}/>
+          <Step page="home" text="Подпишите договор и уведомление дебитора" number="4" highlight={false}/>
+          <Step page="home" text="Получите финансирование" number="5" highlight={false}/>
       </div>
       <div className="fiveSteps__buttons">
         <ButtonRequest/>
