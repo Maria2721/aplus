@@ -1,0 +1,55 @@
+@import "../../styles/_vars.scss";
+
+.calculator {}
+
+.calculator_modal {
+    & .calculator__header {
+        font-size: 40px;
+        line-height: 54px;
+    }
+}
+
+.calculator__description {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 38px;
+}
+
+.calculator__main {
+    display: flex;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.calculator__col {
+    display: flex;
+    flex-direction: column;
+     gap: 30px;
+
+     &_second .calculator__cell:last-child {
+        gap: 30px;
+     }
+
+    &_third .calculator__cell {
+       gap: 30px;
+    }
+}
+
+.calculator__cell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    // gap: 30px;
+}
+
+.calculator__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+
+    &_highlight {
+        color: $accentColor;
+        margin-bottom: 8px;
+    }
+}

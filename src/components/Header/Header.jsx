@@ -24,14 +24,14 @@ function Header({ opened, closeBurgerMenu, handleBurger }) {
         </Link>
         <div className={classOverlay}></div>
         <nav className={classNav} onClick={closeBurgerMenu}>
-          <div className="header__navInner">
+          <div className="header__navInner" onClick={(e) => e.stopPropagation()}>
             {opened && (
               <button className="header__close" onClick={closeBurgerMenu}>
                 <Close className="header__closeIcon" />
               </button>
             )}
             <div className="header__linksAndButtons">
-              <div className="header__links" onClick={(e) => e.stopPropagation()}>
+              <div className="header__links">
                 <Link to="/" onClick={closeBurgerMenu} className="header__link">
                   Факторинг
                 </Link>
