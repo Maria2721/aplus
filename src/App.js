@@ -12,8 +12,8 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const { pathname } = useLocation(); 
-  let [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
-  const [openedCalculatorModal, setOpenedCalculatorModal] = useState(true);
+  const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
+  const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
 
   const closeBurgerMenu = () => {
     if (openedBurgerMenu) {
