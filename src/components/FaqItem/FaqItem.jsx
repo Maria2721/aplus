@@ -8,7 +8,7 @@ function FaqItem({ id, question, answer }) {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="faqItem" id={id}>
+    <div className={cn("faqItem", { "faqItem_lastopen": (show === true && id === "deposit") })} id={id}>
       <div className={cn("faqItem__question", { "faqItem__question_smaller": show === true })}>
         <div className="faqItem__question__title">{question}</div>
         <button className="faqItem__question__btn" onClick={() => setShow(!show)}>
