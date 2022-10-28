@@ -3,6 +3,8 @@ import TakeAsMuch from "../../components/TakeAsMuch/TakeAsMuch";
 import FirstScreen from "../../components/FirstScreen/FirstScreen";
 import HowReceiveMoney from "../../components/HowReceiveMoney/HowReceiveMoney";
 import PersonalContact from '../../components/PersonalContact/PersonalContact';
+import Faq from '../../components/Faq/Faq';
+import BannerFactoring from '../../components/BannerFactoring/BannerFactoring';
 
 const MarketplacePage = () => (
   <div className="marketplacePage">
@@ -18,6 +20,8 @@ const MarketplacePage = () => (
     <HowReceiveMoney />
     <TakeAsMuch />
     <PersonalContact />
+    <Faq />
+    <BannerFactoring />
   </div>
 );
 

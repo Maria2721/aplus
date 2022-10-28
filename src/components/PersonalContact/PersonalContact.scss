@@ -146,7 +146,7 @@
     }
 }
 
-@media screen and (min-width: $mobile) and (max-width: $tablet) {
+@media screen and (min-width: 481px) and (max-width: $tablet) {
     .personalContact__info {
         h1 {
             font-size: 30px;
@@ -156,7 +156,7 @@
     }
 }
 
-@media screen and (min-width: $mobile) and (max-width: 720px) {
+@media screen and (min-width: 481px) and (max-width: 720px) {
     .personalContact__info {
         .personalContact__info__subtitle {
             font-size: 13px !important;
