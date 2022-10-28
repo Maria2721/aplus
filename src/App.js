@@ -6,12 +6,14 @@ import SchemePage from './pages/SchemePage/SchemePage';
 import CasesPage from './pages/CasesPage/CasesPage';
 import MarketplacePage from './pages/MarketplacePage/MarketplacePage';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
+import CalculatorModal from './components/CalculatorModal/CalculatorModal';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function App() {
   const { pathname } = useLocation(); 
   let [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
+  const [openedCalculatorModal, setOpenedCalculatorModal] = useState(true);
 
   const closeBurgerMenu = () => {
     if (openedBurgerMenu) {
@@ -25,6 +27,7 @@ function App() {
 
   return (
       <div className="App">
+        <CalculatorModal handleModal={() => setOpenedCalculatorModal((curr) => !curr)} opened={openedCalculatorModal}/>
         <Header opened={openedBurgerMenu} closeBurgerMenu={closeBurgerMenu} handleBurger={() => setOpenedBurgerMenu(!openedBurgerMenu)}/>
         <main>
           <Routes>
