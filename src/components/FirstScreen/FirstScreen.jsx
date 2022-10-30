@@ -3,7 +3,7 @@ import ButtonRequest from '../ButtonRequest/ButtonRequest';
 import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 import * as cx from "classnames";
 
-function FirstScreen ({ page, description, children, buttonRequest, buttonCalculate }) {
+function FirstScreen ({ page, description, children, buttonRequest, buttonCalculate, handleCalculatorModal }) {
   const classFirstScreen = cx("container firstScreen", {
     "container firstScreen firstScreen_home": page === 'home',
     "container firstScreen firstScreen_market": page === 'market',
@@ -16,7 +16,7 @@ function FirstScreen ({ page, description, children, buttonRequest, buttonCalcul
         <p className="firstScreen__description">{description}</p>
         <div className="firstScreen__buttons">
           {buttonRequest && <ButtonRequest/>}
-          {buttonCalculate && <ButtonCalculate/>}
+          {buttonCalculate && <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>}
         </div>
       </div>
     </section>

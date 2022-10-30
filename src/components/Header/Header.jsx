@@ -7,7 +7,7 @@ import { ReactComponent as Burger } from "../../assets/imgs/burger_icon_tablet.s
 import { ReactComponent as Close } from "../../assets/imgs/close_icon.svg";
 import ButtonRequest from "../ButtonRequest/ButtonRequest";
 
-function Header({ opened, closeBurgerMenu, handleBurger }) {
+function Header({ opened, closeBurgerMenu, handleBurger, handleCalculatorModal }) {
   const classNav = cx("header__nav", {
     "header__nav header__nav_active": opened,
   });
@@ -53,11 +53,11 @@ function Header({ opened, closeBurgerMenu, handleBurger }) {
               </div>
               <div className="header__buttons">
                 <ButtonRequest isSmall={true}/>
-                <button className="header__calc">
+                <button className="header__calc" onClick={handleCalculatorModal}>
                   {opened ? (
                     "Калькулятор"
                   ) : (
-                    <CalculatorIcon className="header__calcIcon" />
+                    <CalculatorIcon className="header__calcIcon"/>
                   )}
                 </button>
               </div>
