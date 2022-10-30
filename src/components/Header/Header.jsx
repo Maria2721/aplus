@@ -23,30 +23,30 @@ function Header({ opened, closeBurgerMenu, handleBurger, handleCalculatorModal }
           <Logo className="header__logoIcon" />
         </Link>
         <div className={classOverlay}></div>
-        <nav className={classNav} onClick={closeBurgerMenu}>
+        <nav className={classNav} onClick={handleBurger}>
           <div className="header__navInner" onClick={(e) => e.stopPropagation()}>
             {opened && (
-              <button className="header__close" onClick={closeBurgerMenu}>
+              <button className="header__close" onClick={handleBurger}>
                 <Close className="header__closeIcon" />
               </button>
             )}
             <div className="header__linksAndButtons">
               <div className="header__links">
-                <Link to="/" onClick={closeBurgerMenu} className="header__link">
+                <Link to="/" onClick={handleBurger} className="header__link">
                   Факторинг
                 </Link>
-                <Link to="/scheme" onClick={closeBurgerMenu} className="header__link">
+                <Link to="/scheme" onClick={handleBurger} className="header__link">
                   Схема факторинга
                 </Link>
-                <Link to="/cases" onClick={closeBurgerMenu} className="header__link">
+                <Link to="/cases" onClick={handleBurger} className="header__link">
                   Кейсы
                 </Link>
-                <Link to="/for-marketplaces" onClick={closeBurgerMenu} className="header__link">
+                <Link to="/for-marketplaces" onClick={handleBurger} className="header__link">
                   Маркетплейсам
                 </Link>
                 <Link
                   to="/contacts"
-                  onClick={closeBurgerMenu}
+                  onClick={handleBurger}
                   className="header__link header__link_border">
                   Контакты
                 </Link>

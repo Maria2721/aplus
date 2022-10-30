@@ -15,11 +15,25 @@ function App() {
   const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
   const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
 
-  const closeBurgerMenu = () => {
+  const handleBurgerMenu = () => {
     if (openedBurgerMenu) {
       setOpenedBurgerMenu(false);
+      document.body.style = "";
+    } else {
+      setOpenedBurgerMenu(true)
+      document.body.style.overflow = "hidden";
     }
   };
+
+  const handleCalculatorModal = () => {
+    if (openedCalculatorModal) {
+      setOpenedCalculatorModal(false)
+      document.body.style = "";
+    } else {
+      setOpenedCalculatorModal(true)
+      document.body.style.overflow = "hidden";
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,14 +41,13 @@ function App() {
 
   return (
       <div className="App">
-        <CalculatorModal handleModal={() => setOpenedCalculatorModal((curr) => !curr)} opened={openedCalculatorModal}/>
+        <CalculatorModal handleModal={handleCalculatorModal} opened={openedCalculatorModal}/>
         <Header opened={openedBurgerMenu}
-        closeBurgerMenu={closeBurgerMenu}
-        handleBurger={() => setOpenedBurgerMenu(!openedBurgerMenu)}
-        handleCalculatorModal={() => setOpenedCalculatorModal((curr) => !curr)}/>
+        handleBurger={handleBurgerMenu}
+        handleCalculatorModal={handleCalculatorModal}/>
         <main>
           <Routes>
-                  <Route path='/' element={<HomePage  handleCalculatorModal={() => setOpenedCalculatorModal((curr) => !curr)}/>}/>
+                  <Route path='/' element={<HomePage  handleCalculatorModal={handleCalculatorModal}/>}/>
                   <Route path='/scheme' element={<SchemePage/>}/>
                   <Route path='/cases' element={<CasesPage/>}/>
                   <Route path='/for-marketplaces' element={<MarketplacePage/>}/>
