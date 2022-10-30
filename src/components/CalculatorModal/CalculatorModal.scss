@@ -3,7 +3,8 @@
 .calculatorModal {
     display: none;
     position: fixed;
-    background-color: rgba(0,0,0,.4);;
+    background-color: rgba(0,0,0,.4);
+    top: 0;
     width: 100%;
     height: 100%;
     z-index: 10000;
@@ -17,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
 }
 
 .calculatorModal__content{
