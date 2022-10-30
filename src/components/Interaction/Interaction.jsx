@@ -4,7 +4,7 @@ import SchemeRetinaImg from "../../assets/imgs/scheme_2x.jpg"
 import ButtonRequest from '../ButtonRequest/ButtonRequest';
 import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 
-function Interaction() {
+function Interaction({ handleCalculatorModal }) {
   return (
     <div className="interaction container">
       <div className="container__row container__row_wide">
@@ -50,7 +50,7 @@ function Interaction() {
           </div>
          <div className="interaction__buttons">
         <ButtonRequest/>
-        <ButtonCalculate/>
+        <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>
       </div>
       </div>
       </div>

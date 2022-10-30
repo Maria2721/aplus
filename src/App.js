@@ -28,10 +28,13 @@ function App() {
   return (
       <div className="App">
         <CalculatorModal handleModal={() => setOpenedCalculatorModal((curr) => !curr)} opened={openedCalculatorModal}/>
-        <Header opened={openedBurgerMenu} closeBurgerMenu={closeBurgerMenu} handleBurger={() => setOpenedBurgerMenu(!openedBurgerMenu)}/>
+        <Header opened={openedBurgerMenu}
+        closeBurgerMenu={closeBurgerMenu}
+        handleBurger={() => setOpenedBurgerMenu(!openedBurgerMenu)}
+        handleCalculatorModal={() => setOpenedCalculatorModal((curr) => !curr)}/>
         <main>
           <Routes>
-                  <Route path='/' element={<HomePage/>}/>
+                  <Route path='/' element={<HomePage  handleCalculatorModal={() => setOpenedCalculatorModal((curr) => !curr)}/>}/>
                   <Route path='/scheme' element={<SchemePage/>}/>
                   <Route path='/cases' element={<CasesPage/>}/>
                   <Route path='/for-marketplaces' element={<MarketplacePage/>}/>

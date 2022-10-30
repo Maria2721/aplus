@@ -1,10 +1,10 @@
 import './ButtonCalculate.scss';
 
-function ButtonCalculate () {
+function ButtonCalculate ({ handleCalculatorModal }) {
   return (
-    <button className="btn btn_blank">
+    <button className="btn btn_blank" onClick={handleCalculatorModal}>
     Рассчитать стоимость
-  </button>
+    </button>
   )
 }
 

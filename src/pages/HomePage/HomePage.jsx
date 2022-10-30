@@ -7,19 +7,22 @@ import Cases from "../../components/Cases/Cases";
 import Documents from "../../components/Documents/Documents";
 import Contacts from "../../components/Contacts/Contacts";
 
-function HomePage() {
+function HomePage({ handleCalculatorModal }) {
   return (
     <div className="homePage">
       <FirstScreen
         page="home"
         description="Все виды факторинга, все регионы России, получите выгодные условия на факторинг."
         buttonRequest={true}
-        buttonCalculate={true}>
+        buttonCalculate={true}
+        handleCalculatorModal={handleCalculatorModal}>
         Факторинг для поставщиков <br /> и покупателей
       </FirstScreen>
-      <FiveSteps />
+      <FiveSteps
+      handleCalculatorModal={handleCalculatorModal}/>
       <FactoringIs />
-      <Interaction />
+      <Interaction 
+      handleCalculatorModal={handleCalculatorModal}/>
       <div className="container">
         <div className="homePage__casesAndDocuments container__row">
           <Cases />
