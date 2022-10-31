@@ -18,9 +18,9 @@ const MarketplacePage = () => (
       на развитие бизнеса <br />
       на маркетплейсах
     </FirstScreen>
-    <div className='marketplacePage__calculator container__row'>
+    <section className='marketplacePage__calculator container__row'>
       <Calculator isModal={false}/>
-    </div>
+    </section>
     <HowReceiveMoney />
     <TakeAsMuch />
     <PersonalContact />

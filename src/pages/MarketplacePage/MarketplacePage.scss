@@ -9,3 +9,15 @@
 .marketplacePage__calculator {
     margin-bottom: 200px;
 }
+
+@media screen and (max-width: $tablet) {
+    .marketplacePage__calculator {
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .marketplacePage__calculator {
+        margin-bottom: 50px;
+    }
+}
