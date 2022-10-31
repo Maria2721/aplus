@@ -1,36 +1,74 @@
 @import "../../styles/_vars.scss";
 
 .buttonRequest {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .buttonRequest__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: transparent;
 }
 
 .buttonRequest__inner_active {
-    transform: translateX(100%);
-    transition: transform 200ms ease;
+  transform: translateX(100%);
+  transition: transform 200ms ease;
 }
 
 .buttonRequest__arrowWrapper {
-    width: 0;
-    height: 17px;
-    overflow: hidden;
+  width: 0;
+  height: 17px;
+  overflow: hidden;
 }
 
 .buttonRequest:hover .buttonRequest__arrowWrapper {
+  width: 17px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  transition: width 0.3s ease-in-out;
+}
+
+.buttonRequest__arrow {
+  width: 17px;
+}
+
+@media screen and (max-width: $tablet) {
+  .buttonRequest:hover .buttonRequest__arrowWrapper {
+    width: 0;
+    display: none;
+  }
+
+  .buttonRequest__inner_active {
+    transform: translateX(100%);
+    transition: transform 300ms ease;
+  }
+
+  .buttonRequest__inner:active .buttonRequest__arrowWrapper {
     width: 17px;
     display: flex;
     align-items: center;
     margin-left: 10px;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.1s ease;
+  }
 }
 
-.buttonRequest__arrow {
-    width: 17px;
+@media screen and (max-width: $mobile) {
+  .buttonRequest__inner:active .buttonRequest__arrowWrapper {
+    width: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    transition: width 0.1s ease;
+  }
+
+  .buttonRequest__arrowWrapper {
+    height: 10px;
+  }
+
+  .buttonRequest__arrow {
+    width: 10px;
+  }
 }
