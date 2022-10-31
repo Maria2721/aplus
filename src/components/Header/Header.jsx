@@ -32,21 +32,21 @@ function Header({ opened, closeBurgerMenu, handleBurger, handleCalculatorModal }
             )}
             <div className="header__linksAndButtons">
               <div className="header__links">
-                <Link to="/" onClick={handleBurger} className="header__link">
+                <Link to="/" onClick={opened && handleBurger} className="header__link">
                   Факторинг
                 </Link>
-                <Link to="/scheme" onClick={handleBurger} className="header__link">
+                <Link to="/scheme" onClick={opened && handleBurger} className="header__link">
                   Схема факторинга
                 </Link>
-                <Link to="/cases" onClick={handleBurger} className="header__link">
+                <Link to="/cases" onClick={opened && handleBurger} className="header__link">
                   Кейсы
                 </Link>
-                <Link to="/for-marketplaces" onClick={handleBurger} className="header__link">
+                <Link to="/for-marketplaces" onClick={opened && handleBurger} className="header__link">
                   Маркетплейсам
                 </Link>
                 <Link
                   to="/contacts"
-                  onClick={handleBurger}
+                  onClick={opened && handleBurger}
                   className="header__link header__link_border">
                   Контакты
                 </Link>

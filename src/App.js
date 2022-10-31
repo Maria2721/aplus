@@ -17,26 +17,27 @@ function App() {
 
   const handleBurgerMenu = () => {
     if (openedBurgerMenu) {
-      setOpenedBurgerMenu(false);
       document.body.style = "";
+      setOpenedBurgerMenu(false);
     } else {
-      setOpenedBurgerMenu(true)
       document.body.style.overflow = "hidden";
+      setOpenedBurgerMenu(true)
     }
   };
 
   const handleCalculatorModal = () => {
     if (openedCalculatorModal) {
-      setOpenedCalculatorModal(false)
       document.body.style = "";
+      setOpenedCalculatorModal(false)
     } else {
-      setOpenedCalculatorModal(true)
       document.body.style.overflow = "hidden";
+      setOpenedCalculatorModal(true)
     }
   }
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.body.style = "";
   }, [pathname]);
 
   return (

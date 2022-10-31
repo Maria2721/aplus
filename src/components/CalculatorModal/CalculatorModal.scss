@@ -75,9 +75,9 @@
 
 @media screen and (max-width: $smallMobile){
     .calculatorModal__content{
-        padding: 55px 21px 35px 21px;
+        padding: 55px 21px 0 21px;
         max-width: 270px;
-        max-height: 568px;
+        min-height: 550px;
     }
 
     .calculatorModal__closeIcon {

@@ -3,13 +3,13 @@ import * as cx from "classnames";
 import { useState } from "react";
 import Range from "../Range/Range";
 
-function Calculator({ page }) {
+function Calculator({ isModal }) {
   const [volume, setVolume] = useState(4000000);
   const [frequency, setFrequency] = useState(30);
   const [deferral, setDeferral] = useState(50);
 
   const classCalculator = cx("calculator", {
-    calculator_modal: page === "modal",
+    "calculator_modal": isModal,
   });
 
   return (
@@ -25,6 +25,7 @@ function Calculator({ page }) {
               Объем отгрузки
             </div>
             <Range
+              isModal={isModal}
               handleChange={(e) => setVolume(e.target.value)}
               value={volume}
               text="₽"
@@ -38,6 +39,7 @@ function Calculator({ page }) {
               Отсрочка платежа
             </div>
             <Range
+             isModal={isModal}
               handleChange={(e) => setDeferral(e.target.value)}
               value={deferral}
               text="дн."
@@ -54,6 +56,7 @@ function Calculator({ page }) {
               Периодичность поставки
             </div>
             <Range
+            isModal={isModal}
               handleChange={(e) => setFrequency(e.target.value)}
               value={frequency}
               text="дн."
