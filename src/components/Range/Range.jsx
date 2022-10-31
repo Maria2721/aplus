@@ -1,11 +1,16 @@
 import "./Range.scss";
+import * as cx from "classnames";
 
-function Range({ text, value, handleChange, min, max, step }) {
+function Range({ isModal, text, value, handleChange, min, max, step }) {
   const percent = ((value - min) * 100) / (max - min);
-  const outputOffset = (value - min) / (max - min) * 100
+  const outputOffset = (value - min) / (max - min) * 100;
+
+  const classRange= cx("range", {
+    "range_modal": isModal,
+});
 
   return (
-    <div className="range">
+    <div className={classRange}>
       <div className="range__inputWrapper">
         <input
         className="range__input"

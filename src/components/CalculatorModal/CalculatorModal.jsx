@@ -15,7 +15,7 @@ function CalculatorModal ({ handleModal, opened }) {
               <button className="calculatorModal__closeButton" onClick={handleModal}>
                 <Close className="calculatorModal__closeIcon" />
               </button>
-          <Calculator page="modal"/>
+          <Calculator isModal={true}/>
         </div>
       </div>
     </div>
