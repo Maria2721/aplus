@@ -51,14 +51,34 @@
     height: 32px;
     border: none;
     background-color: transparent;
+
+    &:hover {
+        color: $accentColor;
+        transition: color 0.1s ease;
+      }
 }
 
 .header__calcIcon {
+    fill: #FFFFFF;
     width: 32px;
+
+    &:hover {
+      fill: $accentColor;
+      transition: fill 0.1s ease;
+    }
 }
 
 .header__burger {
     display: none;
+}
+
+.header__burgerIcon {
+    fill: #FFFFFF;
+
+    &:hover {
+        fill: $accentColor;
+        transition: fill 0.1s ease;
+      }
 }
 
 .header__close {
@@ -66,6 +86,14 @@
     cursor: pointer;
     border: none;
     background-color: transparent;
+}
+
+.header__closeIcon {
+    fill: $textColor;
+    &:hover {
+        fill: $accentColor;
+        transition: fill 0.1s ease;
+      }
 }
 
 .header__overlay {

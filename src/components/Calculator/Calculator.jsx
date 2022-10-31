@@ -2,6 +2,7 @@ import "./Calculator.scss";
 import * as cx from "classnames";
 import { useState } from "react";
 import Range from "../Range/Range";
+import ButtonRequest from '../ButtonRequest/ButtonRequest';
 
 function Calculator({ isModal }) {
   const [volume, setVolume] = useState(4000000);
@@ -99,7 +100,10 @@ function Calculator({ isModal }) {
         </div>
       </div>
 
-      <div className="calculator__buttonWrapper"><button className="btn btn_full">Отправить заявку</button></div>
+      <div className="calculator__buttonWrapper">
+      <ButtonRequest/>
+        {/* <button className="btn btn_full">Отправить заявку</button> */}
+        </div>
     </div>
   );
 }

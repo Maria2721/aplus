@@ -11,15 +11,15 @@
 .firstScreen_home {
   background-image: image-set("../../assets/imgs/first_screen.jpg" 1x, "../../assets/imgs/first_screen_2x.jpg" 2x);
 
-  & :after {
+  &:after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.19);
-    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
   }
 
   & .firstScreen__description {
@@ -39,15 +39,15 @@
   background-image: image-set("../../assets/imgs/first_screen_market.jpg" 1x, "../../assets/imgs/first_screen_market_2x.jpg" 2x);
   margin-bottom: 150px;
 
-  & :after {
+  &:after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.03);
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
   }
 
   & .firstScreen__description {

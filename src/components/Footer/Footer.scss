@@ -69,6 +69,11 @@
     text-align: start;
 }
 
+.footer__link:hover {
+    color: $accentColor;
+    transition: color 0.1s ease;
+}
+
 .footer__telAndSocial {
     display: flex;
     flex-direction: column;
@@ -85,6 +90,11 @@
 .footer__icon {
     max-width: 28px;
     width: 100%;
+    
+    & :hover {
+        fill: $accentColor;
+        transition: fill 0.1s ease;
+      }
 }
 
 .footer__social {
