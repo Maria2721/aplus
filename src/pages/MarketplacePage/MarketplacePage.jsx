@@ -7,13 +7,14 @@ import Calculator from '../../components/Calculator/Calculator';
 import Faq from '../../components/Faq/Faq';
 import BannerFactoring from '../../components/BannerFactoring/BannerFactoring';
 
-const MarketplacePage = () => (
+const MarketplacePage = ({ handleRequestModal }) => (
   <div className="marketplacePage">
     <FirstScreen
       page="market"
       description="Получайте финансирование и развивайте бизнес на Wildberries, Ozon и других площадках"
       buttonRequest={true}
-      buttonCalculate={false}>
+      buttonCalculate={false}
+      handleRequestModal={handleRequestModal}>
       Деньги <br />
       на развитие бизнеса <br />
       на маркетплейсах

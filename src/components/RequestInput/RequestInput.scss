@@ -1,0 +1,66 @@
+@import "../../styles/_vars.scss";
+
+.requestInput {
+    position: relative;
+    max-width: 600px;
+
+    &:first-child {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    &:nth-child(2) {
+        width: 38%;
+        margin-bottom: 32px;
+    }
+    &:nth-child(3) {
+        width: 62%;
+        padding-left: 10px;
+        margin-bottom: 32px;
+    }
+    &:nth-child(4) {
+        width: 51%;
+        margin-bottom: 10px;
+    }
+    &:last-child {
+        width: 49%;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+}
+.requestInput__input {
+    width: 100%;
+    height: 36px;
+    border: 2px solid #B3B3B3;
+    background-color: #FCFCFC;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    padding: 10px 5px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &_error {
+        border: 2px solid $accentColor;
+    }
+}
+
+.requestInput__label {
+    position: absolute;
+    top: -22px;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+}
+
+.requestInput__error {
+    position: absolute;
+    top: -15px;
+    right: 2px;
+    color: $accentColor;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+}

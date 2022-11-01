@@ -3,7 +3,7 @@ import ButtonRequest from '../ButtonRequest/ButtonRequest';
 import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 import Step from '../Step/Step';
 
-function FiveSteps({ handleCalculatorModal }){
+function FiveSteps({ handleCalculatorModal, handleRequestModal }){
   return (
   <section className="fiveSteps container">
     <div className="fiveSteps__inner container__row">
@@ -16,7 +16,7 @@ function FiveSteps({ handleCalculatorModal }){
           <Step page="home" text="Получите финансирование" number="5" highlight={false}/>
       </div>
       <div className="fiveSteps__buttons">
-        <ButtonRequest/>
+        <ButtonRequest handleRequestModal={handleRequestModal}/>
         <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>
       </div>
     </div>
