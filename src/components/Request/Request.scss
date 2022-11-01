@@ -1,0 +1,85 @@
+@import "../../styles/_vars.scss";
+
+.request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.request__header {
+    margin-bottom: 64px;
+}
+.request__form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+.request__inputsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.request__buttonWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+// Чекбокс
+.request__checkbox {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.checkbox__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 4;
+}
+
+.checkbox__text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+}
+
+.checkbox__link {
+    color: $accentColor;
+    text-decoration: underline;
+}
+
+.checkbox__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.checkbox__input+label::before {
+    content: '';
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 14px;
+    height: 14px;
+    margin-right: 14px;
+    border: 1px solid $textColor_dark;
+}
+
+.checkbox__mark {
+    position: absolute;
+    // display: none;
+    width: 12px;
+    top: 5px;
+    left: 1px;
+}
+
+.checkbox__input:checked+label .checkbox__mark {
+    display: block;
+}
+
+.checkbox__input:not(:disabled):not(:checked)+label:hover::before {
+    cursor: pointer;
+}

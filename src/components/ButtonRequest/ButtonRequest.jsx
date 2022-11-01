@@ -3,7 +3,7 @@ import * as cx from "classnames";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button.svg";
 import { useState } from 'react';
 
-function ButtonRequest({ isSmall }) {
+function ButtonRequest({ isSmall, handleRequestModal }) {
   const [isActive, setIsActive] = useState(false);
   const classButton = cx("buttonRequest btn btn_full", {
     "btn btn_full btn_smaller": isSmall,
@@ -15,7 +15,7 @@ function ButtonRequest({ isSmall }) {
 
   const handleClick = () => {
     setIsActive(true)
-
+    handleRequestModal();
     setTimeout(() => {
       setIsActive(false)
     }, 1000)
