@@ -175,3 +175,26 @@
   margin-bottom: 147px;
 }
 }
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
+  .firstScreen_home {
+    & .firstScreen__inner {
+      margin-top: 60px;
+    }
+  
+    & .firstScreen__buttons {
+      margin-bottom: 80px;
+    }
+  }
+
+  .firstScreen_market {
+    & .firstScreen__inner {
+      margin-top: 60px;
+    }
+  
+    & .firstScreen__buttons {
+      margin-bottom: 90px;
+  }
+}
+}

@@ -10,7 +10,7 @@ function Modal ({ handleModal, opened, className, children }) {
 
   return (
     <div className={classModal}>
-      <div className='modal__inner' onClick={handleModal}>
+      <div className='modal__inner'>
         <div className={className} onClick={e => e.stopPropagation()}>
           {children}
           <button className="modal__closeButton" onClick={handleModal}>
