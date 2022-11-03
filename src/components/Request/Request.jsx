@@ -1,5 +1,6 @@
 import './Request.scss';
-import ButtonSendRequest from '../ButtonSendRequest/ButtonSendRequest';
+// import * as cx from "classnames";
+import ButtonSend from '../ButtonSend/ButtonSend';
 import RequestInput from '../RequestInput/RequestInput';
 import { requestFields } from './requestFields';
 import { ReactComponent as CheckboxMark } from "../../assets/imgs/checkbox_mark.svg";
@@ -8,6 +9,7 @@ import { useState } from 'react';
 
 function Request ({ handleModal }) {
   const [valid, setValid] = useState(false);
+  const [agreeToAllTerms, setAgreeToAllTerms] = useState(true);
   const [state, setState] = useState({
     surname: {
         value: '',
@@ -69,12 +71,12 @@ const blurHandler = (type) => {
   validateForm()
 }
 
-const handleClick = () => {
+const handleSendForm = () => {
   validateForm();
 
   if (valid) {
     console.log('Форма отправлена')
-    handleModal()
+    // handleModal()
   }
 };
 
@@ -129,14 +131,16 @@ const validateForm = () => {
       </div>
 
       <div className="request__checkbox checkbox">
-            <input className="checkbox__input" id="requestCheckbox" type="checkbox" required/>
+            <input className="checkbox__input" id="requestCheckbox" type="checkbox"
+            checked={agreeToAllTerms}
+            onChange={() => setAgreeToAllTerms((curr) => !curr)}/>
             <label className="checkbox__label" htmlFor="requestCheckbox">
                 <CheckboxMark className="checkbox__mark"/>
                 <div className="checkbox__text">Принимаю условия <Link to="/" className="checkbox__link">соглашения об обработке персональных данных</Link></div>
             </label>
         </div>
     <div className="request__buttonWrapper">
-      <ButtonSendRequest handleClick={handleClick}/>
+      <ButtonSend handleSendForm={handleSendForm} isValid={valid} handleModal={handleModal}>Отправить заявку</ButtonSend>
     </div>
     </div>
     </div>
