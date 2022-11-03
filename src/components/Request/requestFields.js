@@ -26,8 +26,8 @@ export const requestFields = [
     },
     {
         id: 'company',
-        name: 'Название компании',
+        name: 'ИНН компании*',
         type:'text',
-        rule: '',
+        rule: 'required',
     }
 ]

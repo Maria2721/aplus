@@ -1,0 +1,85 @@
+@import "../../styles/_vars.scss";
+
+.buttonSend {
+    overflow: hidden;
+  }
+  
+  .buttonSend__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: transparent;
+  }
+  
+  .buttonSend__arrowWrapper {
+    width: 0;
+    height: 17px;
+    overflow: hidden;
+  }
+
+  .buttonSend:hover .buttonSend__arrowWrapper {
+    width: 17px;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    align-items: center;
+    transition: width 0.1s ease-in-out;
+    overflow: visible
+  }
+
+  .buttonSend:hover .buttonSend__arrowWrapper_active {
+    width: 0;
+  }
+  
+  .buttonSend__arrow {
+    width: 17px;
+    margin-left: 10px;
+  }
+
+  .buttonSend__arrow_active {
+    transform: translateX(1000%);
+    transition: transform 300ms ease;
+  }
+
+.buttonSend__checkWrapper {
+    position: relative;
+    display: none;
+}
+
+.buttonSend__checkWrapper_active {
+    display: block;
+}
+
+.buttonSend__check {
+    position: absolute;
+    width: 12px;
+    top: -4px;
+    right: 0;
+  }
+
+  .buttonSend__sendedText {
+    margin-right: 20px;
+  }
+
+  // @media screen and (max-width: $tablet) {
+  //   .buttonSend:hover .buttonSend__arrowWrapper {
+  //     display: none;
+  //   }
+  // }
+
+  @media screen and (max-width: $mobile) {
+    .buttonSend__arrow {
+      width: 10px;
+      margin-left: 7px;
+    }
+
+    .buttonSend__check {
+      position: absolute;
+      width: 8px;
+      top: -4px;
+    }
+
+    .buttonSend__sendedText {
+      margin-right: 13px;
+    }
+  }
