@@ -88,12 +88,20 @@
 }
 
 @media screen and (orientation:landscape)
-and (max-width: 900px) {
+and (max-width: $landscape) {
     .btn_smaller {
         max-width: 113px;
         width: 100%;
         font-size: 8px;
         line-height: 9.75px;
         padding: 8px 6px;
+    }
+}
+
+@media screen and (orientation:landscape)
+and (max-width: $landscapeMiddle) {
+    .btn__biggerOnMobile {
+        width: 220px;
+        padding: 11px 0;
     }
 }

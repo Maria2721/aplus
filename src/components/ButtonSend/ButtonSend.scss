@@ -61,11 +61,11 @@
     margin-right: 20px;
   }
 
-  // @media screen and (max-width: $tablet) {
-  //   .buttonSend:hover .buttonSend__arrowWrapper {
-  //     display: none;
-  //   }
-  // }
+  @media screen and (max-width: $tablet) {
+    .buttonSend:hover .buttonSend__arrowWrapper {
+      display: none;
+    }
+  }
 
   @media screen and (max-width: $mobile) {
     .buttonSend__arrow {
