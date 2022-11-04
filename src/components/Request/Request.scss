@@ -156,3 +156,36 @@
       line-height: 20px;
     }
 }
+
+@media screen and (orientation:landscape)
+and (max-width: $landscape) {
+   .request__header {
+    font-size: 35px;
+    margin-bottom: 25px;
+  }
+  .request__checkbox {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (orientation:landscape)
+and (max-width: $landscapeMiddle) {
+    .request__header {
+        font-size: 27px;
+        margin-bottom: 12px;
+      }
+      .request__checkbox {
+        margin-bottom: 15px;
+      }
+
+      .request__checkbox {
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (orientation:landscape)
+and (max-width: $landscapeSmall) {
+    .request__header {
+        font-size: 20px;
+      }
+}

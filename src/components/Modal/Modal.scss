@@ -128,4 +128,58 @@
     .modal__closeIcon {
         width: 12px;
     }
+
+    .modal__request {
+        max-width: 320px;
+        padding: 35px 15px 15px 15px;
+
+        & .modal__closeButton {
+            top: 15px;
+            right: 15px;
+        }
+    }
+}
+
+
+@media screen and (orientation:landscape)
+and (max-width: $landscape) {
+    .modal__request {
+        max-width: 650px;
+        min-height: 280px;
+        padding: 30px 21px 25px 21px;
+
+        & .modal__closeButton {
+            top: 23px;
+            right: 23px;
+        }
+    }
+}
+
+@media screen and (orientation:landscape)
+and (max-width: $landscapeMiddle) {
+    .modal__request {
+        max-width: 630px;
+        min-height: 280px;
+        padding: 15px 21px 15px 21px;
+
+        & .modal__closeButton {
+            top: 23px;
+            right: 23px;
+        }
+    }
+}
+
+
+@media screen and (orientation:landscape)
+and (max-width: $landscapeSmall) {
+    .modal__request {
+        & .modal__closeButton {
+            top: 10px;
+            right: 10px;
+        }
+
+        & .modal__closeIcon {
+            width: 12px;
+        }
+    }
 }
