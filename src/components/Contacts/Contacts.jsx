@@ -22,10 +22,10 @@ function Contacts(){
               <h2 className="contacts__subtitle">Для связи</h2>
               <div className="contacts__telAndMail">
                 <div className="contacts__linkAndIcon">
-                  <TelIcon className="contacts__iconTel"/> <a href="tel:+74954459099" className="contacts__description">+7 (495) 445-90-99</a>
+                  <TelIcon className="contacts__icon contacts__iconTel"/> <a href="tel:+74954459099" className="contacts__description">+7 (495) 445-90-99</a>
                 </div>
                 <div className="contacts__linkAndIcon">
-                  <MailIcon className="contacts__iconMail"/><a href="mailto:info@fcaplus.ru" className="contacts__description">info@fcaplus.ru</a>
+                  <MailIcon className="contacts__icon contacts__iconMail"/><a href="mailto:info@fcaplus.ru" className="contacts__description">info@fcaplus.ru</a>
                 </div>
               </div>
             </div>
