@@ -179,3 +179,15 @@
         padding-left: 0;
     }
 }
+
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
+    .interaction {
+        padding-top: 40px;
+    }
+
+    .interaction__header {
+        margin-bottom: 20px;
+    }
+}

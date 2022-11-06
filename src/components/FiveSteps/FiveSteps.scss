@@ -3,7 +3,7 @@
 .fiveSteps__inner {
     display: flex;
     flex-direction: column;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     margin-top: 150px;
 }
@@ -64,6 +64,7 @@
 }
 
 @media screen and (max-width: $smallTablet) {
+
     .fiveSteps__inner {
         width: 100% !important;
         margin-top: 70px;
@@ -119,10 +120,41 @@
      }
 }
 
+
+@media screen and (max-width: 467px) {
+     .fiveSteps__steps:after {
+        content: "";
+        height: 1px;
+        min-width: 129px;
+    }
+}
+
 @media screen and (max-width: $smallMobile) {
     .fiveSteps__steps {
+        max-width: 95%;
         column-gap: 10px;
         row-gap: 15px;
         margin-bottom: 15px;
+
+        &:after {
+            min-width: 88px;
+        }
+    }
+}
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
+    .fiveSteps__inner {
+        margin-top: 50px;
+    }
+    .fiveSteps__header, .fiveSteps__number {
+        margin-bottom: 40px;
+    }
+    .fiveSteps__steps {
+        margin-bottom: 45px;
+    }
+
+    .fiveSteps__buttons {
+        margin-bottom: 50px;
     }
 }

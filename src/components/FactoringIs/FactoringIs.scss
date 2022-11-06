@@ -155,6 +155,7 @@
 @media screen and (max-width: $tablet) {
   .factoring__header {
     font-size: 40px;
+    line-height: 40px;
     font-weight: 54px;
   }
 
@@ -227,6 +228,8 @@
 
   .factoring__header {
     margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 21px;
 }
 
   .factoring__subtitle {
@@ -260,5 +263,18 @@
   .factoring__text {
     font-size: 10px;
     line-height: 13.62px;
+  }
+}
+
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
+  .factoring__section_left {
+    padding-left: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .factoring__section_right {
+    padding-right: 40px;
   }
 }
