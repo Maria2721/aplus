@@ -5,7 +5,7 @@
 }
 
 .contacts {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 .contacts__header {
@@ -16,13 +16,17 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    gap: 35px;
 }
 
 .contacts__contacts {
     display: flex;
     flex-direction: column;
-    gap: 29px;
+    // gap: 29px;
+    margin-right: 35px;
+}
+
+.contacts__row:first-child {
+   margin-bottom: 29px;
 }
 
 .contacts__row:last-child {
@@ -54,7 +58,10 @@
 .contacts__linkAndIcon {
     display: flex;
     align-items: center;
-    gap: 21px;
+}
+
+.contacts__icon {
+    margin-right: 21px;
 }
 
 .contacts__iconTel {
@@ -71,7 +78,7 @@
     width: 70%;
     height: 100%;
     max-width: 720px;
-    min-height: 443px;
+    min-height: 700px;
 }
 
 .contacts__map {
@@ -88,12 +95,8 @@
         margin-bottom: 89px;
     }
     
-    .contacts__content {
-        gap: 20px;
-    }
-    
     .contacts__contacts {
-        gap: 30px;
+        margin-right: 20px;
     }
     
     .contacts__subtitle {
@@ -114,7 +117,6 @@
     
     .contacts__content {
         flex-direction: column;
-        gap: 17px;
     }
 
     .contacts__header {
@@ -124,30 +126,35 @@
     .contacts__contacts {
         flex-direction: row;
         justify-content: space-between;
-        gap: 30px;
+        margin-bottom: 17px;
     }
+
+    .contacts__row:first-child {
+        margin-right: 30px;
+        margin-bottom: 0;
+     }     
     
     .contacts__subtitle {
-        font-size: 10px;
-        line-height: 13.62px;
+        font-size: 12px;
+        line-height: 16px;
         margin-bottom: 9px;
     }
     
     .contacts__description {
-        font-size: 10px;
-        line-height: 13.62px;
+        font-size: 12px;
+        line-height: 16px;
     }
     
     .contacts__telAndMail {
         gap: 8px;
     }
     
-    .contacts__linkAndIcon {
-        gap: 8px;
+    .contacts__icon {
+        margin-right: 8px;
     }
     
     .contacts__iconTel {
-        width: 10px;
+        width: 11px;
     }
     
     .contacts__iconMail {

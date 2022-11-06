@@ -7,7 +7,7 @@ import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 function Interaction({ handleCalculatorModal, handleRequestModal }) {
   return (
     <div className="interaction container">
-      <div className="container__row container__row_wide">
+      <div className="container__row container__row">
         <div className='interaction__inner'>
           <div className="interaction__content">
             <div className="interaction__left">
