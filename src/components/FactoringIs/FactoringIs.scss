@@ -265,3 +265,16 @@
     line-height: 13.62px;
   }
 }
+
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
+  .factoring__section_left {
+    padding-left: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .factoring__section_right {
+    padding-right: 40px;
+  }
+}

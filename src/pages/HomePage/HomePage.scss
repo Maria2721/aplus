@@ -9,12 +9,18 @@
 @media screen and (max-width: $tablet) {
     .homePage__casesAndDocuments {
         flex-direction: column;
-        // gap: 20px;
         margin-bottom: 100px;
     }
 }
 
 @media screen and (max-width: $mobile) {
+    .homePage__casesAndDocuments {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
     .homePage__casesAndDocuments {
         margin-bottom: 40px;
     }

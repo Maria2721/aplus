@@ -141,3 +141,20 @@
         }
     }
 }
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
+    .fiveSteps__inner {
+        margin-top: 50px;
+    }
+    .fiveSteps__header, .fiveSteps__number {
+        margin-bottom: 40px;
+    }
+    .fiveSteps__steps {
+        margin-bottom: 45px;
+    }
+
+    .fiveSteps__buttons {
+        margin-bottom: 50px;
+    }
+}

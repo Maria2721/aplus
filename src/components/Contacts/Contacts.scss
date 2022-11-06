@@ -173,3 +173,10 @@
         gap: 10px;
     }
 }
+
+@media screen and (orientation:landscape)
+and (max-width: 900px) {
+    .contacts {
+        margin-bottom: 20px;
+    }
+}
