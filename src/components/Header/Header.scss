@@ -275,7 +275,7 @@
 }
 
 @media screen and (orientation:landscape)
-and (max-width: 900px) {
+and (max-width: $landscape) and (max-height: 600px) {
     .header {
         height: 85px;
     }

@@ -3,31 +3,31 @@ export const requestFields = [
         id: 'surname',
         name: 'Фамилия*',
         type:'text',
-        rule: 'required',
+        rule: 'name',
     },
         {
         id: 'name',
         name: 'Имя*',
         type:'text',
-        rule: 'required',
+        rule: 'name',
     },
     {
         id: 'middle',
         name: 'Отчество',
         view: 'input',
         type:'text',
-        rule: '',
+        rule: 'middle',
     },
     {
         id: 'email',
         name: 'E-mail*',
-        type:'text',
-        rule: 'required',
+        type:'email',
+        rule: 'email',
     },
     {
-        id: 'company',
+        id: 'inn',
         name: 'ИНН компании*',
         type:'text',
-        rule: 'required',
+        rule: 'inn',
     }
 ]

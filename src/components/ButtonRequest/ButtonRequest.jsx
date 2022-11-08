@@ -15,10 +15,10 @@ function ButtonRequest({ isSmall, handleRequestModal }) {
 
   const handleClick = () => {
     setIsActive(true)
-    handleRequestModal();
     setTimeout(() => {
+      handleRequestModal();
       setIsActive(false)
-    }, 1000)
+    }, 200)
   } 
 
   return (

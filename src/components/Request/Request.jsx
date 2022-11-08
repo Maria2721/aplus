@@ -6,6 +6,7 @@ import { requestFields } from './requestFields';
 import { ReactComponent as CheckboxMark } from "../../assets/imgs/checkbox_mark.svg";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
+import { initialState } from "./initialState";
 
 function Request ({ handleModal }) {
   const [valid, setValid] = useState(false);
@@ -31,31 +32,21 @@ function Request ({ handleModal }) {
       isDirty: false,
       error: ''
   },
-    company: {
+    inn: {
         value: '',
         isDirty: false,
         error: ''
     }
 });
+const {surname, name, middle, email, inn} = state;
 
-const handleChange = (e, id, type) => {
-  let value;
-  switch (type) {
-    case 'text':
-        value = e.target.value.trimStart().replace(/ +/g, " ");
-      break;
-    // case 'tel':
-    //     value = e.target.value.trimStart().replace(/ +/g, " ").replace (/[^0-9+]/, '');
-      // break;
-    default:
-    value = e.target.value;
-}  
-
+const handleChange = (e, id) => {
+  // let value = e.target.value.trimStart().replace(/ +/g, " ");
 setState({
   ...state,
   [id]: {
       ...state[id],
-      value: value
+      value: e.target.value
   }
 });
 };
@@ -74,14 +65,36 @@ const blurHandler = (type) => {
 const handleSendForm = () => {
   validateForm();
 
+  for (let key in state) { // проходим по стейту и отмечаем isDirty, чтобы отобразилась ошибка у всех
+    setState((state) => ({
+      ...state,
+      [key]: {
+          ...state[key],
+          isDirty: true
+      }
+    }));
+  }
+
   if (valid) {
-    console.log('Форма отправлена')
-    // handleModal()
+    console.log(`Фамилия: ${surname.value.trimStart().replace(/ +/g, " ")},
+    Имя: ${name.value.trimStart().replace(/ +/g, " ")},
+    Отчество: ${middle.value.trimStart().replace(/ +/g, " ")},
+    Email:${email.value.trimStart().replace(/ +/g, " ")},
+    ИНН: ${inn.value.trimStart().replace(/ +/g, " ")}`)
+    // handleModal() // закрытие модалки перенесено в кнопку
+    setState(initialState); // возвращаем состояние к началу - почему не возвращается?
   }
 };
 
 const validateForm = () => {
   setValid(true);
+  const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
+  const regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+  const regNumber = /\d{1,3}/;
+
+    if (!agreeToAllTerms) {
+      setValid(false);
+    }
 
     for (const field of requestFields) {
         const { rule, id } = field;
@@ -89,15 +102,82 @@ const validateForm = () => {
         let error;
 
         switch (rule) {
-            case 'required':
-              if (value.length === 0) {
-                error = 'Необходимо заполнить';
-                setValid(false);
-              }
+          case 'name':
+            if (value.length === 0) {
+              error = 'Необходимо заполнить';
+              setValid(false);
               break;
-            default:
-            error = '';
-        }    
+            } 
+            if (value.length > 200) {
+                error = 'Максимум 200 символов';
+                setValid(false);
+                break;
+            }
+            if (!regName.test(value)) {
+                error = 'Недопустимые символы';
+                setValid(false);
+                break;
+              }
+            break;
+        case 'inn':
+            if (value.length === 0) {
+              error = 'Необходимо заполнить';
+              setValid(false);
+              break;
+            } 
+            if (!regNumber.test(value)) {
+              error = 'Недопустимый формат';
+              setValid(false);
+              break;
+            } 
+            if ((value.length > 0) && (value.length < 10)) {
+              error = 'Минимум 10 символов';
+              setValid(false);
+              break;
+          }
+            if (value.length > 12) {
+                error = 'Максимум 12 символов';
+                setValid(false);
+                break;
+            }
+            break;
+        case 'middle':
+            if (value.length !== 0 && value.length > 200) {
+                error = 'Максимум 200 символов';
+                setValid(false);
+                break;
+            }
+            if (value.length !== 0 && !regName.test(value)) {
+                error = 'Недопустимые символы';
+                setValid(false);
+                break;
+            }
+            break;
+        case 'email':
+            if (value.length === 0) {
+              error = 'Необходимо заполнить';
+              setValid(false);
+              break;
+            } 
+            if (value.length < 5) {
+                error = 'Минимум 5 символов';
+                setValid(false);
+                break;
+              } 
+            if (value.length > 200) {
+                error = 'Максимум 200 символов';
+                setValid(false);
+                break;
+            }
+            if (!regEmail.test(value)) {
+                error = 'Недопустимый формат';
+                setValid(false);
+                break;
+              }
+            break;
+          default:
+          error = '';
+      }    
 
         setState((state) => ({
             ...state,
