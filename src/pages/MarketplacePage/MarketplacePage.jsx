@@ -24,9 +24,9 @@ const MarketplacePage = ({ handleRequestModal }) => (
     </section>
     <HowReceiveMoney />
     <TakeAsMuch />
-    <PersonalContact />
+    <PersonalContact handleRequestModal={handleRequestModal}/>
     <Faq />
-    <BannerFactoring />
+    <BannerFactoring handleRequestModal={handleRequestModal}/>
   </div>
 );
 

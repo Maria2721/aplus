@@ -7,7 +7,7 @@
 }
 
 .request__header {
-    text-align: center;
+  text-align: center;
   margin-bottom: 64px;
 }
 .request__form {
@@ -102,18 +102,18 @@
 }
 
 @media screen and (max-width: $smallTablet) {
-    .request__header {
-        font-size: 35px;
-    }
-
-    .checkbox__input + label::before {
-        margin-right: 9px;
-      }
-
-    .checkbox__text {
-        font-size: 10px;
-      }
+  .request__header {
+    font-size: 35px;
   }
+
+  .checkbox__input + label::before {
+    margin-right: 9px;
+  }
+
+  .checkbox__text {
+    font-size: 10px;
+  }
+}
 
 @media screen and (max-width: $mobile) {
   .request__header {
@@ -149,17 +149,15 @@
   }
 }
 
-
 @media screen and (max-width: $smallMobile) {
-    .request__header {
-      font-size: 20px;
-      line-height: 20px;
-    }
+  .request__header {
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: $landscape) {
-   .request__header {
+@media screen and (orientation: landscape) and (max-width: $landscape) and (max-height: 600px) {
+  .request__header {
     font-size: 35px;
     margin-bottom: 25px;
   }
@@ -168,24 +166,59 @@ and (max-width: $landscape) {
   }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: $landscapeMiddle) {
-    .request__header {
-        font-size: 27px;
-        margin-bottom: 12px;
-      }
-      .request__checkbox {
-        margin-bottom: 15px;
-      }
+@media screen and (orientation: landscape) and (max-width: $landscapeMiddle) {
+  .request__header {
+    font-size: 27px;
+    margin-bottom: 12px;
+  }
+  .request__checkbox {
+    margin-bottom: 15px;
+  }
 
-      .request__checkbox {
-        margin-bottom: 8px;
-    }
+  .request__checkbox {
+    margin-bottom: 8px;
+  }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: $landscapeSmall) {
-    .request__header {
-        font-size: 20px;
-      }
+@media screen and (orientation: landscape) and (max-width: $landscapeSmall) {
+  .request__header {
+    font-size: 20px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 400px) {
+  .request__header {
+    font-size: 16px;
+  }
+
+  .requestInput__error {
+    top: -9px;
+    font-size: 6px;
+  }
+
+  .modal__request .modal__closeIcon {
+    width: 9px;
+  }
+
+  .modal__request .modal__closeButton {
+    top: 19px;
+    right: 23px;
+  }
+
+  .checkbox__text {
+    font-size: 6px;
+    line-height: 6px;
+  }
+
+  .checkbox__input + label::before {
+    min-width: 9px;
+    height: 9px;
+    margin-right: 5px;
+  }
+
+  .checkbox__mark {
+    width: 8px;
+    top: 0px;
+    left: 1px;
+  }
 }
