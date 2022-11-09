@@ -72,23 +72,6 @@ h1 {
   }
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 32.68px;
-  color: $accentColor;
-
-  @media (max-width: $tablet)  {
-    font-size: 20px;
-    line-height: 32.68px;
-  }
-
-  @media (max-width: $mobile)  {
-    font-size: 16px;
-    line-height: 21.79px;
-  }
-}
-
 @supports(padding:max(0px)) {
   body, header, footer {
       padding-left: min(0vmin, env(safe-area-inset-left));

@@ -28,7 +28,9 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
       handleRequestModal={handleRequestModal}/>
       <div className="container">
         <div className="homePage__casesAndDocuments container__row">
-          <Cases />
+          <div className="homePage__cases">
+            <Cases />
+          </div>
           <Documents />
         </div>
       </div>

@@ -20,15 +20,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 17px;
     width: 100%;
     margin-bottom: 70px;
 }
 
 .fiveSteps__buttons {
     display: flex;
-    gap: 10px;
     margin-bottom: 74px;
+}
+
+.fiveSteps__buttonCalc {
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 1150px) {
@@ -39,9 +41,7 @@
 
     .fiveSteps__steps {
         flex-wrap: wrap;
-        column-gap: 20px;
-        row-gap: 25px;
-        margin-bottom: 98px;
+        margin-bottom: 73px;
     }
 
     .fiveSteps__header {
@@ -58,7 +58,6 @@
 
      .fiveSteps__buttons {
         display: flex;
-        gap: 10px;
         margin-bottom: 85px;
     }
 }
@@ -71,7 +70,7 @@
     }
 
     .fiveSteps__steps {
-        margin-bottom: 50px;
+        margin-bottom: 25px;
     }
 
     .fiveSteps__header {
@@ -89,8 +88,12 @@
      .fiveSteps__buttons {
         display: flex;
         flex-direction: column;
-        gap: 15px;
         margin-bottom: 40px;
+    }
+
+    .fiveSteps__buttonCalc {
+        margin-top: 15px;
+        margin-left: 0;
     }
     
 }
@@ -98,12 +101,6 @@
 @media screen and (max-width: $mobile) {
     .fiveSteps__inner {
         margin-top: 40px;
-    }
-
-    .fiveSteps__steps {
-        column-gap: 22px;
-        row-gap: 35px;
-        margin-bottom: 15px;
     }
 
     .fiveSteps__header {
@@ -121,23 +118,21 @@
 }
 
 
-@media screen and (max-width: 467px) {
+@media screen and (max-width: 483px) {
      .fiveSteps__steps:after {
         content: "";
         height: 1px;
-        min-width: 129px;
+        min-width: 149px;
     }
 }
 
-@media screen and (max-width: $smallMobile) {
+@media screen and (max-width: 337px) {
     .fiveSteps__steps {
         max-width: 95%;
-        column-gap: 10px;
-        row-gap: 15px;
         margin-bottom: 15px;
 
         &:after {
-            min-width: 88px;
+            min-width: 98px;
         }
     }
 }

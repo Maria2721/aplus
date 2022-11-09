@@ -2,14 +2,21 @@
 
 .homePage__casesAndDocuments {
     display: flex;
-    gap: 20px;
-    margin-bottom: 140px;
+    margin-bottom: 100px;
+}
+
+.homePage__cases {
+    margin-right: 20px;
 }
 
 @media screen and (max-width: $tablet) {
     .homePage__casesAndDocuments {
         flex-direction: column;
-        margin-bottom: 100px;
+    }
+
+    .homePage__cases {
+        margin-right: 0;
+        margin-bottom: 40px;
     }
 }
 

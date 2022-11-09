@@ -44,10 +44,10 @@
 .header__buttons {
     display: flex;
     align-items: center;
-    gap: 14px;
 }
 
 .header__calc {
+    margin-left: 14px;
     height: 32px;
     border: none;
     background-color: transparent;

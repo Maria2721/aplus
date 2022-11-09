@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function Documents() {
   return (
     <div className="documents">
-      <div className="documents__header">
-          <h2>Документы</h2>
+      <div>
+          <h1 className="documents__header">Документы</h1>
       </div>
       <div className="documents__list">
           <Link to="/" className="documents__link">Выписка из ЕГРЮЛ</Link>

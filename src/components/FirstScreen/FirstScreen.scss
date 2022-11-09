@@ -87,7 +87,10 @@
 .firstScreen__buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+}
+
+.firstScreen__buttonCalc {
+  margin-top: 10px;
 }
 
 @media screen and (max-width: $tablet) {

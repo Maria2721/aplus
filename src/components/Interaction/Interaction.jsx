@@ -50,7 +50,9 @@ function Interaction({ handleCalculatorModal, handleRequestModal }) {
           </div>
          <div className="interaction__buttons">
         <ButtonRequest handleRequestModal={handleRequestModal}/>
-        <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>
+        <div className="interaction__buttonCalc">
+          <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>
+        </div>
       </div>
       </div>
       </div>
