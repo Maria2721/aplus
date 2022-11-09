@@ -8,7 +8,7 @@
 }
 
 .documents__header {
-    display: flex;
+    // display: flex;
     margin-bottom: 37px;
 }
 
@@ -33,9 +33,18 @@
     }
 }
 
+@media screen and (max-width: 1070px) {
+    .documents__header {
+        font-size: 31px;
+        line-height: 45px;
+        margin-bottom: 33px;
+    }
+ }
+
 @media screen and (max-width: $tablet) {
     .documents__header {
-        font-size: 20px;
+        font-size: 48px;
+        line-height: 65px;
         margin-bottom: 10px;
     }
 
@@ -60,6 +69,8 @@
 
 @media screen and (max-width: $mobile) {
     .documents__header {
+        font-size: 16px;
+        line-height: 21px;
         margin-bottom: 19px;
     }
 

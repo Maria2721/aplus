@@ -3,7 +3,6 @@
 .cases__content {
     display: flex;
     width: 100%;
-    gap: 20px;
     height: 488px;
 }
 
@@ -13,6 +12,7 @@
 
 .cases__leftSide {
     width: 60%;
+    margin-right: 20px;
 }
 
 .cases__rightSide {
@@ -68,6 +68,11 @@
 }
 
 @media screen and (max-width: $tablet) {
+    .cases__header {
+        font-size: 48px;
+        line-height: 65px;
+    }
+
     .cases__leftSide {
         width: 100%;
         max-width: 60%;
@@ -89,9 +94,17 @@
 }
 
 @media screen and (max-width: $mobile) {
+    .cases__header {
+        font-size: 16px;
+        line-height: 21.79px;
+    }
+
     .cases__content {
         height: 202px;
-        gap: 9px;
+    }
+
+    .cases__leftSide {
+        margin-right: 9px;
     }
 
     .cases__img {
@@ -117,8 +130,8 @@
 }
 
 @media screen and (max-width: $smallMobile) {
-    .cases__content {
-        gap: 5px;
+    .cases__leftSide {
+        margin-right: 5px;
     }
     
     .cases__subtitle {

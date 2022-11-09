@@ -17,7 +17,9 @@ function FiveSteps({ handleCalculatorModal, handleRequestModal }){
       </div>
       <div className="fiveSteps__buttons">
         <ButtonRequest handleRequestModal={handleRequestModal}/>
-        <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>
+        <div className="fiveSteps__buttonCalc">
+          <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>
+        </div>
       </div>
     </div>
   </section>
