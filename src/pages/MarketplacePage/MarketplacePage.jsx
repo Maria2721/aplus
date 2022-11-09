@@ -23,7 +23,7 @@ const MarketplacePage = ({ handleRequestModal }) => (
       <Calculator isModal={false}/>
     </section>
     <HowReceiveMoney />
-    <TakeAsMuch />
+    <TakeAsMuch handleRequestModal={handleRequestModal}/>
     <PersonalContact handleRequestModal={handleRequestModal}/>
     <Faq />
     <BannerFactoring handleRequestModal={handleRequestModal}/>

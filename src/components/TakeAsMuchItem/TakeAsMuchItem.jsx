@@ -1,7 +1,7 @@
 import './TakeAsMuchItem.scss';
 import ButtonRequest from '../ButtonRequest/ButtonRequest';
 
-function TakeAsMuchItem({ id, title, solution, rate, experience, turnover, warehouse, documents }) {
+function TakeAsMuchItem({ id, title, solution, rate, experience, turnover, warehouse, documents, handleRequestModal }) {
   return (
     <div className="takeAsMuchItem" id={id}>
       <div className="takeAsMuchItem__header">{title}</div>
@@ -15,7 +15,7 @@ function TakeAsMuchItem({ id, title, solution, rate, experience, turnover, wareh
         <div>Склад: {warehouse}</div>
         <div>Документы: {documents}</div>
       </div>
-      <ButtonRequest isSmall={true} />
+      <ButtonRequest size="smallerOnTablet" handleRequestModal={handleRequestModal}/>
     </div>
   )
 }

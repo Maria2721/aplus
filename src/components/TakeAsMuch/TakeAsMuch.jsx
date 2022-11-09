@@ -2,7 +2,7 @@ import './TakeAsMuch.scss';
 import { businessItems } from './businessItems';
 import TakeAsMuchItem from '../TakeAsMuchItem/TakeAsMuchItem';
 
-function TakeAsMuch() {
+function TakeAsMuch({ handleRequestModal }) {
   return (
     <div className="takeAsMuch container">
       <div className="takeAsMuch__inner container__row">
@@ -19,6 +19,7 @@ function TakeAsMuch() {
               turnover={item.turnover}
               warehouse={item.warehouse}
               documents={item.documents}
+              handleRequestModal={handleRequestModal}
             />
           ))}
         </div>

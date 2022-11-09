@@ -3,14 +3,15 @@ import * as cx from "classnames";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button.svg";
 import { useState } from 'react';
 
-function ButtonRequest({ isSmall, handleRequestModal }) {
+function ButtonRequest({ size, handleRequestModal }) {
   const [isActive, setIsActive] = useState(false);
   const classButton = cx("buttonRequest btn btn_full", {
-    "btn btn_full btn_smaller": isSmall,
+    "btn btn_full btn_smaller": size === 'small',
+    "btn btn_full btn_smallerOnTablet": size === 'smallerOnTablet',
   });
   
   const classButtonInner = cx("buttonRequest__inner", {
-    "buttonRequest__inner_active": isActive && !isSmall,
+    "buttonRequest__inner_active": isActive && !(size === 'small'),
   });
 
   const handleClick = () => {
@@ -25,7 +26,7 @@ function ButtonRequest({ isSmall, handleRequestModal }) {
       <button className={classButton} onClick={handleClick}>
         <div className={classButtonInner}>
           Отправить заявку
-          {!isSmall && 
+          {!(size === 'small') && 
           <div className='buttonRequest__arrowWrapper'>
           <Arrow className='buttonRequest__arrow'/>
         </div>
