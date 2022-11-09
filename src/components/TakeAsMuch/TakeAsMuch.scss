@@ -35,26 +35,7 @@
     }
 }
 
-@media screen and (max-width: 834px) {
-    // up to 620px
-    .takeAsMuch__inner {
-        margin-top: 50px;
-        margin-bottom: 40px;
-        .takeAsMuch__header {
-            margin-bottom: 30px;
-            margin-right: 0px;
-        }
-        .takeAsMuch__items {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            margin-right: 0px;
-        }
-    }
-}
-
-@media screen and (max-width: $mobile) {
-    // up to 480px
+@media screen and (max-width: 800px) {
     .takeAsMuch__inner {
         margin-top: 50px;
         margin-bottom: 40px;

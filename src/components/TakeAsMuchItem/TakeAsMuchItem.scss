@@ -53,6 +53,12 @@
 }
 
 @media screen and (max-width: 1150px) {
+    .takeAsMuchItem {
+        width: 420px;
+    }
+}
+
+@media screen and (max-width: $tablet) {
     // up to 959px
     .takeAsMuchItem {
         width: 340px;
@@ -100,20 +106,20 @@
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 834px) {
+@media screen and (min-width: 481px) and (max-width: 800px) {
     #smallBusiness {
-        margin-left: 9px !important;
+        margin-left: 0px !important;
     }
     #middleBusiness {
-        margin-top: 0px !important;
+        margin-top: 30px !important;
     }
 }
 
-@media screen and (max-width: 834px) {
-    // up to 620px
+@media screen and (max-width: $mobile) {
+    // up to 480px
     .takeAsMuchItem {
         width: 200px;
-        height: 203px; //203px
+        height: 203px;
         padding-top: 11px;
         padding-left: 13px;
         padding-right: 19px;
