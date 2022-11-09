@@ -9,7 +9,7 @@ function FaqItem({ id, question, answer }) {
 
   return (
     <div className={cn("faqItem", { "faqItem_lastopen": (show === true && id === "deposit") })} id={id}>
-      <div className={cn("faqItem__question", { "faqItem__question_smaller": show === true })}>
+      <div className={cn("faqItem__question", { "faqItem__question_smaller": show === true })} onClick={() => setShow(!show)}>
         <div className="faqItem__question__title">{question}</div>
         <button className="faqItem__question__btn" onClick={() => setShow(!show)}>
           <img src={show ? ArrowLess : ArrowMore} alt="Показать" />

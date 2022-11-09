@@ -60,12 +60,10 @@
     border-bottom: 0px !important;
 }
 
+.faqItem__question,
 .faqItem__question__btn {
     &:hover {
-        background-color: $accentColor;
-        opacity: 0.9;
         cursor: pointer;
-        transition: background-color 0.1s ease;
     }
 }
 
