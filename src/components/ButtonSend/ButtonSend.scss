@@ -16,14 +16,14 @@
     width: 0;
     height: 17px;
     overflow: hidden;
-  }
-
-  .buttonSend:hover .buttonSend__arrowWrapper {
-    width: 17px;
     display: grid;
     grid-template-columns: 10fr 1fr;
     align-items: center;
     transition: width 0.1s ease-in-out;
+  }
+
+  .buttonSend:hover .buttonSend__arrowWrapper {
+    width: 17px;
     overflow: visible
   }
 
@@ -34,11 +34,11 @@
   .buttonSend__arrow {
     width: 17px;
     margin-left: 10px;
+    transition: transform 300ms ease;
   }
 
   .buttonSend__arrow_active {
     transform: translateX(1000%);
-    transition: transform 300ms ease;
   }
 
 .buttonSend__checkWrapper {
@@ -52,34 +52,59 @@
 
 .buttonSend__check {
     position: absolute;
-    width: 12px;
-    top: -4px;
+    width: 14px;
+    top: -5px;
     right: 0;
   }
 
   .buttonSend__sendedText {
-    margin-right: 20px;
+    margin-right: 22px;
   }
 
   @media screen and (max-width: $tablet) {
     .buttonSend:hover .buttonSend__arrowWrapper {
-      display: none;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .buttonSend .buttonSend__arrowWrapper.buttonSend__arrowWrapper_active {
+      width: 17px;
+      margin-left: 0;
+      overflow: visible;
+    }
+
+    .buttonSend__arrowWrapper_active {
+      width: 17px;
+      overflow: visible
+    }
+
+    .buttonSend__sendedText {
+      margin-right: 5px;
     }
   }
 
   @media screen and (max-width: $mobile) {
+    .buttonSend .buttonSend__arrowWrapper.buttonSend__arrowWrapper_active {
+      width: 12px;
+      margin-left: 0;
+      overflow: visible;
+    }
+
+    .buttonSend__arrowWrapper {
+      height: 10px;
+    }
+
     .buttonSend__arrow {
-      width: 10px;
-      margin-left: 7px;
+      width: 9px;
+      margin-left: 0;
     }
 
     .buttonSend__check {
-      position: absolute;
-      width: 8px;
+      width: 9px;
       top: -4px;
     }
 
     .buttonSend__sendedText {
-      margin-right: 13px;
+      margin-right: 0;
     }
   }

@@ -95,7 +95,7 @@
 }
 
 @media screen and (orientation:landscape)
-and (max-width: $landscape) {
+and (max-width: $landscape) and (max-height: 600px){
     .btn_smaller {
         max-width: 113px;
         width: 100%;

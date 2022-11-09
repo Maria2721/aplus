@@ -28,7 +28,7 @@ function ButtonSend({ handleSendForm, isValid, handleModal, children }) {
 
       setTimeout(() => {
         setCheckVisible(true);
-      }, 100);
+      }, 300);
 
       setTimeout(() => {
         handleModal()

@@ -19,7 +19,7 @@ function ButtonRequest({ size, handleRequestModal }) {
     setTimeout(() => {
       handleRequestModal();
       setIsActive(false)
-    }, 200)
+    }, 250)
   } 
 
   return (
