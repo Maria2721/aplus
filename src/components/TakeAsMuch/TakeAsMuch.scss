@@ -1,7 +1,6 @@
 @import "../../styles/_vars.scss";
 
 .takeAsMuch__inner {
-    margin-top: 200px;
     margin-bottom: 190px;
 
     .takeAsMuch__header {
@@ -20,7 +19,6 @@
 @media screen and (max-width: 1150px) {
     // up to 959px
     .takeAsMuch__inner {
-        margin-top: 100px;
         margin-bottom: 80px;
         .takeAsMuch__header {
             margin-bottom: 80px;
@@ -37,7 +35,6 @@
 
 @media screen and (min-width: 481px) and (max-width: 800px) {
     .takeAsMuch__inner {
-        margin-top: 100px !important;
         margin-bottom: 80px !important;
         .takeAsMuch__header {
             margin-bottom: 80px !important;
@@ -48,7 +45,6 @@
 
 @media screen and (max-width: 800px) {
     .takeAsMuch__inner {
-        margin-top: 50px;
         margin-bottom: 40px;
         .takeAsMuch__header {
             margin-bottom: 30px;
