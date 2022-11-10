@@ -3,6 +3,7 @@
 .help__row {
     display: flex;
     justify-content: space-between;
+    color: $textColor;
 
     &:not(:last-child) {
         margin-bottom: 30px;
@@ -25,10 +26,11 @@
     padding: 6px 14px;
     font-size: 16px;
     line-height: 20px;
-    background-color: #F1F0F0;
+    background-color: #4D4D4D;
     border: 1px solid transparent;
     border-radius: 4px;
     font-family: $generalFont;
+    color: $textColor;
     &:focus {
         outline: none;
     }
@@ -38,25 +40,18 @@
     font-family: $generalFont;
     border: none;
     font-size: 16px;
-    background-color: #F1F0F0;
-    box-shadow: inset 0 0 0 50px #F1F0F0;
-    -webkit-box-shadow: inset 0 0 0 50px #F1F0F0;
-    -webkit-text-fill-color: #000;
+    background-color: #4D4D4D;
+    box-shadow: inset 0 0 0 50px #4D4D4D;;
+    -webkit-box-shadow: inset 0 0 0 50px #4D4D4D;;
+    -webkit-text-fill-color: $textColor;
+    color: $textColor;
+
+    &:focus {
+        outline: none;
+    }
   }
 
-#dark .help__row .PhoneInputInput {
-    box-shadow: inset 0 0 0 50px #1A1A1A;
-    -webkit-box-shadow: inset 0 0 0 50px #1A1A1A;
-    -webkit-text-fill-color: $bgColor;
-  }
-
-#dark .help__input {
-    background-color: #1A1A1A;
-    border: 1px solid $bgColor;
-    color: $bgColor;
-}
-
-.help__input_error, #dark .help__input_error {
+.help__input_error {
     border-width: 3px;
     border-color: $accentColor;
     padding: 4px 12px; // уменьшаем паддинги на 2px из-за разной жирности бордера ошибки

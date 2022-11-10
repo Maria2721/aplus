@@ -1,5 +1,5 @@
 import "./HelpDesk.scss";
-import * as cx from "classnames";
+// import * as cx from "classnames";
 import HelpInput from "../HelpInput/HelpInput";
 import { helpFields } from "./helpFields";
 import { Link } from "react-router-dom";
@@ -10,10 +10,6 @@ import ButtonSend from "../ButtonSend/ButtonSend";
 import { useState } from "react";
 
 export default function HelpModal({ handleModal, opened }) {
-  const classModal = cx("help", {
-    "help help_show": opened,
-  });
-
 const [state, setState] = useState(initialState)
 const [phoneValue, setPhoneValue] = useState('');
 const [valid, setValid] = useState(false);
@@ -163,10 +159,7 @@ const validateForm = () => {
 }
 
   return (
-    <div className={classModal}>
-      <div className="help__inner">
-        <div className="help__content">
-          <div className="help__form">
+    <div className="help">
             <div className="help__rows">
               {helpFields.map((item) => (
                 <HelpInput
@@ -207,9 +200,6 @@ const validateForm = () => {
                     <ButtonSend handleSendForm={handleClick} isValid={valid} handleModal={handleModal}>Отправить</ButtonSend>
                 </div>
               </div>
-            </div>
-        </div>
-      </div>
     </div>
   );
 }

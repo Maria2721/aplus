@@ -1,3 +1,35 @@
 @import "../../styles/_vars.scss";
 
-.helpModal {}
+.help__footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .help__helper {
+    width: 30%;
+  }
+  
+  .help__alertAndButton {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+  }
+  
+  .help__alert {
+    display: flex;
+    width: 360px;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 15px;
+    color: $textColor;
+  }
+  
+  .help__alertIcon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+  
+  .help__agreement {
+    text-decoration: underline;
+  }
