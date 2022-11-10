@@ -26,8 +26,8 @@ function Footer () {
               <Link to="/for-marketplaces" className="footer__link footer__market">Для маркетплейсов</Link>
             </div>
             <div className="footer__telAndSocial">
-              <div>
-                <a href="tel:+74954459099" className="footer__tel">+7 (495) 445-90-99</a>
+              <div  className="footer__tel">
+                <a href="tel:+74954459099">+7 (495) 445-90-99</a>
               </div>
               <div className="footer__social">
                 <a

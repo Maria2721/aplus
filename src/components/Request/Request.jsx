@@ -200,7 +200,6 @@ const validateForm = () => {
           id={field.id}
           name={field.name}
           type={field.type}
-          rule={field.rule}
           value={state[field.id].value}
           blurHandler={blurHandler}
           handleChange={handleChange}
