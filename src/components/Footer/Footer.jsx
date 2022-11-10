@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "../../assets/imgs/logo.svg";
 import { ReactComponent as TelegramIcon } from "../../assets/imgs/telegram_icon.svg";
 import { ReactComponent as WatsappIcon } from "../../assets/imgs/watsapp_icon.svg";
 
-function Footer () {
+function Footer ({ handleHelpModal }) {
   return (
   <div className="footer container">
      <div className="footer__inner container__row">
@@ -49,7 +49,7 @@ function Footer () {
           <div className="footer__bottom">
                 <div className="footer__agreementAndHelp">
                   <Link to="/" className="footer__link footer__agreement">Соглашение об обработке персональных данных</Link>
-                  <button className="footer__link footer__help">Служба поддержки</button>
+                  <button className="footer__link footer__help" onClick={handleHelpModal}>Служба поддержки</button>
                 </div>
                 <div className="footer__description">
                     <div className="footer__text">© 2022 ООО «А+ факторинг».</div>
