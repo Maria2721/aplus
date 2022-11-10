@@ -106,7 +106,7 @@
     }
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $smallTablet) {
     .modal__request {
         max-width: 320px;
         padding: 80px 21px 74px 21px;
