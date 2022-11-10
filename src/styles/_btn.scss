@@ -33,11 +33,12 @@
 }
 
 .btn_smaller {
-    max-width: 170px;
-    width: 100%;
+    width: 170px;
+    // max-width: 170px;
+    // width: 100%;
     font-size: 14px;
     line-height: 16.45px;
-    padding: 8px 18px;
+    padding: 8px 0;
 }
 
 @media screen and (max-width: $tablet) {

@@ -11,7 +11,11 @@ function ButtonRequest({ size, handleRequestModal }) {
   });
   
   const classButtonInner = cx("buttonRequest__inner", {
-    "buttonRequest__inner_active": isActive && !(size === 'small'),
+    "buttonRequest__inner_active": isActive,
+  });
+
+  const classArrowWrapper = cx("buttonRequest__arrowWrapper", {
+    "buttonRequest__arrowWrapper_small": size === 'small',
   });
 
   const handleClick = () => {
@@ -26,11 +30,9 @@ function ButtonRequest({ size, handleRequestModal }) {
       <button className={classButton} onClick={handleClick}>
         <div className={classButtonInner}>
           Отправить заявку
-          {!(size === 'small') && 
-          <div className='buttonRequest__arrowWrapper'>
-          <Arrow className='buttonRequest__arrow'/>
+          <div className={classArrowWrapper}>
+          <Arrow className="buttonRequest__arrow"/>
         </div>
-      }
       </div>
       </button>
   );
