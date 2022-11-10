@@ -67,6 +67,17 @@
     }
 }
 
+.faqItem__answer {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.faqItem__answer.in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media screen and (max-width: $tablet) {
     // up to 959px
     .faqItem {
