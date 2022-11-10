@@ -4,7 +4,7 @@ import Step from '../Step/Step';
 function HowReceiveMoney () {
   return (
     <section className="container">
-      <div className="howReceiveMoney__inner container__row">
+      <div className="howReceiveMoney container__row">
         <h1 className="howReceiveMoney__header">Как получить деньги</h1>
         <div className="howReceiveMoney__steps">
           <div className="howReceiveMoney__twoSteps">
