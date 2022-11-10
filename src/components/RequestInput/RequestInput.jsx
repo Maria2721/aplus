@@ -5,6 +5,7 @@ function RequestInput({
   type,
   name,
   id,
+  value,
   errorMessage,
   blurHandler,
   handleChange,
@@ -25,6 +26,7 @@ function RequestInput({
       <input
         className={classInput}
         onChange={(e) => handleChange(e, id)}
+        value={value}
         type={type}
         name={type}
         onBlur={() => blurHandler(id)}
