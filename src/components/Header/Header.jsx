@@ -8,6 +8,7 @@ import { ReactComponent as Close } from "../../assets/imgs/close_icon.svg";
 import ButtonRequest from "../ButtonRequest/ButtonRequest";
 
 function Header({ opened, handleBurger, handleCalculatorModal, handleRequestModal }) {
+
   const classNav = cx("header__nav", {
     "header__nav header__nav_active": opened,
   });

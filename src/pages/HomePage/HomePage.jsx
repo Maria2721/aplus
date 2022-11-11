@@ -25,7 +25,8 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
       <FactoringIs />
       <Interaction 
       handleCalculatorModal={handleCalculatorModal}
-      handleRequestModal={handleRequestModal}/>
+      handleRequestModal={handleRequestModal}
+      id="scheme"/>
       <div className="container">
         <div className="homePage__casesAndDocuments container__row">
           <div className="homePage__cases">
