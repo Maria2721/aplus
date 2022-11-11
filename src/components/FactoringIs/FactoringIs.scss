@@ -276,7 +276,7 @@
 
 
 @media screen and (orientation:landscape)
-and (max-width: 900px) {
+and (max-width: 900px) and (max-height: 590px) {
   .factoring__section_left {
     padding-left: 40px;
     margin-bottom: 40px;

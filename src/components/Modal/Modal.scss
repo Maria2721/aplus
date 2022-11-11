@@ -133,7 +133,7 @@
     }
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $smallTablet) {
     .modal__request {
         max-width: 320px;
         padding: 80px 21px 74px 21px;
@@ -169,7 +169,7 @@
 
 
 @media screen and (orientation:landscape)
-and (max-width: $landscape) and (max-height: 600px){
+and (max-width: $landscape) and (max-height: 590px){
     .modal__request {
         max-width: 650px;
         min-height: 280px;
