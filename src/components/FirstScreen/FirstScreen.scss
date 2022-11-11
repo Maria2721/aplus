@@ -5,12 +5,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $bgColor_dark;
+  height: 100%;
   max-height: 810px;
 }
 
 .firstScreen_home {
   background-image: image-set("../../assets/imgs/first_screen.jpg" 1x, "../../assets/imgs/first_screen_2x.jpg" 2x);
-
   &:after {
     content: "";
     position: absolute;
@@ -22,12 +22,12 @@
     z-index: 0;
   }
 
-  & .firstScreen__description {
-    max-width: 776px;
-  }
-
   & .firstScreen__inner {
     margin-top: 231px;
+  }
+
+  & .firstScreen__description {
+    max-width: 776px;
   }
 
   & .firstScreen__buttons {
@@ -50,12 +50,12 @@
     z-index: 0;
   }
 
-  & .firstScreen__description {
-    max-width: 889px;
-  }
-
   & .firstScreen__inner {
     margin-top: 174px;
+  }
+
+  & .firstScreen__description {
+    max-width: 889px;
   }
 
   & .firstScreen__buttons {
@@ -94,11 +94,14 @@
 }
 
 @media screen and (max-width: $tablet) {
-.firstScreen__inner {
-    margin-top: 361px;
-  }
-
   .firstScreen_home {
+    background-image: image-set("../../assets/imgs/first_screen_tablet.jpg" 1x, "../../assets/imgs/first_screen_tablet_2x.jpg" 2x);
+    max-height: 1094px;
+
+    & .firstScreen__inner {
+      margin-top: 316px;
+    }
+
     & .firstScreen__header {
       max-width: 700px;
     }
@@ -106,10 +109,20 @@
     & .firstScreen__description {
       max-width: 568px;
     }
+
+    & .firstScreen__buttons {
+      margin-bottom: 345px;
+    }
   }
 
   .firstScreen_market {
+    max-height: 1030px;
+    background-image: image-set("../../assets/imgs/first_screen_market_tablet.jpg" 1x, "../../assets/imgs/first_screen_market_tablet_2x.jpg" 2x);
     margin-bottom: 80px;
+
+    & .firstScreen__inner {
+      margin-top: 200px;
+    }
 
     & .firstScreen__header {
       max-width: 540px;
@@ -117,6 +130,10 @@
 
     & .firstScreen__description {
       max-width: 680px;
+    }
+
+    & .firstScreen__buttons {
+      margin-bottom: 464px;
     }
   }
 
@@ -131,18 +148,17 @@
   font-size: 24px;
   line-height: 32.68px;
 }
-
-.firstScreen__buttons {
-  margin-bottom: 342px;
-}
 }
 
 @media screen and (max-width: $mobile) {
-  .firstScreen__inner {
-    margin-top: 123px;
-  }
 
   .firstScreen_home {
+    max-height: 518px;
+
+    & .firstScreen__inner {
+      margin-top: 123px;
+    }
+  
     & .firstScreen__header {
       max-width: 250px;
     }
@@ -153,7 +169,12 @@
   }
 
   .firstScreen_market {
+    max-height: 518px;
     margin-bottom: 30px;
+
+    & .firstScreen__inner {
+      margin-top: 173px;
+    }
 
     & .firstScreen__header {
       max-width: 250px;
@@ -174,9 +195,6 @@
   line-height: 16.34px;
 }
 
-.firstScreen__buttons {
-  margin-bottom: 147px;
-}
 }
 
 @media screen and (orientation:landscape)
