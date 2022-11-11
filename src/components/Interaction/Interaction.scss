@@ -193,7 +193,7 @@
 
 
 @media screen and (orientation:landscape)
-and (max-width: 900px) {
+and (max-width: 900px) and (max-height: 590px) {
     .interaction {
         padding-top: 40px;
     }
