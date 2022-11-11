@@ -1,9 +1,9 @@
 import './PersonalContact.scss';
 import ButtonRequest from '../ButtonRequest/ButtonRequest';
-import ChatManager from "../../assets/imgs/chat_manager.svg";
-import ChatClient from "../../assets/imgs/chat_client.svg";
+import ChatManager from "../../assets/imgs/chat_manager.jpg";
+import ChatClient from "../../assets/imgs/chat_client.jpg";
 
-function PersonalContact({handleRequestModal}) {
+function PersonalContact({ handleRequestModal }) {
   return (
     <div className="personalContact container">
       <div className="personalContact__inner container__row">
@@ -17,7 +17,7 @@ function PersonalContact({handleRequestModal}) {
         <div className="personalContact__info">
           <h1 className="personalContact__info__title">Личный контакт с менеджером</h1>
           <div className="personalContact__info__subtitle">Наши менеджеры отлично разбираются в продукте и обязательно помогут вам!</div>
-          <ButtonRequest handleRequestModal={handleRequestModal}/>
+          <ButtonRequest handleRequestModal={handleRequestModal} />
         </div>
       </div>
     </div>
