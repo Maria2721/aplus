@@ -4,7 +4,7 @@ import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button.svg"
 import { ReactComponent as Check } from "../../assets/imgs/send_check.svg";
 import { useState } from "react";
 
-function ButtonSend({ handleSendForm, isValid, handleModal, children }) {
+function ButtonSend({ handleSendForm, isValid, handleModal, children, capitalLetters }) {
   const [arrowMove, setArrowMove] = useState(false);
   const [checkVisible, setCheckVisible] = useState(false);
 
@@ -14,10 +14,16 @@ function ButtonSend({ handleSendForm, isValid, handleModal, children }) {
 
   const classArrow = cx("buttonSend__arrow", {
     buttonSend__arrow_active: arrowMove,
+    buttonSend__arrow_bigger: capitalLetters,
   });
 
   const classCheckWrapper = cx("buttonSend__checkWrapper", {
     buttonSend__checkWrapper_active: checkVisible,
+    buttonSend__checkWrapper_bigger: capitalLetters,
+  });
+
+  const classText = cx("buttonSend__sendedText", {
+    buttonSend__sendedText_capital: capitalLetters,
   });
 
   const handleClick = () => {
@@ -41,7 +47,7 @@ function ButtonSend({ handleSendForm, isValid, handleModal, children }) {
   return (
     <button className="buttonSend btn btn_full btn__biggerOnMobile" onClick={handleClick}>
       <div className="buttonSend__inner">
-        {arrowMove ? <div className="buttonSend__sendedText">Отправлено</div> : children}
+        {arrowMove ? <div className={classText}>Отправлено</div> : children}
         <div className={classArrowWrapper}>
           <Arrow className={classArrow} />
         </div>

@@ -197,7 +197,7 @@ const validateForm = () => {
                         </Link>
                       </span>
                     </div>
-                    <ButtonSend handleSendForm={handleClick} isValid={valid} handleModal={handleModal}>Отправить</ButtonSend>
+                    <ButtonSend capitalLetters={true} handleSendForm={handleClick} isValid={valid} handleModal={handleModal}>ОТПРАВИТЬ</ButtonSend>
                 </div>
               </div>
     </div>

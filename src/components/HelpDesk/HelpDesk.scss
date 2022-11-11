@@ -1,35 +1,118 @@
 @import "../../styles/_vars.scss";
 
+.help {
+  width: 100%;
+  height: 100%;
+}
+
+.help__rows {
+  display: flex;
+  flex-direction: column;
+}
+
 .help__footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.help__helper {
+  width: 30%;
+}
+
+.help__alertAndButton {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.help__alert {
+  display: flex;
+align-items: center;
+  width: 360px;
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 15px;
+  color: $textColor;
+}
+
+.help__alertIcon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.help__agreement {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: $tablet) {
+  .help__alert {
+    width: 280px;
+    font-size: 8px;
+    line-height: 8px;
+    margin-bottom: 20px;
+  }
+  .help__alertIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .help__helper {
+    width: 39%;
+  }
+
+  .help__alertAndButton {
+    width: 61%;
+  }
+}
+
+@media screen and (max-width: $smallTablet) {
+  .help__alert {
+    width: 250px;
+    margin-bottom: 10px;
   }
   .help__helper {
-    width: 30%;
+    display: none;
   }
-  
   .help__alertAndButton {
-    display: flex;
-    flex-direction: column;
-    width: 65%;
+    width: 100%;
   }
-  
+}
+
+@media screen and (max-width: $smallMobile) {
   .help__alert {
-    display: flex;
-    width: 360px;
-    font-size: 12px;
-    line-height: 12px;
-    margin-bottom: 15px;
-    color: $textColor;
+    width: 200px;
+    margin-bottom: 10px;
   }
-  
-  .help__alertIcon {
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
-  }
-  
-  .help__agreement {
-    text-decoration: underline;
-  }
+}
+
+@media (orientation:landscape) and (max-width: $landscape) and (max-height: 590px) {
+    .help {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .help__rows {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 502px;
+        flex-wrap: wrap;
+    }
+
+    .help__helper {
+        display: none;
+      }
+      .help__alertAndButton {
+        width: 100%;
+      }
+
+      .help__alert {
+        width: 350px;
+        margin-bottom: 10px;
+      }
+}
+
+// @media (orientation:landscape) and (max-width: $landscapeSmall)  {
+// }

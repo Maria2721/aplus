@@ -77,11 +77,11 @@
 @media (max-width: $tablet)  {
     .help__label {
         font-size: 16px;
-        width: 40%;
+        width: 39%;
     }
     
     .help__inputWrapper {
-        width: 60%;
+        width: 61%;
     }
     
     .help__input {
@@ -98,13 +98,8 @@
     .help__row .PhoneInputInput {
         font-size: 14px;
       }
-    
 
-    #dark .help__input_error {
-        border-width: 3px;
-    }
-
-    .help__input_error, #dark .help__input_error {
+    .help__input_error {
         padding: 3px 12px; // уменьшаем паддинги на 2px из-за разной жирности бордера ошибки
     }
 
@@ -179,11 +174,6 @@
         left: 84px;
     }
     
-    #dark .help__input_error {
-        border-width: 2px;
-        padding: 1px 9px; // уменьшаем паддинги на 1px из-за разной жирности бордера ошибки
-    }
-    
     .help__row textarea {
         max-height: 85px;
     }
@@ -233,7 +223,7 @@
     }
 }
 
-@media (orientation:landscape) and (max-width: $landscape) and (max-height: 600px) {
+@media (orientation:landscape) and (max-width: $landscape) and (max-height: 590px) {
     .help__row {
         display: block;
 
@@ -312,13 +302,8 @@
         left: 84px;
     }
     
-    #dark .help__input_error {
-        border-width: 2px;
-        padding: 1px 9px;
-    }
-    
     .help__row textarea {
-        max-height: 85px;
+        max-height: 50px;
     }
 
     .help__row:last-child {
@@ -376,6 +361,10 @@
     .help__label {
         font-size: 6px;
         line-height: 9px;
+    }
+
+    .help__row textarea {
+        max-height: 30px;
     }
 }
 

@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 10fr 1fr;
     align-items: center;
+    align-content: center;
     transition: width 0.1s ease-in-out;
   }
 
@@ -34,7 +35,10 @@
   .buttonSend__arrow {
     width: 17px;
     margin-left: 10px;
-    transition: transform 300ms ease;
+    transition: transform 200ms ease;
+    &_bigger {
+      width: 20px;
+    }
   }
 
   .buttonSend__arrow_active {
@@ -57,8 +61,18 @@
     right: 0;
   }
 
+  .buttonSend__checkWrapper_bigger .buttonSend__check {
+    width: 16px;
+    top: -7px;
+  }
+  
+
   .buttonSend__sendedText {
     margin-right: 22px;
+
+    &_capital {
+      text-transform: uppercase;
+    }
   }
 
   @media screen and (max-width: $tablet) {
@@ -102,9 +116,16 @@
     .buttonSend__check {
       width: 9px;
       top: -4px;
+      right: 3px;
     }
 
+    .buttonSend__checkWrapper_bigger .buttonSend__check {
+      width: 9px;
+      top: -4px;
+    }
+    
+
     .buttonSend__sendedText {
-      margin-right: 0;
+      margin-right: 5px;
     }
   }
