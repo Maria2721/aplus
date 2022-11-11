@@ -6,22 +6,24 @@ import SchemePage from './pages/SchemePage/SchemePage';
 import CasesPage from './pages/CasesPage/CasesPage';
 import MarketplacePage from './pages/MarketplacePage/MarketplacePage';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
-// import CalculatorModal from './components/CalculatorModal/CalculatorModal';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDisableBodyScroll } from './hooks/useDisableBodyScroll';
 import Modal from './components/Modal/Modal';
 import Calculator from './components/Calculator/Calculator';
 import Request from './components/Request/Request';
+import HelpDesk from './components/HelpDesk/HelpDesk';
 
 function App() {
   const { pathname } = useLocation(); 
   const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
   const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
   const [openedRequestModal, setOpenedRequestModal] = useState(false);
+  const [openedHelpModal, setOpenedHelpModal] = useState(false);
   useDisableBodyScroll(openedBurgerMenu)
   useDisableBodyScroll(openedCalculatorModal)
   useDisableBodyScroll(openedRequestModal)
+  useDisableBodyScroll(openedHelpModal)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,6 +37,9 @@ function App() {
         </Modal>
         <Modal className="modal__request" handleModal={() => setOpenedRequestModal((curr) => !curr)} opened={openedRequestModal}>
           <Request handleModal={() => setOpenedRequestModal((curr) => !curr)}/>
+        </Modal>
+        <Modal className="modal__help" handleModal={() => setOpenedHelpModal((curr) => !curr)} opened={openedHelpModal}>
+          <HelpDesk handleModal={() => setOpenedHelpModal((curr) => !curr)}/>
         </Modal>
         <Header opened={openedBurgerMenu}
         handleBurger={() => setOpenedBurgerMenu((curr) => !curr)}
@@ -52,7 +57,7 @@ function App() {
                   <Route path='/contacts' element={<ContactsPage/>}/>
               </Routes>
         </main>
-        <Footer/>
+        <Footer handleHelpModal={() => setOpenedHelpModal((curr) => !curr)}/>
       </div>
   );
 }
