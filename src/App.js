@@ -19,7 +19,7 @@ function App() {
   const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
   const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
   const [openedRequestModal, setOpenedRequestModal] = useState(false);
-  const [openedHelpModal, setOpenedHelpModal] = useState(true);
+  const [openedHelpModal, setOpenedHelpModal] = useState(false);
   useDisableBodyScroll(openedBurgerMenu)
   useDisableBodyScroll(openedCalculatorModal)
   useDisableBodyScroll(openedRequestModal)
