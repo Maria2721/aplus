@@ -1,9 +1,26 @@
+import { useState } from 'react';
 import './ButtonCalculate.scss';
+import * as cx from "classnames";
 
-function ButtonCalculate ({ handleCalculatorModal }) {
+function ButtonCalculate({ handleCalculatorModal }) {
+  const [isActive, setIsActive] = useState(false);
+
+  const classButton = cx("btn btn_blank buttonCalculate", {
+    "buttonCalculate__inactive": isActive === false,
+    "buttonCalculate__active": isActive === true,
+  });
+
+  const handleClick = () => {
+    setIsActive(true)
+    setTimeout(() => {
+      handleCalculatorModal();
+      setIsActive(false)
+    }, 250)
+  }
+
   return (
-    <button className="btn btn_blank" onClick={handleCalculatorModal}>
-    Рассчитать стоимость
+    <button className={classButton} onClick={handleClick}>
+      Рассчитать стоимость
     </button>
   )
 }
