@@ -47,7 +47,7 @@
 
 .factoring__content {
   width: 100%;
-  padding: 0 25px;
+  padding: 0 40px;
   box-sizing: border-box;
   color: $textColor;
 
@@ -174,7 +174,7 @@
   }
   
   .factoring__content {
-    padding: 0 20px;
+    // padding: 0 20px;
   
     &_left {
       // max-width: calc(15vw + 590px);
@@ -212,6 +212,7 @@
   }
   
   .factoring__content {
+    padding: 0 24px;
     &_left {
       padding-top: 17px;
     }

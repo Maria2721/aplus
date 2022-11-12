@@ -7,7 +7,7 @@
 }
 
 .cases__header {
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 }
 
 .cases__leftSide {
@@ -67,10 +67,11 @@
     }
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: 1130px) {
     .cases__header {
         font-size: 48px;
         line-height: 65px;
+        margin-bottom: 10px;
     }
 
     .cases__leftSide {
@@ -97,6 +98,7 @@
     .cases__header {
         font-size: 16px;
         line-height: 21.79px;
+        margin-bottom: 20px;
     }
 
     .cases__content {
