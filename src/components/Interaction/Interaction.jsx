@@ -4,9 +4,9 @@ import SchemeRetinaImg from "../../assets/imgs/scheme_2x.jpg"
 import ButtonRequest from '../ButtonRequest/ButtonRequest';
 import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 
-function Interaction({ handleCalculatorModal, handleRequestModal }) {
+const Interaction = ({ handleCalculatorModal, handleRequestModal, id}, forwardedRef) => {
   return (
-    <div className="interaction container">
+    <div className="interaction container" id={id}>
       <div className="container__row container__row">
         <div className='interaction__inner'>
           <div className="interaction__content">
