@@ -1,5 +1,6 @@
 import './Footer.scss';
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { ReactComponent as Logo } from "../../assets/imgs/logo.svg";
 import { ReactComponent as TelegramIcon } from "../../assets/imgs/telegram_icon.svg";
 import { ReactComponent as WatsappIcon } from "../../assets/imgs/watsapp_icon.svg";
@@ -17,11 +18,11 @@ function Footer ({ handleHelpModal }) {
             <div className="footer__pages">
                 <div className="footer__casesAndFactoring">
                   <Link to="/cases" className="footer__link">Кейсы</Link>
-                  <Link to="/" className="footer__link">Факторинг</Link>
+                  <HashLink smooth to="/#factoring" className="footer__link">Факторинг</HashLink>
                 </div>
                 <div className="footer__contactsAndScheme">
-                  <Link to="/contacts" className="footer__link">Контакты</Link>
-                  <Link to="/scheme" className="footer__link">Схема факторинга</Link>
+                  <HashLink smooth to="/#contacts" className="footer__link">Контакты</HashLink>
+                  <HashLink smooth to="/#scheme" className="footer__link">Схема факторинга</HashLink>
                 </div>
               <Link to="/for-marketplaces" className="footer__link footer__market">Для маркетплейсов</Link>
             </div>

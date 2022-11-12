@@ -1,9 +1,9 @@
 import './FactoringIs.scss';
 
 
-function FactoringIs () {
+function FactoringIs ({ id }) {
   return (
-    <section className="factoring container">
+    <section className="factoring container" id={id}>
       <div className="factoring__row">
 
         <div className="factoring__inner">

@@ -2,10 +2,8 @@ import './App.scss';
 import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import SchemePage from './pages/SchemePage/SchemePage';
 import CasesPage from './pages/CasesPage/CasesPage';
 import MarketplacePage from './pages/MarketplacePage/MarketplacePage';
-import ContactsPage from './pages/ContactsPage/ContactsPage';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDisableBodyScroll } from './hooks/useDisableBodyScroll';
@@ -15,6 +13,7 @@ import Request from './components/Request/Request';
 import HelpDesk from './components/HelpDesk/HelpDesk';
 
 function App() {
+  const { hash } = useLocation();
   const { pathname } = useLocation(); 
   const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
   const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
@@ -29,6 +28,11 @@ function App() {
     window.scrollTo(0, 0);
     document.body.style = "";
   }, [pathname]);
+
+  // console.log(hash)
+  useEffect(() => {
+    openedBurgerMenu && setOpenedBurgerMenu(false)
+  }, [hash, pathname]);
 
   return (
       <div className="App">
@@ -50,11 +54,10 @@ function App() {
                   <Route path='/' element={<HomePage
                   handleCalculatorModal={() => setOpenedCalculatorModal((curr) => !curr)}
                   handleRequestModal={() => setOpenedRequestModal((curr) => !curr)}/>}/>
-                  <Route path='/scheme' element={<SchemePage/>}/>
+                  {/* <Route path='/scheme' element={<SchemePage/>}/> */}
                   <Route path='/cases' element={<CasesPage/>}/>
                   <Route path='/for-marketplaces' element={<MarketplacePage
                   handleRequestModal={() => setOpenedRequestModal((curr) => !curr)}/>}/>
-                  <Route path='/contacts' element={<ContactsPage/>}/>
               </Routes>
         </main>
         <Footer handleHelpModal={() => setOpenedHelpModal((curr) => !curr)}/>
