@@ -26,9 +26,7 @@
   background: #e6e6e6;
   border-radius: 3px;
   background-image: linear-gradient(#ff7a00, #ff7a00);
-  // -webkit-background-image: linear-gradient(#ff7a00, #ff7a00);
   background-repeat: no-repeat;
-  cursor: pointer;
 }
 
 /* Input Thumb */
@@ -42,21 +40,7 @@
   background: $accentColor;
   cursor: ew-resize;
   transition: background 0.3s ease-in-out;
-  cursor: pointer;
 }
-
-// input[type=range]::-webkit-slider-thumb {
-//   position: relative;
-//   -webkit-appearance: none;
-//   appearance: none;
-//   height: 20px;
-//   width: 20px;
-//   border-radius: 50%;
-//   background: $accentColor;
-//   cursor: ew-resize;
-//   transition: background 0.3s ease-in-out;
-//   cursor: pointer;
-// }
 
 .range__input::-moz-range-thumb {
   -webkit-appearance: none;
@@ -66,8 +50,7 @@
   border-radius: 50%;
   background: $accentColor;
   cursor: ew-resize;
-  // box-shadow: 0 0 2px 0 #555;
-  border: none;
+  box-shadow: 0 0 2px 0 #555;
   transition: background 0.3s ease-in-out;
 }
 
@@ -79,8 +62,7 @@
   border-radius: 50%;
   background: $accentColor;
   cursor: ew-resize;
-  // box-shadow: 0 0 2px 0 #555;
-  border: none;
+  box-shadow: 0 0 2px 0 #555;
   transition: background 0.3s ease-in-out;
 }
 
@@ -101,17 +83,8 @@
   -webkit-appearance: none;
   appearance: none;
   box-shadow: none;
-
-  position: relative;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 270px;
-  height: 7px;
-  // background: #e6e6e6;
-  border-radius: 3px;
-  background-image: linear-gradient(#ff7a00, #ff7a00);
-  // -webkit-background-image: linear-gradient(#ff7a00, #ff7a00);
-  background-repeat: no-repeat;
+  border: none;
+  background: transparent;
 }
 
 .range__input::-moz-range-track {
