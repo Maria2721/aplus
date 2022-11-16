@@ -2,7 +2,7 @@
 
 .interaction {
     padding-top: 120px;
-    margin-bottom: 172px;
+    margin-bottom: 160px;
 }
 
 .interaction__inner {
@@ -103,7 +103,7 @@
 @media screen and (max-width: 1180px) {
     .interaction {
         padding-top: 60px;
-        margin-bottom: 103px;
+        margin-bottom: 100px;
     }
 
     .interaction__content {
@@ -156,6 +156,7 @@
 @media screen and (max-width: $mobile) {
     .interaction {
         padding-top: 50px;
+        margin-bottom: 50px;
     }
 
     .interaction__mobile_hidden {
