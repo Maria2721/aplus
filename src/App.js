@@ -29,7 +29,6 @@ function App() {
     document.body.style = "";
   }, [pathname]);
 
-  // console.log(hash)
   useEffect(() => {
     openedBurgerMenu && setOpenedBurgerMenu(false)
   }, [hash, pathname]);
