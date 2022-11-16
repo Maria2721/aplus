@@ -2,10 +2,11 @@
 
 .interaction {
     padding-top: 120px;
-    margin-bottom: 100px;
+    margin-bottom: 160px;
 }
 
 .interaction__inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +43,8 @@
 }
 
 .interaction__buttons {
+    position: absolute;
+    bottom: 0;
     display: flex;
     max-width: 1140px;
     align-items: flex-start;
@@ -57,7 +60,7 @@
     flex-direction: column;
     width: 50%;
     flex-grow: 1;
-    gap: 18px;
+    // gap: 18px;
     margin-top: 70px;
 }
 
@@ -66,6 +69,10 @@
     align-items: center;
     // gap: 38px;
     max-width: 600px;
+
+    &:not(:last-child) {
+        margin-bottom: 13px;
+    }
 }
 
 .interaction__numberWrapper {
@@ -93,10 +100,10 @@
     color: $textColor_dark;
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: 1180px) {
     .interaction {
         padding-top: 60px;
-        margin-bottom: 41px;
+        margin-bottom: 100px;
     }
 
     .interaction__content {
@@ -106,6 +113,14 @@
 
     .interaction__left {
         width: 100%;
+    }
+
+    .interaction__item {
+        // max-width: 600px;
+    
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
     }
 
     .interaction__header {
@@ -127,6 +142,7 @@
     }
 
     .interaction__buttons {
+        position: static;
         flex-direction: column;
         padding-left: 67px;
     }
@@ -140,6 +156,7 @@
 @media screen and (max-width: $mobile) {
     .interaction {
         padding-top: 50px;
+        margin-bottom: 50px;
     }
 
     .interaction__mobile_hidden {
@@ -162,8 +179,16 @@
     
     .interaction__list {
         margin-top: 20px;
-        gap: 20px;
+        // gap: 20px;
     }
+
+    // .interaction__item {
+    //     // max-width: 600px;
+    
+    //     &:not(:last-child) {
+    //         margin-bottom: 13px;
+    //     }
+    // }
 
     .interaction__numberWrapper {
         min-width: 14.91px;

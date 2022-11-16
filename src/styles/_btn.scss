@@ -10,7 +10,7 @@
     text-decoration: none;
     font-family: $extraFont;
 
-    &:hover{
+    &:hover {
         // background-color: $greyColor;
         // color: $accentColor;
         cursor: pointer;
@@ -25,10 +25,9 @@
 }
 
 .btn_blank {
-    padding: 15px 0;
     box-sizing: border-box;
     background-color: transparent;
-    border: 3px solid $accentColor;
+    border: 0;
     color: $accentColor;
 }
 
@@ -59,16 +58,12 @@
 }
 
 @media screen and (max-width: $mobile) {
-    .btn, .btn_smallerOnTablet {
+    .btn,
+    .btn_smallerOnTablet {
         width: 133px;
         padding: 9px 0;
         font-size: 10px;
         line-height: 11.75px;
-    }
-
-    .btn_blank {
-        padding: 7px 0;
-        border-width: 2px;
     }
 
     .btn_smaller {
@@ -95,8 +90,7 @@
     }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: $landscape) and (max-height: 590px){
+@media screen and (orientation: landscape) and (max-width: $landscape) and (max-height: 590px) {
     .btn_smaller {
         max-width: 113px;
         width: 100%;
@@ -106,8 +100,7 @@ and (max-width: $landscape) and (max-height: 590px){
     }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: $landscapeMiddle) {
+@media screen and (orientation: landscape) and (max-width: $landscapeMiddle) {
     .btn__biggerOnMobile {
         width: 220px;
         padding: 11px 0;

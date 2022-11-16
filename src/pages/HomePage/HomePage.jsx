@@ -8,6 +8,7 @@ import Documents from "../../components/Documents/Documents";
 import Contacts from "../../components/Contacts/Contacts";
 
 function HomePage({ handleCalculatorModal, handleRequestModal }) {
+
   return (
     <div className="homePage">
       <FirstScreen
@@ -22,8 +23,9 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
       <FiveSteps
       handleCalculatorModal={handleCalculatorModal}
       handleRequestModal={handleRequestModal}/>
-      <FactoringIs />
-      <Interaction 
+      <FactoringIs id="factoring"/>
+      <Interaction
+      id="scheme"
       handleCalculatorModal={handleCalculatorModal}
       handleRequestModal={handleRequestModal}/>
       <div className="container">
@@ -34,7 +36,7 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
           <Documents />
         </div>
       </div>
-      <Contacts />
+      <Contacts id="contacts"/>
     </div>
   );
 }
