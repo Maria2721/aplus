@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import './ButtonCalculate.scss';
 import * as cx from "classnames";
 
 function ButtonCalculate({ handleCalculatorModal }) {
   const [isActive, setIsActive] = useState(false);
+  const { width } = useWindowDimensions();
 
   const classButton = cx("btn btn_blank buttonCalculate", {
     "buttonCalculate__inactive": isActive === false,
@@ -19,7 +21,7 @@ function ButtonCalculate({ handleCalculatorModal }) {
   }
 
   return (
-    <button className={classButton} onClick={handleClick}>
+    <button className={classButton} onClick={(width < 960) ? handleClick : handleCalculatorModal}>
       Рассчитать стоимость
     </button>
   )
