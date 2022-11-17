@@ -1,0 +1,97 @@
+@import "../../styles/_vars.scss";
+
+.oneCasePage {
+    margin-top: 65px;
+    .oneCasePage__itemSubtitle {
+        font-size: 24px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 33px;
+        color: #808080;
+        margin-bottom: 40px;
+    }
+    .main {
+        display: grid;
+        grid-template-columns: auto 500px;
+        column-gap: 58px;
+        align-items: center;
+        margin-bottom: 75px;
+        .main__schemeImg {
+            width: 100%;
+        }
+        /* #fruitdelivery img {
+            position: relative;
+            left: -15px;
+        }
+        #seafooddelivery img {
+            position: relative;
+            left: -15px;
+        }
+        #softwaredevelopment img {
+            position: relative;
+            left: -51px;
+        }
+        #itoutsourcing img {
+            position: relative;
+            left: -3px;
+        } */
+        .main__steps {
+            > div {
+                margin-bottom: 30px;
+            }
+            :last-child {
+                margin-bottom: 0px;
+            }
+            .main__stepsTitle {
+                font-size: 24px;
+                font-weight: 800;
+                line-height: 33px;
+            }
+            .main__stepsMainText {
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 27px;
+            }
+        }
+    }
+    .oneCasePage__itemAccentSubtitle {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 44px;
+        color: $accentColor;
+        margin-bottom: 45px;
+    }
+    .advantages {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 310px;
+        column-gap: 215px;
+        margin-bottom: 54px;
+
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 27px;
+        .advantages__firstContainer {
+            display: flex;
+            align-items: center;
+            background-image: url(../../assets/imgs/firstadvantage-back.jpg);
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            .advantages__firstContainerText {
+                max-width: 390px;
+            }
+        }
+        .advantages__secondContainer {
+            display: flex;
+            align-items: center;
+            background-image: url(../../assets/imgs/secondadvantage-back.jpg);
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            .advantages__secondContainerText {
+                max-width: 380px;
+            }
+        }
+    }
+}

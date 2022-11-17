@@ -1,3 +1,23 @@
 @import "../../styles/_vars.scss";
 
-.casesPage {}
+.casesPage {
+    margin-top: 90px;
+    margin-bottom: 56px;
+    .casesPage__inner {
+        display: flex;
+        flex-direction: column;
+    }
+    .casesPage__link {
+        color: $textColor_dark;
+        text-decoration: none;
+
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 33px;
+        &:hover {
+            cursor: pointer;
+            color: $accentColor;
+            transition: color 0.1s ease;
+        }
+    }
+}
