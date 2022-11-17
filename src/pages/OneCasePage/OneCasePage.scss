@@ -72,25 +72,27 @@
         font-weight: 600;
         line-height: 27px;
         .advantages__firstContainer {
-            display: flex;
-            align-items: center;
+            /* display: flex;
+            align-items: center; */
             background-image: url(../../assets/imgs/firstadvantage-back.jpg);
             background-position: bottom right;
             background-repeat: no-repeat;
             background-size: contain;
             .advantages__firstContainerText {
                 max-width: 390px;
+                margin-top: 56px;
             }
         }
         .advantages__secondContainer {
-            display: flex;
-            align-items: center;
+            /* display: flex;
+            align-items: center; */
             background-image: url(../../assets/imgs/secondadvantage-back.jpg);
             background-position: bottom right;
             background-repeat: no-repeat;
             background-size: contain;
             .advantages__secondContainerText {
                 max-width: 380px;
+                margin-top: 56px;
             }
         }
     }
