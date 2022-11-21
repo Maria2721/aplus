@@ -14,7 +14,6 @@ import Request from "./components/Request/Request";
 import HelpDesk from "./components/HelpDesk/HelpDesk";
 
 function App() {
-  const { hash } = useLocation();
   const { pathname } = useLocation();
   const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
   const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
@@ -29,10 +28,6 @@ function App() {
     window.scrollTo(0, 0);
     document.body.style = "";
   }, [pathname]);
-
-  useEffect(() => {
-    openedBurgerMenu && setOpenedBurgerMenu(false);
-  }, [hash, pathname]);
 
   return (
     <div className="App">
@@ -59,7 +54,8 @@ function App() {
       </Modal>
       <Header
         opened={openedBurgerMenu}
-        handleBurger={() => setOpenedBurgerMenu((curr) => !curr)}
+        closeBurger={() => setOpenedBurgerMenu(false)}
+        openBurger={() => setOpenedBurgerMenu(true)}
         handleCalculatorModal={() => setOpenedCalculatorModal((curr) => !curr)}
         handleRequestModal={() => setOpenedRequestModal((curr) => !curr)}
       />
