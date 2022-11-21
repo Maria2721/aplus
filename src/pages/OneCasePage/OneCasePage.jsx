@@ -1,14 +1,49 @@
 import './OneCasePage.scss';
+import * as cx from "classnames";
 import { cases } from './cases';
 import BannerFactoring from '../../components/BannerFactoring/BannerFactoring';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 import fruitdelivery from '../../assets/imgs/fruit-delivery.jpg';
 import seafooddelivery from '../../assets/imgs/seafood-delivery.jpg';
 import softwaredevelopment from '../../assets/imgs/software-development.jpg';
 import itoutsourcing from '../../assets/imgs/it-outsourcing.jpg';
 
+import fruitdeliveryTablet from '../../assets/imgs/fruit-delivery-tablet.jpg';
+import seafooddeliveryTablet from '../../assets/imgs/seafood-delivery-tablet.jpg';
+import softwaredevelopmentTablet from '../../assets/imgs/software-development-tablet.jpg';
+import itoutsourcingTablet from '../../assets/imgs/it-outsourcing-tablet.jpg';
+
+import fruitdeliveryMobile from '../../assets/imgs/fruit-delivery-mobile.jpg';
+import seafooddeliveryMobile from '../../assets/imgs/seafood-delivery-mobile.jpg';
+import softwaredevelopmentMobile from '../../assets/imgs/software-development-mobile.jpg';
+import itoutsourcingMobile from '../../assets/imgs/it-outsourcing-mobile.jpg';
+
 function OneCasePage(props) {
   const currentCase = cases.find((item) => (item.id === props.case));
+  const { width } = useWindowDimensions();
+
+  const renderImg = () => {
+    if ((width >= 959)) {
+      return <img className="main__schemeImg" alt="Схема"
+        src={currentCase.id === "fruitdelivery" ? fruitdelivery
+          : currentCase.id === "seafooddelivery" ? seafooddelivery
+            : currentCase.id === "softwaredevelopment" ? softwaredevelopment
+              : itoutsourcing} />;
+    } else if ((width < 959) && (width > 480)) {
+      return <img className="main__schemeImg" alt="Схема"
+        src={currentCase.id === "fruitdelivery" ? fruitdeliveryTablet
+          : currentCase.id === "seafooddelivery" ? seafooddeliveryTablet
+            : currentCase.id === "softwaredevelopment" ? softwaredevelopmentTablet
+              : itoutsourcingTablet} />;
+    } else {
+      return <img className="main__schemeImg" alt="Схема"
+        src={currentCase.id === "fruitdelivery" ? fruitdeliveryMobile
+          : currentCase.id === "seafooddelivery" ? seafooddeliveryMobile
+            : currentCase.id === "softwaredevelopment" ? softwaredevelopmentMobile
+              : itoutsourcingMobile} />;
+    }
+  }
 
   return (
     <div className="oneCasePage">
@@ -20,11 +55,7 @@ function OneCasePage(props) {
               <div className="oneCasePage__itemSubtitle">{currentCase.subtitle}</div>
               <div className="main">
                 <div className="main__scheme" id={currentCase.id}>
-                  <img className="main__schemeImg" alt="Схема"
-                    src={currentCase.id === "fruitdelivery" ? fruitdelivery
-                      : currentCase.id === "seafooddelivery" ? seafooddelivery
-                        : currentCase.id === "softwaredevelopment" ? softwaredevelopment
-                          : itoutsourcing} />
+                  {renderImg()}
                 </div>
                 <div className="main__steps">
                   <div>
@@ -44,10 +75,14 @@ function OneCasePage(props) {
               <div className="oneCasePage__itemAccentSubtitle">Преимущества факторинга</div>
               <div className="advantages">
                 <div className="advantages__firstContainer">
-                  <div className="advantages__firstContainerText">{currentCase.firstadvantage}</div>
+                  <div className={cx("advantages__firstContainerText", (currentCase.id === "softwaredevelopment" || currentCase.id === "itoutsourcing") && "advantages__containerText")}>
+                    {currentCase.firstadvantage}
+                  </div>
                 </div>
                 <div className="advantages__secondContainer">
-                  <div className="advantages__secondContainerText">{currentCase.secondadvantage}</div>
+                  <div className={cx("advantages__secondContainerText", (currentCase.id === "softwaredevelopment" || currentCase.id === "itoutsourcing") && "advantages__containerText")}>
+                    {currentCase.secondadvantage}
+                  </div>
                 </div>
               </div>
             </div>
