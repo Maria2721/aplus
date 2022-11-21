@@ -1,19 +1,21 @@
 import { useEffect } from 'react';
 
+let scrollPosition = 0;
+
 export const useDisableBodyScroll = (open) => {
     useEffect(() => {
         if (open) {
-            document.body.style.paddingRight = `${scrollbarWidth()}px`;
-            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = `${getScrollbarWidth()}px`;
+            fixBody();
             
         } else {
             document.body.style.paddingRight = '0px';
-            document.body.style.overflow = 'unset';
+            releaseBody();
         }
     }, [open]);
 };
 
-const scrollbarWidth = () => {
+const getScrollbarWidth = () => {
 	document.body.style.overflow = 'hidden';
 	let width = document.body.clientWidth;
 	document.body.style.overflow = 'scroll';
@@ -25,4 +27,28 @@ const scrollbarWidth = () => {
 	document.body.style.overflow = '';
  
 	return width;
+}
+
+const fixBody = () => {
+	const body = document.body;
+
+    body.dataset.state = 'fixed';
+
+    scrollPosition = window.pageYOffset;
+    body.style.overflow = 'hidden';
+    body.style.position= 'fixed';
+    body.style.top = `-${scrollPosition}px`;
+    body.style.width = '100%';
+}
+
+const releaseBody = () => {
+	const body = document.body;
+
+    body.dataset.state = 'released';
+
+    body.style.removeProperty('overflow');
+    body.style.removeProperty('position');
+    body.style.removeProperty('top');
+    body.style.removeProperty('width');
+    window.scrollTo(0, scrollPosition);
 }
