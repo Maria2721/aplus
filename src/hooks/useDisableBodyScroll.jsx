@@ -35,10 +35,12 @@ const fixBody = () => {
     body.dataset.state = 'fixed';
 
     scrollPosition = window.pageYOffset;
-    body.style.overflow = 'hidden';
-    body.style.position= 'fixed';
-    body.style.top = `-${scrollPosition}px`;
-    body.style.width = '100%';
+    body.style = {
+        top: `-${scrollPosition}px`,
+        width: '100%',
+        overflow: 'hidden',
+        position:'fixed',
+    }
 }
 
 const releaseBody = () => {
