@@ -6,18 +6,32 @@
     .casesPage__inner {
         display: flex;
         flex-direction: column;
+        .casesPage__header {
+            margin-bottom: 30px;
+        }
     }
-    .casesPage__link {
-        color: $textColor_dark;
-        text-decoration: none;
+}
 
-        font-size: 24px;
-        font-weight: 800;
-        line-height: 33px;
-        &:hover {
-            cursor: pointer;
-            color: $accentColor;
-            transition: color 0.1s ease;
+@media (max-width: $tablet) {
+    .casesPage {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        .casesPage__inner {
+            .casesPage__header {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .casesPage {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        .casesPage__inner {
+            .casesPage__header {
+                margin-bottom: 10px;
+            }
         }
     }
 }
