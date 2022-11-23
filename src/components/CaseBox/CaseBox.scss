@@ -69,11 +69,12 @@
 
 @media (max-width: $tablet) {
     .caseBox {
-        padding-top: 20px;
-        padding-bottom: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         .caseBox__scheme {
             height: 103px;
-            margin-bottom: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
         .caseBox__text {
             margin-left: 20px;
@@ -89,6 +90,7 @@
                 line-height: 19px;
             }
             .linkBox {
+                padding-top: 15px;
                 .linkBox__text {
                     font-size: 14px;
                     font-weight: 600;
@@ -125,6 +127,7 @@
                 line-height: 14px;
             }
             .linkBox {
+                padding-top: 10px;
                 align-self: flex-end;
                 .linkBox__text {
                     margin-right: 2px;
