@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 
-let scrollPosition = 0;
+// let scrollPosition = 0;
 
 export const useDisableBodyScroll = (open) => {
     useEffect(() => {
         if (open) {
             document.body.style.paddingRight = `${getScrollbarWidth()}px`;
-            fixBody();
+            // fixBody();
             
         } else {
             document.body.style.paddingRight = '0px';
-            releaseBody();
+            // releaseBody();
         }
     }, [open]);
 };
@@ -29,28 +29,28 @@ const getScrollbarWidth = () => {
 	return width;
 }
 
-const fixBody = () => {
-	const body = document.body;
+// const fixBody = () => {
+// 	const body = document.body;
 
-    body.dataset.state = 'fixed';
+//     body.dataset.state = 'fixed';
 
-    scrollPosition = window.pageYOffset;
-    Object.assign(document.body.style, {
-        top: `-${scrollPosition}px`,
-        width: '100%',
-        overflow: 'hidden',
-        position:'fixed',
-       })
-}
+//     scrollPosition = window.pageYOffset;
+//     Object.assign(document.body.style, {
+//         top: `-${scrollPosition}px`,
+//         width: '100%',
+//         overflow: 'hidden',
+//         position:'fixed',
+//        })
+// }
 
-const releaseBody = () => {
-	const body = document.body;
+// const releaseBody = () => {
+// 	const body = document.body;
 
-    body.dataset.state = 'released';
+//     body.dataset.state = 'released';
 
-    body.style.removeProperty('overflow');
-    body.style.removeProperty('position');
-    body.style.removeProperty('top');
-    body.style.removeProperty('width');
-    window.scrollTo(0, scrollPosition);
-}
+//     body.style.removeProperty('overflow');
+//     body.style.removeProperty('position');
+//     body.style.removeProperty('top');
+//     body.style.removeProperty('width');
+//     window.scrollTo(0, scrollPosition);
+// }
