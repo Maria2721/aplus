@@ -7,6 +7,7 @@ import { ReactComponent as CalculatorIcon } from "../../assets/imgs/calc_icon.sv
 import { ReactComponent as Burger } from "../../assets/imgs/burger_icon_tablet.svg";
 import { ReactComponent as Close } from "../../assets/imgs/close_icon.svg";
 import ButtonRequest from "../ButtonRequest/ButtonRequest";
+// import { RemoveScroll } from "react-remove-scroll";
 
 function Header({
   opened,

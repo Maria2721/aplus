@@ -6,11 +6,13 @@ export const useDisableBodyScroll = (open) => {
     useEffect(() => {
         if (open) {
             document.body.style.paddingRight = `${getScrollbarWidth()}px`;
+            document.body.style.overflow = 'hidden';
             // fixBody();
             
         } else {
             document.body.style.paddingRight = '0px';
             // releaseBody();
+            document.body.style.removeProperty('overflow');
         }
     }, [open]);
 };
