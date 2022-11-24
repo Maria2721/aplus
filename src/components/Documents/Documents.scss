@@ -8,14 +8,13 @@
 }
 
 .documents__header {
-    // display: flex;
     margin-bottom: 37px;
 }
 
 .documents__list {
     display: flex;
     flex-direction: column;
-    height: 488px;
+    height: 485px;
     padding: 30px 15px;
     background-color: #F3F3F3;
 }
@@ -33,14 +32,6 @@
     }
 }
 
-// @media screen and (max-width: 1070px) {
-//     .documents__header {
-//         font-size: 31px;
-//         line-height: 45px;
-//         margin-bottom: 33px;
-//     }
-//  }
-
 @media screen and (max-width: 1130px) {
     .documents__header {
         font-size: 48px;
@@ -49,7 +40,6 @@
     }
 
     .documents__list {
-        // height: 182px;
         height: 100%;
         padding: 21px 24px;
     }
@@ -75,7 +65,6 @@
     }
 
     .documents__list {
-        // height: 112px;
         padding: 10px 20px;
     }
 

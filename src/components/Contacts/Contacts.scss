@@ -21,7 +21,6 @@
 .contacts__contacts {
     display: flex;
     flex-direction: column;
-    // gap: 29px;
     margin-right: 35px;
 }
 
@@ -115,7 +114,7 @@
     }
 }
 
-@media screen and (max-width: $smallTablet) {
+@media screen and (max-width: $mobile) {
     .contacts {
         margin-bottom: 20px;
     }
