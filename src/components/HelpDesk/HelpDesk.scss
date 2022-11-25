@@ -87,7 +87,7 @@ align-items: center;
   }
 }
 
-@media (orientation:landscape) and (max-width: $landscape) and (max-height: 590px) {
+@media (orientation:landscape) and (max-width: $landscape) and (max-height: 600px) {
     .help {
         display: flex;
         flex-direction: column;

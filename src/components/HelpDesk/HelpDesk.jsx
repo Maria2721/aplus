@@ -55,10 +55,9 @@ const handleClick = () => {
                 Отчество: ${state.helpMiddle.value.trimStart().replace(/ +/g, " ")},
                 Название компании:${state.helpInn.value.trimStart().replace(/ +/g, " ")},
                 Телефон: ${phoneValue.trimStart().replace(/ +/g, " ")},
+                Почта: ${state.helpEmail.value.trimStart().replace(/ +/g, " ")},
                 Вопрос: ${state.helpQuestion.value.trimStart().replace(/ +/g, " ")}.`)
-                // navigate('/'); // возможно не надо никуда навигировать
-                // handleModal() // закрытие модалки перенесено в кнопку
-      setState(initialState); // возвращаем состояние к началу
+      setState(initialState);
       setPhoneValue('');
     }
 };
@@ -67,6 +66,7 @@ const validateForm = () => {
   setValid(true)
   const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
   const regNumber = /\d{1,3}/;
+  const regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
   
       for (const field of helpFields) {
           const { rule, id } = field;
@@ -132,6 +132,28 @@ const validateForm = () => {
                   break;
                 }
                 break;
+            case 'email':
+            if (value.length === 0) {
+              error = 'Необходимо заполнить';
+              setValid(false);
+              break;
+            } 
+            if (value.length < 5) {
+                error = 'Минимум 5 символов';
+                setValid(false);
+                break;
+              } 
+            if (value.length > 200) {
+                error = 'Максимум 200 символов';
+                setValid(false);
+                break;
+            }
+            if (!regEmail.test(value)) {
+                error = 'Недопустимый формат';
+                setValid(false);
+                break;
+              }
+            break;
             case 'question':
                 if (value.length === 0) {
                   error = 'Необходимо заполнить';
@@ -166,6 +188,7 @@ const validateForm = () => {
                   key={item.id}
                   id={item.id}
                   name={item.name}
+                  label={item.label}
                   value={state[item.id].value}
                   type={item.type}
                   view={item.view}
