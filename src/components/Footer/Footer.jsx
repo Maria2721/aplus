@@ -6,10 +6,18 @@ import { ReactComponent as TelegramIcon } from "../../assets/imgs/telegram_icon.
 import { ReactComponent as WatsappIcon } from "../../assets/imgs/watsapp_icon.svg";
 
 function Footer({ handleHelpModal }) {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    document.body.style = "";
+  }
+
   return (
     <div className="footer container">
       <div className="footer__inner container__row">
-        <Link to="/" className="footer__logoWrapper">
+        <Link to="/" onClick={scrollToTop} className="footer__logoWrapper">
           <Logo className="footer__logo" />
         </Link>
 
@@ -31,16 +39,10 @@ function Footer({ handleHelpModal }) {
                 <a href="tel:+74954459099">+7 (495) 445-90-99</a>
               </div>
               <div className="footer__social">
-                <a
-                  href='https://seahorse-app-uhrp6.ondigitalocean.app/'
-                  target="_blank"
-                  rel="noreferrer">
+                <a href="https://telegram.me/74954459099" target="_blank" rel="noreferrer">
                   <TelegramIcon className="footer__icon" />
                 </a>
-                <a
-                  href='https://seahorse-app-uhrp6.ondigitalocean.app/'
-                  target="_blank"
-                  rel="noreferrer">
+                <a href="https://wa.me/74954459099" target="_blank" rel="noreferrer">
                   <WatsappIcon className="footer__icon" />
                 </a>
               </div>
@@ -53,7 +55,7 @@ function Footer({ handleHelpModal }) {
               <button className="footer__link footer__help" onClick={handleHelpModal}>Служба поддержки</button>
             </div>
             <div className="footer__description">
-              <div className="footer__text">© 2022 ООО «А+ факторинг».</div>
+              <div className="footer__text">© 2022 ООО «А+ факторинг»</div>
               <div className="footer__text">Все права защищены</div>
             </div>
           </div>
