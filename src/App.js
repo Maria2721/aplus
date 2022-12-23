@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import CasesPage from "./pages/CasesPage/CasesPage";
 import OneCasePage from "./pages/OneCasePage/OneCasePage";
 import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
+import AgreementPage from "./pages/AgreementPage/AgreementPage";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDisableBodyScroll } from "./hooks/useDisableBodyScroll";
@@ -130,6 +131,7 @@ function App() {
               />
             }
           />
+          <Route path="/agreement" element={<AgreementPage />} />
         </Routes>
       </main>
       <Footer handleHelpModal={() => setOpenedHelpModal((curr) => !curr)} />
