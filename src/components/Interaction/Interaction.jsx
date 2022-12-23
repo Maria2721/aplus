@@ -4,15 +4,15 @@ import SchemeRetinaImg from "../../assets/imgs/scheme_2x.jpg"
 import ButtonRequest from '../ButtonRequest/ButtonRequest';
 import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 
-const Interaction = ({ handleCalculatorModal, handleRequestModal, id}, forwardedRef) => {
+const Interaction = ({ handleCalculatorModal, handleRequestModal, id }, forwardedRef) => {
   return (
     <div className="interaction container" id={id}>
       <div className="container__row container__row">
         <div className='interaction__inner'>
           <div className="interaction__content">
             <div className="interaction__left">
-              <h1 className="interaction__header">Схема<br className="interaction__mobile_hidden"/> взаимодействия</h1>
-              <div className="interaction__imgWrapper"><img className="interaction__img" alt="Схема" src={SchemeImg} srcSet={`${SchemeRetinaImg} 2x`}/></div>
+              <h1 className="interaction__header">Схема<br className="interaction__mobile_hidden" /> взаимодействия</h1>
+              <div className="interaction__imgWrapper"><img className="interaction__img" alt="Схема" src={SchemeImg} srcSet={`${SchemeRetinaImg} 2x`} /></div>
             </div>
             <div className="interaction__list">
               <div className="interaction__item">
@@ -22,11 +22,11 @@ const Interaction = ({ handleCalculatorModal, handleRequestModal, id}, forwarded
               <div className="interaction__item">
                 <div className="interaction__number">2</div>
                 <div className="interaction__description">
-            После поставки товара, Поставщик передает в Открытие Факторинг электронный реестр с перечнем поставок и сумм для выплаты финансирования через личный кабинет </div>
+                  После поставки товара Поставщик передает в А+ электронный реестр с перечнем поставок и сумм для выплаты финансирования через личный кабинет </div>
               </div>
               <div className="interaction__item">
                 <div className="interaction__number">3</div>
-                <div className="interaction__description">А+ отправляет в полученный реестр в адес Дебитора для подтверждения (верификации) действительности переданных поставок</div>
+                <div className="interaction__description">А+ отправляет в полученный реестр в адрес Дебитора для подтверждения (верификации) действительности переданных поставок</div>
               </div>
               <div className="interaction__item">
                 <div className="interaction__number">4</div>
@@ -44,17 +44,17 @@ const Interaction = ({ handleCalculatorModal, handleRequestModal, id}, forwarded
                 <div className="interaction__numberWrapper">
                   <div className="interaction__number interaction__number_grey">!</div>
                 </div>
-                <div className="interaction__description">В случае, если Дебитор не оплачивает задолженность, А+ направляет поставщику требование погасить задолженносьть</div>
+                <div className="interaction__description">В случае, если Дебитор не оплачивает задолженность, А+ направляет поставщику требование погасить задолженность</div>
               </div>
             </div>
           </div>
-         <div className="interaction__buttons">
-        <ButtonRequest handleRequestModal={handleRequestModal}/>
-        <div className="interaction__buttonCalc">
-          <ButtonCalculate handleCalculatorModal={handleCalculatorModal}/>
+          <div className="interaction__buttons">
+            <ButtonRequest handleRequestModal={handleRequestModal} />
+            <div className="interaction__buttonCalc">
+              <ButtonCalculate handleCalculatorModal={handleCalculatorModal} />
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
       </div>
     </div>
   )
