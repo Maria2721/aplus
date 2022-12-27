@@ -5,11 +5,14 @@ import { useState } from 'react';
 
 function ButtonRequest({ size, handleRequestModal }) {
   const [isActive, setIsActive] = useState(false);
+  const [focusIcon, setFocusIcon] = useState(false);
+
   const classButton = cx("buttonRequest btn btn_full", {
     "btn btn_full btn_smaller": size === 'small',
     "btn btn_full btn_smallerOnTablet": size === 'smallerOnTablet',
+    "btn btn_full buttonRequest_focus": focusIcon,
   });
-  
+
   const classButtonInner = cx("buttonRequest__inner", {
     "buttonRequest__inner_active": isActive,
   });
@@ -24,17 +27,19 @@ function ButtonRequest({ size, handleRequestModal }) {
       handleRequestModal();
       setIsActive(false)
     }, 250)
-  } 
+  }
 
   return (
-      <button className={classButton} onClick={handleClick}>
-        <div className={classButtonInner}>
-          Отправить заявку
-          <div className={classArrowWrapper}>
-          <Arrow className="buttonRequest__arrow"/>
+    <button className={classButton} onClick={handleClick}
+      onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
+      onBlur={() => setFocusIcon((focusIcon) => !focusIcon)}>
+      <div className={classButtonInner}>
+        Отправить заявку
+        <div className={classArrowWrapper}>
+          <Arrow className="buttonRequest__arrow" />
         </div>
       </div>
-      </button>
+    </button>
   );
 }
 

@@ -2,6 +2,7 @@ import "./Header.scss";
 import * as cx from "classnames";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useState } from "react";
 import { ReactComponent as Logo } from "../../assets/imgs/logo.svg";
 import { ReactComponent as CalculatorIcon } from "../../assets/imgs/calc_icon.svg";
 import { ReactComponent as Burger } from "../../assets/imgs/burger_icon_tablet.svg";
@@ -16,12 +17,18 @@ function Header({
   handleCalculatorModal,
   handleRequestModal,
 }) {
+  const [focusIcon, setFocusIcon] = useState(false);
+
   const classNav = cx("header__nav", {
     "header__nav header__nav_active": opened,
   });
 
   const classOverlay = cx("header__overlay", {
     "header__overlay header__overlay_active": opened,
+  });
+
+  const classCalcIcon = cx("header__calcIcon", {
+    "header__calcIcon_focus": focusIcon,
   });
 
   return (
@@ -69,11 +76,13 @@ function Header({
                 />
                 <button
                   className="header__calc"
-                  onClick={handleCalculatorModal}>
+                  onClick={handleCalculatorModal}
+                  onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
+                  onBlur={() => setFocusIcon((focusIcon) => !focusIcon)}>
                   {opened ? (
                     "Калькулятор"
                   ) : (
-                    <CalculatorIcon className="header__calcIcon" />
+                    <CalculatorIcon className={classCalcIcon} />
                   )}
                 </button>
               </div>

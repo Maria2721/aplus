@@ -53,6 +53,9 @@ a {
     color: $accentColor;
     transition: color 0.1s ease;
   }
+  &:focus {
+    color: $accentColor;
+  }
 }
 
 h1 {
@@ -61,21 +64,23 @@ h1 {
   line-height: 65.37px;
   color: $accentColor;
 
-  @media (max-width: $tablet)  {
+  @media (max-width: $tablet) {
     font-size: 40px;
     line-height: 54.47px;
   }
 
-  @media (max-width: $mobile)  {
+  @media (max-width: $mobile) {
     font-size: 16px;
     line-height: 21.79px;
   }
 }
 
-@supports(padding:max(0px)) {
-  body, header, footer {
-      padding-left: min(0vmin, env(safe-area-inset-left));
-      padding-right: min(0vmin, env(safe-area-inset-right));
+@supports (padding: max(0px)) {
+  body,
+  header,
+  footer {
+    padding-left: min(0vmin, env(safe-area-inset-left));
+    padding-right: min(0vmin, env(safe-area-inset-right));
   }
 }
 
@@ -85,8 +90,7 @@ h1 {
   }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: 900px) and (max-height: 590px) {
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 590px) {
   .container__row {
     padding: 0 60px;
   }

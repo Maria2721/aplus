@@ -51,21 +51,19 @@
     height: 32px;
     border: none;
     background-color: transparent;
-
-    &:hover {
-        color: $accentColor;
-        transition: color 0.1s ease;
-      }
 }
 
 .header__calcIcon {
-    fill: #FFFFFF;
+    fill: #ffffff;
     width: 32px;
 
     &:hover {
-      fill: $accentColor;
-      transition: fill 0.1s ease;
+        fill: $accentColor;
+        transition: fill 0.1s ease;
     }
+}
+.header__calcIcon_focus {
+    fill: $accentColor;
 }
 
 .header__burger {
@@ -73,12 +71,12 @@
 }
 
 .header__burgerIcon {
-    fill: #FFFFFF;
+    fill: #ffffff;
 
     &:hover {
         fill: $accentColor;
         transition: fill 0.1s ease;
-      }
+    }
 }
 
 .header__close {
@@ -90,10 +88,11 @@
 
 .header__closeIcon {
     fill: $textColor;
+
     &:hover {
         fill: $accentColor;
         transition: fill 0.1s ease;
-      }
+    }
 }
 
 .header__overlay {
@@ -102,9 +101,9 @@
     width: 100vw;
     height: 100vh;
     left: 0;
-    top:0;
+    top: 0;
     z-index: 500;
-    background-color: hsla(0,0%,7%,.36);
+    background-color: hsla(0, 0%, 7%, 0.36);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     opacity: 0;
@@ -113,10 +112,10 @@
 
 .header__overlay_active {
     opacity: 1;
-    background-color: hsla(0,0%,7%,.36);
+    background-color: hsla(0, 0%, 7%, 0.36);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    transition: opacity .8s ease,visibility 0s;
+    transition: opacity 0.8s ease, visibility 0s;
 }
 
 @media screen and (max-width: $tablet) {
@@ -172,7 +171,8 @@
         width: 100vw;
     }
 
-    .header__link, .header__calc {
+    .header__link,
+    .header__calc {
         font-size: 20px;
         font-weight: 600;
         line-height: 20px;
@@ -195,7 +195,7 @@
         margin-left: 0;
         color: $textColor;
     }
-    
+
     .header__burger {
         display: block;
         cursor: pointer;
@@ -241,7 +241,8 @@
         padding: 70px 30px;
     }
 
-    .header__link, .header__calc {
+    .header__link,
+    .header__calc {
         font-size: 12px;
         line-height: 12px;
         margin-bottom: 20px;
@@ -249,7 +250,7 @@
 
     .header__calc {
         height: 12px;
-        margin-bottom: 30q;
+        margin-bottom: 30Q;
     }
 
     .header__buttons {
@@ -272,12 +273,11 @@
     }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: $landscape) and (max-height: 590px) {
+@media screen and (orientation: landscape) and (max-width: $landscape) and (max-height: 590px) {
     .header {
         height: 85px;
     }
-    
+
     .header__navInner {
         padding: 41px 30px;
     }
@@ -287,7 +287,8 @@ and (max-width: $landscape) and (max-height: 590px) {
         align-items: center;
     }
 
-    .header__link, .header__calc {
+    .header__link,
+    .header__calc {
         font-size: 12px;
         line-height: 12px;
         margin-bottom: 20px;

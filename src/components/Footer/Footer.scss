@@ -13,8 +13,8 @@
 }
 
 .footer__logoWrapper {
-   align-self: flex-start;
-   margin-right: 48px;
+    align-self: flex-start;
+    margin-right: 48px;
 }
 
 .footer__logo {
@@ -43,7 +43,8 @@
     margin-right: 108px;
 }
 
-.footer__casesAndFactoring, .footer__contactsAndScheme {
+.footer__casesAndFactoring,
+.footer__contactsAndScheme {
     display: flex;
     flex-direction: column;
     margin-right: 10px;
@@ -58,16 +59,19 @@
     justify-content: space-between;
 }
 
-.footer__agreementAndHelp, .footer__description {
+.footer__agreementAndHelp,
+.footer__description {
     display: flex;
     flex-direction: column;
 }
 
-.footer__agreement, .footer__description .footer__text:first-child  {
+.footer__agreement,
+.footer__description .footer__text:first-child {
     margin-bottom: 10px;
 }
 
-.footer__link, .footer__text {
+.footer__link,
+.footer__text {
     font-size: 16px;
     font-weight: 600;
     line-height: 21.79px;
@@ -78,6 +82,9 @@
 .footer__link:hover {
     color: $accentColor;
     transition: color 0.1s ease;
+}
+.footer__link:focus {
+    color: $accentColor;
 }
 
 .footer__telAndSocial {
@@ -94,13 +101,17 @@
 }
 
 .footer__icon {
+    fill: #ffffff;
     max-width: 28px;
     width: 100%;
-    
-    & :hover {
+
+    &:hover {
         fill: $accentColor;
         transition: fill 0.1s ease;
-      }
+    }
+}
+.footer__social a:focus svg {
+    fill: $accentColor;
 }
 
 .footer__social {
@@ -125,27 +136,29 @@
 
     .footer__logoWrapper {
         margin-right: 30px;
-     }
-    
+    }
+
     .footer__logo {
         width: 65px;
     }
-    
+
     .footer__top {
         padding-top: 20px;
         padding-bottom: 18px;
         margin-bottom: 22px;
     }
 
-    .footer__casesAndFactoring, .footer__contactsAndScheme {
+    .footer__casesAndFactoring,
+    .footer__contactsAndScheme {
         & :first-child {
             margin-bottom: 15px;
         }
     }
-    
-    .footer__link, .footer__text {
+
+    .footer__link,
+    .footer__text {
         font-size: 12px;
-        line-height:16.34px;
+        line-height: 16.34px;
     }
 
     .footer__tel {
@@ -170,15 +183,18 @@
 }
 
 @media screen and (max-width: 682px) {
-      .footer__pages {
+    .footer__pages {
         margin-right: 20px;
     }
-    
-    .footer__agreement, .footer__description .footer__text:first-child  {
+
+    .footer__agreement,
+    .footer__description .footer__text:first-child {
         margin-bottom: 5px;
     }
-    
-    .footer__text, .footer__agreement, .footer__help {
+
+    .footer__text,
+    .footer__agreement,
+    .footer__help {
         font-size: 8px;
         font-weight: 10.89px;
     }
@@ -192,8 +208,7 @@
     .footer__logoWrapper {
         margin-right: 0;
         margin-bottom: 5px;
-     }
-    
+    }
 
     .footer__pages {
         justify-content: flex-start;
@@ -221,10 +236,11 @@
         width: 100%;
     }
 
-    .footer__casesAndFactoring :first-child, .footer__contactsAndScheme :first-child {
+    .footer__casesAndFactoring :first-child,
+    .footer__contactsAndScheme :first-child {
         margin-bottom: 10px;
     }
-    
+
     .footer__telAndSocial {
         position: absolute;
         top: -27px;
@@ -234,7 +250,6 @@
     .footer__tel {
         margin-bottom: 8px;
     }
-
 
     .footer__social {
         & a:first-child {
@@ -253,7 +268,8 @@
         flex-direction: column;
     }
 
-    .footer__agreement, .footer__description .footer__text:first-child  {
+    .footer__agreement,
+    .footer__description .footer__text:first-child {
         margin-bottom: 0;
     }
 
@@ -271,11 +287,13 @@
         height: 175px;
     }
 
-    .footer__casesAndFactoring, .footer__contactsAndScheme {
+    .footer__casesAndFactoring,
+    .footer__contactsAndScheme {
         margin-right: 5px;
     }
 
-    .footer__casesAndFactoring :first-child, .footer__contactsAndScheme :first-child {
+    .footer__casesAndFactoring :first-child,
+    .footer__contactsAndScheme :first-child {
         margin-bottom: 5px;
     }
 
@@ -283,7 +301,8 @@
         margin-bottom: 5px;
     }
 
-    .footer__link, .footer__text {
+    .footer__link,
+    .footer__text {
         font-size: 8px;
         line-height: 14.34px;
     }

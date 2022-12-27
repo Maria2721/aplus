@@ -27,7 +27,8 @@
   transition: width 0.1s ease-in-out;
 }
 
-.buttonRequest:hover .buttonRequest__arrowWrapper {
+.buttonRequest:hover .buttonRequest__arrowWrapper,
+.buttonRequest_focus .buttonRequest__arrowWrapper {
   width: 17px;
   margin-left: 10px;
 }
@@ -46,7 +47,8 @@
   }
 }
 
-.buttonRequest:hover .buttonRequest__arrowWrapper_small {
+.buttonRequest:hover .buttonRequest__arrowWrapper_small,
+.buttonRequest_focus .buttonRequest__arrowWrapper_small {
   width: 9px;
   margin-left: 5px;
 }
@@ -73,12 +75,12 @@
   .buttonRequest__arrowWrapper_small {
     width: 0;
     height: 14px;
-  
+
     & .buttonRequest__arrow {
       width: 14px;
     }
   }
-  
+
   .buttonRequest:hover .buttonRequest__arrowWrapper_small {
     margin-left: 0;
   }
@@ -106,12 +108,12 @@
 
   .buttonRequest__arrowWrapper_small {
     height: 10px;
-  
+
     & .buttonRequest__arrow {
       width: 10px;
     }
   }
-  
+
   .buttonRequest:hover .buttonRequest__arrowWrapper_small {
     margin-left: 0;
   }

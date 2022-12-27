@@ -32,7 +32,9 @@ function Footer({ handleHelpModal }) {
                 <HashLink smooth to="/#contacts" className="footer__link">Контакты</HashLink>
                 <HashLink smooth to="/#scheme" className="footer__link">Схема факторинга</HashLink>
               </div>
-              <Link to="/for-marketplaces" className="footer__link footer__market">Для маркетплейсов</Link>
+              <div className="footer__market">
+                <Link to="/for-marketplaces" className="footer__link">Для маркетплейсов</Link>
+              </div>
             </div>
             <div className="footer__telAndSocial">
               <div className="footer__tel">

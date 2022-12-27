@@ -18,7 +18,8 @@
 }
 
 @media screen and (min-width: $tablet) {
-    .buttonCalculate:hover {
+    .buttonCalculate:hover,
+    .buttonCalculate__focus {
         background-image: url(../../assets/imgs/corner_left_bottom_bold3.svg),
             url(../../assets/imgs/corner_right_top_bold3.svg);
     }
