@@ -2,7 +2,7 @@ import "./Header.scss";
 import * as cx from "classnames";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from 'react';
 import { ReactComponent as Logo } from "../../assets/imgs/logo.svg";
 import { ReactComponent as CalculatorIcon } from "../../assets/imgs/calc_icon.svg";
 import { ReactComponent as Burger } from "../../assets/imgs/burger_icon_tablet.svg";
@@ -18,6 +18,20 @@ function Header({
   handleRequestModal,
 }) {
   const [focusIcon, setFocusIcon] = useState(false);
+  const logoReference = useRef(null);
+  const [focus, setFocus] = useState(false);
+
+  useEffect(() => {
+    if (focus === true) {
+      logoReference.current.focus();
+      setFocus(false);
+    }
+  }, [focus]);
+
+  const handleFocus = () => {
+    console.log("focus on logo");
+    setFocus(true);
+  };
 
   const classNav = cx("header__nav", {
     "header__nav header__nav_active": opened,
@@ -34,7 +48,7 @@ function Header({
   return (
     <header className="header container">
       <div className="header__inner container__row">
-        <Link to="/" className="header__logo">
+        <Link to="/" className="header__logo" ref={logoReference}>
           <Logo className="header__logoIcon" />
         </Link>
         <div className={classOverlay}></div>
@@ -49,23 +63,23 @@ function Header({
             )}
             <div className="header__linksAndButtons">
               <div className="header__links">
-                <HashLink smooth to="/#factoring" className="header__link" onClick={closeBurger}>
+                <HashLink smooth to="/#factoring" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
                   Факторинг
                 </HashLink>
-                <HashLink smooth to="/#scheme" className="header__link" onClick={closeBurger}>
+                <HashLink smooth to="/#scheme" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
                   Схема факторинга
                 </HashLink>
-                <Link to="/cases" className="header__link" onClick={closeBurger}>
+                <Link to="/cases" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
                   Кейсы
                 </Link>
-                <Link to="/for-marketplaces" className="header__link" onClick={closeBurger}>
+                <Link to="/for-marketplaces" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
                   Маркетплейсам
                 </Link>
                 <HashLink
                   smooth
                   to="/#contacts"
                   className="header__link header__link_border"
-                  onClick={closeBurger}>
+                  onClick={() => { closeBurger(); handleFocus(); }}>
                   Контакты
                 </HashLink>
               </div>
@@ -76,7 +90,7 @@ function Header({
                 />
                 <button
                   className="header__calc"
-                  onClick={handleCalculatorModal}
+                  onClick={() => { handleCalculatorModal(); handleFocus(); }}
                   onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
                   onBlur={() => setFocusIcon((focusIcon) => !focusIcon)}>
                   {opened ? (
