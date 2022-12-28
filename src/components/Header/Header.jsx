@@ -29,7 +29,6 @@ function Header({
   }, [focus]);
 
   const handleFocus = () => {
-    console.log("focus on logo");
     setFocus(true);
   };
 

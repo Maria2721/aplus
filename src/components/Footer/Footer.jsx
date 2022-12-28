@@ -18,7 +18,6 @@ function Footer({ handleHelpModal }) {
   }, [focusFooter]);
 
   const handleFocus = () => {
-    console.log("focus on logo");
     setFocusFooter(true);
   };
 

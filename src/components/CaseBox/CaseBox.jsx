@@ -39,15 +39,13 @@ function CaseBox({ id, title, subtitle }) {
       <div className="caseBox__text">
         <div className="caseBox__textTitle">{title}</div>
         <div className="caseBox__textSubtitle">{subtitle}</div>
-        <div className="linkBox">
-          <Link to={id === "fruitdelivery" ? "/case-fruitdelivery"
-            : id === "seafooddelivery" ? "/case-seafooddelivery"
-              : id === "softwaredevelopment" ? "/case-softwaredevelopment"
-                : "/case-itoutsourcing"} className="linkBox__text">
-            Подробнее
-          </Link>
-          <ArrowIcon className="linkBox__arrowIcon" />
-        </div>
+        <Link to={id === "fruitdelivery" ? "/case-fruitdelivery"
+          : id === "seafooddelivery" ? "/case-seafooddelivery"
+            : id === "softwaredevelopment" ? "/case-softwaredevelopment"
+              : "/case-itoutsourcing"} className="caseBox__link">
+          Подробнее
+          <ArrowIcon className="caseBox__link_arrowIcon" />
+        </Link>
       </div>
     </div>
   )

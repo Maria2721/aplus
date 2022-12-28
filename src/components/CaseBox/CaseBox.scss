@@ -31,34 +31,32 @@
             font-weight: 600;
             line-height: 19px;
         }
-        .linkBox {
+        .caseBox__link {
             margin-top: auto;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             width: fit-content;
-            &:hover {
+
+            color: $textColor_dark;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 19px;
+            .caseBox__link_arrowIcon {
+                fill: $textColor_dark;
+                margin-top: 7px;
+                margin-left: 3px;
+            }
+            &:hover,
+            &:focus {
                 cursor: pointer;
-                .linkBox__text {
-                    color: $accentColor;
-                    transition: color 0.1s ease;
-                }
-                .linkBox__arrowIcon {
+                color: $accentColor;
+                transition: color 0.1s ease;
+                .caseBox__link_arrowIcon {
                     fill: $accentColor;
                     transition: fill 0.1s ease;
                 }
-            }
-            .linkBox__text {
-                margin-right: 3px;
-                color: $textColor_dark;
-                text-decoration: none;
-                font-size: 14px;
-                font-weight: 600;
-                line-height: 19px;
-            }
-            .linkBox__arrowIcon {
-                fill: $textColor_dark;
-                margin-top: 7px;
             }
         }
     }
@@ -89,14 +87,12 @@
                 font-weight: 600;
                 line-height: 19px;
             }
-            .linkBox {
+            .caseBox__link {
                 padding-top: 15px;
-                .linkBox__text {
-                    font-size: 14px;
-                    font-weight: 600;
-                    line-height: 19px;
-                }
-                .linkBox__arrowIcon {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 19px;
+                .caseBox__link_arrowIcon {
                     margin-top: 7px;
                 }
             }
@@ -126,17 +122,15 @@
                 font-weight: 600;
                 line-height: 14px;
             }
-            .linkBox {
+            .caseBox__link {
                 padding-top: 10px;
                 align-self: flex-end;
-                .linkBox__text {
-                    margin-right: 2px;
-                    font-size: 10px;
-                    font-weight: 600;
-                    line-height: 14px;
-                }
-                .linkBox__arrowIcon {
+                font-size: 10px;
+                font-weight: 600;
+                line-height: 14px;
+                .caseBox__link_arrowIcon {
                     margin-top: 4px;
+                    margin-left: 2px;
                 }
             }
         }
