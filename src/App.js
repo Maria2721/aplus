@@ -57,8 +57,8 @@ function App() {
         opened={openedBurgerMenu}
         closeBurger={() => setOpenedBurgerMenu(false)}
         openBurger={() => setOpenedBurgerMenu(true)}
-        handleCalculatorModal={() => setOpenedCalculatorModal((curr) => !curr)}
-        handleRequestModal={() => setOpenedRequestModal((curr) => !curr)}
+        handleCalculatorModal={() => setOpenedCalculatorModal(true)}
+        handleRequestModal={() => setOpenedRequestModal(true)}
       />
       <main>
         <Routes>
@@ -66,12 +66,8 @@ function App() {
             path="/"
             element={
               <HomePage
-                handleCalculatorModal={() =>
-                  setOpenedCalculatorModal((curr) => !curr)
-                }
-                handleRequestModal={() =>
-                  setOpenedRequestModal((curr) => !curr)
-                }
+                handleCalculatorModal={() => setOpenedCalculatorModal(true)}
+                handleRequestModal={() => setOpenedRequestModal(true)}
               />
             }
           />
@@ -82,9 +78,7 @@ function App() {
             element={
               <OneCasePage
                 case="fruitdelivery"
-                handleRequestModal={() =>
-                  setOpenedRequestModal((curr) => !curr)
-                }
+                handleRequestModal={() => setOpenedRequestModal(true)}
               />
             }
           />
@@ -93,9 +87,7 @@ function App() {
             element={
               <OneCasePage
                 case="seafooddelivery"
-                handleRequestModal={() =>
-                  setOpenedRequestModal((curr) => !curr)
-                }
+                handleRequestModal={() => setOpenedRequestModal(true)}
               />
             }
           />
@@ -104,9 +96,7 @@ function App() {
             element={
               <OneCasePage
                 case="softwaredevelopment"
-                handleRequestModal={() =>
-                  setOpenedRequestModal((curr) => !curr)
-                }
+                handleRequestModal={() => setOpenedRequestModal(true)}
               />
             }
           />
@@ -115,9 +105,7 @@ function App() {
             element={
               <OneCasePage
                 case="itoutsourcing"
-                handleRequestModal={() =>
-                  setOpenedRequestModal((curr) => !curr)
-                }
+                handleRequestModal={() => setOpenedRequestModal(true)}
               />
             }
           />
@@ -125,16 +113,14 @@ function App() {
             path="/for-marketplaces"
             element={
               <MarketplacePage
-                handleRequestModal={() =>
-                  setOpenedRequestModal((curr) => !curr)
-                }
+                handleRequestModal={() => setOpenedRequestModal(true)}
               />
             }
           />
           <Route path="/agreement" element={<AgreementPage />} />
         </Routes>
       </main>
-      <Footer handleHelpModal={() => setOpenedHelpModal((curr) => !curr)} />
+      <Footer handleHelpModal={() => setOpenedHelpModal(true)} />
     </div>
   );
 }
