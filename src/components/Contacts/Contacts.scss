@@ -25,7 +25,7 @@
 }
 
 .contacts__row:first-child {
-   margin-bottom: 29px;
+    margin-bottom: 29px;
 }
 
 .contacts__row:last-child {
@@ -45,7 +45,7 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 27.24px;
-    color: $textColor_dark
+    color: $textColor_dark;
 }
 
 .contacts__telAndMail {
@@ -98,15 +98,16 @@
     .contacts {
         margin-bottom: 89px;
     }
-    
+
     .contacts__contacts {
         margin-right: 20px;
+        min-width: 220px;
     }
-    
+
     .contacts__subtitle {
         margin-bottom: 10px;
     }
-    
+
     .contacts__mapWrapper {
         width: 80%;
         max-width: 450px;
@@ -118,7 +119,7 @@
     .contacts {
         margin-bottom: 20px;
     }
-    
+
     .contacts__content {
         flex-direction: column;
     }
@@ -128,45 +129,46 @@
         line-height: 21px;
         margin-bottom: 18px;
     }
-    
+
     .contacts__contacts {
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 17px;
+        margin-right: 0px;
     }
 
     .contacts__row:first-child {
-        margin-right: 30px;
+        margin-right: 0px;
         margin-bottom: 0;
-     }     
-    
+    }
+
     .contacts__subtitle {
         font-size: 12px;
         line-height: 16px;
         margin-bottom: 9px;
     }
-    
+
     .contacts__description {
         font-size: 12px;
         line-height: 16px;
     }
-    
+
     .contacts__telAndMail {
         gap: 8px;
     }
-    
+
     .contacts__icon {
         margin-right: 8px;
     }
-    
+
     .contacts__iconTel {
         width: 11px;
     }
-    
+
     .contacts__iconMail {
         width: 12px;
     }
-    
+
     .contacts__mapWrapper {
         width: 100%;
         max-width: 100%;
@@ -180,9 +182,14 @@
     }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: 900px) and (max-height: 590px) {
+@media screen and (orientation: landscape) and (max-width: 959px) and (max-height: 590px) {
     .contacts {
         margin-bottom: 20px;
+    }
+    .contacts__mapWrapper {
+        width: 70%;
+        max-width: 100%;
+        height: 70vh;
+        min-height: 300px;
     }
 }
