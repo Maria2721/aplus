@@ -37,7 +37,7 @@ function Header({
   });
 
   const classOverlay = cx("header__overlay", {
-    "header__overlay header__overlay_active": opened,
+    "header__overlay_active": opened,
   });
 
   const classCalcIcon = cx("header__calcIcon", {

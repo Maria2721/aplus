@@ -110,15 +110,15 @@
     pointer-events: none;
 }
 
-.header__overlay_active {
-    opacity: 1;
-    background-color: hsla(0, 0%, 7%, 0.36);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    transition: opacity 0.8s ease, visibility 0s;
-}
-
 @media screen and (max-width: $tablet) {
+    .header__overlay_active {
+        opacity: 1;
+        background-color: hsla(0, 0%, 7%, 0.36);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        transition: opacity 0.8s ease, visibility 0s;
+    }
+
     .header {
         height: 100px;
     }
