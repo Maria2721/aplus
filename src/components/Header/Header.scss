@@ -51,6 +51,11 @@
     height: 32px;
     border: none;
     background-color: transparent;
+    &:hover .header__calcText {
+        cursor: pointer;
+        color: $accentColor;
+        transition: color 0.1s ease;
+    }
 }
 
 .header__calcIcon {

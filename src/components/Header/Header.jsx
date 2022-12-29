@@ -85,15 +85,15 @@ function Header({
               <div className="header__buttons">
                 <ButtonRequest
                   size="small"
-                  handleRequestModal={handleRequestModal}
+                  handleRequestModal={() => { handleRequestModal(); closeBurger(); }}
                 />
                 <button
                   className="header__calc"
-                  onClick={() => { handleCalculatorModal(); handleFocus(); }}
+                  onClick={() => { handleCalculatorModal(); handleFocus(); closeBurger(); }}
                   onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
                   onBlur={() => setFocusIcon((focusIcon) => !focusIcon)}>
                   {opened ? (
-                    "Калькулятор"
+                    <span className="header__calcText">Калькулятор</span>
                   ) : (
                     <CalculatorIcon className={classCalcIcon} />
                   )}
