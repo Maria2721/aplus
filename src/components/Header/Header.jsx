@@ -17,6 +17,7 @@ function Header({
   openBurger,
   handleCalculatorModal,
   handleRequestModal,
+  clearSelection,
 }) {
   const [focusIcon, setFocusIcon] = useState(false);
   const logoReference = useRef(null);
@@ -49,7 +50,7 @@ function Header({
   return (
     <header className="header container">
       <div className="header__inner container__row">
-        <Link to="/" className="header__logo" ref={logoReference}>
+        <Link to="/" className="header__logo" ref={logoReference} onClick={clearSelection}>
           <Logo className="header__logoIcon" />
         </Link>
         <div className={classOverlay}></div>

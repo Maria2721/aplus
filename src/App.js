@@ -26,9 +26,19 @@ function App() {
   useDisableBodyScroll(openedHelpModal);
 
   useEffect(() => {
+    clearSelection();
     window.scrollTo(0, 0);
     document.body.style = "";
   }, [pathname]);
+
+  const clearSelection = () => {
+    if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+    } else {
+      // старый IE
+      document.selection.empty();
+    }
+  };
 
   return (
     <div className="App">
@@ -120,7 +130,10 @@ function App() {
           <Route path="/agreement" element={<AgreementPage />} />
         </Routes>
       </main>
-      <Footer handleHelpModal={() => setOpenedHelpModal(true)} />
+      <Footer
+        handleHelpModal={() => setOpenedHelpModal(true)}
+        clearSelection={clearSelection()}
+      />
     </div>
   );
 }
