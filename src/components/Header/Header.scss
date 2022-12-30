@@ -14,6 +14,9 @@
 
 .header__logo {
     align-self: start;
+    &:focus {
+        outline: none;
+    }
 }
 
 .header__logoIcon {
@@ -51,24 +54,52 @@
     height: 32px;
     border: none;
     background-color: transparent;
-    &:hover .header__calcText {
+
+    &:focus .header__calcText {
+        color: $accentColor;
+    }
+}
+
+@media (hover: hover) {
+    .header__calc:hover .header__calcText {
         cursor: pointer;
         color: $accentColor;
         transition: color 0.1s ease;
     }
 }
 
+@media (hover: none) {
+    .header__calc:hover .header__calcText {
+        color: #ffffff;
+    }
+    .header__calc:active .header__calcText {
+        color: $accentColor;
+    }
+}
+
 .header__calcIcon {
     fill: #ffffff;
     width: 32px;
+}
+.header__calcIcon_focus {
+    fill: $accentColor;
+}
 
-    &:hover {
+@media (hover: hover) {
+    .header__calcIcon:hover {
+        cursor: pointer;
         fill: $accentColor;
         transition: fill 0.1s ease;
     }
 }
-.header__calcIcon_focus {
-    fill: $accentColor;
+
+@media (hover: none) {
+    .header__calcIcon:hover {
+        fill: #ffffff;
+    }
+    .header__calcIcon:active {
+        fill: $accentColor;
+    }
 }
 
 .header__burger {

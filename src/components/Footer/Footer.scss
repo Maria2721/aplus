@@ -15,6 +15,9 @@
 .footer__logoWrapper {
     align-self: flex-start;
     margin-right: 48px;
+    &:focus {
+        outline: none;
+    }
 }
 
 .footer__logo {
@@ -65,6 +68,10 @@
     flex-direction: column;
 }
 
+.footer__agreementAndHelp .footer__help {
+    width: fit-content;
+}
+
 .footer__agreement,
 .footer__description .footer__text:first-child {
     margin-bottom: 10px;
@@ -77,14 +84,6 @@
     line-height: 21.79px;
     font-family: $generalFont;
     text-align: start;
-}
-
-.footer__link:hover {
-    color: $accentColor;
-    transition: color 0.1s ease;
-}
-.footer__link:focus {
-    color: $accentColor;
 }
 
 .footer__telAndSocial {
@@ -104,14 +103,26 @@
     fill: #ffffff;
     max-width: 28px;
     width: 100%;
+}
+a:focus > .footer__icon {
+    fill: $accentColor;
+}
 
-    &:hover {
+@media (hover: hover) {
+    a:hover > .footer__icon {
+        cursor: pointer;
         fill: $accentColor;
         transition: fill 0.1s ease;
     }
 }
-.footer__social a:focus svg {
-    fill: $accentColor;
+
+@media (hover: none) {
+    a:hover > .footer__icon {
+        fill: #ffffff;
+    }
+    a:active > .footer__icon {
+        fill: $accentColor;
+    }
 }
 
 .footer__social {
@@ -120,6 +131,27 @@
 
     & a:first-child {
         margin-right: 43px;
+    }
+}
+
+.footer__help:focus > .footer__helpText {
+    color: $accentColor;
+}
+
+@media (hover: hover) {
+    .footer__help:hover > .footer__helpText {
+        cursor: pointer;
+        color: $accentColor;
+        transition: color 0.1s ease;
+    }
+}
+
+@media (hover: none) {
+    .footer__help:focus > .footer__helpText {
+        color: $textColor;
+    }
+    .footer__help:active > .footer__helpText {
+        color: $accentColor;
     }
 }
 

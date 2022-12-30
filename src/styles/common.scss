@@ -47,13 +47,24 @@ button:hover {
 a {
   color: $textColor;
   text-decoration: none;
+  &:focus {
+    color: $accentColor;
+  }
+}
 
-  &:hover {
+@media (hover: hover) {
+  a:hover {
     cursor: pointer;
     color: $accentColor;
     transition: color 0.1s ease;
   }
-  &:focus {
+}
+
+@media (hover: none) {
+  a:hover {
+    color: inherit;
+  }
+  a:active {
     color: $accentColor;
   }
 }

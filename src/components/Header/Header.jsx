@@ -3,6 +3,7 @@ import * as cx from "classnames";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useState, useEffect, useRef } from 'react';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { ReactComponent as Logo } from "../../assets/imgs/logo.svg";
 import { ReactComponent as CalculatorIcon } from "../../assets/imgs/calc_icon.svg";
 import { ReactComponent as Burger } from "../../assets/imgs/burger_icon_tablet.svg";
@@ -20,6 +21,7 @@ function Header({
   const [focusIcon, setFocusIcon] = useState(false);
   const logoReference = useRef(null);
   const [focus, setFocus] = useState(false);
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     if (focus === true) {
@@ -92,7 +94,7 @@ function Header({
                   onClick={() => { handleCalculatorModal(); handleFocus(); closeBurger(); }}
                   onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
                   onBlur={() => setFocusIcon((focusIcon) => !focusIcon)}>
-                  {opened ? (
+                  {(opened && (width < 960)) ? (
                     <span className="header__calcText">Калькулятор</span>
                   ) : (
                     <CalculatorIcon className={classCalcIcon} />

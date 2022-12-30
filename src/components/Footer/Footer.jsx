@@ -69,7 +69,9 @@ function Footer({ handleHelpModal }) {
           <div className="footer__bottom">
             <div className="footer__agreementAndHelp">
               <Link to="/agreement" className="footer__link footer__agreement" onClick={() => handleFocus()}>Соглашение об обработке персональных данных</Link>
-              <button className="footer__link footer__help" onClick={() => { handleHelpModal(); handleFocus(); }}>Служба поддержки</button>
+              <button className="footer__link footer__help" onClick={() => { handleHelpModal(); handleFocus(); }}>
+                <span className="footer__helpText">Служба поддержки</span>
+              </button>
             </div>
             <div className="footer__description">
               <div className="footer__text">© 2022 ООО «А+ факторинг»</div>
