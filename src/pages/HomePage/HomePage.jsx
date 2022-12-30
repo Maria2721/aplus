@@ -21,13 +21,13 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
         Факторинг для поставщиков <br /> и покупателей
       </FirstScreen>
       <FiveSteps
-      handleCalculatorModal={handleCalculatorModal}
-      handleRequestModal={handleRequestModal}/>
-      <FactoringIs id="factoring"/>
+        handleCalculatorModal={handleCalculatorModal}
+        handleRequestModal={handleRequestModal} />
+      <FactoringIs id="factoring" />
       <Interaction
-      id="scheme"
-      handleCalculatorModal={handleCalculatorModal}
-      handleRequestModal={handleRequestModal}/>
+        id="scheme"
+        handleCalculatorModal={handleCalculatorModal}
+        handleRequestModal={handleRequestModal} />
       <div className="container">
         <div className="homePage__casesAndDocuments container__row">
           <div className="homePage__cases">
@@ -36,7 +36,7 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
           <Documents />
         </div>
       </div>
-      <Contacts id="contacts"/>
+      <Contacts id="contacts" />
     </div>
   );
 }

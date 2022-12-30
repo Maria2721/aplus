@@ -74,7 +74,7 @@ function Footer({ handleHelpModal }) {
               </button>
             </div>
             <div className="footer__description">
-              <div className="footer__text">© 2022 ООО «А+ факторинг»</div>
+              <div className="footer__text">© 2022 ООО ФК “А+”</div>
               <div className="footer__text">Все права защищены</div>
             </div>
           </div>

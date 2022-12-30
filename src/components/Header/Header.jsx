@@ -77,11 +77,7 @@ function Header({
                 <Link to="/for-marketplaces" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
                   Маркетплейсам
                 </Link>
-                <HashLink
-                  smooth
-                  to="/#contacts"
-                  className="header__link header__link_border"
-                  onClick={() => { closeBurger(); handleFocus(); }}>
+                <HashLink smooth to="/#contacts" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
                   Контакты
                 </HashLink>
               </div>
