@@ -48,21 +48,45 @@
                 margin-top: 7px;
                 margin-left: 3px;
             }
-            &:hover,
-            &:focus {
-                cursor: pointer;
-                color: $accentColor;
-                transition: color 0.1s ease;
-                .caseBox__link_arrowIcon {
-                    fill: $accentColor;
-                    transition: fill 0.1s ease;
-                }
-            }
         }
     }
 }
 #itoutsourcing {
     border-bottom: 1px solid #000000;
+}
+
+.caseBox .caseBox__text .caseBox__link:focus {
+    color: $accentColor;
+    .caseBox__link_arrowIcon {
+        fill: $accentColor;
+    }
+}
+
+@media (hover: hover) {
+    .caseBox .caseBox__text .caseBox__link:hover {
+        cursor: pointer;
+        color: $accentColor;
+        transition: color 0.1s ease;
+        .caseBox__link_arrowIcon {
+            fill: $accentColor;
+            transition: fill 0.1s ease;
+        }
+    }
+}
+
+@media (hover: none) {
+    .caseBox .caseBox__text .caseBox__link:hover {
+        color: $textColor_dark;
+        .caseBox__link_arrowIcon {
+            fill: $textColor_dark;
+        }
+    }
+    .caseBox .caseBox__text .caseBox__link:active {
+        color: $accentColor;
+        .caseBox__link_arrowIcon {
+            fill: $accentColor;
+        }
+    }
 }
 
 @media (max-width: $tablet) {
