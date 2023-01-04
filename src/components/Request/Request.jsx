@@ -10,7 +10,7 @@ import { initialState } from "./initialState";
 
 function Request({ handleModal }) {
   const [valid, setValid] = useState(false);
-  const [agreeToAllTerms, setAgreeToAllTerms] = useState(true);
+  const [agreeToAllTerms, setAgreeToAllTerms] = useState(false);
   const [state, setState] = useState({
     surname: {
       value: '',
