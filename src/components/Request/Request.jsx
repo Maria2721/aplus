@@ -76,11 +76,11 @@ function Request({ handleModal }) {
     }
 
     if (valid) {
-      console.log(`Фамилия: ${surname.value.trimStart().replace(/ +/g, " ")},
-    Имя: ${name.value.trimStart().replace(/ +/g, " ")},
-    Отчество: ${middle.value.trimStart().replace(/ +/g, " ")},
-    Email:${email.value.trimStart().replace(/ +/g, " ")},
-    ИНН: ${inn.value.trimStart().replace(/ +/g, " ")}`)
+      console.log(`Фамилия: ${surname.value.trim()},
+    Имя: ${name.value.trim()},
+    Отчество: ${middle.value.trim()},
+    Email:${email.value.trim()},
+    ИНН: ${inn.value.trim()}`)
       // handleModal() // закрытие модалки перенесено в кнопку
       setState(initialState); // возвращаем состояние к началу - почему не возвращается?
     }
@@ -89,8 +89,9 @@ function Request({ handleModal }) {
   const validateForm = () => {
     setValid(true);
     const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
-    const regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-    const regNumber = /\d{1,3}/;
+    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/; // /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
+    const regEmailFirstSign = /^[a-zA-Z0-9]/;
+    const regNumber = /^\d+$/;
 
     if (!agreeToAllTerms) {
       setValid(false);
@@ -98,7 +99,7 @@ function Request({ handleModal }) {
 
     for (const field of requestFields) {
       const { rule, id } = field;
-      const value = state[id].value.trimStart().replace(/ +/g, " ");
+      const value = state[id].value.trim();
       let error;
 
       switch (rule) {
@@ -108,13 +109,13 @@ function Request({ handleModal }) {
             setValid(false);
             break;
           }
-          if (value.length > 200) {
-            error = 'Максимум 200 символов';
+          if (!regName.test(value)) {
+            error = 'Недопустимые символы';
             setValid(false);
             break;
           }
-          if (!regName.test(value)) {
-            error = 'Недопустимые символы';
+          if (value.length > 200) {
+            error = 'Максимум 200 символов';
             setValid(false);
             break;
           }
@@ -142,13 +143,13 @@ function Request({ handleModal }) {
           }
           break;
         case 'middle':
-          if (value.length !== 0 && value.length > 200) {
-            error = 'Максимум 200 символов';
+          if (value.length !== 0 && !regName.test(value)) {
+            error = 'Недопустимые символы';
             setValid(false);
             break;
           }
-          if (value.length !== 0 && !regName.test(value)) {
-            error = 'Недопустимые символы';
+          if (value.length !== 0 && value.length > 200) {
+            error = 'Максимум 200 символов';
             setValid(false);
             break;
           }
@@ -159,6 +160,16 @@ function Request({ handleModal }) {
             setValid(false);
             break;
           }
+          if (!regEmailFirstSign.test(Array.from(value)[0])) {
+            error = 'Недопустимый формат';
+            setValid(false);
+            break;
+          }
+          if (!regEmail.test(value)) {
+            error = 'Недопустимый формат';
+            setValid(false);
+            break;
+          }
           if (value.length < 5) {
             error = 'Минимум 5 символов';
             setValid(false);
@@ -166,11 +177,6 @@ function Request({ handleModal }) {
           }
           if (value.length > 200) {
             error = 'Максимум 200 символов';
-            setValid(false);
-            break;
-          }
-          if (!regEmail.test(value)) {
-            error = 'Недопустимый формат';
             setValid(false);
             break;
           }
