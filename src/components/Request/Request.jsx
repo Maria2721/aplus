@@ -131,13 +131,8 @@ function Request({ handleModal }) {
             setValid(false);
             break;
           }
-          if ((value.length > 0) && (value.length < 10)) {
-            error = 'Минимум 10 символов';
-            setValid(false);
-            break;
-          }
-          if (value.length > 12) {
-            error = 'Максимум 12 символов';
+          if ((value.length !== 10) && (value.length !== 12)) {
+            error = 'Допустимо 10, 12 символов';
             setValid(false);
             break;
           }
