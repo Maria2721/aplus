@@ -5,12 +5,14 @@ import RequestInput from '../RequestInput/RequestInput';
 import { requestFields } from './requestFields';
 import { ReactComponent as CheckboxMark } from "../../assets/imgs/checkbox_mark.svg";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { initialState } from "./initialState";
 
 function Request({ handleModal }) {
   const [valid, setValid] = useState(false);
   const [agreeToAllTerms, setAgreeToAllTerms] = useState(false);
+  const [checkboxError, setCheckboxError] = useState(false);
+  const [checkboxClick, setcheckboxClick] = useState(+0);
   const [state, setState] = useState({
     surname: {
       value: '',
@@ -40,6 +42,14 @@ function Request({ handleModal }) {
   });
   const { surname, name, middle, email, inn } = state;
 
+  useEffect(() => {
+    if (agreeToAllTerms === false && checkboxClick != 0) {
+      setCheckboxError(true);
+    } else {
+      setCheckboxError(false);
+    }
+  }, [agreeToAllTerms, checkboxClick])
+
   const handleChange = (e, id) => {
     // let value = e.target.value.trimStart().replace(/ +/g, " ");
     setState({
@@ -63,6 +73,7 @@ function Request({ handleModal }) {
   }
 
   const handleSendForm = () => {
+    setcheckboxClick((prev) => ++prev);
     validateForm();
 
     for (let key in state) { // проходим по стейту и отмечаем isDirty, чтобы отобразилась ошибка у всех
@@ -76,13 +87,15 @@ function Request({ handleModal }) {
     }
 
     if (valid) {
-      console.log(`Фамилия: ${surname.value.trim()},
+      setState(initialState); // возвращаем состояние к началу - почему не возвращается?
+      setAgreeToAllTerms(false);
+      setcheckboxClick(+0)
+      // handleModal() // закрытие модалки перенесено в кнопку
+      /* console.log(`Фамилия: ${surname.value.trim()},
     Имя: ${name.value.trim()},
     Отчество: ${middle.value.trim()},
     Email:${email.value.trim()},
-    ИНН: ${inn.value.trim()}`)
-      // handleModal() // закрытие модалки перенесено в кнопку
-      setState(initialState); // возвращаем состояние к началу - почему не возвращается?
+    ИНН: ${inn.value.trim()}`) */
     }
   };
 
@@ -93,7 +106,7 @@ function Request({ handleModal }) {
     const regEmailFirstSign = /^[a-zA-Z0-9]/;
     const regNumber = /^\d+$/;
 
-    if (!agreeToAllTerms) {
+    if (agreeToAllTerms === false) {
       setValid(false);
     }
 
@@ -211,13 +224,18 @@ function Request({ handleModal }) {
         </div>
 
         <div className="request__checkbox checkbox">
-          <input className="checkbox__input" id="requestCheckbox" type="checkbox"
-            checked={agreeToAllTerms}
-            onChange={() => setAgreeToAllTerms((curr) => !curr)} />
-          <label className="checkbox__label" htmlFor="requestCheckbox">
-            <CheckboxMark className="checkbox__mark" />
-            <div className="checkbox__text">Принимаю условия <Link to="/agreement" onClick={handleModal} className="checkbox__link">соглашения об обработке персональных данных</Link></div>
-          </label>
+          {checkboxError && (agreeToAllTerms === false) && (
+            <div className="request__checkboxError">Необходимо отметить</div>
+          )}
+          <div>
+            <input className="checkbox__input" id="requestCheckbox" type="checkbox"
+              checked={agreeToAllTerms}
+              onChange={() => setAgreeToAllTerms((curr) => !curr)} />
+            <label className="checkbox__label" htmlFor="requestCheckbox">
+              <CheckboxMark className="checkbox__mark" />
+              <div className="checkbox__text">Принимаю условия <Link to="/agreement" onClick={handleModal} className="checkbox__link">соглашения об обработке персональных данных</Link></div>
+            </label>
+          </div>
         </div>
         <div className="request__buttonWrapper">
           <ButtonSend handleSendForm={handleSendForm} isValid={valid} handleModal={handleModal}>Отправить заявку</ButtonSend>

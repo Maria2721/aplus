@@ -30,20 +30,32 @@
 
 // Чекбокс
 .request__checkbox {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
+  height: 31px;
   margin-bottom: 35px;
 }
 
-.checkbox__input {
-  position: absolute;
-  z-index: -1;
-  opacity: 4;
+.request__checkboxError {
+  color: $accentColor;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 500;
 }
 
 .checkbox__text {
   font-size: 14px;
   font-weight: 600;
   line-height: 19px;
+}
+
+.checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 4;
 }
 
 .checkbox__link {
@@ -101,6 +113,13 @@
   }
 }
 
+@media screen and (max-width: 675px) {
+  .request__checkboxError {
+    font-size: 9px;
+    line-height: 9px;
+  }
+}
+
 @media screen and (max-width: $smallTablet) {
   .request__header {
     font-size: 24px;
@@ -114,7 +133,13 @@
   }
 
   .request__checkbox {
+    height: 30px;
     margin-bottom: 25px;
+  }
+
+  .request__checkboxError {
+    font-size: 8px;
+    line-height: 8px;
   }
 
   .checkbox__text {
@@ -148,7 +173,12 @@
     margin-bottom: 25px;
   }
   .request__checkbox {
+    height: 28px;
     margin-bottom: 15px;
+  }
+  .request__checkboxError {
+    font-size: 9px;
+    line-height: 9px;
   }
 }
 
@@ -189,6 +219,15 @@
   .modal__request .modal__closeButton {
     top: 19px;
     right: 23px;
+  }
+
+  .request__checkbox {
+    height: 12px;
+  }
+
+  .request__checkboxError {
+    font-size: 6px;
+    line-height: 6px;
   }
 
   .checkbox__text {
