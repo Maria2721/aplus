@@ -30,7 +30,7 @@ function RequestInput({
         type={type}
         name={type}
         onBlur={() => blurHandler(id)}
-        inputmode={id === 'inn' ? "numeric" : ""}
+        inputMode={id === 'inn' ? "numeric" : ""}
       />
     </div>
   );
