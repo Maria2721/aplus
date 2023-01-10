@@ -97,19 +97,19 @@ function Request({ handleModal }) {
         }
       }));
     }
-
-    if (valid) {
-      setState(initialState); // возвращаем состояние к началу - почему не возвращается?
-      setAgreeToAllTerms(false);
-      setcheckboxClick(+0)
-      // handleModal() // закрытие модалки перенесено в кнопку
-      /* console.log(`Фамилия: ${surname.value.trim()},
-    Имя: ${name.value.trim()},
-    Отчество: ${middle.value.trim()},
-    Email:${email.value.trim()},
-    ИНН: ${inn.value.trim()}`) */
-    }
   };
+
+  const clearInputsForm = () => {
+    setState(initialState); // возвращаем состояние к началу - почему не возвращается?
+    setAgreeToAllTerms(false);
+    setcheckboxClick(+0)
+    // handleModal() // закрытие модалки перенесено в кнопку
+    /* console.log(`Фамилия: ${surname.value.trim()},
+  Имя: ${name.value.trim()},
+  Отчество: ${middle.value.trim()},
+  Email:${email.value.trim()},
+  ИНН: ${inn.value.trim()}`) */
+  }
 
   const validateForm = () => {
     setValid(true);
@@ -250,7 +250,8 @@ function Request({ handleModal }) {
           )}
         </div>
         <div className="request__buttonWrapper">
-          <ButtonSend handleSendForm={handleSendForm} isValid={valid} handleModal={handleModal}>Отправить заявку</ButtonSend>
+          <ButtonSend handleSendForm={handleSendForm} isValid={valid}
+            clearInputsForm={clearInputsForm} handleModal={handleModal}>Отправить заявку</ButtonSend>
         </div>
       </div>
     </div>

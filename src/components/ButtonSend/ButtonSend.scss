@@ -1,131 +1,129 @@
 @import "../../styles/_vars.scss";
 
 .buttonSend {
-    overflow: hidden;
-  }
-  
-  .buttonSend__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    background-color: transparent;
-  }
-  
-  .buttonSend__arrowWrapper {
-    width: 0;
-    height: 17px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 10fr 1fr;
-    align-items: center;
-    align-content: center;
-    transition: width 0.1s ease-in-out;
-  }
+  overflow: hidden;
+}
 
-  .buttonSend:hover .buttonSend__arrowWrapper {
-    width: 17px;
-    overflow: visible
-  }
+.buttonSend__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: transparent;
+}
 
-  .buttonSend:hover .buttonSend__arrowWrapper_active {
-    width: 0;
-  }
-  
-  .buttonSend__arrow {
-    width: 17px;
-    margin-left: 10px;
-    transition: transform 200ms ease;
-    &_bigger {
-      width: 20px;
-    }
-  }
+.buttonSend__arrowWrapper {
+  width: 0;
+  height: 17px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  align-items: center;
+  align-content: center;
+  transition: width 0.1s ease-in-out;
+}
 
-  .buttonSend__arrow_active {
-    transform: translateX(1000%);
+.buttonSend:hover .buttonSend__arrowWrapper {
+  width: 17px;
+  overflow: visible;
+}
+
+.buttonSend:hover .buttonSend__arrowWrapper_active {
+  width: 0;
+}
+
+.buttonSend__arrow {
+  width: 17px;
+  margin-left: 10px;
+  transition: transform 500ms ease;
+  &_bigger {
+    width: 20px;
   }
+}
+
+.buttonSend__arrow_active {
+  transform: translateX(1000%);
+}
 
 .buttonSend__checkWrapper {
-    position: relative;
-    display: none;
+  position: relative;
+  display: none;
 }
 
 .buttonSend__checkWrapper_active {
-    display: block;
+  display: block;
 }
 
 .buttonSend__check {
-    position: absolute;
-    width: 14px;
-    top: -5px;
-    right: 0;
+  position: absolute;
+  width: 14px;
+  top: -5px;
+  right: 0;
+}
+
+.buttonSend__checkWrapper_bigger .buttonSend__check {
+  width: 16px;
+  top: -7px;
+}
+
+.buttonSend__sendedText {
+  margin-right: 22px;
+
+  &_capital {
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .buttonSend:hover .buttonSend__arrowWrapper {
+    width: 0;
+    overflow: hidden;
+  }
+
+  .buttonSend .buttonSend__arrowWrapper.buttonSend__arrowWrapper_active {
+    width: 17px;
+    margin-left: 0;
+    overflow: visible;
+  }
+
+  .buttonSend__arrowWrapper_active {
+    width: 17px;
+    overflow: visible;
+  }
+
+  .buttonSend__sendedText {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .buttonSend .buttonSend__arrowWrapper.buttonSend__arrowWrapper_active {
+    width: 12px;
+    margin-left: 0;
+    overflow: visible;
+  }
+
+  .buttonSend__arrowWrapper {
+    height: 10px;
+  }
+
+  .buttonSend__arrow {
+    width: 9px;
+    margin-left: 0;
+  }
+
+  .buttonSend__check {
+    width: 9px;
+    top: -4px;
+    right: 3px;
   }
 
   .buttonSend__checkWrapper_bigger .buttonSend__check {
-    width: 16px;
-    top: -7px;
+    width: 9px;
+    top: -4px;
   }
-  
 
   .buttonSend__sendedText {
-    margin-right: 22px;
-
-    &_capital {
-      text-transform: uppercase;
-    }
+    margin-right: 5px;
   }
-
-  @media screen and (max-width: $tablet) {
-    .buttonSend:hover .buttonSend__arrowWrapper {
-      width: 0;
-      overflow: hidden;
-    }
-
-    .buttonSend .buttonSend__arrowWrapper.buttonSend__arrowWrapper_active {
-      width: 17px;
-      margin-left: 0;
-      overflow: visible;
-    }
-
-    .buttonSend__arrowWrapper_active {
-      width: 17px;
-      overflow: visible
-    }
-
-    .buttonSend__sendedText {
-      margin-right: 5px;
-    }
-  }
-
-  @media screen and (max-width: $mobile) {
-    .buttonSend .buttonSend__arrowWrapper.buttonSend__arrowWrapper_active {
-      width: 12px;
-      margin-left: 0;
-      overflow: visible;
-    }
-
-    .buttonSend__arrowWrapper {
-      height: 10px;
-    }
-
-    .buttonSend__arrow {
-      width: 9px;
-      margin-left: 0;
-    }
-
-    .buttonSend__check {
-      width: 9px;
-      top: -4px;
-      right: 3px;
-    }
-
-    .buttonSend__checkWrapper_bigger .buttonSend__check {
-      width: 9px;
-      top: -4px;
-    }
-    
-
-    .buttonSend__sendedText {
-      margin-right: 5px;
-    }
-  }
+}

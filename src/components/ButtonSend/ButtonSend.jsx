@@ -2,9 +2,9 @@ import "./ButtonSend.scss";
 import * as cx from "classnames";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button.svg";
 import { ReactComponent as Check } from "../../assets/imgs/send_check.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function ButtonSend({ handleSendForm, isValid, handleModal, children, capitalLetters }) {
+function ButtonSend({ handleSendForm, isValid, clearInputsForm, handleModal, children, capitalLetters }) {
   const [arrowMove, setArrowMove] = useState(false);
   const [checkVisible, setCheckVisible] = useState(false);
 
@@ -26,33 +26,38 @@ function ButtonSend({ handleSendForm, isValid, handleModal, children, capitalLet
     buttonSend__sendedText_capital: capitalLetters,
   });
 
-  const handleClick = () => {
-    handleSendForm();
+  const handleAnimation = () => {
+    setArrowMove(true);
 
-    if (isValid) {
-      setArrowMove(true);
+    setTimeout(() => {
+      setCheckVisible(true);
+      clearInputsForm();
+    }, 500);
 
-      setTimeout(() => {
-        setCheckVisible(true);
-      }, 300);
+    setTimeout(() => {
+      handleModal();
+      setArrowMove(false);
+      setCheckVisible(false);
+    }, 1500);
+  }
 
-      setTimeout(() => {
-        handleModal()
-        setArrowMove(false);
-        setCheckVisible(false);
-      }, 1500);
+  useEffect(() => {
+    if (isValid === true) {
+      handleAnimation();
+      //sendData(values);
     }
-  };
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isValid])
 
   return (
-    <button className="buttonSend btn btn_full btn__biggerOnMobile" onClick={handleClick}>
+    <button className="buttonSend btn btn_full btn__biggerOnMobile" onClick={() => handleSendForm()}>
       <div className="buttonSend__inner">
         {arrowMove ? <div className={classText}>Отправлено</div> : children}
         <div className={classArrowWrapper}>
           <Arrow className={classArrow} />
         </div>
         <div className={classCheckWrapper}>
-        <Check className="buttonSend__check" />
+          <Check className="buttonSend__check" />
         </div>
       </div>
     </button>
