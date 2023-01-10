@@ -242,7 +242,9 @@ function Request({ handleModal }) {
               onChange={() => setAgreeToAllTerms((curr) => !curr)} />
             <label className="checkbox__label" htmlFor="requestCheckbox">
               <CheckboxMark className="checkbox__mark" />
-              <div className="checkbox__text">Принимаю условия <Link to="/agreement" onClick={handleModal} className="checkbox__link">соглашения об обработке персональных данных</Link></div>
+              <div className="checkbox__text">Принимаю условия
+                <Link to="/agreement" target="_blank" className="checkbox__link">соглашения об обработке персональных данных</Link>
+              </div>
             </label>
           </div>
           {checkboxError && (agreeToAllTerms === false) && (
