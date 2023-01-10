@@ -95,9 +95,13 @@
   display: block;
 }
 
-.checkbox__input:not(:disabled):not(:checked) + label:hover::before {
+label:hover {
   cursor: pointer;
 }
+
+/* .checkbox__input:not(:disabled):not(:checked) + label:hover::before {
+  cursor: pointer;
+} */
 
 @media screen and (max-width: $tablet) {
   .request__header {
