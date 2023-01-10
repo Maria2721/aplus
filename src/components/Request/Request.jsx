@@ -116,7 +116,7 @@ function Request({ handleModal }) {
     const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
     const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/; // /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
     const regEmailFirstSign = /^[a-zA-Z0-9]/;
-    const regNumber = /^\d+$/;
+    //const regNumber = /^\d+$/;
 
     if (agreeToAllTerms === false) {
       setValid(false);
@@ -151,13 +151,13 @@ function Request({ handleModal }) {
             setValid(false);
             break;
           }
-          if (!regNumber.test(value)) {
+          /* if (!regNumber.test(value)) {
             error = 'Недопустимый формат';
             setValid(false);
             break;
-          }
+          } */
           if ((value.length !== 10) && (value.length !== 12)) {
-            error = 'Допустимо 10, 12 символов';
+            error = 'ИНН должен содержать 10 или 12 цифр';
             setValid(false);
             break;
           }
