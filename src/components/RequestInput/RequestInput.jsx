@@ -31,6 +31,7 @@ function RequestInput({
         name={type}
         onBlur={() => blurHandler(id)}
         inputMode={id === 'inn' ? "numeric" : ""}
+        autoComplete="on"
       />
     </div>
   );
