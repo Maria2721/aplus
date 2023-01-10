@@ -236,9 +236,6 @@ function Request({ handleModal }) {
         </div>
 
         <div className="request__checkbox checkbox">
-          {checkboxError && (agreeToAllTerms === false) && (
-            <div className="request__checkboxError">Необходимо отметить</div>
-          )}
           <div>
             <input className="checkbox__input" id="requestCheckbox" type="checkbox"
               checked={agreeToAllTerms}
@@ -248,6 +245,9 @@ function Request({ handleModal }) {
               <div className="checkbox__text">Принимаю условия <Link to="/agreement" onClick={handleModal} className="checkbox__link">соглашения об обработке персональных данных</Link></div>
             </label>
           </div>
+          {checkboxError && (agreeToAllTerms === false) && (
+            <div className="request__checkboxError">Необходимо принять условия</div>
+          )}
         </div>
         <div className="request__buttonWrapper">
           <ButtonSend handleSendForm={handleSendForm} isValid={valid} handleModal={handleModal}>Отправить заявку</ButtonSend>
