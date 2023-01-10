@@ -40,10 +40,10 @@ function Request({ handleModal }) {
       error: ''
     }
   });
-  const { surname, name, middle, email, inn } = state;
+  //const { surname, name, middle, email, inn } = state;
 
   useEffect(() => {
-    if (agreeToAllTerms === false && checkboxClick != 0) {
+    if (agreeToAllTerms === false && checkboxClick !== 0) {
       setCheckboxError(true);
     } else {
       setCheckboxError(false);
@@ -52,13 +52,25 @@ function Request({ handleModal }) {
 
   const handleChange = (e, id) => {
     // let value = e.target.value.trimStart().replace(/ +/g, " ");
-    setState({
-      ...state,
-      [id]: {
-        ...state[id],
-        value: e.target.value
-      }
-    });
+
+    if (id === 'inn') {
+      const result = e.target.value.replace(/\D/g, '');
+      setState({
+        ...state,
+        [id]: {
+          ...state[id],
+          value: result
+        }
+      });
+    } else {
+      setState({
+        ...state,
+        [id]: {
+          ...state[id],
+          value: e.target.value
+        }
+      });
+    }
   };
 
   const blurHandler = (type) => {
