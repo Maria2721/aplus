@@ -4,7 +4,7 @@ import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button.svg"
 import { ReactComponent as Check } from "../../assets/imgs/send_check.svg";
 import { useState, useEffect } from "react";
 
-function ButtonSend({ handleSendForm, isValid, clearInputsForm, handleModal, children, capitalLetters }) {
+function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, children, capitalLetters }) {
   const [arrowMove, setArrowMove] = useState(false);
   const [checkVisible, setCheckVisible] = useState(false);
 
@@ -42,12 +42,12 @@ function ButtonSend({ handleSendForm, isValid, clearInputsForm, handleModal, chi
   }
 
   useEffect(() => {
-    if (isValid === true) {
+    if (isSending === true) {
       handleAnimation();
       //sendData(values);
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isValid])
+  }, [isSending])
 
   return (
     <button className="buttonSend btn btn_full btn__biggerOnMobile" onClick={() => handleSendForm()}>

@@ -10,6 +10,7 @@ import { initialState } from "./initialState";
 
 function Request({ handleModal }) {
   const [valid, setValid] = useState(false);
+  const [sending, setSending] = useState(false);
   const [agreeToAllTerms, setAgreeToAllTerms] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
   const [checkboxClick, setcheckboxClick] = useState(+0);
@@ -74,19 +75,21 @@ function Request({ handleModal }) {
   };
 
   const blurHandler = (type) => {
-    setState((state) => ({
-      ...state,
-      [type]: {
-        ...state[type],
-        isDirty: true
-      }
-    }));
-    validateForm()
+    if (type !== 'checkbox') {
+      setState((state) => ({
+        ...state,
+        [type]: {
+          ...state[type],
+          isDirty: true
+        }
+      }));
+    }
+    validateForm();
   }
 
   const handleSendForm = () => {
     setcheckboxClick((prev) => ++prev);
-    validateForm();
+    let curValidSend = validateForm();
 
     for (let key in state) { // проходим по стейту и отмечаем isDirty, чтобы отобразилась ошибка у всех
       setState((state) => ({
@@ -97,12 +100,20 @@ function Request({ handleModal }) {
         }
       }));
     }
+
+    if (curValidSend === true) {
+      setSending(true);
+    } else {
+      setSending(false);
+    }
   };
 
   const clearInputsForm = () => {
     setState(initialState); // возвращаем состояние к началу - почему не возвращается?
     setAgreeToAllTerms(false);
-    setcheckboxClick(+0)
+    setcheckboxClick(+0);
+    setSending(false);
+
     // handleModal() // закрытие модалки перенесено в кнопку
     /* console.log(`Фамилия: ${surname.value.trim()},
   Имя: ${name.value.trim()},
@@ -213,6 +224,7 @@ function Request({ handleModal }) {
         }
       }));
     }
+    return valid
   }
 
   return (
@@ -239,12 +251,11 @@ function Request({ handleModal }) {
           <div>
             <input className="checkbox__input" id="requestCheckbox" type="checkbox"
               checked={agreeToAllTerms}
-              onChange={() => setAgreeToAllTerms((curr) => !curr)} />
+              onChange={() => setAgreeToAllTerms((curr) => !curr)}
+              onBlur={() => blurHandler('checkbox')} />
             <label className="checkbox__label" htmlFor="requestCheckbox">
               <CheckboxMark className="checkbox__mark" />
-              <div className="checkbox__text">Принимаю условия
-                <Link to="/agreement" target="_blank" className="checkbox__link">соглашения об обработке персональных данных</Link>
-              </div>
+              <div className="checkbox__text">Принимаю условия <Link to="/agreement" target="_blank" className="checkbox__link">соглашения об обработке персональных данных</Link></div>
             </label>
           </div>
           {checkboxError && (agreeToAllTerms === false) && (
@@ -252,7 +263,7 @@ function Request({ handleModal }) {
           )}
         </div>
         <div className="request__buttonWrapper">
-          <ButtonSend handleSendForm={handleSendForm} isValid={valid}
+          <ButtonSend handleSendForm={handleSendForm} isSending={sending}
             clearInputsForm={clearInputsForm} handleModal={handleModal}>Отправить заявку</ButtonSend>
         </div>
       </div>
