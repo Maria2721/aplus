@@ -3,8 +3,7 @@ import FirstScreen from "../../components/FirstScreen/FirstScreen";
 import FiveSteps from "../../components/FiveSteps/FiveSteps";
 import FactoringIs from "../../components/FactoringIs/FactoringIs";
 import Interaction from "../../components/Interaction/Interaction";
-import Cases from "../../components/Cases/Cases";
-import Documents from "../../components/Documents/Documents";
+import CasesWithDocuments from "../../components/CasesWithDocuments/CasesWithDocuments";
 import Contacts from "../../components/Contacts/Contacts";
 
 function HomePage({ handleCalculatorModal, handleRequestModal }) {
@@ -28,14 +27,7 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
         id="scheme"
         handleCalculatorModal={handleCalculatorModal}
         handleRequestModal={handleRequestModal} />
-      <div className="container">
-        <div className="homePage__casesAndDocuments container__row">
-          <div className="homePage__cases">
-            <Cases />
-          </div>
-          <Documents />
-        </div>
-      </div>
+      <CasesWithDocuments />
       <Contacts id="contacts" />
     </div>
   );
