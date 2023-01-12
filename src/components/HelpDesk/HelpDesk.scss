@@ -28,12 +28,16 @@
 
 .help__alert {
   display: flex;
-align-items: center;
+  align-items: center;
   width: 360px;
   font-size: 12px;
   line-height: 12px;
   margin-bottom: 15px;
   color: $textColor;
+}
+
+.help__alertBtn {
+  cursor: default !important;
 }
 
 .help__alertIcon {
@@ -87,31 +91,31 @@ align-items: center;
   }
 }
 
-@media (orientation:landscape) and (max-width: $landscape) and (max-height: 600px) {
-    .help {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .help__rows {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        max-width: 502px;
-        flex-wrap: wrap;
-    }
+@media (orientation: landscape) and (max-width: $landscape) and (max-height: 600px) {
+  .help {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .help__rows {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 502px;
+    flex-wrap: wrap;
+  }
 
-    .help__helper {
-        display: none;
-      }
-      .help__alertAndButton {
-        width: 100%;
-      }
+  .help__helper {
+    display: none;
+  }
+  .help__alertAndButton {
+    width: 100%;
+  }
 
-      .help__alert {
-        width: 350px;
-        margin-bottom: 10px;
-      }
+  .help__alert {
+    width: 350px;
+    margin-bottom: 10px;
+  }
 }
 
 // @media (orientation:landscape) and (max-width: $landscapeSmall)  {

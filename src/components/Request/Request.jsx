@@ -109,23 +109,22 @@ function Request({ handleModal }) {
   };
 
   const clearInputsForm = () => {
-    setState(initialState); // возвращаем состояние к началу - почему не возвращается?
-    setAgreeToAllTerms(false);
-    setcheckboxClick(+0);
-    setSending(false);
-
-    // handleModal() // закрытие модалки перенесено в кнопку
     /* console.log(`Фамилия: ${surname.value.trim()},
   Имя: ${name.value.trim()},
   Отчество: ${middle.value.trim()},
   Email:${email.value.trim()},
   ИНН: ${inn.value.trim()}`) */
+
+    setState(initialState); // возвращаем состояние к началу - почему не возвращается?
+    setAgreeToAllTerms(false);
+    setcheckboxClick(+0);
+    setSending(false);
   }
 
   const validateForm = () => {
     setValid(true);
     const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
-    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/; // /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
+    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/;
     const regEmailFirstSign = /^[a-zA-Z0-9]/;
     //const regNumber = /^\d+$/;
 

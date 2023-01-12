@@ -7,22 +7,49 @@ import { ReactComponent as AlertIcon } from "../../assets/imgs/alert_icon.svg";
 import { initialState } from "./initialState";
 import { isPossiblePhoneNumber } from 'react-phone-number-input';
 import ButtonSend from "../ButtonSend/ButtonSend";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function HelpModal({ handleModal, opened }) {
-  const [state, setState] = useState(initialState)
+  const [state, setState] = useState(initialState);
   const [phoneValue, setPhoneValue] = useState('');
   const [valid, setValid] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [focusAlert, setFocusAlert] = useState(false);
+  const alertReference = useRef(null);
+
+  useEffect(() => {
+    if (focusAlert === true) {
+      alertReference.current.focus();
+      setFocusAlert(false);
+    }
+  }, [focusAlert]);
+
+  const handleFocusAlert = () => {
+    console.log('set focus on alert')
+    setFocusAlert(true);
+  };
 
   const handleChange = (e, id) => {
     // const value = e.target.value.trimStart().replace(/ +/g, " ");
-    setState({
-      ...state,
-      [id]: {
-        ...state[id],
-        value: e.target.value
-      }
-    });
+
+    if (id === 'helpInn') {
+      const result = e.target.value.replace(/\D/g, '');
+      setState({
+        ...state,
+        [id]: {
+          ...state[id],
+          value: result
+        }
+      });
+    } else {
+      setState({
+        ...state,
+        [id]: {
+          ...state[id],
+          value: e.target.value
+        }
+      });
+    }
   };
 
   const blurHandler = (type) => {
@@ -33,11 +60,11 @@ export default function HelpModal({ handleModal, opened }) {
         isDirty: true
       }
     }));
-    validateForm()
+    validateForm();
   }
 
   const handleClick = () => {
-    validateForm();
+    let curValidSend = validateForm();
 
     for (let key in state) { // проходим по стейту и отмечаем isDirty, чтобы отобразилась ошибка у всех
       setState((state) => ({
@@ -49,28 +76,37 @@ export default function HelpModal({ handleModal, opened }) {
       }));
     }
 
-    if (valid) {
-      console.log(`Фамилия: ${state.helpSurname.value.trimStart().replace(/ +/g, " ")},
-                Имя: ${state.helpName.value.trimStart().replace(/ +/g, " ")},
-                Отчество: ${state.helpMiddle.value.trimStart().replace(/ +/g, " ")},
-                Название компании:${state.helpInn.value.trimStart().replace(/ +/g, " ")},
-                Телефон: ${phoneValue.trimStart().replace(/ +/g, " ")},
-                Почта: ${state.helpEmail.value.trimStart().replace(/ +/g, " ")},
-                Вопрос: ${state.helpQuestion.value.trimStart().replace(/ +/g, " ")}.`)
-      setState(initialState);
-      setPhoneValue('');
+    if (curValidSend === true) {
+      setSending(true);
+    } else {
+      setSending(false);
     }
   };
 
+  const clearInputsForm = () => {
+    /* console.log(`Фамилия: ${state.helpSurname.value.trimStart().replace(/ +/g, " ")},
+              Имя: ${state.helpName.value.trimStart().replace(/ +/g, " ")},
+              Отчество: ${state.helpMiddle.value.trimStart().replace(/ +/g, " ")},
+              Название компании:${state.helpInn.value.trimStart().replace(/ +/g, " ")},
+              Телефон: ${phoneValue.trimStart().replace(/ +/g, " ")},
+              Почта: ${state.helpEmail.value.trimStart().replace(/ +/g, " ")},
+              Вопрос: ${state.helpQuestion.value.trimStart().replace(/ +/g, " ")}.`) */
+
+    setState(initialState);
+    setPhoneValue('');
+    setSending(false);
+  }
+
   const validateForm = () => {
-    setValid(true)
+    setValid(true);
     const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
-    const regNumber = /\d{1,3}/;
-    const regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/;
+    const regEmailFirstSign = /^[a-zA-Z0-9]/;
+    //const regNumber = /^\d+$/;
 
     for (const field of helpFields) {
       const { rule, id } = field;
-      const value = state[id].value.trimStart().replace(/ +/g, " ");
+      const value = state[id].value.trim();
       let error;
 
       switch (rule) {
@@ -80,25 +116,25 @@ export default function HelpModal({ handleModal, opened }) {
             setValid(false);
             break;
           }
-          if (value.length > 200) {
-            error = 'Максимум 200 символов';
-            setValid(false);
-            break;
-          }
           if (!regName.test(value)) {
             error = 'Недопустимые символы';
             setValid(false);
             break;
           }
-          break;
-        case 'middle':
-          if (value.length !== 0 && value.length > 200) {
+          if (value.length > 200) {
             error = 'Максимум 200 символов';
             setValid(false);
             break;
           }
+          break;
+        case 'middle':
           if (value.length !== 0 && !regName.test(value)) {
             error = 'Недопустимые символы';
+            setValid(false);
+            break;
+          }
+          if (value.length !== 0 && value.length > 200) {
+            error = 'Максимум 200 символов';
             setValid(false);
             break;
           }
@@ -109,23 +145,23 @@ export default function HelpModal({ handleModal, opened }) {
             setValid(false);
             break;
           }
-          if (!regNumber.test(value)) {
+          /* if (!regNumber.test(value)) {
             error = 'Недопустимый формат';
             setValid(false);
             break;
-          }
-          if ((value.length > 0) && (value.length < 10)) {
-            error = 'Минимум 10 символов';
-            setValid(false);
-            break;
-          }
-          if (value.length > 12) {
-            error = 'Максимум 12 символов';
+          } */
+          if ((value.length !== 10) && (value.length !== 12)) {
+            error = 'ИНН должен содержать 10 или 12 цифр';
             setValid(false);
             break;
           }
           break;
         case 'phone':
+          if ((phoneValue === undefined) || (phoneValue.length === 0)) {
+            error = 'Необходимо заполнить';
+            setValid(false);
+            break;
+          }
           if (!isPossiblePhoneNumber(phoneValue)) {
             error = 'Недопустимая длина';
             setValid(false);
@@ -138,6 +174,16 @@ export default function HelpModal({ handleModal, opened }) {
             setValid(false);
             break;
           }
+          if (!regEmailFirstSign.test(Array.from(value)[0])) {
+            error = 'Недопустимый формат';
+            setValid(false);
+            break;
+          }
+          if (!regEmail.test(value)) {
+            error = 'Недопустимый формат';
+            setValid(false);
+            break;
+          }
           if (value.length < 5) {
             error = 'Минимум 5 символов';
             setValid(false);
@@ -145,11 +191,6 @@ export default function HelpModal({ handleModal, opened }) {
           }
           if (value.length > 200) {
             error = 'Максимум 200 символов';
-            setValid(false);
-            break;
-          }
-          if (!regEmail.test(value)) {
-            error = 'Недопустимый формат';
             setValid(false);
             break;
           }
@@ -178,6 +219,7 @@ export default function HelpModal({ handleModal, opened }) {
         }
       }));
     }
+    return valid
   }
 
   return (
@@ -206,19 +248,21 @@ export default function HelpModal({ handleModal, opened }) {
         <div className="help__helper"></div>
         <div className="help__alertAndButton">
           <div className="help__alert">
-            <div>
+            <button ref={alertReference} className="help__alertBtn">
               <AlertIcon className="help__alertIcon" />
-            </div>
+            </button>
             <span>
               Нажимая «Отправить», вы даете{" "}
               <Link
-                to="/agreement" onClick={handleModal}
-                className="help__agreement">
+                to="/agreement" target="_blank"
+                className="help__agreement"
+                onClick={handleFocusAlert}>
                 согласие на обработку персональных данных
               </Link>
             </span>
           </div>
-          <ButtonSend capitalLetters={true} handleSendForm={handleClick} isValid={valid} handleModal={handleModal}>ОТПРАВИТЬ</ButtonSend>
+          <ButtonSend capitalLetters={true} handleSendForm={handleClick} isSending={sending}
+            clearInputsForm={clearInputsForm} handleModal={handleModal}>ОТПРАВИТЬ</ButtonSend>
         </div>
       </div>
     </div>

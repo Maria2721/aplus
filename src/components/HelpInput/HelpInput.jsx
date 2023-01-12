@@ -29,7 +29,7 @@ export default function HelpInput({
       </label>
       <div className="help__inputWrapper">
         {errorMessage && isDirty && <div className="help__error">{errorMessage}</div>}
-        
+
         {view === "input" && (
           <input
             className={classInput}
@@ -39,34 +39,36 @@ export default function HelpInput({
             id={id}
             name={name}
             value={value}
+            inputMode={id === 'helpInn' ? "numeric" : ""}
+            autoComplete="on"
           />
         )}
 
         {view === "phone" && (
           <PhoneInput
-          labels={ru}
-          international
-          defaultCountry="RU"
-          name={name}
-          value={phoneValue}
-          type={type}
-          onBlur={() => blurHandler(id)}
-          onChange={handlePhoneValue}
-          className={classInput}
-          maxLength={25}
-        />)}
+            labels={ru}
+            international
+            defaultCountry="RU"
+            name={name}
+            value={phoneValue}
+            type={type}
+            onBlur={() => blurHandler(id)}
+            onChange={handlePhoneValue}
+            className={classInput}
+            maxLength={25}
+          />)}
 
         {view === "texterea" && (
-            <textarea
-              className={classInput}
-              onBlur={() => blurHandler(id)}
-              onChange={(e) => handleChange(e, id)}
-              type={type}
-              id={id}
-              name={name}
-              value={value}
-              maxLength={5000}
-            />
+          <textarea
+            className={classInput}
+            onBlur={() => blurHandler(id)}
+            onChange={(e) => handleChange(e, id)}
+            type={type}
+            id={id}
+            name={name}
+            value={value}
+            maxLength={5000}
+          />
         )}
       </div>
     </div>
