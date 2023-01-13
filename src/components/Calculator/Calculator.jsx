@@ -1,17 +1,24 @@
 import "./Calculator.scss";
 import * as cx from "classnames";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Range from "../Range/Range";
-import ButtonRequest from '../ButtonRequest/ButtonRequest';
+import Select from "../Select/Select";
+import ButtonCalculateModal from "../ButtonCalculateModal/ButtonCalculateModal";
 
-function Calculator({ isModal }) {
-  const [volume, setVolume] = useState(4000000);
-  const [frequency, setFrequency] = useState(30);
-  const [deferral, setDeferral] = useState(50);
+function Calculator({ isModal, handleModal }) {
+  const [delivery, setDelivery] = useState(4000000);
+  const [financing, setFinancing] = useState(4000000);
+  const [payment, setPayment] = useState(40);
+  const [responsible, setResponsible] = useState("provider");
+  const [typeFactoring, setTypeFactoring] = useState("withRegression");
 
   const classCalculator = cx("calculator", {
     "calculator_modal": isModal,
   });
+
+  useEffect(() => {
+    //console.log(responsible)
+  }, [responsible]);
 
   return (
     <div className={classCalculator}>
@@ -20,15 +27,15 @@ function Calculator({ isModal }) {
         Получите предварительный расчет и отправьте заявку
       </div>
       <div className="calculator__main">
-        <div className="calculator__col calculator__col_first">
+        <div className="calculator__rangesBox">
           <div className="calculator__cell">
-            <div className="calculator__text calculator__text_highlight">
-              Объем отгрузки
+            <div className="calculator__text">
+              Сумма поставки
             </div>
             <Range
               isModal={isModal}
-              handleChange={(e) => setVolume(e.target.value)}
-              value={volume}
+              handleChange={(e) => setDelivery(e.target.value)}
+              value={delivery}
               text="₽"
               min={1000000}
               max={6000000}
@@ -36,74 +43,63 @@ function Calculator({ isModal }) {
             />
           </div>
           <div className="calculator__cell">
-            <div className="calculator__text calculator__text_highlight">
-              Отсрочка платежа
+            <div className="calculator__text">
+              Срок оплаты
             </div>
             <Range
-             isModal={isModal}
-              handleChange={(e) => setDeferral(e.target.value)}
-              value={deferral}
+              isModal={isModal}
+              handleChange={(e) => setPayment(e.target.value)}
+              value={payment}
               text="дн."
               min={10}
-              max={70}
+              max={60}
               step={10}
+            />
+          </div>
+          <div className="calculator__cell">
+            <div className="calculator__text">
+              Сумма финансирования
+            </div>
+            <Range
+              isModal={isModal}
+              handleChange={(e) => setFinancing(e.target.value)}
+              value={financing}
+              text="₽"
+              min={1000000}
+              max={6000000}
+              step={1000000}
             />
           </div>
         </div>
 
-        <div className="calculator__col calculator__col_second">
-          <div className="calculator__cell">
-            <div className="calculator__text calculator__text_highlight">
-              Периодичность поставки
-            </div>
-            <Range
+        <div className="calculator__selectorBox">
+          <Select
             isModal={isModal}
-              handleChange={(e) => setFrequency(e.target.value)}
-              value={frequency}
-              text="дн."
-              min={10}
-              max={50}
-              step={10}
-            />
-          </div>
-          <div className="calculator__cell">
-            <div className="calculator__text">
-              Количество поставок:{" "}
-              <span className="calculator__text_bold">13</span> штук
-            </div>
-            <div className="calculator__text">
-              Годовая выручка
-              <span className="calculator__text_bold">
-                <br />с Факторингом 65 000 000 руб.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="calculator__col calculator__col_third">
-          <div className="calculator__cell">
-            <div className="calculator__text">
-              Периодичность поставки 60 дн.
-            </div>
-            <div className="calculator__text">
-              Колличество поставок:{" "}
-              <span className="calculator__text_bold">7</span> шт.
-            </div>
-            <div className="calculator__text">
-              Годовая выручка{" "}
-              <span className="calculator__text_bold">
-                <br />
-                без Факторинга 35 000 000 руб.
-              </span>
-            </div>
+            handleChange={(e) => setResponsible(e.target.value)}
+            value={responsible}
+            firstValue="provider"
+            secondValue="buyer"
+            name="responsible"
+            question="Кто отвечает за оплату?"
+            firstOption="Поставщик"
+            secondOption="Покупатель"
+          />
+          <Select
+            isModal={isModal}
+            handleChange={(e) => setTypeFactoring(e.target.value)}
+            value={typeFactoring}
+            firstValue="withRegression"
+            secondValue="withoutRegression"
+            name="typeFactoring"
+            question="Вид факторинга"
+            firstOption="С регрессом"
+            secondOption="Без регресса"
+          />
+          <div className="calculator__buttonWrapper">
+            <ButtonCalculateModal handleCalculateModal={handleModal} />
           </div>
         </div>
       </div>
-
-      <div className="calculator__buttonWrapper">
-      <ButtonRequest/>
-        {/* <button className="btn btn_full">Отправить заявку</button> */}
-        </div>
     </div>
   );
 }

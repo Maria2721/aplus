@@ -47,7 +47,10 @@ function App() {
         handleModal={() => setOpenedCalculatorModal((curr) => !curr)}
         opened={openedCalculatorModal}
       >
-        <Calculator isModal={true} />
+        <Calculator
+          isModal={true}
+          handleModal={() => setOpenedCalculatorModal((curr) => !curr)}
+        />
       </Modal>
       <Modal
         className="modal__request"

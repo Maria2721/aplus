@@ -44,12 +44,20 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 59px 65px 50px 60px;
-  background-color: $bgColor;
-  max-width: 1000px;
+  padding: 49px 50px 48px 0px;
+  background-color: #f7f7f7;
+  width: 850px;
+  height: 500px;
+
+  /* max-width: 850px;
   width: 100%;
-  min-height: 500px;
+  min-height: 500px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  & .modal__closeButton {
+    top: 40px;
+    right: 50px;
+  }
 }
 
 .modal__request {

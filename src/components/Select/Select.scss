@@ -1,0 +1,66 @@
+@import "../../styles/_vars.scss";
+
+.select {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 320px;
+    border: 2px solid $accentColor;
+    background-color: $bgColor;
+}
+
+/* .select_showOptions {
+    position: absolute;
+    left: 0;
+    top: 0px;
+} */
+
+#responsible {
+    margin-bottom: 30px;
+}
+#typeFactoring {
+    margin-bottom: 59px;
+}
+
+.select__questionBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(50px - 4px);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.select__questionBtnTitle {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #4d4d4d;
+}
+
+.select__options {
+    padding-left: 20px;
+    padding-top: 17px;
+}
+
+.select__optionsRadioFirst {
+    margin-bottom: 15px;
+}
+.select__optionsRadioSecond {
+    margin-bottom: calc(15px - 2px);
+}
+
+.select__optionsRadioInput {
+}
+
+.select__optionsText {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #4d4d4d;
+}

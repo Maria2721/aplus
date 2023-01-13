@@ -100,7 +100,7 @@ export default function HelpModal({ handleModal, opened }) {
   const validateForm = () => {
     setValid(true);
     const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
-    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/;
+    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,63}$/;
     const regEmailFirstSign = /^[a-zA-Z0-9]/;
     //const regNumber = /^\d+$/;
 

@@ -3,17 +3,16 @@ import * as cx from "classnames";
 
 function Range({ isModal, text, value, handleChange, min, max, step }) {
   const percent = ((value - min) * 100) / (max - min);
-  const outputOffset = (value - min) / (max - min) * 100;
 
-  const classRange= cx("range", {
+  const classRange = cx("range", {
     "range_modal": isModal,
-});
+  });
 
   return (
     <div className={classRange}>
       <div className="range__inputWrapper">
         <input
-        className="range__input"
+          className="range__input"
           type="range"
           value={value}
           step={step}
@@ -26,10 +25,7 @@ function Range({ isModal, text, value, handleChange, min, max, step }) {
         />
       </div>
       <div
-        className="range__numberWrapper"
-        style={{
-          left: `calc(${outputOffset}% + ${20 - (20 * (outputOffset / 100))}px)`,
-        }}>
+        className="range__numberWrapper">
         <output id="rangevalue" className="range__number">
           {value.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1 ")} {text}
         </output>

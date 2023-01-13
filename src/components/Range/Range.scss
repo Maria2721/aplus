@@ -1,15 +1,26 @@
 @import "../../styles/_vars.scss";
 
 .range {
-  position: relative;
-  width: 270px;
+  display: flex;
+  flex-direction: row;
+  margin-top: calc(10px - 5.6px);
+  margin-bottom: 24px;
+  //width: 270px;
+
+  & .range__input {
+    width: 270px;
+    height: 7px;
+    border-radius: 3px;
+  }
 }
 
 .range_modal {
-  width: 260px;
+  //width: 260px;
 
   & .range__input {
-    width: 260px;
+    width: 258px;
+    height: 5px;
+    border-radius: 3px;
   }
 }
 
@@ -21,10 +32,7 @@
   position: relative;
   -webkit-appearance: none;
   appearance: none;
-  width: 270px;
-  height: 7px;
   background: #e6e6e6;
-  border-radius: 3px;
   background-image: linear-gradient(#ff7a00, #ff7a00);
   background-repeat: no-repeat;
 }
@@ -34,8 +42,8 @@
   position: relative;
   -webkit-appearance: none;
   appearance: none;
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   background: $accentColor;
   cursor: ew-resize;
@@ -45,24 +53,22 @@
 .range__input::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   background: $accentColor;
   cursor: ew-resize;
-  box-shadow: 0 0 2px 0 #555;
   transition: background 0.3s ease-in-out;
 }
 
 .range__input::-ms-thumb {
   -webkit-appearance: none;
   appearance: none;
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   background: $accentColor;
   cursor: ew-resize;
-  box-shadow: 0 0 2px 0 #555;
   transition: background 0.3s ease-in-out;
 }
 
@@ -106,20 +112,17 @@
 /* Цифры */
 
 .range__numberWrapper {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 26px;
-  transform: translateX(-50%);
-  margin-left: -10px;
-}
-.range__number {
-  font-size: 12px;
-  line-height: 16.34px;
-  font-weight: 600;
-  white-space: nowrap;
+  margin-left: 10px;
 }
 
+.range__number {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  white-space: nowrap;
+  color: $textColor_dark;
+}
+/* 
 @media screen and (max-width: $tablet) {
   .range {
     width: 260px;
@@ -184,3 +187,4 @@
     line-height: 11px;
   }
 }
+ */
