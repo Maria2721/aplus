@@ -1,17 +1,21 @@
 @import "../../styles/_vars.scss";
 
 .caseBox {
-    display: flex;
-    flex-direction: row;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto;
     border-top: 1px solid #000000;
     padding-top: 10px;
     padding-bottom: 10px;
     .caseBox__scheme {
         align-self: center;
+        display: flex;
+        justify-content: center;
         height: 190px;
         .caseBox__schemeImg {
-            height: 100%;
-            width: auto;
+            width: 100%;
+            object-fit: contain;
         }
     }
     .caseBox__text {
@@ -51,6 +55,7 @@
         }
     }
 }
+
 #itoutsourcing {
     border-bottom: 1px solid #000000;
 }
@@ -91,12 +96,11 @@
 
 @media (max-width: $tablet) {
     .caseBox {
+        grid-template-columns: 140px 1fr;
         padding-top: 10px;
         padding-bottom: 10px;
         .caseBox__scheme {
-            height: 103px;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            height: 123px;
         }
         .caseBox__text {
             margin-left: 20px;
@@ -126,12 +130,11 @@
 
 @media (max-width: $mobile) {
     .caseBox {
+        grid-template-columns: 89px 1fr;
         padding-top: 5px;
         padding-bottom: 5px;
         .caseBox__scheme {
             height: 82px;
-            margin-top: 12px;
-            margin-bottom: 12px;
         }
         .caseBox__text {
             margin-left: 15px;

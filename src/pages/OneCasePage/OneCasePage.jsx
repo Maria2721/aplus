@@ -27,10 +27,10 @@ import softwaredevelopmentMobileRetina from '../../assets/imgs/software-developm
 
 import itoutsourcing from '../../assets/imgs/it-outsourcing.jpg';
 import itoutsourcingRetina from '../../assets/imgs/it-outsourcing_2x.jpg';
-import itoutsourcingTablet from '../../assets/imgs/it-outsourcing-tablet.jpg';
-import itoutsourcingTabletRetina from '../../assets/imgs/it-outsourcing-tablet_2x.jpg';
-import itoutsourcingMobile from '../../assets/imgs/it-outsourcing-mobile.jpg';
-import itoutsourcingMobileRetina from '../../assets/imgs/it-outsourcing-mobile_2x.jpg';
+import itoutsourcingTablet from '../../assets/imgs/it-outsourcing.jpg';
+import itoutsourcingTabletRetina from '../../assets/imgs/it-outsourcing_2x.jpg';
+import itoutsourcingMobile from '../../assets/imgs/it-outsourcing.jpg';
+import itoutsourcingMobileRetina from '../../assets/imgs/it-outsourcing_2x.jpg';
 
 function OneCasePage(props) {
   const currentCase = cases.find((item) => (item.id === props.case));
