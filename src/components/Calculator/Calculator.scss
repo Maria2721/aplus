@@ -39,4 +39,24 @@
 .calculator__selectorBox {
     margin-top: 58px;
     position: relative;
+    width: 320px;
+    top: 0px;
+}
+
+.calculator__buttonWrapper {
+    position: absolute;
+    top: calc(402px - 213px);
+    left: 0px;
+}
+
+.calculator__selectResponsible {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.calculator__selectTypeFactoring {
+    position: absolute;
+    top: calc(293px - 213px);
+    left: 0px;
 }

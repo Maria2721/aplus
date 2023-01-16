@@ -3,41 +3,40 @@ import * as cx from "classnames";
 import { ReactComponent as ArrowMore } from "../../assets/imgs/arrow-more-calc.svg";
 import { ReactComponent as ArrowLess } from "../../assets/imgs/arrow-less-calc.svg";
 
-import { useState } from 'react';
-
-function Select({ isModal, handleChange, firstValue, secondValue, value, name, question, firstOption, secondOption }) {
-  const [show, setShow] = useState(false);
+function Select({ isModal, handleChange, firstValue, secondValue, value, name, question, firstOption, secondOption, showSelect, handleSelect }) {
 
   const classSelect = cx("select", {
     "select_modal": isModal,
-    "select_showOptions": show,
+    "select_showOptions": showSelect,
   });
 
   return (
     <div className={classSelect} id={name}>
-      <button className="select__questionBtn" onClick={() => setShow(!show)}>
+      <button className="select__questionBtn" onClick={handleSelect}>
         <div className="select__questionBtnTitle">{question}</div>
-        {show ? <ArrowLess className="select__questionBtnArrow" />
+        {showSelect ? <ArrowLess className="select__questionBtnArrow" />
           : <ArrowMore className="select__questionBtnArrow" />}
       </button>
 
-      {show &&
+      {showSelect &&
         <div className="select__options">
-          <div className="select__optionsRadioFirst">
+          <div className="select__optionsRadio select__optionsRadioFirst">
             <input type="radio" name={name}
               className="select__optionsRadioInput"
+              id={firstValue}
               value={firstValue}
               checked={value === firstValue ? true : false}
               onChange={handleChange} />
-            <span className="select__optionsText">{firstOption}</span>
+            <label htmlFor={firstValue} className="select__optionsText">{firstOption}</label>
           </div>
-          <div className="select__optionsRadioSecond">
+          <div className="select__optionsRadio select__optionsRadioSecond">
             <input type="radio" name={name}
               className="select__optionsRadioInput"
+              id={secondValue}
               value={secondValue}
               checked={value === secondValue ? true : false}
               onChange={handleChange} />
-            <span className="select__optionsText">{secondOption}</span>
+            <label htmlFor={secondValue} className="select__optionsText">{secondOption}</label>
           </div>
         </div>}
     </div>
