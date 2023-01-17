@@ -74,17 +74,13 @@
     }
 }
 
-@media screen and (max-width: $mobile) {
-    .buttonCalculateModal .buttonCalculateModal__innerActive .buttonCalculateModal__arrowWrapper {
-        width: 10px;
-        margin-left: 5px;
+@media screen and (max-width: $smallTablet) {
+    .buttonCalculateModal {
+        width: 220px;
+        height: 40px;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 14px;
+        padding: 13px 0;
     }
-
-    /* .buttonCalculateModal__arrowWrapper {
-        height: 10px;
-    }
-
-    .buttonCalculateModal__arrow {
-        width: 10px;
-    } */
 }

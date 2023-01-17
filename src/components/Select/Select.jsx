@@ -8,14 +8,17 @@ function Select({ isModal, handleChange, firstValue, secondValue, value, name, q
   const classSelect = cx("select", {
     "select_modal": isModal,
     "select_showOptions": showSelect,
+    "select_showOptionsFirst": showSelect && (name === "responsible"),
   });
 
   return (
     <div className={classSelect} id={name}>
       <button className="select__questionBtn" onClick={handleSelect}>
         <div className="select__questionBtnTitle">{question}</div>
-        {showSelect ? <ArrowLess className="select__questionBtnArrow" />
-          : <ArrowMore className="select__questionBtnArrow" />}
+        <div className="select__questionBtnArrowWrapper">
+          {showSelect ? <ArrowLess className="select__questionBtnArrow" />
+            : <ArrowMore className="select__questionBtnArrow" />}
+        </div>
       </button>
 
       {showSelect &&
