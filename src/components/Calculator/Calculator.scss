@@ -1,5 +1,6 @@
 @import "../../styles/_vars.scss";
 
+// ввод данных
 .calculator__header {
     font-size: 32px;
     line-height: 44px;
@@ -58,6 +59,24 @@
     left: 0px;
 }
 
+// загрузка расчета
+.calculator__loadingCalculation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: calc(179px - 49px);
+    margin-left: 50px;
+}
+.calculator__loadingText {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    color: #4d4d4d;
+    margin-top: calc(25px - 15px);
+}
+
+// вывод данных
+
 @media screen and (max-width: $tablet) {
     .calculator__header {
         font-size: 30px;
@@ -94,6 +113,18 @@
     }
     .calculator__buttonWrapper {
         top: calc(415px - 223px);
+    }
+
+    // загрузка расчета
+    .calculator__loadingCalculation {
+        margin-top: calc(190px - 50px);
+        margin-left: 40px;
+    }
+    .calculator__loadingText {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 22px;
+        margin-top: calc(28px - 15px);
     }
 }
 
@@ -143,5 +174,17 @@
     .calculator__buttonWrapper {
         top: calc(482px - 145px);
         left: calc(50px - 20px);
+    }
+
+    // загрузка расчета
+    .calculator__loadingCalculation {
+        margin-top: calc(225px - 60px);
+        margin-left: 20px;
+    }
+    .calculator__loadingText {
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 16px;
+        margin-top: calc(15px - 10px);
     }
 }

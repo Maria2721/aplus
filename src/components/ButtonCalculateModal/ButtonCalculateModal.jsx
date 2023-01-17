@@ -3,7 +3,7 @@ import * as cx from "classnames";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button_calc.svg";
 import { useState } from 'react';
 
-function ButtonCalculateModal({ handleCalculateModal }) {
+function ButtonCalculateModal({ handleCalculationModal, handleLoading }) {
   const [isActive, setIsActive] = useState(false);
 
   const classButtonInner = cx("buttonCalculateModal__inner", {
@@ -11,10 +11,11 @@ function ButtonCalculateModal({ handleCalculateModal }) {
   });
 
   const handleClick = () => {
-    setIsActive(true)
+    setIsActive(true);
     setTimeout(() => {
-      handleCalculateModal();
-      setIsActive(false)
+      handleCalculationModal();
+      handleLoading();
+      setIsActive(false);
     }, 350)
   }
 
