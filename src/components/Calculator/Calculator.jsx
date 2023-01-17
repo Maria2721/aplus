@@ -5,10 +5,11 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 import Range from "../Range/Range";
 import Select from "../Select/Select";
 import ButtonCalculateModal from "../ButtonCalculateModal/ButtonCalculateModal";
+import ButtonRequest from "../ButtonRequest/ButtonRequest";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import PrecomputationResults from "../PrecomputationResults/PrecomputationResults";
+import { calculatedData } from "./calculatedData";
 
-function Calculator({ isModal, handleModal }) {
+function Calculator({ isModal, handleModal, handleRequestModal }) {
   const [delivery, setDelivery] = useState(4000000);
   const [financing, setFinancing] = useState(4000000);
   const [payment, setPayment] = useState(40);
@@ -20,7 +21,7 @@ function Calculator({ isModal, handleModal }) {
   const [calculation, setCalculation] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
-  const loadingDuration = 30000; // 3 seconds 3000
+  const loadingDuration = 3000; // 3 seconds 3000
   const { width } = useWindowDimensions();
 
   const classCalculator = cx("calculator", {
@@ -136,8 +137,7 @@ function Calculator({ isModal, handleModal }) {
               <div className="calculator__buttonWrapper">
                 <ButtonCalculateModal
                   handleCalculationModal={() => setCalculation(true)}
-                  handleLoading={() => setLoading(true)}
-                />
+                  handleLoading={() => setLoading(true)} />
               </div>
             </div>
           </div>
@@ -151,8 +151,25 @@ function Calculator({ isModal, handleModal }) {
             <div className="calculator__loadingText">
               Рассчитываем...
             </div>
+          </div> :
+          <div className="calculator__outputs">
+            <h1 className="calculator__header">Калькулятор факторинга</h1>
+            <div className="calculator__description">
+              Получите предварительный расчет и отправьте заявку
+            </div>
+            <div className="calculator__mainResults">
+              {calculatedData.map((item) => (
+                <div key={item.id} id={item.id} className="calculator__mainResultsBox">
+                  <div className="calculator__mainResultsLabel">{item.label}</div>
+                  <div className="calculator__mainResultsValue">{item.value}</div>
+                </div>
+              ))}
+            </div>
+            <div className="calculator__outputsButtonWrapper">
+              {/* <ButtonRequest handleRequestModal={handleRequestModal} /> */}
+              <ButtonCalculateModal />
+            </div>
           </div>
-          : <PrecomputationResults />
       }
     </div>
   );

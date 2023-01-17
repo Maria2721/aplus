@@ -50,6 +50,7 @@ function App() {
         <Calculator
           isModal={true}
           handleModal={() => setOpenedCalculatorModal((curr) => !curr)}
+          handleRequestModal={() => setOpenedRequestModal(true)}
         />
       </Modal>
       <Modal

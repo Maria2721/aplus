@@ -75,7 +75,46 @@
     margin-top: calc(25px - 15px);
 }
 
-// вывод данных
+// вывод полученных данных
+.calculator__mainResults {
+    width: 540px;
+    height: 232px;
+    background-color: $bgColor;
+    padding-top: 32px;
+    padding-left: 132px;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator__mainResultsBox {
+    display: grid;
+    grid-template-columns: 1fr 125px;
+    align-items: center;
+    margin-bottom: 19px;
+}
+
+.calculator__mainResultsLabel {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    color: #7b7b7b;
+}
+
+.calculator__mainResultsValue {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    color: #ff7a00;
+}
+
+.calculator__outputsButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
 
 @media screen and (max-width: $tablet) {
     .calculator__header {
