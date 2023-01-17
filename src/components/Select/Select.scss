@@ -36,9 +36,8 @@
 
 .select__options {
     padding-left: 20px;
-    padding-top: 17px;
+    padding-top: calc(29px - 12px);
 }
-
 .select__optionsRadioFirst {
     margin-bottom: 15px;
 }
@@ -64,10 +63,10 @@
         position: absolute;
         left: 0;
         top: 4px;
-        background: url(../../assets/imgs/radio.svg) 0 0 no-repeat;
+        background: center / contain no-repeat url(../../assets/imgs/radio.svg);
     }
     input[type="radio"]:checked + label:before {
-        background: url(../../assets/imgs/radio-checked.svg) 0 0 no-repeat;
+        background: center / contain no-repeat url(../../assets/imgs/radio-checked.svg);
     }
 }
 
@@ -77,4 +76,45 @@
     font-weight: 700;
     line-height: 22px;
     color: #4d4d4d;
+}
+
+@media screen and (max-width: $tablet) {
+    .select {
+        width: 260px;
+    }
+    .select__questionBtn {
+        height: calc(45px - 4px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .select__questionBtnTitle {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+    }
+
+    .select__options {
+        padding-left: 20px;
+        padding-top: calc(15px - 11px);
+    }
+    .select__optionsRadioFirst {
+        margin-bottom: 15px;
+    }
+    .select__optionsRadioSecond {
+        margin-bottom: calc(15px - 2px);
+    }
+
+    .select__optionsRadio {
+        label:before {
+            width: 11px;
+            height: 11px;
+            top: 4px;
+        }
+    }
+    .select__optionsText {
+        padding-left: calc(11px + 8px);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+    }
 }

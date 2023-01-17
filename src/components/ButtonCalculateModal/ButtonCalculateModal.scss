@@ -8,7 +8,6 @@
     line-height: 22px;
     text-align: center;
     padding: 14px 0;
-
     overflow: hidden;
 }
 
@@ -45,22 +44,33 @@
 }
 
 @media screen and (max-width: $tablet) {
+    .buttonCalculateModal {
+        width: 260px;
+        height: 45px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+        padding: 13px 0;
+    }
+
     .buttonCalculateModal__arrowWrapper {
         width: 0;
+        height: 8px;
         overflow: hidden;
         margin-left: 0;
     }
-
     .buttonCalculateModal:hover .buttonCalculateModal__arrowWrapper {
         width: 0;
         overflow: hidden;
         margin-left: 0;
     }
-
     .buttonCalculateModal .buttonCalculateModal__innerActive .buttonCalculateModal__arrowWrapper {
         width: 12px;
-        margin-left: 5px;
         overflow: visible;
+        margin-left: 5px;
+    }
+    .buttonCalculateModal__arrow {
+        width: 12px;
     }
 }
 
