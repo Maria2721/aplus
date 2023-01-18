@@ -153,3 +153,22 @@
     line-height: 14px;
   }
 }
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .range_modal {
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+    & .range__input {
+      width: 170px;
+    }
+  }
+  .range__numberWrapper {
+    margin-left: 10px;
+  }
+  .range__number {
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 11px;
+  }
+}

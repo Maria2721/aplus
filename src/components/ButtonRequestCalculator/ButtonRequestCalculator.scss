@@ -84,3 +84,14 @@
         padding: 13px 0;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .buttonRequestCalculator {
+        width: 190px;
+        height: 40px;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 14px;
+        padding: 13px 0;
+    }
+}

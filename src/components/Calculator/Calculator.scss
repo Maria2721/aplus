@@ -280,3 +280,103 @@
         justify-content: center;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .calculator__header {
+        font-size: 20px;
+        line-height: 27px;
+        text-align: left;
+        margin-left: 40px;
+        margin-bottom: 0px;
+    }
+    .calculator__description {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 13px;
+        text-align: left;
+        margin-left: 40px;
+        margin-bottom: 22px;
+    }
+    .calculator__main {
+        flex-direction: column-reverse;
+    }
+
+    .calculator__rangesBox {
+        position: relative;
+        margin-top: calc(150px - 102px);
+        width: 528px;
+        height: 126px;
+        padding-top: 15px;
+        padding-left: 40px;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .calculator__text {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        margin-left: 0px;
+    }
+
+    .calculator__selectorBox {
+        margin-left: 40px;
+        margin-top: 0px;
+        width: 100%;
+    }
+    .calculator__selectResponsible {
+        top: 0px;
+        left: 0px;
+    }
+    .calculator__selectTypeFactoring {
+        top: 0px;
+        left: calc(303px - 40px);
+    }
+    .calculator__buttonWrapper {
+        top: calc(257px - 102px);
+        left: calc(308px - 40px);
+    }
+
+    // загрузка расчета
+    .calculator__loadingCalculation {
+        margin-top: calc(102px - 40px);
+        margin-left: 40px;
+    }
+    .calculator__loadingText {
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 16px;
+        margin-top: calc(15px - 10px);
+    }
+
+    // вывод полученных данных
+    .calculator__outputs .calculator__description {
+        margin-bottom: 10px;
+    }
+    .calculator__mainResults {
+        width: 330px;
+        height: 160px;
+        padding-top: 21px;
+        padding-left: 40px;
+        margin-bottom: 0px;
+    }
+    .calculator__mainResultsBox {
+        grid-template-columns: 1fr 110px;
+        margin-bottom: 14px;
+    }
+    .calculator__mainResultsLabel {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+    }
+    .calculator__mainResultsValue {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+    }
+    .calculator__outputsButtonWrapper {
+        margin-left: 20px;
+        justify-content: flex-end;
+    }
+}

@@ -173,3 +173,44 @@
         line-height: 16px;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .select {
+        width: 225px;
+    }
+    .select__questionBtn {
+        height: calc(40px - 4px);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .select__questionBtnTitle {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+    }
+
+    .select__options {
+        padding-left: 15px;
+        padding-top: calc(15px - 10px);
+    }
+    .select__optionsRadioFirst {
+        margin-bottom: 12px;
+    }
+    .select__optionsRadioSecond {
+        margin-bottom: calc(15px - 2px);
+    }
+
+    .select__optionsRadio {
+        label:before {
+            width: 8px;
+            height: 8px;
+            top: 4px;
+        }
+    }
+    .select__optionsText {
+        padding-left: calc(8px + 5px);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+    }
+}
