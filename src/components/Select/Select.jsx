@@ -13,7 +13,6 @@ function Select({ isModal, handleChange, firstValue, secondValue, value, name, q
 
   const handleSelectOption = () => {
     setTimeout(() => {
-      console.log('close select options')
       handleSelect();
     }, 100)
   }

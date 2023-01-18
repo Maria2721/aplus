@@ -5,7 +5,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 import Range from "../Range/Range";
 import Select from "../Select/Select";
 import ButtonCalculateModal from "../ButtonCalculateModal/ButtonCalculateModal";
-import ButtonRequest from "../ButtonRequest/ButtonRequest";
+import ButtonRequestCalculator from "../ButtonRequestCalculator/ButtonRequestCalculator";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { calculatedData } from "./calculatedData";
 
@@ -167,8 +167,7 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
               ))}
             </div>
             <div className="calculator__outputsButtonWrapper">
-              {/* <ButtonRequest handleRequestModal={handleRequestModal} /> */}
-              <ButtonCalculateModal />
+              <ButtonRequestCalculator handleModal={handleModal} handleRequestModal={handleRequestModal} />
             </div>
           </div>
       }
