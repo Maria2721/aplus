@@ -47,6 +47,7 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
 
   useEffect(() => {
     //console.log(responsible)
+    //setShowSelectResponsible((curr) => !curr);
   }, [responsible]);
 
   return (

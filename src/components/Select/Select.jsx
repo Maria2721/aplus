@@ -11,6 +11,13 @@ function Select({ isModal, handleChange, firstValue, secondValue, value, name, q
     "select_showOptionsFirst": showSelect && (name === "responsible"),
   });
 
+  const handleSelectOption = () => {
+    setTimeout(() => {
+      console.log('close select options')
+      handleSelect();
+    }, 100)
+  }
+
   return (
     <div className={classSelect} id={name}>
       <button className="select__questionBtn" onClick={handleSelect}>
@@ -29,7 +36,8 @@ function Select({ isModal, handleChange, firstValue, secondValue, value, name, q
               id={firstValue}
               value={firstValue}
               checked={value === firstValue ? true : false}
-              onChange={handleChange} />
+              onChange={handleChange}
+              onClick={handleSelectOption} />
             <label htmlFor={firstValue} className="select__optionsText">{firstOption}</label>
           </div>
           <div className="select__optionsRadio select__optionsRadioSecond">
@@ -38,7 +46,8 @@ function Select({ isModal, handleChange, firstValue, secondValue, value, name, q
               id={secondValue}
               value={secondValue}
               checked={value === secondValue ? true : false}
-              onChange={handleChange} />
+              onChange={handleChange}
+              onClick={handleSelectOption} />
             <label htmlFor={secondValue} className="select__optionsText">{secondOption}</label>
           </div>
         </div>}
