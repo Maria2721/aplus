@@ -43,6 +43,25 @@
     width: 20px;
 }
 
+// for market page
+.buttonCalculateModal_market {
+    width: 440px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    padding: 20.5px 0;
+
+    .buttonCalculateModal:hover .buttonCalculateModal__arrowWrapper {
+        width: 15px;
+        margin-left: 10px;
+    }
+
+    .buttonCalculateModal__arrow {
+        width: 15px;
+    }
+}
+
 @media screen and (max-width: $tablet) {
     .buttonCalculateModal {
         width: 260px;
@@ -82,5 +101,52 @@
         font-weight: 700;
         line-height: 14px;
         padding: 13px 0;
+    }
+}
+
+// for market page
+@media screen and (max-width: 1180px), screen and (orientation: landscape) and (max-height: 500px) {
+    .buttonCalculateModal_market {
+        width: 300px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+        padding: 14px 0;
+
+        .buttonCalculateModal:hover .buttonCalculateModal__arrowWrapper {
+            width: 15px;
+            margin-left: 5px;
+        }
+
+        .buttonCalculateModal__arrow {
+            width: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buttonCalculateModal_market {
+        width: 220px;
+        height: 40px;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 14px;
+        padding: 13px 0;
+
+        .buttonCalculateModal:hover .buttonCalculateModal__arrowWrapper {
+            width: 10px;
+            margin-left: 5px;
+        }
+
+        .buttonCalculateModal__arrow {
+            width: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .buttonCalculateModal_market {
+        width: 180px;
     }
 }

@@ -6,6 +6,7 @@ function Range({ isModal, text, value, handleChange, min, max, step }) {
 
   const classRange = cx("range", {
     "range_modal": isModal,
+    "range_market": isModal === false,
   });
 
   return (

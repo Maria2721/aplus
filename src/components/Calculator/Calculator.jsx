@@ -26,6 +26,7 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
 
   const classCalculator = cx("calculator", {
     "calculator_modal": isModal,
+    "calculator_market": isModal === false,
   });
 
   useEffect(() => {
@@ -137,6 +138,7 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
               </div>
               <div className="calculator__buttonWrapper">
                 <ButtonCalculateModal
+                  isModal={isModal}
                   handleCalculationModal={() => setCalculation(true)}
                   handleLoading={() => setLoading(true)} />
               </div>
@@ -167,7 +169,10 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
               ))}
             </div>
             <div className="calculator__outputsButtonWrapper">
-              <ButtonRequestCalculator handleModal={handleModal} handleRequestModal={handleRequestModal} />
+              <ButtonRequestCalculator
+                isModal={isModal}
+                handleModal={handleModal}
+                handleRequestModal={handleRequestModal} />
             </div>
           </div>
       }

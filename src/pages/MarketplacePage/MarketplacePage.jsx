@@ -19,14 +19,16 @@ const MarketplacePage = ({ handleRequestModal }) => (
       на развитие бизнеса <br />
       на маркетплейсах
     </FirstScreen>
-    <section className='marketplacePage__calculator container__row'>
-      <Calculator isModal={false}/>
+    <section className="marketplacePage__calculator container">
+      <div className="marketplacePage__calculatorInner container__row">
+        <Calculator isModal={false} handleRequestModal={handleRequestModal} />
+      </div>
     </section>
     <HowReceiveMoney />
-    <TakeAsMuch handleRequestModal={handleRequestModal}/>
-    <PersonalContact handleRequestModal={handleRequestModal}/>
+    <TakeAsMuch handleRequestModal={handleRequestModal} />
+    <PersonalContact handleRequestModal={handleRequestModal} />
     <Faq />
-    <BannerFactoring handleRequestModal={handleRequestModal}/>
+    <BannerFactoring handleRequestModal={handleRequestModal} />
   </div>
 );
 

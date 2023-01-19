@@ -3,8 +3,13 @@ import * as cx from "classnames";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button_calc.svg";
 import { useState } from 'react';
 
-function ButtonCalculateModal({ handleCalculationModal, handleLoading }) {
+function ButtonCalculateModal({ isModal, handleCalculationModal, handleLoading }) {
   const [isActive, setIsActive] = useState(false);
+
+  const classButton = cx("buttonCalculateModal btn_full", {
+    "buttonCalculateModal_modal": isModal,
+    "buttonCalculateModal_market": isModal === false,
+  });
 
   const classButtonInner = cx("buttonCalculateModal__inner", {
     "buttonCalculateModal__innerActive": isActive,
@@ -20,7 +25,7 @@ function ButtonCalculateModal({ handleCalculationModal, handleLoading }) {
   }
 
   return (
-    <button className="buttonCalculateModal btn_full" onClick={handleClick}>
+    <button className={classButton} onClick={handleClick}>
       <div className={classButtonInner}>
         Расчитать стоимость
         <div className="buttonCalculateModal__arrowWrapper">

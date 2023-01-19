@@ -7,6 +7,7 @@ function Select({ isModal, handleChange, firstValue, secondValue, value, name, q
 
   const classSelect = cx("select", {
     "select_modal": isModal,
+    "select_market": isModal === false,
     "select_showOptions": showSelect,
     "select_showOptionsFirst": showSelect && (name === "responsible"),
   });

@@ -36,8 +36,10 @@
 }
 
 .firstScreen_market {
-  background-image: image-set("../../assets/imgs/first_screen_market.jpg" 1x, "../../assets/imgs/first_screen_market_2x.jpg" 2x);
-  margin-bottom: 150px;
+  background-image: image-set(
+    "../../assets/imgs/first_screen_market.jpg" 1x,
+    "../../assets/imgs/first_screen_market_2x.jpg" 2x
+  );
 
   &:after {
     content: "";
@@ -95,7 +97,10 @@
 
 @media screen and (max-width: $tablet) {
   .firstScreen_home {
-    background-image: image-set("../../assets/imgs/first_screen_tablet.jpg" 1x, "../../assets/imgs/first_screen_tablet_2x.jpg" 2x);
+    background-image: image-set(
+      "../../assets/imgs/first_screen_tablet.jpg" 1x,
+      "../../assets/imgs/first_screen_tablet_2x.jpg" 2x
+    );
     max-height: 1094px;
 
     & .firstScreen__inner {
@@ -117,8 +122,10 @@
 
   .firstScreen_market {
     max-height: 1030px;
-    background-image: image-set("../../assets/imgs/first_screen_market_tablet.jpg" 1x, "../../assets/imgs/first_screen_market_tablet_2x.jpg" 2x);
-    margin-bottom: 80px;
+    background-image: image-set(
+      "../../assets/imgs/first_screen_market_tablet.jpg" 1x,
+      "../../assets/imgs/first_screen_market_tablet_2x.jpg" 2x
+    );
 
     & .firstScreen__inner {
       margin-top: 200px;
@@ -137,28 +144,26 @@
     }
   }
 
+  .firstScreen__header {
+    margin-bottom: 10px;
+    font-size: 48px;
+    line-height: 65.37px;
+  }
 
-.firstScreen__header {
-  margin-bottom: 10px;
-  font-size: 48px;
-  line-height: 65.37px;
-}
-
-.firstScreen__description {
-  font-size: 24px;
-  line-height: 32.68px;
-}
+  .firstScreen__description {
+    font-size: 24px;
+    line-height: 32.68px;
+  }
 }
 
 @media screen and (max-width: $mobile) {
-
   .firstScreen_home {
     max-height: 518px;
 
     & .firstScreen__inner {
       margin-top: 123px;
     }
-  
+
     & .firstScreen__header {
       max-width: 250px;
     }
@@ -170,7 +175,6 @@
 
   .firstScreen_market {
     max-height: 518px;
-    margin-bottom: 30px;
 
     & .firstScreen__inner {
       margin-top: 173px;
@@ -185,25 +189,23 @@
     }
   }
 
-.firstScreen__header {
-  font-size: 20px;
-  line-height: 27.24px;
+  .firstScreen__header {
+    font-size: 20px;
+    line-height: 27.24px;
+  }
+
+  .firstScreen__description {
+    font-size: 12px;
+    line-height: 16.34px;
+  }
 }
 
-.firstScreen__description {
-  font-size: 12px;
-  line-height: 16.34px;
-}
-
-}
-
-@media screen and (orientation:landscape)
-and (max-width: 900px) and (max-height: 590px) {
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 590px) {
   .firstScreen_home {
     & .firstScreen__inner {
       margin-top: 60px;
     }
-  
+
     & .firstScreen__buttons {
       margin-bottom: 80px;
     }
@@ -213,9 +215,9 @@ and (max-width: 900px) and (max-height: 590px) {
     & .firstScreen__inner {
       margin-top: 60px;
     }
-  
+
     & .firstScreen__buttons {
       margin-bottom: 90px;
+    }
   }
-}
 }
