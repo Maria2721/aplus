@@ -1,4 +1,5 @@
 import './ProgressBar.scss';
+import * as cx from "classnames";
 
 const ProgressBar = (props) => {
   let {
@@ -13,6 +14,7 @@ const ProgressBar = (props) => {
     labelColor = `#FF7A00`,
     spinnerMode = false,
     spinnerSpeed = 1,
+    isModal = false,
   } = props;
 
   const center = size / 2,
@@ -22,6 +24,10 @@ const ProgressBar = (props) => {
     dashOffset = dashArray * ((100 - progress) / 100);
 
   let hideLabel = size < 100 || !label.length || spinnerMode ? true : false;
+
+  const classLabel = cx("svg-pi-label__progress", {
+    "svg-pi-label__progress_market": isModal === false,
+  });
 
   return (
     <>
@@ -57,7 +63,7 @@ const ProgressBar = (props) => {
             {/* <span className="svg-pi-label__loading">{label}</span> */}
 
             {!spinnerMode && (
-              <span className="svg-pi-label__progress">
+              <span className={classLabel}>
                 {`${progress > 100 ? 100 : progress}%`}
               </span>
             )}

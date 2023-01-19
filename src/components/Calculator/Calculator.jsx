@@ -21,7 +21,7 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
   const [calculation, setCalculation] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
-  const loadingDuration = 3000; // 3 seconds 3000
+  const loadingDuration = 300000; // 3 seconds 3000
   const { width, height } = useWindowDimensions();
 
   const classCalculator = cx("calculator", {
@@ -147,10 +147,17 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
         </div>
         : (calculation === true && loading === true) ?
           <div className="calculator__loadingCalculation">
-            <ProgressBar progress={progress}
-              size={((width < 621) || (height < 501)) ? 105 : 138}
-              trackWidth={((width < 621) || (height < 501)) ? 10 : 15}
-              indicatorWidth={((width < 621) || (height < 501)) ? 10 : 15} />
+            {isModal === true ?
+              <ProgressBar progress={progress}
+                size={((width < 621) || (height < 501)) ? 105 : 138}
+                trackWidth={((width < 621) || (height < 501)) ? 10 : 15}
+                indicatorWidth={((width < 621) || (height < 501)) ? 10 : 15}
+                isModal={isModal} />
+              : <ProgressBar progress={progress}
+                size={(width < 481) ? 105 : ((width < 1181) || (height < 501)) ? 150 : 250}
+                trackWidth={(width < 481) ? 10 : ((width < 1181) || (height < 501)) ? 15 : 25}
+                indicatorWidth={(width < 481) ? 10 : ((width < 1181) || (height < 501)) ? 15 : 25}
+                isModal={isModal} />}
             <div className="calculator__loadingText">
               Рассчитываем...
             </div>
