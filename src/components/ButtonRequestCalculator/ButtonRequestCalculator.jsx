@@ -3,7 +3,7 @@ import * as cx from "classnames";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button_calc.svg";
 import { useState } from 'react';
 
-function ButtonRequestCalculator({ handleModal, handleRequestModal }) {
+function ButtonRequestCalculator({ isModal, handleModal, handleRequestModal }) {
   const [isActive, setIsActive] = useState(false);
 
   const classButtonInner = cx("buttonRequestCalculator__inner", {
@@ -19,8 +19,17 @@ function ButtonRequestCalculator({ handleModal, handleRequestModal }) {
     }, 350)
   }
 
+  const handleClickFromMarket = () => {
+    setIsActive(true);
+    setTimeout(() => {
+      handleRequestModal();
+      setIsActive(false);
+    }, 350)
+  }
+
   return (
-    <button className="buttonRequestCalculator btn_full" onClick={handleClick}>
+    <button className="buttonRequestCalculator btn_full"
+      onClick={isModal === true ? handleClick : handleClickFromMarket}>
       <div className={classButtonInner}>
         Отправить заявку
         <div className="buttonRequestCalculator__arrowWrapper">
