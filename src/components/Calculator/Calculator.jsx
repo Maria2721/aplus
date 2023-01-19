@@ -21,7 +21,7 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
   const [calculation, setCalculation] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
-  const loadingDuration = 300000; // 3 seconds 3000
+  const loadingDuration = 3000; // 3 seconds 3000
   const { width, height } = useWindowDimensions();
 
   const classCalculator = cx("calculator", {
