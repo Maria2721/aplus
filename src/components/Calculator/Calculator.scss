@@ -75,7 +75,7 @@
 }
 
 // вывод полученных данных
-.calculator__mainResults {
+.calculator_modal .calculator__mainResults {
     width: 540px;
     height: 232px;
     background-color: $bgColor;
@@ -188,6 +188,52 @@
         color: #4d4d4d;
         margin-top: calc(30px - 25px);
     }
+
+    // вывод полученных данных
+    .calculator__mainResults {
+        position: absolute;
+        top: 287px;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 56vw; // 805px
+        height: 380px;
+        background-color: $bgColor;
+        padding-top: 52px;
+        padding-left: calc(56vw - 530px);
+        margin-bottom: 23px;
+    }
+
+    .calculator__mainResultsBox {
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        align-items: center;
+        margin-bottom: 29px;
+    }
+
+    .calculator__mainResultsLabel {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 33px;
+        text-align: left;
+        color: #7b7b7b;
+    }
+
+    .calculator__mainResultsValue {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 44px;
+        text-align: left;
+        color: #ff7a00;
+    }
+
+    .calculator__outputsButtonWrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 470px;
+    }
 }
 
 @media screen and (max-width: $tablet) {
@@ -242,7 +288,7 @@
     }
 
     // вывод полученных данных
-    .calculator__mainResults {
+    .calculator_modal .calculator__mainResults {
         width: 493px;
         height: 233px;
         padding-top: 18px;
@@ -331,7 +377,7 @@
     .calculator_modal .calculator__outputs .calculator__description {
         margin-bottom: 84px;
     }
-    .calculator__mainResults {
+    .calculator_modal .calculator__mainResults {
         width: 300px;
         height: 200px;
         padding-top: 21px;
@@ -352,7 +398,7 @@
         font-weight: 700;
         line-height: 19px;
     }
-    .calculator__outputsButtonWrapper {
+    .calculator_modal .calculator__outputsButtonWrapper {
         margin-left: 20px;
         justify-content: center;
     }
@@ -433,7 +479,7 @@
     .calculator_modal .calculator__outputs .calculator__description {
         margin-bottom: 10px;
     }
-    .calculator__mainResults {
+    .calculator_modal .calculator__mainResults {
         width: 330px;
         height: 160px;
         padding-top: 21px;
@@ -454,7 +500,7 @@
         font-weight: 700;
         line-height: 19px;
     }
-    .calculator__outputsButtonWrapper {
+    .calculator_modal .calculator__outputsButtonWrapper {
         margin-left: 20px;
         justify-content: flex-end;
     }
@@ -527,6 +573,38 @@
             line-height: 22px;
             margin-top: calc(20px - 15px);
         }
+
+        // вывод полученных данных
+        .calculator__mainResults {
+            position: absolute;
+            top: 204px;
+            left: 0;
+
+            width: 60vw; // 500px
+            height: 255px;
+            padding-top: 43px;
+            padding-left: calc(60vw - 373px);
+            margin-bottom: 10px;
+        }
+
+        .calculator__mainResultsBox {
+            grid-template-columns: 1fr 113px;
+            margin-bottom: 20px;
+        }
+        .calculator__mainResultsLabel {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+        }
+        .calculator__mainResultsValue {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 27px;
+        }
+
+        .calculator__outputsButtonWrapper {
+            margin-top: 337px;
+        }
     }
 }
 
@@ -589,6 +667,39 @@
             line-height: 22px;
             margin-top: calc(20px - 15px);
         }
+
+        // вывод полученных данных
+        .calculator__mainResults {
+            position: absolute;
+            top: 254px; // 204px;
+            left: 0;
+
+            width: calc(373px + (100vw - 373px) / 2); //60vw; 500px
+            height: 255px;
+            padding-top: 43px;
+            padding-left: calc((100vw - 373px) / 2);
+            margin-bottom: 10px;
+        }
+
+        .calculator__mainResultsBox {
+            grid-template-columns: 1fr 113px;
+            margin-bottom: 20px;
+        }
+        .calculator__mainResultsLabel {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+        }
+        .calculator__mainResultsValue {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 27px;
+        }
+
+        .calculator__outputsButtonWrapper {
+            margin-top: 457px; // 337px;
+            justify-content: center;
+        }
     }
 }
 
@@ -602,6 +713,11 @@
         .calculator__loadingCalculation {
             margin-top: calc(330px - 61px + 44px);
             margin-left: 0px;
+        }
+        // вывод полученных данных
+        .calculator__outputsButtonWrapper {
+            margin-top: calc(457px - 44px); // 337px;
+            justify-content: center;
         }
     }
 }
@@ -678,6 +794,39 @@
             line-height: 16px;
             margin-top: calc(15px - 10px);
         }
+
+        // вывод полученных данных
+        .calculator__mainResults {
+            position: absolute;
+            top: 199px;
+            left: 0;
+
+            width: calc(280px + (100vw - 280px) / 2);
+            height: 200px;
+            padding-top: 21px;
+            padding-left: calc((100vw - 280px) / 2);
+            margin-bottom: 0px;
+        }
+
+        .calculator__mainResultsBox {
+            grid-template-columns: 1fr 100px;
+            margin-bottom: 27px;
+        }
+        .calculator__mainResultsLabel {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 16px;
+        }
+        .calculator__mainResultsValue {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 19px;
+        }
+
+        .calculator__outputsButtonWrapper {
+            margin-top: 367px;
+            justify-content: center;
+        }
     }
 }
 
@@ -692,6 +841,14 @@
         }
         .calculator__buttonWrapper {
             left: calc((230px - 180px) / 2);
+        }
+        .calculator__mainResults {
+            width: calc(230px + (100vw - 230px) / 2);
+            padding-left: calc((100vw - 230px) / 2);
+        }
+
+        .calculator__mainResultsBox {
+            grid-template-columns: 1fr 70px;
         }
     }
 }

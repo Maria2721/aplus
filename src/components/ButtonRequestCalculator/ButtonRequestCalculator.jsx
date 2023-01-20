@@ -6,6 +6,11 @@ import { useState } from 'react';
 function ButtonRequestCalculator({ isModal, handleModal, handleRequestModal }) {
   const [isActive, setIsActive] = useState(false);
 
+  const classButton = cx("buttonRequestCalculator btn_full", {
+    "buttonRequestCalculator_modal": isModal,
+    "buttonRequestCalculator_market": isModal === false,
+  });
+
   const classButtonInner = cx("buttonRequestCalculator__inner", {
     "buttonRequestCalculator__innerActive": isActive,
   });
@@ -28,7 +33,7 @@ function ButtonRequestCalculator({ isModal, handleModal, handleRequestModal }) {
   }
 
   return (
-    <button className="buttonRequestCalculator btn_full"
+    <button className={classButton}
       onClick={isModal === true ? handleClick : handleClickFromMarket}>
       <div className={classButtonInner}>
         Отправить заявку
