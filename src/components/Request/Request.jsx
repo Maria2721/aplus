@@ -226,6 +226,48 @@ function Request({ handleModal }) {
     return valid
   }
 
+  // ОТПРАВКА ФОРМЫ 
+  useEffect(() => {
+    if (sending === true) {
+      sendData();
+    }
+
+    // eslint-disable-next-line
+  }, [sending])
+
+  const sendData = () => {
+    const URL = process.env.REACT_APP_API_APPLICATION;
+    const data = {
+      inn: state["inn"].value.trimStart().replace(/ +/g, " "),
+      email: state["email"].value.trimStart().replace(/ +/g, " "),
+      name: state["name"].value.trimStart().replace(/ +/g, " "),
+      patronymic: state["middle"].value.trimStart().replace(/ +/g, " "),
+      surname: state["surname"].value.trimStart().replace(/ +/g, " ")
+    }
+    console.log(data)
+
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        INN: data.inn,
+        email: data.email,
+        name: data.name,
+        patronymic: data.patronymic,
+        surname: data.surname
+      }),
+      mode: 'cors'
+    })
+
+      .then((response) => {
+        console.log(response)
+      })
+
+      .catch((e) => console.log(e))
+  }
+
   return (
     <div className="request">
       <h1 className="request__header">Заявка на факторинг</h1>
