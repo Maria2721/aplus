@@ -222,6 +222,52 @@ export default function HelpModal({ handleModal, opened }) {
     return valid
   }
 
+  // ОТПРАВКА ФОРМЫ 
+  useEffect(() => {
+    if (sending === true) {
+      sendData();
+    }
+
+    // eslint-disable-next-line
+  }, [sending])
+
+  const sendData = () => {
+    const URL = process.env.REACT_APP_API_SUPPORT;
+    const data = {
+      inn: state.helpSurname.value.trimStart().replace(/ +/g, " "),
+      email: state.helpEmail.value.trimStart().replace(/ +/g, " "),
+      mobileNumber: phoneValue.trimStart().replace(/ +/g, " "),
+      name: state.helpName.value.trimStart().replace(/ +/g, " "),
+      patronymic: state.helpMiddle.value.trimStart().replace(/ +/g, " "),
+      question: state.helpQuestion.value.trimStart().replace(/ +/g, " "),
+      surname: state.helpSurname.value.trimStart().replace(/ +/g, " ")
+    }
+    console.log(data)
+
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        INN: data.inn,
+        email: data.email,
+        mobile_number: data.mobileNumber,
+        name: data.name,
+        patronymic: data.patronymic,
+        question: data.question,
+        surname: data.surname
+      }),
+      mode: 'cors'
+    })
+
+      .then((response) => {
+        console.log(response)
+      })
+
+      .catch((e) => console.log(e))
+  }
+
   return (
     <div className="help">
       <div className="help__rows">
