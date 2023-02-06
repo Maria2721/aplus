@@ -108,9 +108,9 @@
     margin-left: 10px;
   }
   .range__number {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 16px;
     white-space: nowrap;
     color: $textColor_dark;
   }
@@ -133,9 +133,9 @@
     margin-left: 25px;
   }
   .range__number {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 27px;
+    line-height: 22px;
   }
 
   .range__input::-webkit-slider-thumb {
@@ -181,11 +181,6 @@
     & .range__input {
       width: 200px;
     }
-    .range__number {
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 19px;
-    }
   }
 }
 
@@ -201,9 +196,9 @@
       margin-left: 5px;
     }
     .range__number {
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 600;
-      line-height: 16px;
+      line-height: 14px;
     }
   }
 }
@@ -220,9 +215,9 @@
       margin-left: 10px;
     }
     .range__number {
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 600;
-      line-height: 14px;
+      line-height: 11px;
     }
   }
 }
@@ -243,9 +238,9 @@
       margin-left: 10px;
     }
     .range__number {
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 600;
-      line-height: 22px;
+      line-height: 16px;
     }
 
     .range__input::-webkit-slider-thumb {
@@ -299,9 +294,9 @@
       margin-left: 5px;
     }
     .range__number {
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 600;
-      line-height: 16px;
+      line-height: 14px;
     }
 
     .range__input::-webkit-slider-thumb {
