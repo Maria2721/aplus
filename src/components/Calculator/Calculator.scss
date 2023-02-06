@@ -374,15 +374,21 @@
     }
 
     // вывод полученных данных
-    .calculator_modal .calculator__outputs .calculator__description {
-        margin-bottom: 84px;
+    .calculator_modal .calculator__outputs {
+        margin-top: 30px;
+        .calculator__header {
+            margin-bottom: 5px;
+        }
+        .calculator__description {
+            margin-bottom: 51px;
+        }
     }
     .calculator_modal .calculator__mainResults {
         width: 300px;
         height: 200px;
         padding-top: 21px;
         padding-left: 20px;
-        margin-bottom: 83px;
+        margin-bottom: 51px;
     }
     .calculator__mainResultsBox {
         grid-template-columns: 1fr 100px;
@@ -796,6 +802,9 @@
         }
 
         // вывод полученных данных
+        .calculator__outputs {
+            margin-top: calc(90px - 62px);
+        }
         .calculator__mainResults {
             position: absolute;
             top: 199px;
@@ -824,7 +833,7 @@
         }
 
         .calculator__outputsButtonWrapper {
-            margin-top: 367px;
+            margin-top: 302px;
             justify-content: center;
         }
     }

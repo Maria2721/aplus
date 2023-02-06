@@ -13,8 +13,8 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
   const [delivery, setDelivery] = useState(4000000);
   const [financing, setFinancing] = useState(4000000);
   const [payment, setPayment] = useState(40);
-  const [responsible, setResponsible] = useState("provider");
-  const [typeFactoring, setTypeFactoring] = useState("withRegression");
+  const [responsible, setResponsible] = useState("");
+  const [typeFactoring, setTypeFactoring] = useState("");
   const [showSelectResponsible, setShowSelectResponsible] = useState(false);
   const [showSelectTypeFactoring, setShowSelectTypeFactoring] = useState(false);
 
