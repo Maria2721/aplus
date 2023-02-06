@@ -82,6 +82,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 53px 108px 44px 40px;
   background-color: $bgColor_dark;
   max-width: 850px;
@@ -256,12 +257,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 70px 26px 100px;
-    width: 100vw;
-    height: 100vh;
+    padding: 45px 27px 37px 28px;
+    width: auto;
+    height: auto;
     max-width: 100vw;
-    min-height: 100vh;
-    max-height: 100vh;
+    min-height: 400px;
+    max-height: 500px;
 
     & .modal__closeButton {
       top: 20px;
