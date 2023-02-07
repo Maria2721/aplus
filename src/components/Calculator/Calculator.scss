@@ -39,11 +39,13 @@
         position: absolute;
         top: 0px;
         left: 0px;
+        width: 100%;
     }
     .calculator__selectTypeFactoring {
         position: absolute;
         top: calc(293px - 213px);
         left: 0px;
+        width: 100%;
     }
     .calculator__buttonWrapper {
         position: absolute;
@@ -161,11 +163,13 @@
         position: absolute;
         top: 0px;
         left: 0px;
+        width: 100%;
     }
     .calculator__selectTypeFactoring {
         position: absolute;
         top: calc(466px - 361px);
         left: 0px;
+        width: 100%;
     }
     .calculator__buttonWrapper {
         position: absolute;
@@ -859,5 +863,32 @@
         .calculator__mainResultsBox {
             grid-template-columns: 1fr 70px;
         }
+    }
+}
+
+// вывод ошибок при вводе данных
+.calculator__selectorBox__error {
+    position: absolute;
+    top: -15px;
+    right: 2px;
+    color: #ff7a00;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: $smallTablet) {
+    .calculator_modal .calculator__selectorBox__error {
+        top: -11px;
+        font-size: 8px;
+        line-height: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calculator_market .calculator__selectorBox__error {
+        top: -11px;
+        font-size: 8px;
+        line-height: 8px;
     }
 }

@@ -1,11 +1,9 @@
 import './Select.scss';
 import * as cx from "classnames";
-import { useState, useEffect } from "react";
 import { ReactComponent as ArrowMore } from "../../assets/imgs/arrow-more-calc.svg";
 import { ReactComponent as ArrowLess } from "../../assets/imgs/arrow-less-calc.svg";
 
-function Select({ isModal, handleChange, firstValue, secondValue, value, name, question, firstOption, secondOption, showSelect, handleSelect }) {
-  const [selectedOptions, setSelectedOptions] = useState(0);
+function Select({ isModal, handleChange, firstValue, secondValue, value, name, question, firstOption, secondOption, showSelect, handleSelect, removeError }) {
 
   const classSelect = cx("select", {
     "select_modal": isModal,
@@ -17,12 +15,9 @@ function Select({ isModal, handleChange, firstValue, secondValue, value, name, q
   const handleSelectOption = () => {
     setTimeout(() => {
       handleSelect();
+      removeError();
     }, 100)
   }
-
-  useEffect(() => {
-    console.log(`value is ${value}`)
-  }, [value]);
 
   return (
     <div className={classSelect} id={name}>

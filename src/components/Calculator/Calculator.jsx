@@ -10,13 +10,25 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import { calculatedData } from "./calculatedData";
 
 function Calculator({ isModal, handleModal, handleRequestModal }) {
-  const [delivery, setDelivery] = useState(4000000);
-  const [financing, setFinancing] = useState(4000000);
-  const [payment, setPayment] = useState(40);
+  const [delivery, setDelivery] = useState(50000000);
+  const [financing, setFinancing] = useState(50000000);
+  const [payment, setPayment] = useState(50);
   const [responsible, setResponsible] = useState("");
   const [typeFactoring, setTypeFactoring] = useState("");
   const [showSelectResponsible, setShowSelectResponsible] = useState(false);
   const [showSelectTypeFactoring, setShowSelectTypeFactoring] = useState(false);
+
+  const [sending, setSending] = useState(false);
+  const [state, setState] = useState({
+    responsible: {
+      isDirty: false,
+      error: ''
+    },
+    typeFactoring: {
+      isDirty: false,
+      error: ''
+    }
+  });
 
   const [calculation, setCalculation] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -46,10 +58,87 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
     }
   }, [progress, loading]);
 
-  useEffect(() => {
-    //console.log(responsible)
-    //setShowSelectResponsible((curr) => !curr);
-  }, [responsible]);
+  const handleSendCalculation = () => {
+    let curValid = validateSelect();
+    //console.log(`curValid is ${curValid}`)
+
+    if (curValid === true) {
+      setSending(true);
+    } else {
+      setSending(false);
+    }
+  };
+
+  const validateSelect = () => {
+    if (responsible === "") {
+      let error = 'Необходимо заполнить';
+      setState((state) => ({
+        ...state,
+        "responsible": {
+          ...state["responsible"],
+          error: error,
+          isDirty: true
+        }
+      }));
+    } else {
+      setState((state) => ({
+        ...state,
+        "responsible": {
+          ...state["responsible"],
+          error: '',
+          isDirty: false
+        }
+      }));
+    }
+    if (typeFactoring === "") {
+      let error = 'Необходимо заполнить';
+      setState((state) => ({
+        ...state,
+        "typeFactoring": {
+          ...state["typeFactoring"],
+          error: error,
+          isDirty: true
+        }
+      }));
+    } else {
+      setState((state) => ({
+        ...state,
+        "typeFactoring": {
+          ...state["typeFactoring"],
+          error: '',
+          isDirty: false
+        }
+      }));
+    }
+
+    if (responsible === "" || typeFactoring === "") {
+      return false
+    } else {
+      return true
+    }
+  }
+
+  const removeErrorResponsible = () => {
+    setState((state) => ({
+      ...state,
+      "responsible": {
+        ...state["responsible"],
+        error: '',
+        isDirty: false
+      }
+    }));
+  }
+
+  const removeErrorTypeFactoring = () => {
+    setState((state) => ({
+      ...state,
+      "typeFactoring": {
+        ...state["typeFactoring"],
+        error: '',
+        isDirty: false
+      }
+    }));
+  }
 
   return (
     <div className={classCalculator}>
@@ -70,9 +159,9 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
                   handleChange={(e) => setDelivery(e.target.value)}
                   value={delivery}
                   text="₽"
-                  min={1000000}
-                  max={6000000}
-                  step={1000000}
+                  min={100000}
+                  max={100000000}
+                  step={10000}
                 />
               </div>
               <div className="calculator__cell">
@@ -85,8 +174,8 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
                   value={payment}
                   text="дн."
                   min={10}
-                  max={60}
-                  step={10}
+                  max={90}
+                  step={5}
                 />
               </div>
               <div className="calculator__cell">
@@ -98,15 +187,18 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
                   handleChange={(e) => setFinancing(e.target.value)}
                   value={financing}
                   text="₽"
-                  min={1000000}
-                  max={6000000}
-                  step={1000000}
+                  min={100000}
+                  max={100000000}
+                  step={10000}
                 />
               </div>
             </div>
 
             <div className="calculator__selectorBox">
               <div className="calculator__selectResponsible">
+                {state["responsible"].error && state["responsible"].isDirty && (
+                  <div className="calculator__selectorBox__error">{state["responsible"].error}</div>
+                )}
                 <Select
                   isModal={isModal}
                   handleChange={(e) => setResponsible(e.target.value)}
@@ -119,9 +211,13 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
                   secondOption="Покупатель"
                   showSelect={showSelectResponsible}
                   handleSelect={() => setShowSelectResponsible(!showSelectResponsible)}
+                  removeError={removeErrorResponsible}
                 />
               </div>
               <div className="calculator__selectTypeFactoring">
+                {state["typeFactoring"].error && state["typeFactoring"].isDirty && (
+                  <div className="calculator__selectorBox__error">{state["typeFactoring"].error}</div>
+                )}
                 <Select
                   isModal={isModal}
                   handleChange={(e) => setTypeFactoring(e.target.value)}
@@ -134,13 +230,16 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
                   secondOption="Без регресса"
                   showSelect={showSelectTypeFactoring}
                   handleSelect={() => setShowSelectTypeFactoring(!showSelectTypeFactoring)}
+                  removeError={removeErrorTypeFactoring}
                 />
               </div>
               <div className="calculator__buttonWrapper">
                 <ButtonCalculateModal
                   isModal={isModal}
                   handleCalculationModal={() => setCalculation(true)}
-                  handleLoading={() => setLoading(true)} />
+                  handleLoading={() => setLoading(true)}
+                  handleSendCalculation={handleSendCalculation}
+                  isSending={sending} />
               </div>
             </div>
           </div>

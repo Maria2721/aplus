@@ -1,9 +1,9 @@
 import './ButtonCalculateModal.scss';
 import * as cx from "classnames";
+import { useState, useEffect } from "react";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button_calc.svg";
-import { useState } from 'react';
 
-function ButtonCalculateModal({ isModal, handleCalculationModal, handleLoading }) {
+function ButtonCalculateModal({ isModal, handleCalculationModal, handleLoading, handleSendCalculation, isSending }) {
   const [isActive, setIsActive] = useState(false);
 
   const classButton = cx("buttonCalculateModal btn_full", {
@@ -15,17 +15,20 @@ function ButtonCalculateModal({ isModal, handleCalculationModal, handleLoading }
     "buttonCalculateModal__innerActive": isActive,
   });
 
-  const handleClick = () => {
-    setIsActive(true);
-    setTimeout(() => {
-      handleCalculationModal();
-      handleLoading();
-      setIsActive(false);
-    }, 350)
-  }
+  useEffect(() => {
+    if (isSending === true) {
+      setIsActive(true);
+      setTimeout(() => {
+        handleCalculationModal();
+        handleLoading();
+        setIsActive(false);
+      }, 350)
+    } else return
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSending])
 
   return (
-    <button className={classButton} onClick={handleClick}>
+    <button className={classButton} onClick={handleSendCalculation}>
       <div className={classButtonInner}>
         Расчитать стоимость
         <div className="buttonCalculateModal__arrowWrapper">
