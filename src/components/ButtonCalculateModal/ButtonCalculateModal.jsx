@@ -30,7 +30,7 @@ function ButtonCalculateModal({ isModal, handleCalculationModal, handleLoading, 
   return (
     <button className={classButton} onClick={handleSendCalculation}>
       <div className={classButtonInner}>
-        Расчитать стоимость
+        Рассчитать стоимость
         <div className="buttonCalculateModal__arrowWrapper">
           <Arrow className="buttonCalculateModal__arrow" />
         </div>

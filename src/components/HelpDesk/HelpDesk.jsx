@@ -242,7 +242,6 @@ export default function HelpModal({ handleModal, opened }) {
       question: state.helpQuestion.value.trimStart().replace(/ +/g, " "),
       surname: state.helpSurname.value.trimStart().replace(/ +/g, " ")
     }
-    console.log(data)
 
     fetch(URL, {
       method: 'POST',

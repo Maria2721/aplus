@@ -244,7 +244,6 @@ function Request({ handleModal }) {
       patronymic: state["middle"].value.trimStart().replace(/ +/g, " "),
       surname: state["surname"].value.trimStart().replace(/ +/g, " ")
     }
-    console.log(data)
 
     fetch(URL, {
       method: 'POST',
