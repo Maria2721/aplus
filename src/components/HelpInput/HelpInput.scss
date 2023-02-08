@@ -26,36 +26,36 @@
     padding: 6px 14px;
     font-size: 16px;
     line-height: 20px;
-    background-color: #4D4D4D;
+    background-color: #4d4d4d;
     border: 1px solid $bgColor_dark;
     border-radius: 4px;
     font-family: $generalFont;
     color: $textColor;
-    box-shadow: none; 
+    box-shadow: none;
     appearance: none;
     -webkit-appearance: none;
-    box-shadow: inset 0 0 0 50px #4D4D4D;
-    -webkit-box-shadow: inset 0 0 0 50px #4D4D4D;
+    box-shadow: inset 0 0 0 50px #4d4d4d;
+    -webkit-box-shadow: inset 0 0 0 50px #4d4d4d;
     -webkit-text-fill-color: $textColor;
     &:focus {
         outline: none;
     }
 }
-  
+
 .help__row .PhoneInputInput {
     font-family: $generalFont;
     border: none;
     font-size: 16px;
-    background-color: #4D4D4D;
-    box-shadow: inset 0 0 0 50px #4D4D4D;
-    -webkit-box-shadow: inset 0 0 0 50px #4D4D4D;
+    background-color: #4d4d4d;
+    box-shadow: inset 0 0 0 50px #4d4d4d;
+    -webkit-box-shadow: inset 0 0 0 50px #4d4d4d;
     -webkit-text-fill-color: $textColor;
     color: $textColor;
 
     &:focus {
         outline: none;
     }
-  }
+}
 
 .help__input_error {
     border-width: 3px;
@@ -80,16 +80,17 @@
     margin-bottom: 7px;
 }
 
-@media (max-width: $tablet)  {
+@media screen and (max-width: 850px),
+    screen and (orientation: landscape) and (min-height: 580px) and (max-height: 700px) {
     .help__label {
         font-size: 16px;
         width: 39%;
     }
-    
+
     .help__inputWrapper {
         width: 61%;
     }
-    
+
     .help__input {
         width: 280px;
         height: 25px;
@@ -103,7 +104,7 @@
 
     .help__row .PhoneInputInput {
         font-size: 14px;
-      }
+    }
 
     .help__input_error {
         padding: 3px 12px; // уменьшаем паддинги на 2px из-за разной жирности бордера ошибки
@@ -114,7 +115,7 @@
         font-size: 8px;
         line-height: 8px;
     }
-    
+
     .help__row textarea {
         height: 100px;
     }
@@ -122,13 +123,13 @@
     .help__row:not(:last-child) {
         margin-bottom: 20px;
     }
-    
+
     .help__row:last-child {
         margin-bottom: 5px;
     }
 }
 
-@media (max-width: $smallTablet)  {
+@media screen and (max-width: 550px) {
     .help__row {
         display: block;
 
@@ -142,13 +143,13 @@
         line-height: 14px;
         width: 100%;
     }
-    
+
     .help__inputWrapper {
         display: flex;
         flex-direction: column-reverse;
         width: 100%;
     }
-    
+
     .help__input {
         width: 265px;
         max-height: 20px;
@@ -162,7 +163,7 @@
 
     .help__row .PhoneInputInput {
         font-size: 8px;
-      }
+    }
 
     .help__input {
         border-width: 2px;
@@ -179,13 +180,13 @@
         top: 87px;
         left: 84px;
     }
-    
+
     .help__row textarea {
         max-height: 85px;
     }
 }
 
-@media (max-width: $smallMobile)  {
+@media screen and (max-width: 330px) {
     .help__label {
         font-size: 10px;
         line-height: 12px;
@@ -213,8 +214,7 @@
         top: 73px;
         left: 59px;
     }
-    
-    
+
     .help__row textarea {
         max-height: 70px;
     }
@@ -224,7 +224,7 @@
     }
 }
 
-@media (orientation:landscape) and (max-width: $landscape) and (max-height: 600px) {
+@media screen and (orientation: landscape) and (max-height: 580px) {
     .help__row {
         display: block;
 
@@ -251,13 +251,12 @@
 
         &:nth-child(5) {
             width: 50%;
-             padding-right: 10px;
+            padding-right: 10px;
         }
         &:nth-child(6) {
             width: 50%;
             padding-left: 10px;
         }
-
 
         &:last-child {
             width: 100%;
@@ -269,13 +268,13 @@
         line-height: 14px;
         width: 100%;
     }
-    
+
     .help__inputWrapper {
         display: flex;
         flex-direction: column-reverse;
         width: 100%;
     }
-    
+
     .help__input {
         width: 100%;
         max-height: 25px;
@@ -285,12 +284,11 @@
         border-radius: 2px;
         margin-bottom: 0;
         border-width: 2px;
-
     }
 
     .help__row .PhoneInputInput {
         font-size: 8px;
-      }
+    }
 
     .help__input {
         border-width: 2px;
@@ -307,7 +305,7 @@
         top: 87px;
         left: 84px;
     }
-    
+
     .help__row textarea {
         max-height: 50px;
     }
@@ -317,9 +315,9 @@
     }
 
     .help__error {
-    top: -9px;
-    right: 0;
-    left: unset;
+        top: -9px;
+        right: 0;
+        left: unset;
     }
 
     .help__row:last-child .help__error {
@@ -329,7 +327,7 @@
     }
 }
 
-@media (orientation:landscape) and (max-width: $landscapeMiddle) {
+/* @media (orientation: landscape) and (max-width: $landscapeMiddle) {
     .help__label {
         font-size: 10px;
         line-height: 12px;
@@ -344,15 +342,15 @@
         top: 22px;
         left: 84px;
     }
-    
+
     .help__row textarea {
         max-height: 40px;
     }
 
     .help__error {
-    top: -9px;
-    right: 0;
-    left: unset;
+        top: -9px;
+        right: 0;
+        left: unset;
     }
 
     .help__row:last-child .help__error {
@@ -362,7 +360,7 @@
     }
 }
 
-@media (orientation:landscape) and (max-width: $landscapeSmall) {
+@media (orientation: landscape) and (max-width: $landscapeSmall) {
     .help__label {
         font-size: 6px;
         line-height: 9px;
@@ -380,8 +378,8 @@
     }
 
     .help__input {
-    margin-bottom: -7px;
-}
+        margin-bottom: -7px;
+    }
 
     .help__error {
         font-size: 4px;
@@ -408,5 +406,4 @@
         width: 5px;
         height: 5px;
     }
-  }
-  
+} */

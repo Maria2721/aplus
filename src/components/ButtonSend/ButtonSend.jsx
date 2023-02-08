@@ -50,7 +50,7 @@ function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, c
   }, [isSending])
 
   return (
-    <button className="buttonSend btn btn_full btn__biggerOnMobile" onClick={() => handleSendForm()}>
+    <button className="buttonSend btn btn_full btn__helpmodal" onClick={() => handleSendForm()}>
       <div className="buttonSend__inner">
         {arrowMove ? <div className={classText}>Отправлено</div> : children}
         <div className={classArrowWrapper}>
