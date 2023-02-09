@@ -884,6 +884,15 @@
         line-height: 8px;
     }
 }
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .calculator_modal .calculator__selectorBox__error {
+        width: fit-content;
+        top: -11px;
+        left: calc(225px - 97px);
+        font-size: 8px;
+        line-height: 8px;
+    }
+}
 
 @media screen and (max-width: 480px) {
     .calculator_market .calculator__selectorBox__error {
