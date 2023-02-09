@@ -21,10 +21,13 @@ export default function HelpInput({
   const classInput = cx("help__input", {
     "help__input help__input_error": errorMessage && isDirty
   });
+  const classLabel = cx("help__label", {
+    "help__label_textarea": view === "texterea"
+  });
 
   return (
     <div className="help__row">
-      <label className="help__label" htmlFor={id}>
+      <label className={classLabel} htmlFor={id}>
         {label}
       </label>
       <div className="help__inputWrapper">
