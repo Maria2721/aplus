@@ -59,6 +59,7 @@ export default function HelpInput({
             onChange={handlePhoneValue}
             className={classInput}
             maxLength={25}
+            smartCaret={false}
           />)}
 
         {view === "texterea" && (

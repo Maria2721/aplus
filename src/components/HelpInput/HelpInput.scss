@@ -52,6 +52,7 @@
     &:focus {
         outline: none;
     }
+    caret-color: #ffffff;
 }
 
 .help__input:-webkit-autofill,
@@ -60,8 +61,18 @@
     appearance: none;
     -webkit-appearance: none;
     -webkit-box-shadow: inset 0 0 0 50px #4d4d4d;
+    border-color: #4d4d4d !important;
     background-color: #4d4d4d !important;
-    border-width: 0px;
+}
+
+.help__row .PhoneInputInput:-webkit-autofill,
+.help__row .PhoneInputInput:-webkit-autofill:hover,
+.help__row .PhoneInputInput:-webkit-autofill:focus {
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: inset 0 0 0 50px #4d4d4d;
+    background-color: #4d4d4d !important;
+    border-width: 0px !important;
 }
 
 .help__row .PhoneInputInput {
@@ -69,7 +80,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 20px;
-    height: 20px;
+    height: 24px;
 
     border: none;
     background-color: #4d4d4d;
@@ -81,6 +92,7 @@
     &:focus {
         outline: none;
     }
+    caret-color: #ffffff;
 }
 
 .help__input_error {
@@ -137,7 +149,7 @@
     .help__row .PhoneInputInput {
         font-size: 14px;
         line-height: 14px;
-        height: 14px;
+        height: 19px;
     }
 
     .help__input_error {
@@ -201,7 +213,7 @@
     .help__row .PhoneInputInput {
         font-size: 12px;
         line-height: 12px;
-        height: 12px;
+        height: 16px;
     }
 
     .help__error {
@@ -311,10 +323,14 @@
         margin-bottom: 0;
     }
 
+    .help__input_error {
+        border-width: 2px;
+    }
+
     .help__row .PhoneInputInput {
         font-size: 12px;
         line-height: 12px;
-        height: 12px;
+        height: 16px;
     }
 
     .help__row textarea {
@@ -323,10 +339,6 @@
 
     .help__row:last-child {
         margin-bottom: 5px;
-    }
-
-    .help__input_error {
-        border-width: 2px;
     }
 
     .help__error {
