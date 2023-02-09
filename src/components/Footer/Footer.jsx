@@ -40,7 +40,7 @@ function Footer({ handleHelpModal }) {
           <div className="footer__top">
             <div className="footer__pages">
               <div className="footer__casesAndFactoring">
-                <Link to="/cases" className="footer__link" onClick={() => handleFocus()}>Кейсы</Link>
+                <Link to="/cases" className="footer__link" onClick={() => { handleFocus(); scrollToTop(); }}>Кейсы</Link>
                 <HashLink smooth to="/#factoring" className="footer__link">Факторинг</HashLink>
               </div>
               <div className="footer__contactsAndScheme">
@@ -48,7 +48,7 @@ function Footer({ handleHelpModal }) {
                 <HashLink smooth to="/#scheme" className="footer__link">Схема факторинга</HashLink>
               </div>
               <div className="footer__market">
-                <Link to="/for-marketplaces" className="footer__link" onClick={() => handleFocus()}>Для маркетплейсов</Link>
+                <Link to="/for-marketplaces" className="footer__link" onClick={() => { handleFocus(); scrollToTop(); }}>Для маркетплейсов</Link>
               </div>
             </div>
             <div className="footer__telAndSocial">
@@ -68,7 +68,7 @@ function Footer({ handleHelpModal }) {
 
           <div className="footer__bottom">
             <div className="footer__agreementAndHelp">
-              <Link to="/agreement" className="footer__link footer__agreement" onClick={() => handleFocus()}>Соглашение об обработке персональных данных</Link>
+              <Link to="/agreement" className="footer__link footer__agreement" onClick={() => { handleFocus(); scrollToTop(); }}>Соглашение об обработке персональных данных</Link>
               <button className="footer__link footer__help" onClick={() => { handleHelpModal(); handleFocus(); }}>
                 <span className="footer__helpText">Служба поддержки</span>
               </button>

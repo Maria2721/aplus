@@ -47,10 +47,18 @@ function Header({
     "header__calcIcon_focus": focusIcon,
   });
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    document.body.style = "";
+  }
+
   return (
     <header className="header container">
       <div className="header__inner container__row">
-        <Link to="/" className="header__logo" ref={logoReference} onClick={clearSelection}>
+        <Link to="/" className="header__logo" ref={logoReference} onClick={() => { clearSelection(); scrollToTop(); }}>
           <Logo className="header__logoIcon" />
         </Link>
         <div className={classOverlay}></div>
