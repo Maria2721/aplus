@@ -17,7 +17,7 @@ function Modal({ handleModal, opened, className, children }) {
   }
 
   return (
-    <RemoveScroll removeScrollBar>
+    <RemoveScroll removeScrollBar allowPinchZoom>
       <div className={classModal}>
         <div className={classModalInner}>
           <div className={className} onClick={e => e.stopPropagation()}>
