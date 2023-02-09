@@ -3,10 +3,17 @@ import * as cx from "classnames";
 import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button.svg";
 import { ReactComponent as Check } from "../../assets/imgs/send_check.svg";
 import { useState, useEffect } from "react";
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
-function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, children, capitalLetters }) {
+function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, children, capitalLetters, isModal }) {
   const [arrowMove, setArrowMove] = useState(false);
   const [checkVisible, setCheckVisible] = useState(false);
+  const { width } = useWindowDimensions();
+
+  const classBtn = cx("buttonSend btn btn_full", {
+    "btn__helpmodal": isModal === "help",
+    "btn__requestmodal": isModal === "request",
+  });
 
   const classArrowWrapper = cx("buttonSend__arrowWrapper", {
     buttonSend__arrowWrapper_active: arrowMove,
@@ -29,10 +36,15 @@ function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, c
   const handleAnimation = () => {
     setArrowMove(true);
 
-    setTimeout(() => {
+    if (width < 960) {
       setCheckVisible(true);
       clearInputsForm();
-    }, 500);
+    } else {
+      setTimeout(() => {
+        setCheckVisible(true);
+        clearInputsForm();
+      }, 500);
+    }
 
     setTimeout(() => {
       handleModal();
@@ -50,12 +62,12 @@ function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, c
   }, [isSending])
 
   return (
-    <button className="buttonSend btn btn_full btn__helpmodal" onClick={() => handleSendForm()}>
+    <button className={classBtn} onClick={() => handleSendForm()}>
       <div className="buttonSend__inner">
         {arrowMove ? <div className={classText}>Отправлено</div> : children}
-        <div className={classArrowWrapper}>
+        {(width > 959 && checkVisible === false) && <div className={classArrowWrapper}>
           <Arrow className={classArrow} />
-        </div>
+        </div>}
         <div className={classCheckWrapper}>
           <Check className="buttonSend__check" />
         </div>

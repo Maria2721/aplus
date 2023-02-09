@@ -125,7 +125,7 @@
     }
 
     .help__row:last-child {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 }
 
@@ -326,84 +326,3 @@
         left: unset;
     }
 }
-
-/* @media (orientation: landscape) and (max-width: $landscapeMiddle) {
-    .help__label {
-        font-size: 10px;
-        line-height: 12px;
-    }
-
-    .help__input {
-        max-height: 20px;
-        margin-bottom: -4px;
-    }
-    .help__error {
-        font-size: 7px;
-        top: 22px;
-        left: 84px;
-    }
-
-    .help__row textarea {
-        max-height: 40px;
-    }
-
-    .help__error {
-        top: -9px;
-        right: 0;
-        left: unset;
-    }
-
-    .help__row:last-child .help__error {
-        top: -9px;
-        right: 0;
-        left: unset;
-    }
-}
-
-@media (orientation: landscape) and (max-width: $landscapeSmall) {
-    .help__label {
-        font-size: 6px;
-        line-height: 9px;
-    }
-
-    .help__row textarea {
-        max-height: 30px;
-    }
-}
-
-@media (orientation: landscape) and (max-width: 400px) {
-    .help__label {
-        font-size: 5px;
-        line-height: 6px;
-    }
-
-    .help__input {
-        margin-bottom: -7px;
-    }
-
-    .help__error {
-        font-size: 4px;
-        top: -7px;
-    }
-
-    .help__alert {
-        width: 250px;
-        font-size: 5px;
-        line-height: 5px;
-        margin-bottom: 3px;
-    }
-
-    .help__row:last-child {
-        margin-bottom: 0;
-    }
-
-    .help__row textarea {
-        max-height: 30px;
-        margin-bottom: 5px;
-    }
-
-    .help__alertIcon {
-        width: 5px;
-        height: 5px;
-    }
-} */

@@ -304,7 +304,7 @@ function Request({ handleModal }) {
         </div>
         <div className="request__buttonWrapper">
           <ButtonSend handleSendForm={handleSendForm} isSending={sending}
-            clearInputsForm={clearInputsForm} handleModal={handleModal}>Отправить заявку</ButtonSend>
+            clearInputsForm={clearInputsForm} handleModal={handleModal} isModal="request">Отправить заявку</ButtonSend>
         </div>
       </div>
     </div>

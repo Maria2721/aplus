@@ -307,7 +307,7 @@ export default function HelpModal({ handleModal, opened }) {
             </span>
           </div>
           <ButtonSend capitalLetters={true} handleSendForm={handleClick} isSending={sending}
-            clearInputsForm={clearInputsForm} handleModal={handleModal}>ОТПРАВИТЬ</ButtonSend>
+            clearInputsForm={clearInputsForm} handleModal={handleModal} isModal="help">ОТПРАВИТЬ</ButtonSend>
         </div>
       </div>
     </div>

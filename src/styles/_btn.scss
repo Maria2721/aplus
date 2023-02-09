@@ -2,7 +2,7 @@
 
 .btn {
     width: 260px;
-    padding: 18px 0;
+    padding: 18.1px 0;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
@@ -36,6 +36,15 @@
     font-size: 14px;
     line-height: 16.45px;
     padding: 8px 0;
+}
+
+.btn__requestmodal {
+    width: 260px;
+    height: 55px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18.8px;
+    padding: 18.1px 0;
 }
 
 .btn__helpmodal {
@@ -99,6 +108,28 @@
         font-size: 8px;
         line-height: 9.75px;
         padding: 8px 6px;
+    }
+}
+
+// style for request modal
+@media screen and (max-width: 700px) {
+    .btn__requestmodal {
+        width: 160px;
+        height: 35px;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 11.75px;
+        padding: 9px 0;
+    }
+}
+@media screen and (orientation: landscape) and (max-height: 550px) {
+    .btn__requestmodal {
+        width: 160px;
+        height: 35px;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 11.75px;
+        padding: 9px 0;
     }
 }
 

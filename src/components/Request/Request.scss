@@ -9,6 +9,10 @@
 .request__header {
   text-align: center;
   margin-bottom: 64px;
+
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 54px;
 }
 
 .request__form {
@@ -37,7 +41,7 @@
   justify-content: flex-start;
   width: 100%;
   height: 31px;
-  margin-bottom: 35px;
+  margin-bottom: calc(35px - 12px);
 }
 
 .request__checkboxError {
@@ -70,8 +74,6 @@
   display: flex;
   align-items: center;
   user-select: none;
-  font-size: 20px;
-  line-height: 1;
 }
 
 .checkbox__input + label::before {
@@ -105,31 +107,25 @@ label:hover {
   cursor: pointer;
 } */
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: 850px),
+  screen and (orientation: landscape) and (min-height: 550px) and (max-height: 700px) {
   .request__header {
-    margin-bottom: 43px;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 54px;
+    margin-bottom: 65px;
   }
   .request__form {
-    max-width: 700px;
-  }
-
-  .checkbox__label {
-    font-size: 16px;
-    line-height: 21px;
+    max-width: 600px;
   }
 }
 
-@media screen and (max-width: 675px) {
-  .request__checkboxError {
-    font-size: 9px;
-    line-height: 9px;
-  }
-}
-
-@media screen and (max-width: $smallTablet) {
+@media screen and (max-width: 700px) and (min-height: 550px) {
   .request__header {
     font-size: 24px;
+    font-weight: 800;
     line-height: 25px;
+    margin-bottom: 79px;
   }
 
   .request__form {
@@ -140,7 +136,7 @@ label:hover {
 
   .request__checkbox {
     height: 30px;
-    margin-bottom: 25px;
+    margin-bottom: calc(25px - 8px);
   }
 
   .request__checkboxError {
@@ -167,91 +163,39 @@ label:hover {
   }
 }
 
-@media screen and (max-width: $smallMobile) {
+@media screen and (orientation: landscape) and (max-height: 550px) {
   .request__header {
-    font-size: 20px;
-    line-height: 20px;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-width: $landscape) and (max-height: 590px) {
-  .request__header {
-    font-size: 35px;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 25px;
     margin-bottom: 25px;
   }
+
   .request__checkbox {
-    height: 28px;
-    margin-bottom: 15px;
+    height: 23px;
+    margin-bottom: calc(20px - 9px);
   }
+
   .request__checkboxError {
     font-size: 9px;
     line-height: 9px;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-width: $landscapeMiddle) {
-  .request__header {
-    font-size: 27px;
-    margin-bottom: 12px;
-  }
-  .request__checkbox {
-    margin-bottom: 15px;
-  }
-
-  .request__checkbox {
-    margin-bottom: 8px;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-width: $landscapeSmall) {
-  .request__header {
-    font-size: 20px;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-width: 400px) {
-  .request__header {
-    font-size: 16px;
-  }
-
-  .requestInput__error {
-    top: -9px;
-    font-size: 6px;
-  }
-
-  .modal__request .modal__closeIcon {
-    width: 9px;
-  }
-
-  .modal__request .modal__closeButton {
-    top: 19px;
-    right: 23px;
-  }
-
-  .request__checkbox {
-    height: 12px;
-  }
-
-  .request__checkboxError {
-    font-size: 6px;
-    line-height: 6px;
-    margin-left: 14px;
+    margin-left: 25px;
   }
 
   .checkbox__text {
-    font-size: 6px;
-    line-height: 6px;
+    font-size: 10px;
+    line-height: 14px;
   }
 
   .checkbox__input + label::before {
-    min-width: 9px;
-    height: 9px;
-    margin-right: 5px;
+    min-width: 13px;
+    height: 13px;
+    margin-right: 12px;
   }
 
   .checkbox__mark {
-    width: 8px;
-    top: 0px;
+    width: 11px;
+    top: 3px;
     left: 1px;
   }
 }
