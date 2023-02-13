@@ -1,6 +1,6 @@
 import "./Calculator.scss";
 import * as cx from "classnames";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createRef } from "react";
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import Range from "../Range/Range";
 import Select from "../Select/Select";
@@ -8,6 +8,7 @@ import ButtonCalculateModal from "../ButtonCalculateModal/ButtonCalculateModal";
 import ButtonRequestCalculator from "../ButtonRequestCalculator/ButtonRequestCalculator";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { calculatedData } from "./calculatedData";
+import { useKeyboardListener } from "../../hooks/useKeyboardListener";
 
 function Calculator({ isModal, handleModal, handleRequestModal }) {
   const [delivery, setDelivery] = useState(50000000);
@@ -17,6 +18,9 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
   const [typeFactoring, setTypeFactoring] = useState("");
   const [showSelectResponsible, setShowSelectResponsible] = useState(false);
   const [showSelectTypeFactoring, setShowSelectTypeFactoring] = useState(false);
+
+  const ref = createRef();
+  useKeyboardListener(ref, handleModal);
 
   const [sending, setSending] = useState(false);
   const [state, setState] = useState({
@@ -141,7 +145,7 @@ function Calculator({ isModal, handleModal, handleRequestModal }) {
   }
 
   return (
-    <div className={classCalculator}>
+    <div className={classCalculator} ref={ref}>
       {calculation === false ?
         <div className="calculator__inputs">
           <h1 className="calculator__header">Калькулятор факторинга</h1>
