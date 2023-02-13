@@ -124,8 +124,9 @@ function Request({ handleModal }) {
   const validateForm = () => {
     setValid(true);
     const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
-    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,63}$/;
+    const regEmail = /^[a-zA-Z0-9.\-_]+@[a-zA-Z0-9.\-_]+\.[a-zA-Z]{2,63}$/;
     const regEmailFirstSign = /^[a-zA-Z0-9]/;
+    const serchPunycode = /\b@xn--\b/giu;
     //const regNumber = /^\d+$/;
 
     if (agreeToAllTerms === false) {
@@ -192,6 +193,11 @@ function Request({ handleModal }) {
           }
           if (!regEmailFirstSign.test(Array.from(value)[0])) {
             error = 'Недопустимый формат';
+            setValid(false);
+            break;
+          }
+          if (serchPunycode.test(value)) {
+            error = "Недопустимый формат";
             setValid(false);
             break;
           }

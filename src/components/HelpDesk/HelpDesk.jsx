@@ -100,8 +100,9 @@ export default function HelpModal({ handleModal, opened }) {
   const validateForm = () => {
     setValid(true);
     const regName = /^[A-ZА-ЯЁ\s'-]+$/i;
-    const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,63}$/;
+    const regEmail = /^[a-zA-Z0-9.\-_]+@[a-zA-Z0-9.\-_]+\.[a-zA-Z]{2,63}$/;
     const regEmailFirstSign = /^[a-zA-Z0-9]/;
+    const serchPunycode = /\b@xn--\b/giu;
     //const regNumber = /^\d+$/;
 
     for (const field of helpFields) {
@@ -176,6 +177,11 @@ export default function HelpModal({ handleModal, opened }) {
           }
           if (!regEmailFirstSign.test(Array.from(value)[0])) {
             error = 'Недопустимый формат';
+            setValid(false);
+            break;
+          }
+          if (serchPunycode.test(value)) {
+            error = "Недопустимый формат";
             setValid(false);
             break;
           }
