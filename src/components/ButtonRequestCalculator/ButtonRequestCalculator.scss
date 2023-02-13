@@ -33,14 +33,13 @@
     margin-left: 8px;
     transition: width 0.1s ease-in-out;
 }
-
-.buttonRequestCalculator:hover .buttonRequestCalculator__arrowWrapper {
-    width: 20px;
-    margin-left: 8px;
-}
-
 .buttonRequestCalculator__arrow {
     width: 20px;
+}
+.buttonRequestCalculator_modal:hover .buttonRequestCalculator__arrowWrapper,
+.buttonRequestCalculator_modal__focus .buttonRequestCalculator__arrowWrapper {
+    width: 20px;
+    margin-left: 8px;
 }
 
 // for market page
@@ -63,7 +62,8 @@
         width: 15px;
     }
 }
-.buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper {
+.buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper,
+.buttonRequestCalculator_market__focus .buttonRequestCalculator__arrowWrapper {
     width: 15px;
     margin-left: 10px;
 }
@@ -87,7 +87,8 @@
             width: 12px;
         }
     }
-    .buttonRequestCalculator_modal:hover .buttonRequestCalculator__arrowWrapper {
+    .buttonRequestCalculator_modal:hover .buttonRequestCalculator__arrowWrapper,
+    .buttonRequestCalculator_modal__focus .buttonRequestCalculator__arrowWrapper {
         width: 0;
         overflow: hidden;
         margin-left: 0;
@@ -143,7 +144,8 @@
         }
     }
 
-    .buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper {
+    .buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper,
+    .buttonRequestCalculator_market__focus .buttonRequestCalculator__arrowWrapper {
         width: 20px;
         margin-left: 10px;
     }
@@ -161,7 +163,8 @@
             width: 20px;
         }
     }
-    .buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper {
+    .buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper,
+    .buttonRequestCalculator_market__focus .buttonRequestCalculator__arrowWrapper {
         width: 0;
         overflow: hidden;
         margin-left: 0;
@@ -193,7 +196,8 @@
             width: 12px;
         }
     }
-    .buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper {
+    .buttonRequestCalculator_market:hover .buttonRequestCalculator__arrowWrapper,
+    .buttonRequestCalculator_market__focus .buttonRequestCalculator__arrowWrapper {
         width: 0;
         overflow: hidden;
         margin-left: 0;

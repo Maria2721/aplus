@@ -8,11 +8,14 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, children, capitalLetters, isModal }) {
   const [arrowMove, setArrowMove] = useState(false);
   const [checkVisible, setCheckVisible] = useState(false);
+  const [focusIcon, setFocusIcon] = useState(false);
   const { width } = useWindowDimensions();
 
   const classBtn = cx("buttonSend btn btn_full", {
     "btn__helpmodal": isModal === "help",
     "btn__requestmodal": isModal === "request",
+    "buttonSend__helpmodal_focus": focusIcon && (isModal === "help"),
+    "buttonSend__requestmodal_focus": focusIcon && (isModal === "request"),
   });
 
   const classArrowWrapper = cx("buttonSend__arrowWrapper", {
@@ -62,7 +65,9 @@ function ButtonSend({ handleSendForm, isSending, clearInputsForm, handleModal, c
   }, [isSending])
 
   return (
-    <button className={classBtn} onClick={() => handleSendForm()}>
+    <button className={classBtn} onClick={() => handleSendForm()}
+      onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
+      onBlur={() => setFocusIcon((focusIcon) => !focusIcon)}>
       <div className="buttonSend__inner">
         {arrowMove ? <div className={classText}>Отправлено</div> : children}
         {(width > 959 && checkVisible === false) && <div className={classArrowWrapper}>

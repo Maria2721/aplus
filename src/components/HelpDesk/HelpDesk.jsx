@@ -7,8 +7,7 @@ import { ReactComponent as AlertIcon } from "../../assets/imgs/alert_icon.svg";
 import { initialState } from "./initialState";
 import { isPossiblePhoneNumber } from 'react-phone-number-input';
 import ButtonSend from "../ButtonSend/ButtonSend";
-import { useState, useEffect, useRef, createRef } from "react";
-import { useKeyboardListener } from "../../hooks/useKeyboardListener";
+import { useState, useEffect, useRef } from "react";
 
 export default function HelpModal({ handleModal, opened }) {
   const [state, setState] = useState(initialState);
@@ -17,9 +16,6 @@ export default function HelpModal({ handleModal, opened }) {
   const [sending, setSending] = useState(false);
   const [focusAlert, setFocusAlert] = useState(false);
   const alertReference = useRef(null);
-
-  const ref = createRef();
-  useKeyboardListener(ref, handleModal);
 
   useEffect(() => {
     if (focusAlert === true) {
@@ -278,7 +274,7 @@ export default function HelpModal({ handleModal, opened }) {
   }
 
   return (
-    <div className="help" ref={ref}>
+    <div className="help">
       <div className="help__rows">
         {helpFields.map((item) => (
           <HelpInput

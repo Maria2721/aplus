@@ -105,6 +105,11 @@
   }
 }
 
+.buttonSend__requestmodal_focus .buttonSend__arrowWrapper {
+  width: 17px;
+  overflow: visible;
+}
+
 @media screen and (max-width: $tablet) {
   .btn__requestmodal {
     .buttonSend__check {
@@ -164,6 +169,11 @@
   .buttonSend__sendedText {
     margin-right: calc(16px + 8px);
   }
+}
+
+.buttonSend__helpmodal_focus .buttonSend__arrowWrapper {
+  width: 20px;
+  overflow: visible;
 }
 
 @media screen and (max-width: $tablet) {

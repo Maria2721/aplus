@@ -5,9 +5,8 @@ import RequestInput from '../RequestInput/RequestInput';
 import { requestFields } from './requestFields';
 import { ReactComponent as CheckboxMark } from "../../assets/imgs/checkbox_mark.svg";
 import { Link } from "react-router-dom";
-import { useState, useEffect, createRef } from 'react';
+import { useState, useEffect } from 'react';
 import { initialState } from "./initialState";
-import { useKeyboardListener } from "../../hooks/useKeyboardListener";
 
 function Request({ handleModal }) {
   const [valid, setValid] = useState(false);
@@ -43,9 +42,6 @@ function Request({ handleModal }) {
     }
   });
   //const { surname, name, middle, email, inn } = state;
-
-  const ref = createRef();
-  useKeyboardListener(ref, handleModal);
 
   useEffect(() => {
     if (agreeToAllTerms === false && checkboxClick !== 0) {
@@ -278,7 +274,7 @@ function Request({ handleModal }) {
   }
 
   return (
-    <div className="request" ref={ref}>
+    <div className="request">
       <h1 className="request__header">Заявка на факторинг</h1>
       <div className="request__form">
         <div className="request__inputsWrapper">
