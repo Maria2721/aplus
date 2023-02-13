@@ -3,8 +3,8 @@ import Case1 from "../../assets/imgs/case1.jpg"
 import Case1Retina from "../../assets/imgs/case1_2x.jpg"
 import Case2 from "../../assets/imgs/case2.jpg"
 import Case2Retina from "../../assets/imgs/case2_2x.jpg"
-import Case3 from "../../assets/imgs/case3.jpg"
-import Case3Retina from "../../assets/imgs/case3_2x.jpg"
+import Case3 from "../../assets/imgs/software-development.jpg"
+import Case3Retina from "../../assets/imgs/software-development_2x.jpg"
 import { Link } from "react-router-dom";
 
 function Cases() {
