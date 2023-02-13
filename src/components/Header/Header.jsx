@@ -73,7 +73,7 @@ function Header({
             )}
             <div className="header__linksAndButtons">
               <div className="header__links">
-                <HashLink smooth to="/#factoring" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
+                <HashLink smooth to="/#factoring" className="header__link" onClick={() => { closeBurger(); handleFocus(); }} onMouseDown={handleFocus}>
                   Факторинг
                 </HashLink>
                 <HashLink smooth to="/#scheme" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>

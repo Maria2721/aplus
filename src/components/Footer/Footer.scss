@@ -15,7 +15,7 @@
 .footer__logoWrapper {
     align-self: flex-start;
     margin-right: 48px;
-    &:focus {
+    &:focus-visible {
         outline: none;
     }
 }
@@ -108,7 +108,7 @@
     max-width: 28px;
     width: 100%;
 }
-a:focus > .footer__icon {
+a:focus-visible > .footer__icon {
     fill: $accentColor;
 }
 
@@ -138,7 +138,7 @@ a:focus > .footer__icon {
     }
 }
 
-.footer__help:focus > .footer__helpText {
+.footer__help:focus-visible > .footer__helpText {
     color: $accentColor;
 }
 
@@ -151,7 +151,7 @@ a:focus > .footer__icon {
 }
 
 @media (hover: none) {
-    .footer__help:focus > .footer__helpText {
+    .footer__help:hover > .footer__helpText {
         color: $textColor;
     }
     .footer__help:active > .footer__helpText {

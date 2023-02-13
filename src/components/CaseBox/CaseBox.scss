@@ -60,7 +60,7 @@
     border-bottom: 1px solid #000000;
 }
 
-.caseBox .caseBox__text .caseBox__link:focus {
+.caseBox .caseBox__text .caseBox__link:focus-visible {
     color: $accentColor;
     .caseBox__link_arrowIcon {
         fill: $accentColor;

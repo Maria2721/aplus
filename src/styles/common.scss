@@ -47,7 +47,7 @@ button:hover {
 a {
   color: $textColor;
   text-decoration: none;
-  &:focus {
+  &:focus-visible {
     color: $accentColor;
   }
 }

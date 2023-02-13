@@ -14,7 +14,7 @@
 
 .header__logo {
     align-self: start;
-    &:focus {
+    &:focus-visible {
         outline: none;
     }
 }
@@ -55,7 +55,7 @@
     border: none;
     background-color: transparent;
 
-    &:focus .header__calcText {
+    &:focus-visible .header__calcText {
         color: $accentColor;
     }
 }

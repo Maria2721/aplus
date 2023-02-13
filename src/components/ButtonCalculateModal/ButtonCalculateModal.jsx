@@ -5,10 +5,12 @@ import { ReactComponent as Arrow } from "../../assets/imgs/arrow_for_button_calc
 
 function ButtonCalculateModal({ isModal, handleCalculationModal, handleLoading, handleSendCalculation, isSending }) {
   const [isActive, setIsActive] = useState(false);
+  const [focusIcon, setFocusIcon] = useState(false);
 
   const classButton = cx("buttonCalculateModal btn_full", {
     "buttonCalculateModal_modal": isModal,
     "buttonCalculateModal_market": isModal === false,
+    "buttonCalculateModal_focus": focusIcon,
   });
 
   const classButtonInner = cx("buttonCalculateModal__inner", {
@@ -28,7 +30,9 @@ function ButtonCalculateModal({ isModal, handleCalculationModal, handleLoading, 
   }, [isSending])
 
   return (
-    <button className={classButton} onClick={handleSendCalculation}>
+    <button className={classButton} onClick={handleSendCalculation}
+      onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
+      onBlur={() => setFocusIcon((focusIcon) => !focusIcon)}>
       <div className={classButtonInner}>
         Рассчитать стоимость
         <div className="buttonCalculateModal__arrowWrapper">
