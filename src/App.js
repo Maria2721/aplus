@@ -16,6 +16,8 @@ import HelpDesk from "./components/HelpDesk/HelpDesk";
 
 function App() {
   const { pathname } = useLocation();
+  const { hash } = useLocation();
+  const [loading, setLoading] = useState(0);
   const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false);
   const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
   const [openedRequestModal, setOpenedRequestModal] = useState(false);
@@ -27,7 +29,7 @@ function App() {
 
   useEffect(() => {
     clearSelection();
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
     document.body.style = "";
   }, [pathname]);
 
@@ -38,6 +40,37 @@ function App() {
       // старый IE
       document.selection.empty();
     }
+  };
+
+  // scroll to hash after reload page
+  useEffect(() => {
+    scrollToHashElement();
+  }, []);
+
+  // scroll to hash after reload page when document is visible for the first time
+  useEffect(() => {
+    if (loading === 1) {
+      scrollToHashElement();
+    } else return;
+  }, [loading]);
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden === false) {
+      setLoading((curr) => curr + 1);
+    }
+  });
+
+  const scrollToHashElement = () => {
+    const elementToScroll = document.getElementById(hash?.replace("#", ""));
+
+    if (!elementToScroll) return;
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: elementToScroll.offsetTop,
+        behavior: "smooth",
+      });
+    }, 200);
   };
 
   return (
