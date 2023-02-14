@@ -7,27 +7,13 @@ import { ReactComponent as AlertIcon } from "../../assets/imgs/alert_icon.svg";
 import { initialState } from "./initialState";
 import { isPossiblePhoneNumber } from 'react-phone-number-input';
 import ButtonSend from "../ButtonSend/ButtonSend";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function HelpModal({ handleModal, opened }) {
   const [state, setState] = useState(initialState);
   const [phoneValue, setPhoneValue] = useState('');
   const [valid, setValid] = useState(false);
   const [sending, setSending] = useState(false);
-  const [focusAlert, setFocusAlert] = useState(false);
-  const alertReference = useRef(null);
-
-  useEffect(() => {
-    if (focusAlert === true) {
-      alertReference.current.focus();
-      setFocusAlert(false);
-    }
-  }, [focusAlert]);
-
-  const handleFocusAlert = () => {
-    console.log('set focus on alert')
-    setFocusAlert(true);
-  };
 
   const handleChange = (e, id) => {
     // const value = e.target.value.trimStart().replace(/ +/g, " ");
@@ -299,15 +285,14 @@ export default function HelpModal({ handleModal, opened }) {
         <div className="help__helper"></div>
         <div className="help__alertAndButton">
           <div className="help__alert">
-            <button ref={alertReference} className="help__alertBtn">
+            <div className="help__alertWrapper">
               <AlertIcon className="help__alertIcon" />
-            </button>
+            </div>
             <span>
               Нажимая «Отправить», вы даете{" "}
               <Link
                 to="/agreement" target="_blank"
-                className="help__agreement"
-                onClick={handleFocusAlert}>
+                className="help__agreement">
                 согласие на обработку персональных данных
               </Link>
             </span>
