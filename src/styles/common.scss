@@ -44,6 +44,15 @@ button:hover {
   cursor: pointer;
 }
 
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
 a {
   color: $textColor;
   text-decoration: none;
@@ -66,6 +75,7 @@ a {
   }
   a:active {
     color: $accentColor;
+    outline: none;
   }
 }
 
