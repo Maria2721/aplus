@@ -46,11 +46,21 @@ button:hover {
 
 a,
 button,
-input {
+input[type="text"],
+input[type="email"],
+input[type="checkbox"],
+input[type="range"],
+input[type="radio"],
+input[type="tel"],
+textarea {
   -webkit-tap-highlight-color: transparent;
-  appearance: none;
-  -moz-appearance: none;
+
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
 }
 
 a {
