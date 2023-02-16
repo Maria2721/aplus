@@ -52,7 +52,9 @@ input[type="checkbox"],
 input[type="range"],
 input[type="radio"],
 input[type="tel"],
-textarea {
+textarea,
+label,
+div {
   -webkit-tap-highlight-color: transparent;
 
   -webkit-appearance: none;
