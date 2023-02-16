@@ -7,7 +7,7 @@ import OneCasePage from "./pages/OneCasePage/OneCasePage";
 import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
 import AgreementPage from "./pages/AgreementPage/AgreementPage";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDisableBodyScroll } from "./hooks/useDisableBodyScroll";
 import Modal from "./components/Modal/Modal";
 import Calculator from "./components/Calculator/Calculator";
@@ -22,14 +22,13 @@ function App() {
   const [openedCalculatorModal, setOpenedCalculatorModal] = useState(false);
   const [openedRequestModal, setOpenedRequestModal] = useState(false);
   const [openedHelpModal, setOpenedHelpModal] = useState(false);
+  const appRef = useRef(null);
   useDisableBodyScroll(openedBurgerMenu);
-  useDisableBodyScroll(openedCalculatorModal);
-  useDisableBodyScroll(openedRequestModal);
-  useDisableBodyScroll(openedHelpModal);
 
+  // снятие выделения при обновлении/открытии страницы
   useEffect(() => {
     clearSelection();
-    //window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     document.body.style = "";
   }, [pathname]);
 
@@ -73,8 +72,33 @@ function App() {
     }, 200);
   };
 
+  // фиксирование фона при открытии бургер-меню
+  /* useEffect(() => {
+    if (openedBurgerMenu) {
+      document.body.style.paddingRight = `${getScrollbarWidth()}px`;
+      appRef.current.style.overflow = "hidden";
+    } else {
+      document.body.style.paddingRight = "0px";
+      appRef.current.style.removeProperty("overflow");
+    }
+  }, [openedBurgerMenu]); */
+
+  const getScrollbarWidth = () => {
+    document.body.style.overflow = "hidden";
+    let width = document.body.clientWidth;
+    document.body.style.overflow = "scroll";
+
+    width -= document.body.clientWidth;
+
+    if (!width) width = document.body.offsetWidth - document.body.clientWidth;
+
+    document.body.style.overflow = "";
+
+    return width;
+  };
+
   return (
-    <div className="App">
+    <div className="App" ref={appRef}>
       <Modal
         className="modal__calculator"
         handleModal={() => setOpenedCalculatorModal((curr) => !curr)}
