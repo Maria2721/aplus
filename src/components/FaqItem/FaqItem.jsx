@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import useMountTransition from "../../hooks/useMountTransition";
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import cn from "classnames";
 import './FaqItem.scss';
 import ArrowMore from "../../assets/imgs/arrow-more.svg";
@@ -9,20 +10,32 @@ function FaqItem({ id, question, answer }) {
   const [show, setShow] = useState(false);
   const hasTransitionedIn = useMountTransition(show, 400);
   const answerRef = useRef();
-  const [height, setHeight] = useState();
+  const [heightAnswer, setHeightAnswer] = useState();
+  const { width, height } = useWindowDimensions();
+  const isPortrait = height > width;
 
   const answerStyles = {
-    height: show ? height : 0,
+    height: show ? heightAnswer : 0,
   };
 
   const getAnswerSize = () => {
     const newHeight = answerRef.current.clientHeight;
-    setHeight(newHeight);
+    setHeightAnswer(newHeight);
   };
 
   useEffect(() => {
     getAnswerSize();
   }, [show]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      getAnswerSize();
+    }, 400);
+  }, [width]);
+
+  useEffect(() => {
+    getAnswerSize();
+  }, [isPortrait]);
 
   return (
     <div className={"faqItem"}>

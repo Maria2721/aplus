@@ -25,7 +25,7 @@ function App() {
   const appRef = useRef(null);
   useDisableBodyScroll(openedBurgerMenu);
 
-  // снятие выделения при обновлении/открытии страницы
+  // снятие выделения и скролл в начало при обновлении/открытии новой страницы
   useEffect(() => {
     clearSelection();
     window.scrollTo(0, 0);
