@@ -80,7 +80,7 @@
     font-weight: 500;
 }
 
-@media screen and (max-width: 950px),
+@media screen and (max-width: 1000px),
     screen and (orientation: landscape) and (min-height: 550px) and (max-height: 700px) {
     .requestInput {
         &:nth-child(4) {
@@ -92,7 +92,7 @@
     }
 }
 
-@media screen and (max-width: 700px) and (min-height: 400px) {
+@media screen and (max-width: 700px) {
     .requestInput {
         &:first-child {
             width: 100%;
@@ -149,22 +149,30 @@
     }
 }
 
-@media screen and (orientation: landscape) and (max-height: 550px) {
+@media screen and (orientation: landscape) and (max-height: 550px) and (min-aspect-ratio: 1/1) {
     .requestInput {
         &:first-child {
             margin-bottom: 24px;
         }
 
         &:nth-child(2) {
+            width: 50%;
+            padding-right: 5px;
             margin-bottom: 24px;
         }
         &:nth-child(3) {
+            width: 50%;
+            padding-left: 5px;
             margin-bottom: 24px;
         }
         &:nth-child(4) {
+            width: 50%;
+            padding-right: 5px;
             margin-bottom: 8px;
         }
         &:last-child {
+            width: 50%;
+            padding-left: 5px;
             margin-bottom: 8px;
         }
     }

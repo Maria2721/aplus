@@ -7,28 +7,27 @@ export const useDisableBodyScroll = (open) => {
         if (open) {
             document.body.style.paddingRight = `${getScrollbarWidth()}px`;
             document.body.style.overflow = 'hidden';
-            // fixBody();
-            
+            document.getElementsByTagName('html')[0].style.overflow = 'hidden';
         } else {
             document.body.style.paddingRight = '0px';
-            // releaseBody();
             document.body.style.removeProperty('overflow');
+            document.getElementsByTagName('html')[0].style.removeProperty('overflow');
         }
     }, [open]);
 };
 
 const getScrollbarWidth = () => {
-	document.body.style.overflow = 'hidden';
-	let width = document.body.clientWidth;
-	document.body.style.overflow = 'scroll';
- 
-	width -= document.body.clientWidth;
- 
-	if(!width) width = document.body.offsetWidth-document.body.clientWidth;
- 
-	document.body.style.overflow = '';
- 
-	return width;
+    document.body.style.overflow = 'hidden';
+    let width = document.body.clientWidth;
+    document.body.style.overflow = 'scroll';
+
+    width -= document.body.clientWidth;
+
+    if (!width) width = document.body.offsetWidth - document.body.clientWidth;
+
+    document.body.style.overflow = '';
+
+    return width;
 }
 
 // const fixBody = () => {
