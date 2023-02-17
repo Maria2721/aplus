@@ -9,7 +9,7 @@ import { isPossiblePhoneNumber } from 'react-phone-number-input';
 import ButtonSend from "../ButtonSend/ButtonSend";
 import { useState, useEffect } from "react";
 
-export default function HelpModal({ handleModal, opened }) {
+export default function HelpModal({ handleModal }) {
   const [state, setState] = useState(initialState);
   const [phoneValue, setPhoneValue] = useState('');
   const [valid, setValid] = useState(false);

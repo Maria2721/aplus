@@ -105,7 +105,6 @@
   .modal__calculator {
     padding: 50px 40px 0px 0px;
     width: 650px;
-    max-width: 100vw;
     height: 500px;
 
     & .modal__closeButton {
@@ -132,6 +131,16 @@
     }
     & .modal__closeIcon {
       width: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $smallTablet) and (max-height: 568px) {
+  .modal__calculator {
+    max-height: 100%;
+    & .modal__closeButton {
+      top: 30px;
+      right: 25px;
     }
   }
 }
@@ -275,6 +284,15 @@
     padding: 30px 20px 37px 20px;
     width: 260px;
     height: 480px;
+
+    & .modal__closeButton {
+      top: 20px;
+      right: 20px;
+      height: 12px;
+    }
+    & .modal__closeIcon {
+      width: 12px;
+    }
   }
 }
 
