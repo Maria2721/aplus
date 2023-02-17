@@ -146,7 +146,8 @@
     pointer-events: none;
 }
 
-@media screen and (max-width: $tablet), (orientation: landscape) and (max-width: 959px) and (max-height: 590px) {
+@media screen and (max-width: $tablet),
+    screen and (orientation: landscape) and (max-width: 959px) and (max-height: 590px) {
     .header__overlay_active {
         opacity: 1;
         background-color: hsla(0, 0%, 7%, 0.36);
@@ -306,41 +307,6 @@
     .header__close {
         top: 27px;
         right: 15px;
-    }
-}
-
-@media screen and (orientation: landscape) and (min-width: 959px) and (max-width: $landscape) and (max-height: 590px) {
-    .header {
-        height: 85px;
-    }
-
-    .header__link {
-        font-size: 12px;
-        line-height: 12px;
-    }
-
-    .header__calc {
-        margin-left: 14px;
-        width: 25px;
-        height: 25px;
-    }
-
-    .header__calcIcon {
-        width: 25px;
-        height: 25px;
-    }
-
-    .header__close {
-        top: 26px;
-        right: 50px;
-    }
-
-    .header__closeIcon {
-        width: 10px;
-    }
-
-    .header__calc {
-        align-self: center;
     }
 }
 

@@ -94,8 +94,7 @@
     }
 }
 
-@media screen and (max-width: $smallMobile),
-    screen and (orientation: landscape) and (min-width: 959px) and (max-width: $landscape) and (max-height: 590px) {
+@media screen and (max-width: $smallMobile) {
     .btn_smaller {
         max-width: 113px;
         width: 100%;
