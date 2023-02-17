@@ -8,7 +8,7 @@ import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
 import AgreementPage from "./pages/AgreementPage/AgreementPage";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
-import { useDisableBodyScroll } from "./hooks/useDisableBodyScroll";
+import { useScrollController } from "./hooks/useScrollController";
 import Modal from "./components/Modal/Modal";
 import Calculator from "./components/Calculator/Calculator";
 import Request from "./components/Request/Request";
@@ -23,7 +23,7 @@ function App() {
   const [openedRequestModal, setOpenedRequestModal] = useState(false);
   const [openedHelpModal, setOpenedHelpModal] = useState(false);
   const appRef = useRef(null);
-  useDisableBodyScroll(openedBurgerMenu);
+  useScrollController(openedBurgerMenu);
 
   // снятие выделения и скролл в начало при обновлении/открытии новой страницы
   useEffect(() => {
@@ -70,31 +70,6 @@ function App() {
         behavior: "smooth",
       });
     }, 200);
-  };
-
-  // фиксирование фона при открытии бургер-меню
-  /* useEffect(() => {
-    if (openedBurgerMenu) {
-      document.body.style.paddingRight = `${getScrollbarWidth()}px`;
-      appRef.current.style.overflow = "hidden";
-    } else {
-      document.body.style.paddingRight = "0px";
-      appRef.current.style.removeProperty("overflow");
-    }
-  }, [openedBurgerMenu]); */
-
-  const getScrollbarWidth = () => {
-    document.body.style.overflow = "hidden";
-    let width = document.body.clientWidth;
-    document.body.style.overflow = "scroll";
-
-    width -= document.body.clientWidth;
-
-    if (!width) width = document.body.offsetWidth - document.body.clientWidth;
-
-    document.body.style.overflow = "";
-
-    return width;
   };
 
   return (
