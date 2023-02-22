@@ -50,9 +50,9 @@ const Interaction = ({ handleCalculatorModal, handleRequestModal, id }, forwarde
           </div>
           <div className="interaction__buttons">
             <ButtonRequest handleRequestModal={handleRequestModal} />
-            <div className="interaction__buttonCalc">
+            {/* <div className="interaction__buttonCalc">
               <ButtonCalculate handleCalculatorModal={handleCalculatorModal} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

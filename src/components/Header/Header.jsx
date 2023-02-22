@@ -94,7 +94,7 @@ function Header({
                   size="small"
                   handleRequestModal={() => { handleRequestModal(); closeBurger(); }}
                 />
-                <button
+                {/* <button
                   className="header__calc"
                   onClick={() => { handleCalculatorModal(); handleFocus(); closeBurger(); }}
                   onFocus={() => setFocusIcon((focusIcon) => !focusIcon)}
@@ -104,7 +104,7 @@ function Header({
                   ) : (
                     <CalculatorIcon className={classCalcIcon} />
                   )}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
