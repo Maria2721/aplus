@@ -88,7 +88,7 @@
     color: $accentColor;
 
     &_grey {
-        color: #D9D9D9
+        color: #d9d9d9;
     }
 }
 
@@ -102,7 +102,6 @@
 
 @media screen and (max-width: 1180px) {
     .interaction {
-        padding-top: 60px;
         margin-bottom: 100px;
     }
 
@@ -117,7 +116,7 @@
 
     .interaction__item {
         // max-width: 600px;
-    
+
         &:not(:last-child) {
             margin-bottom: 18px;
         }
@@ -153,9 +152,15 @@
     }
 }
 
+@media screen and (max-width: $tablet) {
+    .interaction {
+        padding-top: 110px;
+    }
+}
+
 @media screen and (max-width: $mobile) {
     .interaction {
-        padding-top: 50px;
+        padding-top: 40px;
         margin-bottom: 50px;
     }
 
@@ -176,7 +181,7 @@
     .interaction__imgWrapper {
         padding: 0;
     }
-    
+
     .interaction__list {
         margin-top: 20px;
         // gap: 20px;
@@ -184,7 +189,7 @@
 
     // .interaction__item {
     //     // max-width: 600px;
-    
+
     //     &:not(:last-child) {
     //         margin-bottom: 13px;
     //     }
@@ -193,7 +198,7 @@
     .interaction__numberWrapper {
         min-width: 14.91px;
     }
-    
+
     .interaction__number {
         font-size: 26px;
         line-height: 35.41px;
@@ -216,9 +221,7 @@
     }
 }
 
-
-@media screen and (orientation:landscape)
-and (max-width: 900px) and (max-height: 590px) {
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 590px) {
     .interaction {
         padding-top: 40px;
     }

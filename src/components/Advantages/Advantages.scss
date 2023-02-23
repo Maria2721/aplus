@@ -15,6 +15,7 @@
 .advantages__options {
     width: 100%;
     height: calc(565px - 82px);
+    color: $textColor_dark;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

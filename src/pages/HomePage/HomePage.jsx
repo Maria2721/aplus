@@ -7,6 +7,7 @@ import CasesWithDocuments from "../../components/CasesWithDocuments/CasesWithDoc
 import Contacts from "../../components/Contacts/Contacts";
 import CostOfFactoring from "../../components/CostOfFactoring/CostOfFactoring";
 import Advantages from "../../components/Advantages/Advantages";
+import ReverseFactoring from "../../components/ReverseFactoring/ReverseFactoring";
 
 function HomePage({ handleCalculatorModal, handleRequestModal }) {
 
@@ -26,6 +27,7 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
         handleRequestModal={handleRequestModal} />
       <Advantages />
       <CostOfFactoring id="factoring" />
+      <ReverseFactoring />
       {/* <FactoringIs id="factoring" /> */}
       <Interaction
         id="scheme"
