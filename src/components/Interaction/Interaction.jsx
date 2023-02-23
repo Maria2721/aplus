@@ -7,7 +7,7 @@ import ButtonCalculate from '../ButtonCalculate/ButtonCalculate';
 const Interaction = ({ handleCalculatorModal, handleRequestModal, id }, forwardedRef) => {
   return (
     <div className="interaction container">
-      <div className="container__row container__row" id={id}>
+      <div className="container__row" id={id}>
         <div className='interaction__inner'>
           <div className="interaction__content">
             <div className="interaction__left">

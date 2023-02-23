@@ -5,6 +5,7 @@ import FactoringIs from "../../components/FactoringIs/FactoringIs";
 import Interaction from "../../components/Interaction/Interaction";
 import CasesWithDocuments from "../../components/CasesWithDocuments/CasesWithDocuments";
 import Contacts from "../../components/Contacts/Contacts";
+import CostOfFactoring from "../../components/CostOfFactoring/CostOfFactoring";
 
 function HomePage({ handleCalculatorModal, handleRequestModal }) {
 
@@ -22,7 +23,8 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
       <FiveSteps
         handleCalculatorModal={handleCalculatorModal}
         handleRequestModal={handleRequestModal} />
-      <FactoringIs id="factoring" />
+      <CostOfFactoring id="factoring" />
+      {/* <FactoringIs id="factoring" /> */}
       <Interaction
         id="scheme"
         handleCalculatorModal={handleCalculatorModal}

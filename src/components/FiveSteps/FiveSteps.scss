@@ -8,7 +8,8 @@
     margin-top: 150px;
 }
 
-.fiveSteps__header, .fiveSteps__number {
+.fiveSteps__header,
+.fiveSteps__number {
     font-size: 48px;
     font-weight: 800;
     line-height: 65.37px;
@@ -18,9 +19,9 @@
 
 .fiveSteps__clearfix_tablet,
 .fiveSteps__clearfix_mob {
-  display: none;
-  width: 100%;
-  height: 0;
+    display: none;
+    width: 100%;
+    height: 0;
 }
 
 .fiveSteps__steps {
@@ -33,7 +34,7 @@
 
 .fiveSteps__buttons {
     display: flex;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .fiveSteps__buttonCalc {
@@ -43,7 +44,7 @@
 @media screen and (max-width: 1150px) {
     .fiveSteps__clearfix_tablet {
         display: block;
-}
+    }
 
     .fiveSteps__inner {
         margin-top: 100px;
@@ -51,24 +52,25 @@
 
     .fiveSteps__steps {
         flex-wrap: wrap;
-        margin-bottom: 73px;
+        margin-bottom: 98px;
     }
 
     .fiveSteps__header {
-       max-width: 657px;
-       font-size: 40px;
-       line-height: 51.87px;
+        max-width: 657px;
+        font-size: 40px;
+        line-height: 41.87px;
+        margin-bottom: 153px;
     }
 
     .fiveSteps__number {
         font-size: 64px;
         line-height: 67px;
         margin: 0 3px;
-     }
+    }
 
-     .fiveSteps__buttons {
+    .fiveSteps__buttons {
         display: flex;
-        margin-bottom: 80px;
+        margin-bottom: 100px;
     }
 }
 
@@ -88,7 +90,6 @@
 }
 
 @media screen and (max-width: $smallTablet) {
-
     .fiveSteps__inner {
         margin-top: 70px;
     }
@@ -104,18 +105,18 @@
     }
 
     .fiveSteps__header {
-       max-width: 423px;
-       font-size: 28px;
-       line-height: 8.87px;
-       margin-bottom: 50px;
+        max-width: 423px;
+        font-size: 28px;
+        line-height: 29.87px;
+        margin-bottom: 50px;
     }
 
     .fiveSteps__number {
         font-size: 37px;
         line-height: 67px;
-     }
+    }
 
-     .fiveSteps__buttons {
+    .fiveSteps__buttons {
         display: flex;
         flex-direction: column;
         margin-bottom: 50px;
@@ -125,7 +126,6 @@
         margin-top: 10px;
         margin-left: 0;
     }
-    
 }
 
 @media screen and (max-width: $mobile) {
@@ -134,19 +134,19 @@
     }
 
     .fiveSteps__header {
-       max-width: 273px;
-       font-size: 16px;
-       line-height: 16.75px;
-       margin-bottom: 45px;
+        max-width: 273px;
+        font-size: 16px;
+        line-height: 16.75px;
+        margin-bottom: 56px;
     }
 
     .fiveSteps__number {
         font-size: 22px;
         line-height: 23.03px;
         margin: 0 3px;
-     }
+    }
 
-     .fiveSteps__buttons {
+    .fiveSteps__buttons {
         display: flex;
         flex-direction: row;
         margin-bottom: 50px;
@@ -157,7 +157,6 @@
         margin-left: 15px;
     }
 }
-
 
 @media screen and (max-width: 319px) {
     .fiveSteps__steps {
@@ -172,7 +171,7 @@
 
     .fiveSteps__buttons {
         display: flex;
-        flex-direction: column
+        flex-direction: column;
     }
 
     .fiveSteps__buttonCalc {
@@ -181,12 +180,12 @@
     }
 }
 
-@media screen and (orientation:landscape)
-and (max-width: 900px) and (max-height: 590px) {
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 590px) {
     .fiveSteps__inner {
         margin-top: 50px;
     }
-    .fiveSteps__header, .fiveSteps__number {
+    .fiveSteps__header,
+    .fiveSteps__number {
         margin-bottom: 40px;
     }
     .fiveSteps__steps {
