@@ -264,6 +264,7 @@
         height: calc(206px + 629px);
     }
     .costOfFactoring__question {
+        width: calc(100% - 24px);
         height: 206px;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -372,10 +373,13 @@
     }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 355px) {
     .costOfFactoring__question {
         height: auto;
     }
+}
+
+@media screen and (max-width: 335px) {
     .costOfFactoring__types {
         padding-top: 129px;
     }
@@ -385,9 +389,6 @@
     .costOfFactoring__types_leftSide {
         margin-bottom: 20px;
     }
-}
-
-@media screen and (max-width: 330px) {
     .costOfFactoring__types_leftSide .bubles {
         margin-right: 30px;
     }
@@ -397,9 +398,6 @@
 }
 
 @media screen and (max-width: 295px) {
-    .costOfFactoring__types {
-        padding-top: 149px;
-    }
     .costOfFactoring__types_leftSide .bubles {
         margin-right: 10px;
     }
@@ -408,9 +406,18 @@
     }
 }
 
+@media screen and (max-width: 280px) {
+    .costOfFactoring__types {
+        padding-top: 149px;
+    }
+}
+
 @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 590px) {
     .costOfFactoring__header {
         margin-left: 60px;
+    }
+    .costOfFactoring__question {
+        width: calc(100% - 40px);
     }
     .costOfFactoring__description {
         margin-left: 60px;
