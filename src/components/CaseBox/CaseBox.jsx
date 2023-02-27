@@ -37,7 +37,10 @@ function CaseBox({ id, title, subtitle }) {
     <div className="caseBox" id={id}>
       <div className="caseBox__scheme">{renderImg()}</div>
       <div className="caseBox__text">
-        <div className="caseBox__textTitle">{title}</div>
+        <Link to={id === "fruitdelivery" ? "/case-fruitdelivery"
+          : id === "seafooddelivery" ? "/case-seafooddelivery"
+            : id === "softwaredevelopment" ? "/case-softwaredevelopment"
+              : "/case-itoutsourcing"} className="caseBox__textTitle">{title}</Link>
         <div className="caseBox__textSubtitle">{subtitle}</div>
         <Link to={id === "fruitdelivery" ? "/case-fruitdelivery"
           : id === "seafooddelivery" ? "/case-seafooddelivery"
