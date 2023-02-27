@@ -8,6 +8,7 @@ import Contacts from "../../components/Contacts/Contacts";
 import CostOfFactoring from "../../components/CostOfFactoring/CostOfFactoring";
 import Advantages from "../../components/Advantages/Advantages";
 import ReverseFactoring from "../../components/ReverseFactoring/ReverseFactoring";
+import FrequentQuestions from "../../components/FrequentQuestions/FrequentQuestions";
 
 function HomePage({ handleCalculatorModal, handleRequestModal }) {
 
@@ -34,6 +35,7 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
         handleCalculatorModal={handleCalculatorModal}
         handleRequestModal={handleRequestModal} />
       <CasesWithDocuments />
+      <FrequentQuestions />
       <Contacts id="contacts" />
     </div>
   );
