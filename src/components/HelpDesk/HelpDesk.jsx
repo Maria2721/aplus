@@ -249,7 +249,7 @@ export default function HelpModal({ handleModal }) {
         question: data.question,
         surname: data.surname
       }),
-      mode: 'cors'
+      mode: 'cors',
     })
       .then((response) => {
         console.log(response)
