@@ -251,11 +251,9 @@ export default function HelpModal({ handleModal }) {
       }),
       mode: 'cors'
     })
-
       .then((response) => {
         console.log(response)
       })
-
       .catch((e) => console.log(e))
   }
 

@@ -242,7 +242,7 @@ function Request({ handleModal }) {
   }, [sending])
 
   const sendData = () => {
-    const URL = process.env.REACT_APP_API_APPLICATION;
+    const URL = "http://45.89.27.249:8000/api/factoring";
     const data = {
       inn: state["inn"].value.trimStart().replace(/ +/g, " "),
       email: state["email"].value.trimStart().replace(/ +/g, " "),
@@ -265,11 +265,9 @@ function Request({ handleModal }) {
       }),
       mode: 'cors'
     })
-
       .then((response) => {
         console.log(response)
       })
-
       .catch((e) => console.log(e))
   }
 
