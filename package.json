@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "gen-env-template": "^2.1.0",
     "generate-react-cli": "^7.4.0"
   }
 }
