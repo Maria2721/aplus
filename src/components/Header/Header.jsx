@@ -19,7 +19,6 @@ function Header({
   handleRequestModal,
   clearSelection,
 }) {
-  const [focusIcon, setFocusIcon] = useState(false);
   const logoReference = useRef(null);
   const [focus, setFocus] = useState(false);
   const { width } = useWindowDimensions();
@@ -44,7 +43,7 @@ function Header({
   });
 
   const classCalcIcon = cx("header__calcIcon", {
-    "header__calcIcon_focus": focusIcon,
+    "header__calcIcon_focus": focus,
   });
 
   const scrollToTop = () => {
@@ -53,6 +52,17 @@ function Header({
       behavior: "smooth",
     });
     document.body.style = "";
+  }
+
+  const handleRequestModalFromNav = () => {
+    if (opened === false) {
+      handleRequestModal();
+    } else {
+      closeBurger();
+      setTimeout(() => {
+        handleRequestModal();
+      }, 10)
+    }
   }
 
   return (
@@ -73,7 +83,7 @@ function Header({
             )}
             <div className="header__linksAndButtons">
               <div className="header__links">
-                <HashLink smooth to="/#factoring" className="header__link" onClick={() => { closeBurger(); handleFocus(); }} onMouseDown={handleFocus}>
+                <HashLink smooth to="/#factoring" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
                   Факторинг
                 </HashLink>
                 <HashLink smooth to="/#scheme" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
@@ -92,7 +102,7 @@ function Header({
               <div className="header__buttons">
                 <ButtonRequest
                   size="small"
-                  handleRequestModal={() => { handleRequestModal(); closeBurger(); }}
+                  handleRequestModal={handleRequestModalFromNav}
                 />
                 {/* <button
                   className="header__calc"
