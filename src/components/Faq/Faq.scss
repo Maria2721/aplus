@@ -17,7 +17,15 @@
     .faq__inner {
         margin-bottom: 50px;
         .faq__header {
-            margin-bottom: 45px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: $smallTablet) {
+    .faq__inner {
+        .faq__header {
+            margin-bottom: 15px;
         }
     }
 }

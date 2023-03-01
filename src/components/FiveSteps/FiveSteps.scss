@@ -45,31 +45,30 @@
     .fiveSteps__clearfix_tablet {
         display: block;
     }
+    .fiveSteps__steps {
+        flex-wrap: wrap;
+    }
+}
 
+@media screen and (max-width: 959px) {
     .fiveSteps__inner {
         margin-top: 100px;
     }
-
-    .fiveSteps__steps {
-        flex-wrap: wrap;
-        margin-bottom: 98px;
-    }
-
     .fiveSteps__header {
         max-width: 657px;
         font-size: 40px;
         line-height: 41.87px;
         margin-bottom: 153px;
     }
-
+    .fiveSteps__steps {
+        margin-bottom: 98px;
+    }
     .fiveSteps__number {
         font-size: 64px;
         line-height: 67px;
         margin: 0 3px;
     }
-
     .fiveSteps__buttons {
-        display: flex;
         margin-bottom: 100px;
     }
 }
@@ -113,7 +112,7 @@
 
     .fiveSteps__number {
         font-size: 37px;
-        line-height: 67px;
+        line-height: 37px;
     }
 
     .fiveSteps__buttons {
