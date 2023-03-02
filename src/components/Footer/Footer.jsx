@@ -56,10 +56,10 @@ function Footer({ handleHelpModal }) {
                 <a href="tel:+74954459099" onClick={() => handleFocus()}>+7 (495) 445-90-99</a>
               </div>
               <div className="footer__social">
-                <a href="https://telegram.me/74954459099" target="_blank" rel="noreferrer" onClick={() => handleFocus()}>
+                <a href="https://telegram.me/+79585787495" target="_blank" rel="noreferrer" onClick={() => handleFocus()}>
                   <TelegramIcon className="footer__icon" />
                 </a>
-                <a href="https://wa.me/74954459099" target="_blank" rel="noreferrer" onClick={() => handleFocus()}>
+                <a href="https://wa.me/79585787495" target="_blank" rel="noreferrer" onClick={() => handleFocus()}>
                   <WatsappIcon className="footer__icon" />
                 </a>
               </div>
