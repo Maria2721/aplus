@@ -103,10 +103,14 @@
     margin-bottom: 35px;
 }
 
+.footer__social a {
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
 .footer__icon {
     fill: #ffffff;
-    max-width: 28px;
-    width: 100%;
+    width: 28px;
 }
 a:focus-visible > .footer__icon {
     fill: $accentColor;
@@ -159,15 +163,25 @@ a:focus-visible > .footer__icon {
     }
 }
 
+.footer__casesAndFactoring {
+    grid-area: casesAndFactoring;
+}
+.footer__contactsAndScheme {
+    grid-area: contactsAndScheme;
+}
+.footer__market {
+    grid-area: market;
+}
+
 @media screen and (max-width: 1100px) {
     .footer__pages {
-        margin-right: 58px;
+        margin-right: 72px;
     }
 }
 
 @media screen and (max-width: $tablet) {
     .footer {
-        height: 195px;
+        height: 185px;
     }
 
     .footer__logoWrapper {
@@ -212,49 +226,42 @@ a:focus-visible > .footer__icon {
         }
     }
 
+    .footer__social a {
+        height: 20px;
+    }
     .footer__icon {
-        max-width: 20px;
-        width: 100%;
+        width: 20px;
     }
 }
 
-@media screen and (max-width: 682px) {
+@media screen and (max-width: 710px) {
+    .footer__logoWrapper {
+        margin-right: 10px;
+    }
     .footer__pages {
         margin-right: 20px;
     }
+}
 
-    .footer__agreement,
-    .footer__description .footer__text:first-child {
-        margin-bottom: 5px;
-    }
-
-    .footer__text,
-    .footer__agreement,
-    .footer__help {
-        font-size: 8px;
-        font-weight: 10.89px;
+@media screen and (max-width: 635px) {
+    .footer__pages {
+        margin-right: 10px;
     }
 }
 
 @media screen and (max-width: $smallTablet) {
+    .footer {
+        height: auto;
+    }
+
     .footer__inner {
         flex-direction: column;
     }
 
     .footer__logoWrapper {
+        height: 31px;
         margin-right: 0;
         margin-bottom: 5px;
-    }
-
-    .footer__pages {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        flex: auto;
-    }
-
-    .footer__contactsAndScheme {
-        margin-left: 100px;
-        margin-bottom: 10px;
     }
 
     .footer__logo {
@@ -268,83 +275,97 @@ a:focus-visible > .footer__icon {
         margin-bottom: 5px;
     }
 
-    .footer__market {
-        width: 100%;
+    .footer__pages {
+        display: grid;
+        grid-template-areas:
+            "casesAndFactoring contactsAndScheme"
+            "market contactsAndScheme";
+        align-items: end;
+        margin-right: 0px;
     }
 
-    .footer__casesAndFactoring :first-child,
+    .footer__casesAndFactoring .footer__link {
+        margin-bottom: 10px;
+    }
     .footer__contactsAndScheme :first-child {
         margin-bottom: 10px;
+    }
+    .footer__casesAndFactoring,
+    .footer__contactsAndScheme {
+        margin-right: 0px;
+    }
+    .footer__contactsAndScheme {
+        align-items: flex-end;
+    }
+    .footer__market {
+        display: flex;
     }
 
     .footer__telAndSocial {
         position: absolute;
-        top: -27px;
+        top: -29px;
         right: 0;
     }
 
     .footer__tel {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
-
     .footer__social {
         & a:first-child {
-            margin-right: 15px;
+            margin-right: 17px;
         }
     }
-
-    .footer__icon {
-        max-width: 15px;
+    .footer__social a {
+        height: 15px;
     }
-}
+    .footer__icon {
+        width: 15px;
+    }
 
-@media screen and (max-width: $mobile) {
     .footer__bottom {
         gap: 0;
         flex-direction: column;
     }
-
-    .footer__agreement,
-    .footer__description .footer__text:first-child {
-        margin-bottom: 0;
-    }
-
-    .footer__agreementAndHelp {
+    .footer__agreementAndHelp,
+    .footer__description {
         flex-direction: column-reverse;
     }
 
-    .footer__contactsAndScheme {
-        margin-left: 50px;
+    .footer__agreement,
+    .footer__description {
+        margin-bottom: 0;
+    }
+    .footer__description .footer__text:first-child {
+        margin-bottom: calc(5px + 6px);
+    }
+    .footer__agreementAndHelp .footer__link,
+    .footer__description .footer__text {
+        margin-bottom: 5px;
     }
 }
 
-@media screen and (max-width: $smallMobile) {
+@media screen and (max-width: $mobile) {
     .footer {
         height: 175px;
     }
 
-    .footer__casesAndFactoring,
-    .footer__contactsAndScheme {
-        margin-right: 5px;
+    .footer__top .footer__link {
+        font-size: 10px;
+        line-height: 14px;
     }
 
-    .footer__casesAndFactoring :first-child,
-    .footer__contactsAndScheme :first-child {
-        margin-bottom: 5px;
-    }
-
-    .footer__contactsAndScheme {
-        margin-bottom: 5px;
-    }
-
-    .footer__link,
-    .footer__text {
+    .footer__bottom .footer__link,
+    .footer__bottom .footer__text {
         font-size: 8px;
-        line-height: 14.34px;
+        line-height: 11px;
     }
 
     .footer__tel {
-        font-size: 12px;
-        line-height: 17.07px;
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .footer__description .footer__text:first-child {
+        margin-bottom: 0px;
     }
 }
