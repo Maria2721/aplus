@@ -32,7 +32,7 @@ function Footer({ handleHelpModal }) {
   return (
     <div className="footer container">
       <div className="footer__inner container__row">
-        <Link to="/" onClick={scrollToTop} className="footer__logoWrapper" ref={logoReferenceFooter}>
+        <Link to="/" className="footer__logoWrapper" ref={logoReferenceFooter} onClick={scrollToTop}>
           <Logo className="footer__logo" />
         </Link>
 
@@ -41,11 +41,11 @@ function Footer({ handleHelpModal }) {
             <div className="footer__pages">
               <div className="footer__casesAndFactoring">
                 <Link to="/cases" className="footer__link" onClick={() => { handleFocus(); scrollToTop(); }}>Кейсы</Link>
-                <HashLink smooth to="/#factoring" className="footer__link">Факторинг</HashLink>
+                <HashLink smooth to="/#factoring" className="footer__link" onClick={handleFocus}>Факторинг</HashLink>
               </div>
               <div className="footer__contactsAndScheme">
-                <HashLink smooth to="/#contacts" className="footer__link">Контакты</HashLink>
-                <HashLink smooth to="/#scheme" className="footer__link">Схема факторинга</HashLink>
+                <HashLink smooth to="/#contact-info" className="footer__link" onClick={handleFocus}>Контакты</HashLink>
+                <HashLink smooth to="/#scheme" className="footer__link" onClick={handleFocus}>Схема факторинга</HashLink>
               </div>
               <div className="footer__market">
                 <Link to="/for-marketplaces" className="footer__link" onClick={() => { handleFocus(); scrollToTop(); }}>Для маркетплейсов</Link>
@@ -53,13 +53,13 @@ function Footer({ handleHelpModal }) {
             </div>
             <div className="footer__telAndSocial">
               <div className="footer__tel">
-                <a href="tel:+74954459099" onClick={() => handleFocus()}>+7 (495) 445-90-99</a>
+                <a href="tel:+74954459099" onClick={handleFocus}>+7 (495) 445-90-99</a>
               </div>
               <div className="footer__social">
-                <a href="https://telegram.me/+79585787495" target="_blank" rel="noreferrer" onClick={() => handleFocus()}>
+                <a href="https://telegram.me/+79585787495" target="_blank" rel="noreferrer" onClick={handleFocus}>
                   <TelegramIcon className="footer__icon" />
                 </a>
-                <a href="https://wa.me/79585787495" target="_blank" rel="noreferrer" onClick={() => handleFocus()}>
+                <a href="https://wa.me/79585787495" target="_blank" rel="noreferrer" onClick={handleFocus}>
                   <WatsappIcon className="footer__icon" />
                 </a>
               </div>

@@ -36,7 +36,7 @@ function HomePage({ handleCalculatorModal, handleRequestModal }) {
         handleRequestModal={handleRequestModal} />
       <CasesWithDocuments />
       <FrequentQuestions />
-      <Contacts id="contacts" />
+      <Contacts id="contact-info" />
     </div>
   );
 }

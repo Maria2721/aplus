@@ -17,7 +17,6 @@ function Header({
   openBurger,
   handleCalculatorModal,
   handleRequestModal,
-  clearSelection,
 }) {
   const logoReference = useRef(null);
   const [focus, setFocus] = useState(false);
@@ -65,10 +64,19 @@ function Header({
     }
   }
 
+  const handleNav = () => {
+    if (opened === false) {
+      handleFocus();
+    } else {
+      closeBurger();
+      handleFocus();
+    }
+  }
+
   return (
     <header className="header container">
       <div className="header__inner container__row">
-        <Link to="/" className="header__logo" ref={logoReference} onClick={() => { clearSelection(); scrollToTop(); }}>
+        <Link to="/" className="header__logo" ref={logoReference} onClick={scrollToTop}>
           <Logo className="header__logoIcon" />
         </Link>
         <div className={classOverlay}></div>
@@ -83,19 +91,19 @@ function Header({
             )}
             <div className="header__linksAndButtons">
               <div className="header__links">
-                <HashLink smooth to="/#factoring" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
+                <HashLink smooth to="/#factoring" className="header__link" onClick={handleNav}>
                   Факторинг
                 </HashLink>
-                <HashLink smooth to="/#scheme" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
+                <HashLink smooth to="/#scheme" className="header__link" onClick={handleNav}>
                   Схема факторинга
                 </HashLink>
-                <Link to="/cases" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
+                <Link to="/cases" className="header__link" onClick={handleNav}>
                   Кейсы
                 </Link>
-                <Link to="/for-marketplaces" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
+                <Link to="/for-marketplaces" className="header__link" onClick={handleNav}>
                   Маркетплейсам
                 </Link>
-                <HashLink smooth to="/#contacts" className="header__link" onClick={() => { closeBurger(); handleFocus(); }}>
+                <HashLink smooth to="/#contact-info" className="header__link" onClick={handleNav}>
                   Контакты
                 </HashLink>
               </div>
