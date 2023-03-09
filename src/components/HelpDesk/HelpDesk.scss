@@ -128,3 +128,9 @@
     width: 100%;
   }
 }
+
+@media screen and (orientation: landscape) and (max-height: 350px) {
+  .help__alert {
+    margin-bottom: 5px;
+  }
+}
