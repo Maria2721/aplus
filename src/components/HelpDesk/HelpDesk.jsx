@@ -226,7 +226,7 @@ export default function HelpModal({ handleModal }) {
   const sendData = () => {
     const URL = process.env.REACT_APP_API_SUPPORT;
     const data = {
-      inn: state.helpSurname.value.trimStart().replace(/ +/g, " "),
+      inn: state.helpInn.value.trimStart().replace(/ +/g, " "),
       email: state.helpEmail.value.trimStart().replace(/ +/g, " "),
       mobileNumber: phoneValue.trimStart().replace(/ +/g, " "),
       name: state.helpName.value.trimStart().replace(/ +/g, " "),
