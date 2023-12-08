@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/aplus/static/css/main.ec1ebb33.css",
-    "main.js": "/aplus/static/js/main.a1fc9efc.js",
+    "main.js": "/aplus/static/js/main.4d6dbd6d.js",
     "static/js/787.28cb0dcd.chunk.js": "/aplus/static/js/787.28cb0dcd.chunk.js",
     "static/media/seafood-delivery-tablet_2x.jpg": "/aplus/static/media/seafood-delivery-tablet_2x.053a281ff4ec377f1cda.jpg",
     "static/media/software-development-tablet_2x.jpg": "/aplus/static/media/software-development-tablet_2x.286925241fa19489c43c.jpg",
@@ -129,11 +129,11 @@
     "static/media/polygon_more.svg": "/aplus/static/media/polygon_more.5052ff55680b195789dbd6ad196ef12c.svg",
     "static/media/radio.svg": "/aplus/static/media/radio.5a1d9f80e2d3671a3745.svg",
     "main.ec1ebb33.css.map": "/aplus/static/css/main.ec1ebb33.css.map",
-    "main.a1fc9efc.js.map": "/aplus/static/js/main.a1fc9efc.js.map",
+    "main.4d6dbd6d.js.map": "/aplus/static/js/main.4d6dbd6d.js.map",
     "787.28cb0dcd.chunk.js.map": "/aplus/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec1ebb33.css",
-    "static/js/main.a1fc9efc.js"
+    "static/js/main.4d6dbd6d.js"
   ]
 }
