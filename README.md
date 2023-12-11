@@ -6,6 +6,8 @@
 
 https://maria2721.github.io/aplus/
 
+<img src="src/assets/imgs/aplus_preview.png" alt="preview" title="preview"/>
+
 ## Technologies
 
 <div>
