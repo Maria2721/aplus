@@ -7,6 +7,9 @@
 https://maria2721.github.io/aplus/
 
 <img src="src/assets/imgs/aplus_preview.png" alt="preview" title="preview"/>
+<img src="src/assets/imgs/aplus_steps.png" alt="steps" title="steps"/>
+<img src="src/assets/imgs/aplus_regression.png" alt="regression" title="regression"/>
+<img src="src/assets/imgs/aplus_footer.png" alt="footer" title="footer"/>
 
 ## Technologies
 
